@@ -50,7 +50,7 @@
                </font>
             </Label>
             <Label layoutX="104.0" layoutY="331.0" text="New user? signup" />
-            <Button fx:id="userSignup" layoutX="122.0" layoutY="351.0" mnemonicParsing="false" onAction="#registerSwitchLoad" style="-fx-background-color: #E96151;" text="Singup" textFill="WHITE" />
+            <Button fx:id="userSignup" layoutX="122.0" layoutY="351.0" mnemonicParsing="false" onAction="#registerSwitchLoad" style="-fx-background-color: #E96151;" text="Signup" textFill="WHITE" />
          </children>
       </AnchorPane>
    </right>

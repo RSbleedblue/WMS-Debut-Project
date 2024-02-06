@@ -1,13 +1,11 @@
 package org.wms;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -53,7 +51,7 @@ public class loginController implements Initializable  {
             validateLogin();
         }
         else{
-            loginMessageLabel.setText("Invalid");
+            loginMessageLabel.setText("Invalid User");
         }
     }
     public void cancelButtonOnAction(ActionEvent event){
@@ -88,9 +86,6 @@ public class loginController implements Initializable  {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("registerView.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
-    }
-    public void successRegister(){
-        loginMessageLabel.setText("User Registered Successfully");
     }
 
 }

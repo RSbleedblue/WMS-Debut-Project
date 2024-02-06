@@ -4,3 +4,49 @@
 .registerNav{
     -fx-background-color : #ececec;
 }
+.image {
+    -fx-background-radius: 100%;
+    -fx-background-color: white; /* If you want a white border around the circular image */
+    -fx-border-color: #ececec; /* Border color same as registerNav */
+    -fx-border-width: 10px; /* Adjust border width as needed */
+}
+
+.image-container {
+    -fx-background-color: transparent; /* Ensure container background is transparent */
+    -fx-padding: 10px; /* Adjust padding as needed */
+}
+/* Style for the combo box */
+.quality-bar .combo-box {
+    -fx-background-color: transparent; /* Transparent background */
+    -fx-border-color: #ccc; /* Border color */
+    -fx-border-width: 1px; /* Border width */
+    -fx-border-radius: 5px; /* Border radius */
+    -fx-padding: 5px; /* Padding */
+    -fx-font-size: 14px; /* Font size */
+}
+
+/* Style for the arrow button */
+.quality-bar .arrow-button {
+    -fx-background-color: transparent; /* Transparent background */
+    -fx-shape: ""; /* Remove the default shape */
+}
+
+/* Style for the popup */
+.quality-bar .list-view {
+    -fx-background-color: #d3d3d3; /* Background color */
+    -fx-border-color: #ccc; /* Border color */
+    -fx-border-width: 1px; /* Border width */
+    -fx-border-radius: 5px; /* Border radius */
+    -fx-font-size: 14px; /* Font size */
+}
+
+/* Style for the list cell */
+.quality-bar .list-view .list-cell {
+    -fx-padding: 5px 10px; /* Padding */
+}
+
+/* Style for the selected item */
+.quality-bar .combo-box .list-cell:selected {
+    -fx-background-color: #f0f0f0; /* Background color */
+}
+

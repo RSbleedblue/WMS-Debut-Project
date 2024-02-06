@@ -11,7 +11,7 @@ import java.io.IOException;
 public class main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(main.class.getResource("loginView.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(main.class.getResource("userView.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         stage.initStyle(StageStyle.UNDECORATED);

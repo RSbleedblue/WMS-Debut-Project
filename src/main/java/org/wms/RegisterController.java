@@ -1,17 +1,17 @@
 package org.wms;
 
-import javafx.event.ActionEvent;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -40,15 +40,19 @@ public class RegisterController implements Initializable {
     private ImageView shieldImage;
     @FXML
     private Button cancelButton;
+    @FXML
+    private ComboBox<String> isAdmin;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
         File fileshield = new File("images/registerShield.jpg");
         Image shield = new Image(fileshield.toURI().toString());
         shieldImage.setImage(shield);
+
+        isAdmin.setItems(FXCollections.observableArrayList("admin","user"));
     }
 
     public void register() {
-        String registerQuery = "INSERT INTO user_account (firstname, lastname, username, password) VALUES (?, ?, ?, ?)";
+        String registerQuery = "INSERT INTO user_account (firstname, lastname, username, password, isAdmin) VALUES (?, ?, ?, ?, ?)";
 
         try {
             if (reg_Fname.getText().isEmpty() || reg_Lname.getText().isEmpty() || reg_Uname.getText().isEmpty() || reg_password.getText().isEmpty()) {
@@ -59,12 +63,15 @@ public class RegisterController implements Initializable {
                 reg_password.setPromptText("Password required");
             }
 
+            boolean isAdminValue = isAdmin.getValue().equals("admin");
+
             PreparedStatement preparedStatement = connectionDB.prepareStatement(registerQuery);
 
             preparedStatement.setString(1, reg_Fname.getText());
             preparedStatement.setString(2, reg_Lname.getText());
             preparedStatement.setString(3, reg_Uname.getText());
             preparedStatement.setString(4, reg_password.getText());
+            preparedStatement.setBoolean(5, isAdminValue);
             preparedStatement.executeUpdate();
             preparedStatement.close();
             returnBack();
@@ -74,6 +81,7 @@ public class RegisterController implements Initializable {
             throw new RuntimeException(e);
         }
     }
+
 
     public void closeConnection() {
         try {
