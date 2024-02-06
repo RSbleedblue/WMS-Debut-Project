@@ -89,5 +89,8 @@ public class loginController implements Initializable  {
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
     }
+    public void successRegister(){
+        loginMessageLabel.setText("User Registered");
+    }
 
 }
