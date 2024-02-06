@@ -90,7 +90,7 @@ public class loginController implements Initializable  {
         stage.setScene(scene);
     }
     public void successRegister(){
-        loginMessageLabel.setText("User Registered");
+        loginMessageLabel.setText("User Registered Successfully");
     }
 
 }

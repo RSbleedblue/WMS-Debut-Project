@@ -51,6 +51,14 @@ public class RegisterController implements Initializable {
         String registerQuery = "INSERT INTO user_account (firstname, lastname, username, password) VALUES (?, ?, ?, ?)";
 
         try {
+            if (reg_Fname.getText().isEmpty() || reg_Lname.getText().isEmpty() || reg_Uname.getText().isEmpty() || reg_password.getText().isEmpty()) {
+                // Prompt text in the respective fields
+                reg_Fname.setPromptText("First name required");
+                reg_Lname.setPromptText("Last name required");
+                reg_Uname.setPromptText("Username required");
+                reg_password.setPromptText("Password required");
+            }
+
             PreparedStatement preparedStatement = connectionDB.prepareStatement(registerQuery);
 
             preparedStatement.setString(1, reg_Fname.getText());
@@ -58,12 +66,15 @@ public class RegisterController implements Initializable {
             preparedStatement.setString(3, reg_Uname.getText());
             preparedStatement.setString(4, reg_password.getText());
             preparedStatement.executeUpdate();
-
             preparedStatement.close();
+            returnBack();
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
+
     public void closeConnection() {
         try {
             if (connectionDB != null && !connectionDB.isClosed()) {
@@ -73,7 +84,7 @@ public class RegisterController implements Initializable {
             e.printStackTrace();
         }
     }
-    public void returnBack(ActionEvent event) throws IOException {
+    public void returnBack() throws IOException {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
          FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("loginView.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
