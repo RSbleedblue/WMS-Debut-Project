@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.wms.RegisterController">
+   <top>
+      <AnchorPane prefHeight="80.0" prefWidth="520.0" BorderPane.alignment="TOP_LEFT">
+         <children>
+            <ImageView fx:id="shieldImage" blendMode="DARKEN" fitHeight="91.0" fitWidth="44.0" layoutX="106.0" layoutY="20.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../images/registerShield.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="157.0" layoutY="21.0" prefHeight="40.0" prefWidth="240.0" text="User Registration">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <HBox prefHeight="320.0" prefWidth="520.0" styleClass="registerNav" stylesheets="@style.css" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="320.0" prefWidth="523.0">
+               <children>
+                  <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="89.0" layoutY="14.0" text="FirstName" />
+                  <TextField fx:id="reg_Fname" layoutX="89.0" layoutY="38.0" prefHeight="26.0" prefWidth="200.0" />
+                  <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="89.0" layoutY="72.0" text="LastName" />
+                  <TextField fx:id="reg_Lname" layoutX="89.0" layoutY="96.0" prefHeight="26.0" prefWidth="200.0" />
+                  <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="89.0" layoutY="135.0" text="Username" />
+                  <TextField fx:id="reg_Uname" layoutX="89.0" layoutY="159.0" prefHeight="26.0" prefWidth="200.0" />
+                  <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="89.0" layoutY="203.0" text="Password" />
+                  <Button fx:id="regButton" alignment="CENTER" layoutX="337.0" layoutY="92.0" mnemonicParsing="false" onAction="#register" prefHeight="18.0" prefWidth="138.0" style="-fx-background-color: #E96151;" text="Register" textFill="WHITE">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Button>
+                  <PasswordField fx:id="reg_password" layoutX="89.0" layoutY="234.0" prefHeight="26.0" prefWidth="200.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </center>
+</BorderPane>

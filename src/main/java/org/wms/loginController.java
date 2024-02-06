@@ -1,7 +1,9 @@
 package org.wms;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -11,13 +13,14 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 
-public class loginController  implements Initializable {
+public class loginController implements Initializable  {
     @FXML
     private Button cancelButton;
     @FXML
@@ -30,6 +33,10 @@ public class loginController  implements Initializable {
     private TextField usernameTextField;
     @FXML
     private PasswordField enterPasswordField;
+    @FXML
+    private Button userSignup;
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
         File brandingFile = new File("images/0_k3B9c-aDz179qBT0.jpg");
@@ -76,6 +83,11 @@ public class loginController  implements Initializable {
             e.getCause();
         }
     }
-
+    public void registerSwitchLoad(ActionEvent event) throws IOException {
+        Stage stage = (Stage) userSignup.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("registerView.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setScene(scene);
+    }
 
 }
