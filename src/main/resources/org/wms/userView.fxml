@@ -16,7 +16,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.wms.userController">
    <top>
-      <AnchorPane prefHeight="50.0" prefWidth="800.0" style="-fx-background-color: #E96151;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="50.0" prefWidth="800.0" style="-fx-background-color: #f7ffff;" BorderPane.alignment="CENTER">
          <children>
             <Label alignment="CENTER" contentDisplay="CENTER" layoutX="328.0" layoutY="5.0" text="Place Order">
                <font>
@@ -68,17 +68,17 @@
                   <String fx:value="image" />
                </styleClass>
             </StackPane>
-            <Label layoutX="243.0" layoutY="80.0" text="Bed">
+            <Label layoutX="243.0" layoutY="59.0" text="Bed">
+               <font>
+                  <Font name="Segoe UI Emoji" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="245.0" layoutY="224.0" text="Sofa">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
-            <Label layoutX="245.0" layoutY="245.0" text="Sofa">
-               <font>
-                  <Font size="25.0" />
-               </font>
-            </Label>
-            <Label layoutX="245.0" layoutY="409.0" text="Table">
+            <Label layoutX="245.0" layoutY="388.0" text="Table">
                <font>
                   <Font size="25.0" />
                </font>
@@ -86,14 +86,14 @@
             <Line endX="371.4000244140625" endY="1.52587890625E-5" layoutX="131.0" layoutY="190.0" startX="73.4000244140625" startY="1.52587890625E-5" stroke="#dfd9d9" />
             <Line endX="371.4000244140625" endY="1.52587890625E-5" layoutX="131.0" layoutY="353.0" startX="73.4000244140625" startY="1.52587890625E-5" stroke="#dfd9d9" />
             <Line endX="371.4000244140625" endY="1.52587890625E-5" layoutX="131.0" layoutY="518.0" startX="73.4000244140625" startY="1.52587890625E-5" stroke="#dfd9d9" />
-            <ComboBox fx:id="bedQuality" layoutX="243.0" layoutY="126.0" prefHeight="32.0" prefWidth="114.0" promptText="Quality" stylesheets="@style.css">
+            <ComboBox fx:id="bedQuality" layoutX="243.0" layoutY="126.0" prefHeight="32.0" prefWidth="114.0" promptText="0" stylesheets="@style.css">
                <styleClass>
                   <String fx:value="arrow-button" />
                   <String fx:value="list-cell" />
                   <String fx:value="list-view" />
                </styleClass>
             </ComboBox>
-            <ComboBox fx:id="sofaQuality" layoutX="243.0" layoutY="296.0" prefWidth="114.0" promptText="Quality" stylesheets="@style.css">
+            <ComboBox fx:id="sofaQuality" layoutX="243.0" layoutY="296.0" prefWidth="114.0" promptText="0" stylesheets="@style.css">
                <styleClass>
                   <String fx:value="arrow-button" />
                   <String fx:value="quality-bar" />
@@ -101,7 +101,7 @@
                   <String fx:value="list-view" />
                </styleClass>
             </ComboBox>
-            <ComboBox fx:id="tableQuality" layoutX="243.0" layoutY="458.0" prefWidth="114.0" promptText="Quality" stylesheets="@style.css">
+            <ComboBox fx:id="tableQuality" layoutX="243.0" layoutY="458.0" prefWidth="114.0" promptText="0" stylesheets="@style.css">
                <styleClass>
                   <String fx:value="list-cell" />
                   <String fx:value="list-view" />
@@ -109,16 +109,7 @@
                   <String fx:value="arrow-button" />
                </styleClass>
             </ComboBox>
-            <ComboBox fx:id="bedQuantity" layoutX="374.0" layoutY="126.0" prefHeight="32.0" prefWidth="114.0" promptText="Quantity" stylesheets="@style.css">
-               <styleClass>
-                  <String fx:value="quality-bar" />
-                  <String fx:value="arrow-button" />
-                  <String fx:value="quality-bar" />
-                  <String fx:value="list-view" />
-                  <String fx:value="list-cell" />
-               </styleClass>
-            </ComboBox>
-            <ComboBox fx:id="sofaQuantity" layoutX="374.0" layoutY="296.0" prefHeight="32.0" prefWidth="114.0" promptText="Quantity" stylesheets="@style.css">
+            <ComboBox fx:id="bedQuantity" layoutX="374.0" layoutY="126.0" prefHeight="32.0" prefWidth="114.0" promptText="0" stylesheets="@style.css">
                <styleClass>
                   <String fx:value="quality-bar" />
                   <String fx:value="arrow-button" />
@@ -127,7 +118,7 @@
                   <String fx:value="list-cell" />
                </styleClass>
             </ComboBox>
-            <ComboBox fx:id="tableQuantity" layoutX="374.0" layoutY="458.0" prefHeight="32.0" prefWidth="114.0" promptText="Quantity" stylesheets="@style.css">
+            <ComboBox fx:id="sofaQuantity" layoutX="374.0" layoutY="296.0" prefHeight="32.0" prefWidth="114.0" promptText="0" stylesheets="@style.css">
                <styleClass>
                   <String fx:value="quality-bar" />
                   <String fx:value="arrow-button" />
@@ -136,11 +127,26 @@
                   <String fx:value="list-cell" />
                </styleClass>
             </ComboBox>
+            <ComboBox fx:id="tableQuantity" layoutX="374.0" layoutY="458.0" prefHeight="32.0" prefWidth="114.0" promptText="0" stylesheets="@style.css">
+               <styleClass>
+                  <String fx:value="quality-bar" />
+                  <String fx:value="arrow-button" />
+                  <String fx:value="quality-bar" />
+                  <String fx:value="list-view" />
+                  <String fx:value="list-cell" />
+               </styleClass>
+            </ComboBox>
+            <Label layoutX="274.0" layoutY="101.0" text="Quality" />
+            <Label layoutX="274.0" layoutY="266.0" text="Quality" />
+            <Label layoutX="274.0" layoutY="430.0" text="Quality" />
+            <Label layoutX="405.0" layoutY="101.0" text="Quantity" />
+            <Label layoutX="405.0" layoutY="266.0" text="Quantity" />
+            <Label layoutX="405.0" layoutY="430.0" text="Quantity" />
          </children>
       </AnchorPane>
    </left>
    <center>
-      <AnchorPane prefHeight="600.0" prefWidth="300.0" style="-fx-background-color: #D3D3d3;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="600.0" prefWidth="300.0" style="-fx-background-color: #f7ffff;" BorderPane.alignment="CENTER">
          <children>
             <Label layoutX="69.0" layoutY="20.0" text="Order Details">
                <font>
@@ -166,9 +172,8 @@
             </Label>
             <TextField layoutX="36.0" layoutY="237.0" prefHeight="26.0" prefWidth="125.0" promptText="Enter Name" />
             <Separator layoutX="14.0" layoutY="285.0" prefHeight="0.0" prefWidth="265.0" />
-            <Button fx:id="cancelButton" layoutX="168.0" layoutY="467.0" mnemonicParsing="false" onAction="#closePlaceOrder" prefHeight="26.0" prefWidth="58.0" style="-fx-background-color: #FFA500;" text="Close" textFill="#fff6f6" />
-            <Button fx:id="placeOrderBtn" layoutX="59.0" layoutY="467.0" mnemonicParsing="false" onAction="#placeOrder" prefHeight="26.0" prefWidth="80.0" style="-fx-background-color: #00A36C;" text="Place Order" textFill="#fff6f6" />
-            <TextField fx:id="placeOrderField" layoutX="74.0" layoutY="350.0" />
+            <Button fx:id="cancelButton" layoutX="43.0" layoutY="413.0" mnemonicParsing="false" onAction="#closePlaceOrder" prefHeight="58.0" prefWidth="209.0" style="-fx-background-color: #FFA500;" text="Close" textFill="#fff6f6" />
+            <Button fx:id="placeOrderBtn" layoutX="42.0" layoutY="331.0" mnemonicParsing="false" onAction="#placeOrder" prefHeight="58.0" prefWidth="209.0" style="-fx-background-color: #00A36C;" text="Place Order" textFill="#fff6f6" />
          </children></AnchorPane>
    </center>
 </BorderPane>

@@ -26,13 +26,13 @@ public class loginController implements Initializable  {
     @FXML
     private ImageView brandingImageView;
     @FXML
-    private ImageView lockImageView;
-    @FXML
     private TextField usernameTextField;
     @FXML
     private PasswordField enterPasswordField;
     @FXML
     private Button userSignup;
+    @FXML
+    private Button loginButton;
 
 
     @Override
@@ -40,10 +40,6 @@ public class loginController implements Initializable  {
         File brandingFile = new File("images/0_k3B9c-aDz179qBT0.jpg");
         Image branding = new Image(brandingFile.toURI().toString());
         brandingImageView.setImage(branding);
-
-        File lockFile = new File("images/lock.png");
-        Image lock = new Image(lockFile.toURI().toString());
-        lockImageView.setImage(lock);
     }
 
     public void loginButtonOnAction(ActionEvent event){
@@ -58,34 +54,62 @@ public class loginController implements Initializable  {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
     }
-    public void validateLogin(){
+    public void validateLogin() {
         DatabaseConnection connection = new DatabaseConnection();
         Connection connectionDB = connection.getConnection();
 
-        String verifyLogin = "select count(1) FROM user_account WHERE username = '"+usernameTextField.getText() + "' AND password ='" + enterPasswordField.getText() + "'";
+        String verifyLogin = "SELECT count(1), isAdmin FROM user_account WHERE username = '" + usernameTextField.getText() + "' AND password = '" + enterPasswordField.getText() + "'";
 
-        try{
+        try {
             Statement statement = connectionDB.createStatement();
             ResultSet queryResult = statement.executeQuery(verifyLogin);
-            while(queryResult.next()){
-                if(queryResult.getInt(1) == 1){
-                    loginMessageLabel.setText("Logged In");
-                }
-                else{
+            while (queryResult.next()) {
+                int count = queryResult.getInt(1);
+                if (count == 1) {
+                    int isAdmin = queryResult.getInt("isAdmin");
+                    if (isAdmin == 0) {
+                        // User is not an admin
+                        userSwitchLoad();
+                    } else {
+                        // User is an admin
+                        adminSwitchLoad();
+                    }
+                } else {
                     loginMessageLabel.setText("Invalid User");
                 }
             }
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-            e.getCause();
         }
     }
+
     public void registerSwitchLoad(ActionEvent event) throws IOException {
         Stage stage = (Stage) userSignup.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("registerView.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
     }
+    private void userSwitchLoad() {
+        try {
+            Stage stage = (Stage) loginButton.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("userView.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    private void adminSwitchLoad(){
+        try{
+            Stage stage = (Stage) loginButton.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(""));
+            Scene scene = new Scene(fxmlLoader.load());
+            stage.setScene(scene);
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
 
 }

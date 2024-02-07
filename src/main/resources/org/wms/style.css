@@ -6,47 +6,48 @@
 }
 .image {
     -fx-background-radius: 100%;
-    -fx-background-color: white; /* If you want a white border around the circular image */
-    -fx-border-color: #ececec; /* Border color same as registerNav */
-    -fx-border-width: 10px; /* Adjust border width as needed */
+    -fx-background-color: white;
+    -fx-border-color: #ececec;
+    -fx-border-width: 10px;
 }
 
 .image-container {
-    -fx-background-color: transparent; /* Ensure container background is transparent */
-    -fx-padding: 10px; /* Adjust padding as needed */
+    -fx-background-color: transparent;
+    -fx-padding: 10px;
 }
-/* Style for the combo box */
 .quality-bar .combo-box {
-    -fx-background-color: transparent; /* Transparent background */
-    -fx-border-color: #ccc; /* Border color */
-    -fx-border-width: 1px; /* Border width */
-    -fx-border-radius: 5px; /* Border radius */
-    -fx-padding: 5px; /* Padding */
-    -fx-font-size: 14px; /* Font size */
+    -fx-background-color: transparent;
+    -fx-border-color: #ccc;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px;
+    -fx-font-size: 14px;
 }
 
-/* Style for the arrow button */
 .quality-bar .arrow-button {
-    -fx-background-color: transparent; /* Transparent background */
-    -fx-shape: ""; /* Remove the default shape */
+    -fx-background-color: transparent;
+    -fx-shape: "";
 }
 
 /* Style for the popup */
 .quality-bar .list-view {
-    -fx-background-color: #d3d3d3; /* Background color */
-    -fx-border-color: #ccc; /* Border color */
-    -fx-border-width: 1px; /* Border width */
-    -fx-border-radius: 5px; /* Border radius */
-    -fx-font-size: 14px; /* Font size */
+    -fx-background-color: #d3d3d3;
+    -fx-border-color: #ccc;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-font-size: 14px;
 }
 
-/* Style for the list cell */
 .quality-bar .list-view .list-cell {
-    -fx-padding: 5px 10px; /* Padding */
+    -fx-padding: 5px 10px;
 }
 
-/* Style for the selected item */
 .quality-bar .combo-box .list-cell:selected {
-    -fx-background-color: #f0f0f0; /* Background color */
+    -fx-background-color: #f0f0f0;
 }
+
+.thanksNav{
+    -fx-background-color:  #f7ffff;
+}
+
 

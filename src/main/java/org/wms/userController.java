@@ -1,19 +1,20 @@
 package org.wms;
 
-import com.mysql.cj.x.protobuf.MysqlxCrud;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -51,13 +52,7 @@ public class userController implements Initializable {
     @FXML
     private Button cancelButton;
     @FXML
-    private TextField nameField;
-    @FXML
-    private TextField placeOrderField;
-    @FXML
-    private Button placeOrderBtn;
-
-
+    private  Button placeOrderBtn;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
@@ -91,45 +86,51 @@ public class userController implements Initializable {
     }
     public void placeOrder() throws SQLException {
 
-        int bedQL = Integer.parseInt(bedQuality.getValue());
-        int bedQN = Integer.parseInt(bedQuantity.getValue());
-
-        int sofaQL = Integer.parseInt(sofaQuality.getValue());
-        int sofaQN = Integer.parseInt(sofaQuantity.getValue());
-
-        int tableQN = Integer.parseInt(tableQuantity.getValue());
-        int tableQL = Integer.parseInt(tableQuality.getValue());
-        String bed = "";
-        String table = "";
-        String sofa = "";
-        int orderID = generateID();
-
         ArrayList<OrderItem> items = new ArrayList<>();
-        if(bedQL != 0 && bedQN != 0){
+        if(bedQuality.getValue() != null && bedQuantity.getValue()!=null){
+            int bedQL = Integer.parseInt(bedQuality.getValue());
+            int bedQN = Integer.parseInt(bedQuantity.getValue());
             items.add(new OrderItem("bed",bedQL,bedQN));
+
         }
-        if(sofaQL != 0 && sofaQN != 0){
+        if(sofaQuality.getValue() != null && sofaQuantity.getValue() != null){
+            int sofaQL = Integer.parseInt(sofaQuality.getValue());
+            int sofaQN = Integer.parseInt(sofaQuantity.getValue());
             items.add(new OrderItem("sofa",sofaQL,sofaQN));
+
         }
-        if(tableQL != 0 && tableQN != 0){
+        if(tableQuality.getValue() != null && tableQuantity.getValue() != null){
+            int tableQN = Integer.parseInt(tableQuantity.getValue());
+            int tableQL = Integer.parseInt(tableQuality.getValue());
             items.add(new OrderItem("table",tableQL,tableQN));
         }
-        insertIntoOrder(items, orderID);
+        String orderID = generateID();
+        boolean res = insertIntoOrder(items, orderID);
+        if(res){
+            try {
+                Stage stage = (Stage) placeOrderBtn.getScene().getWindow();
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("thanksView.fxml"));
+                Scene scene = new Scene(fxmlLoader.load());
+                stage.setScene(scene);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
-    private void insertIntoOrder(ArrayList<OrderItem> items, int orderID) throws SQLException {
+    private boolean insertIntoOrder(ArrayList<OrderItem> items, String orderID) throws SQLException {
         int commodityID = -1;
         String query = "INSERT INTO order_detail (order_id, commodity_id, quality, quantity) VALUES (?, ?,  ?, ?)";
         for(int i = 0; i < items.size(); i++) {
             String commodityName = items.get(i).getCommodity();
             commodityID = getCommodityID(commodityName);
             PreparedStatement statement = connectionDB.prepareStatement(query);
-            statement.setInt(1,orderID);
+            statement.setString(1,orderID);
             statement.setInt(2,commodityID);
             statement.setInt(3,items.get(i).getQuality());
             statement.setInt(4,items.get(i).getQuantity());
             statement.executeUpdate();
         }
-
+        return true;
     }
     private int getCommodityID(String name){
         int commodityId = -1;
@@ -147,10 +148,10 @@ public class userController implements Initializable {
         }
         return  commodityId;
     }
-    private int generateID(){
-        return 10;
+    private String generateID() {
+        UUID uuid = UUID.randomUUID();
+        String uuidString = uuid.toString().replace("-", "");
+        return uuidString.substring(0, 4);
     }
-
-
 
 }
