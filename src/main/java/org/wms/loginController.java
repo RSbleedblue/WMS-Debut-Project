@@ -102,7 +102,7 @@ public class loginController implements Initializable  {
     private void adminSwitchLoad(){
         try{
             Stage stage = (Stage) loginButton.getScene().getWindow();
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(""));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("adminView.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             stage.setScene(scene);
         }
