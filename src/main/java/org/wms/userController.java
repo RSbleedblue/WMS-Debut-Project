@@ -134,13 +134,13 @@ public class userController implements Initializable {
     }
     private int getCommodityID(String name){
         int commodityId = -1;
-        String insertQuery = "SELECT commodity_id FROM commodities WHERE name = ?";
+        String insertQuery = "SELECT c_ID FROM commodities WHERE name = ?";
         try{
             PreparedStatement statement = connectionDB.prepareStatement(insertQuery);
             statement.setString(1,name);
             ResultSet resultSet = statement.executeQuery();
             if(resultSet.next()){
-                commodityId = resultSet.getInt("commodity_id");
+                commodityId = resultSet.getInt("c_ID");
             }
         }
         catch (SQLException e) {

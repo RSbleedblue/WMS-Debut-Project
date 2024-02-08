@@ -1,5 +1,4 @@
 package org.wms;
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -84,6 +83,7 @@ public class loginController implements Initializable  {
     }
 
     public void registerSwitchLoad(ActionEvent event) throws IOException {
+
         Stage stage = (Stage) userSignup.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("registerView.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
