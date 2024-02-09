@@ -3,11 +3,15 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Rectangle2D;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
+import org.w3c.dom.events.MouseEvent;
 
 import java.io.File;
 import java.io.IOException;
@@ -99,14 +103,31 @@ public class loginController implements Initializable  {
             e.printStackTrace();
         }
     }
-    private void adminSwitchLoad(){
-        try{
-            Stage stage = (Stage) loginButton.getScene().getWindow();
+    private double x , y;
+    private void adminSwitchLoad() {
+        try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("adminView.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
+            Parent root = fxmlLoader.load();
+
+            // Create a new scene
+            Scene scene = new Scene(root);
+
+            Screen screen = Screen.getPrimary();
+            Rectangle2D bounds = screen.getVisualBounds();
+
+            // Calculate the center coordinates
+            double centerX = bounds.getMinX() + (bounds.getWidth() - scene.getWidth()) / 2;
+            double centerY = bounds.getMinY() + (bounds.getHeight() - scene.getHeight()) / 2;
+
+            // Set the stage position to the center coordinates
+            Stage stage = new Stage();
             stage.setScene(scene);
-        }
-        catch (IOException e){
+            stage.setX(centerX);
+            stage.setY(centerY);
+
+            // Show the stage
+            stage.show();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
