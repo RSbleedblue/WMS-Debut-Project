@@ -17,6 +17,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ResourceBundle;
 
 public class adminController implements Initializable {
@@ -43,6 +45,8 @@ public class adminController implements Initializable {
 
     @FXML
     private AnchorPane dashboardSection;
+    @FXML
+    private AnchorPane orders_Section;
 
     @FXML
     private Button homeBtn;
@@ -67,7 +71,18 @@ public class adminController implements Initializable {
 
     @FXML
     private TableView<warehouseData> tableView;
-
+    @FXML
+    private TableView<placedOrders> order_table;
+    @FXML
+    private TableColumn<placedOrders, String> order_id_col;
+    @FXML
+    private TableColumn<placedOrders,String> name_col;
+    @FXML
+    private TableColumn<placedOrders,Integer> quality_col;
+    @FXML
+    private TableColumn<placedOrders, Integer> quantity_col;
+    @FXML
+    private TableColumn<placedOrders, Integer> c_id_order_col;
     @FXML
     private ImageView truckINOUT;
     @FXML
@@ -85,6 +100,12 @@ public class adminController implements Initializable {
     private TextField quantity_select;
     @FXML
     private ComboBox<Integer> quality_select;
+    @FXML
+    private Label truckINTime;
+    @FXML
+    private Label truckOutTime;
+    @FXML
+    private Button orders_BTN;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -94,7 +115,26 @@ public class adminController implements Initializable {
         getOrdersPending();
         loadWarehouseData();
         initializeDropdowns();
+        truckTimeLoad();
+        loadDeliverOrder();
 
+    }
+    private void truckTimeLoad(){
+        String query = "select * from truck_status";
+        try{
+
+            PreparedStatement statement = connectionDB.prepareStatement(query);
+            ResultSet result = statement.executeQuery();
+            if(result.next()){
+                String truckIn = result.getString("truck_in");
+                String truckOut = result.getString("truck_out");
+                truckINTime.setText(truckIn);
+                truckOutTime.setText(truckOut);
+            }
+        }
+        catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
     private void initializeImages() {
         Image adminImg = loadImage("admin.jpg");
@@ -156,10 +196,17 @@ public class adminController implements Initializable {
         if(event.getSource() == homeBtn){
             addCommoditySection.setVisible(false);
             dashboardSection.setVisible(true);
+            orders_Section.setVisible(false);
         }
         else if(event.getSource() == addCommodityBtn){
             addCommoditySection.setVisible(true);
             dashboardSection.setVisible(false);
+            orders_Section.setVisible(false);
+        }
+        else if(event.getSource() == orders_BTN){
+            addCommoditySection.setVisible(false);
+            dashboardSection.setVisible(false);
+            orders_Section.setVisible(true);
         }
     }
     private void getOrdersPending(){
@@ -181,6 +228,54 @@ public class adminController implements Initializable {
             throw new RuntimeException(e);
         }
     }
+    private ObservableList<placedOrders> getNotDeliveredOrders() {
+        String query = "SELECT Order_ID, commodity_ID, quality, quantity\n" +
+                "FROM order_detail\n" +
+                "WHERE delivery_status ='not_delivered'\n";
+
+        ObservableList<placedOrders> pList = FXCollections.observableArrayList();
+        try (PreparedStatement getOrderStatement = connectionDB.prepareStatement(query)) {
+            ResultSet orders = getOrderStatement.executeQuery();
+            while (orders.next()) {
+                String Order_ID = orders.getString("Order_ID");
+                int commodity_ID = orders.getInt("commodity_ID");
+                int quality = orders.getInt("quality");
+                int quantity = orders.getInt("quantity");
+                String commodityName = getCommodityName(commodity_ID); // Fetch commodity name
+                placedOrders pOds = new placedOrders(Order_ID, commodityName, quality, quantity); // Pass commodity name
+                pList.add(pOds);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return pList;
+    }
+    ObservableList<placedOrders> placedList;
+    private void loadDeliverOrder() {
+        placedList = getNotDeliveredOrders();
+        order_id_col.setCellValueFactory(new PropertyValueFactory<>("Order_ID"));
+        name_col.setCellValueFactory(new PropertyValueFactory<>("commodityName")); // Use commodityName instead of commodity_ID
+        quality_col.setCellValueFactory(new PropertyValueFactory<>("quality"));
+        quantity_Col.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        order_table.setItems(placedList);
+    }
+
+
+    private String getCommodityName(int c_id){
+        String c_name = null;
+        String query = "SELECT name FROM commodities WHERE c_ID = ?";
+        try (PreparedStatement preparedStatement = connectionDB.prepareStatement(query)) {
+            preparedStatement.setInt(1, c_id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                c_name = resultSet.getString("name");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return c_name;
+    }
+
     public void updateWarehouse() throws SQLException {
         String c_Name = commodity_Select.getValue().toLowerCase();
         int quality = quality_select.getValue();
@@ -193,7 +288,7 @@ public class adminController implements Initializable {
             alert.setHeaderText(null);
             alert.setContentText("Please enter a valid integer for quantity.");
             alert.showAndWait();
-            return; // Exit the method
+            return;
         }
 //      Query to update the commodity
         String updateQuery = "UPDATE commodities\n" +
@@ -206,6 +301,25 @@ public class adminController implements Initializable {
             prepare.setInt(3, quality);
             prepare.executeUpdate();
         }
+        LocalTime time = LocalTime.now();
+        String truckInTimeQuery = "Update truck_status \n"+
+                "SET truck_in = ?\n"+
+                "WHERE truck_id = 1";
+        String truckOutTimeQuery = "UPDATE truck_status\n" +
+                "SET truck_out = ?\n" +
+                "WHERE truck_id = 1";
+        try (PreparedStatement truckInPrepare = connectionDB.prepareStatement(truckInTimeQuery);
+             PreparedStatement truckOutPrepare = connectionDB.prepareStatement(truckOutTimeQuery))
+        {
+            truckInPrepare.setObject(1, time);
+            truckInPrepare.executeUpdate();
+
+            truckOutPrepare.setObject(1, "00:00:00");
+            truckOutPrepare.executeUpdate();
+        }
+        truckTimeLoad();
+        loadWarehouseData();
+
     }
     public void clearWarehouse() {
         commodity_Select.getSelectionModel().clearSelection();
@@ -214,5 +328,6 @@ public class adminController implements Initializable {
         quality_select.getSelectionModel().clearSelection();
         quality_select.setPromptText("0");
     }
+
 
 }
