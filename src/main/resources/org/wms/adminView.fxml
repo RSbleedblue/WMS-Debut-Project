@@ -24,7 +24,7 @@
                   <Label layoutX="23.0" layoutY="264.0" text="Order ID:" />
                   <BorderPane layoutX="23.0" layoutY="14.0" stylesheets="@style.css">
                      <center>
-                        <ImageView fitHeight="175.0" fitWidth="200.0" pickOnBounds="true">
+                        <ImageView fx:id="order_sec_image" fitHeight="175.0" fitWidth="200.0" pickOnBounds="true">
                            <image>
                               <Image url="@../../../../../images/table.jpg" />
                            </image>
@@ -69,13 +69,13 @@
                         <String fx:value="list-cell" />
                      </styleClass>
                   </TextField>
-                  <Button layoutX="39.0" layoutY="475.0" mnemonicParsing="false" style="-fx-background-color: #00A36C;" stylesheets="@style.css" text="Push Order" textFill="WHITE">
+                  <Button fx:id="push_order_btn" layoutX="39.0" layoutY="475.0" mnemonicParsing="false" style="-fx-background-color: #00A36C;" stylesheets="@style.css" text="Push Order" textFill="WHITE">
                      <styleClass>
                         <String fx:value="list-view" />
                         <String fx:value="list-cell" />
                      </styleClass>
                   </Button>
-                  <Button layoutX="145.0" layoutY="475.0" mnemonicParsing="false" style="-fx-background-color: #E96151;" stylesheets="@style.css" text="Delete Order" textFill="WHITE">
+                  <Button fx:id="delete_order_btn" layoutX="145.0" layoutY="475.0" mnemonicParsing="false" style="-fx-background-color: #E96151;" stylesheets="@style.css" text="Delete Order" textFill="WHITE">
                      <styleClass>
                         <String fx:value="list-cell" />
                         <String fx:value="list-view" />
@@ -88,11 +88,10 @@
                <children>
                   <TableView fx:id="order_table" layoutX="17.0" layoutY="23.0" prefHeight="522.0" prefWidth="494.0">
                     <columns>
-                      <TableColumn fx:id="order_id_col" maxWidth="119.0" prefWidth="73.60003662109375" text="Order_ID" />
-                      <TableColumn fx:id="name_col" text="Name" />
-                        <TableColumn fx:id="quality_col" prefWidth="87.2000732421875" text="Quality" />
-                        <TableColumn fx:id="quantity_col" prefWidth="89.5999755859375" text="Quantity" />
-                        <TableColumn fx:id="c_id_order_col" maxWidth="265.60003662109375" prefWidth="128.79998779296875" text="c_id" />
+                      <TableColumn fx:id="order_id_col" maxWidth="119.0" prefWidth="123.0" text="Order_ID" />
+                      <TableColumn fx:id="order_name_col" prefWidth="123.0" text="Name" />
+                        <TableColumn fx:id="order_quality_col" prefWidth="123.0" text="Quality" />
+                        <TableColumn fx:id="orders_quantity_col" prefWidth="123.0" text="Quantity" />
                     </columns>
                   </TableView>
                </children>

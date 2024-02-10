@@ -12,6 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import org.w3c.dom.events.MouseEvent;
+import org.wms.utils.SceneUtil;
 
 import java.io.File;
 import java.io.IOException;
@@ -91,6 +92,7 @@ public class loginController implements Initializable  {
         Stage stage = (Stage) userSignup.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("registerView.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
+        SceneUtil.centerSceneOnScreen(stage,scene);
         stage.setScene(scene);
     }
     private void userSwitchLoad() {
@@ -98,34 +100,18 @@ public class loginController implements Initializable  {
             Stage stage = (Stage) loginButton.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("userView.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
+            SceneUtil.centerSceneOnScreen(stage,scene);
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    private double x , y;
     private void adminSwitchLoad() {
         try {
+            Stage stage = (Stage) loginButton.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("adminView.fxml"));
-            Parent root = fxmlLoader.load();
-
-            // Create a new scene
-            Scene scene = new Scene(root);
-
-            Screen screen = Screen.getPrimary();
-            Rectangle2D bounds = screen.getVisualBounds();
-
-            // Calculate the center coordinates
-            double centerX = bounds.getMinX() + (bounds.getWidth() - scene.getWidth()) / 2;
-            double centerY = bounds.getMinY() + (bounds.getHeight() - scene.getHeight()) / 2;
-
-            // Set the stage position to the center coordinates
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.setX(centerX);
-            stage.setY(centerY);
-
-            // Show the stage
+            Scene scene = new Scene(fxmlLoader.load());
+            SceneUtil.centerSceneOnScreen(stage,scene);
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
