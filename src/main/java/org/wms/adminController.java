@@ -76,13 +76,12 @@ public class adminController implements Initializable {
     @FXML
     private TableColumn<placedOrders, String> order_id_col;
     @FXML
-    private TableColumn<placedOrders,String> name_col;
+    private TableColumn<placedOrders,String> order_name_col;
     @FXML
-    private TableColumn<placedOrders,Integer> quality_col;
+    private TableColumn<placedOrders,Integer> order_quality_col;
     @FXML
-    private TableColumn<placedOrders, Integer> quantity_col;
-    @FXML
-    private TableColumn<placedOrders, Integer> c_id_order_col;
+    private TableColumn<placedOrders, Integer> orders_quantity_col;
+
     @FXML
     private ImageView truckINOUT;
     @FXML
@@ -254,9 +253,9 @@ public class adminController implements Initializable {
     private void loadDeliverOrder() {
         placedList = getNotDeliveredOrders();
         order_id_col.setCellValueFactory(new PropertyValueFactory<>("Order_ID"));
-        name_col.setCellValueFactory(new PropertyValueFactory<>("commodityName")); // Use commodityName instead of commodity_ID
-        quality_col.setCellValueFactory(new PropertyValueFactory<>("quality"));
-        quantity_Col.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        order_name_col.setCellValueFactory(new PropertyValueFactory<>("commodityName")); // Use commodityName instead of commodity_ID
+        order_quality_col.setCellValueFactory(new PropertyValueFactory<>("quality"));
+        orders_quantity_col.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         order_table.setItems(placedList);
     }
 
