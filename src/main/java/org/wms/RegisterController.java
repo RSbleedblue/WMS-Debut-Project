@@ -37,18 +37,18 @@ public class RegisterController implements Initializable {
     @FXML
     private PasswordField reg_password;
     @FXML
-    private ImageView shieldImage;
+    private ImageView brandingImageView;
     @FXML
     private Button cancelButton;
     @FXML
     private ComboBox<String> isAdmin;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
-        File fileshield = new File("images/registerShield.jpg");
+        File fileshield = new File("images/WMSLoginPage.png");
         Image shield = new Image(fileshield.toURI().toString());
-        shieldImage.setImage(shield);
+        brandingImageView.setImage(shield);
 
-        isAdmin.setItems(FXCollections.observableArrayList("admin","user"));
+        isAdmin.setItems(FXCollections.observableArrayList("Admin","User"));
     }
 
     public void register() {
@@ -79,17 +79,6 @@ public class RegisterController implements Initializable {
             e.printStackTrace();
         } catch (IOException e) {
             throw new RuntimeException(e);
-        }
-    }
-
-
-    public void closeConnection() {
-        try {
-            if (connectionDB != null && !connectionDB.isClosed()) {
-                connectionDB.close();
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
     }
     public void returnBack() throws IOException {

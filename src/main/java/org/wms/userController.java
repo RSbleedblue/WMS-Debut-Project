@@ -50,9 +50,12 @@ public class userController implements Initializable {
     @FXML
     private ImageView tableImage;
     @FXML
+    private ImageView wmsLogo;
+    @FXML
     private Button cancelButton;
     @FXML
     private  Button placeOrderBtn;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
@@ -65,9 +68,10 @@ public class userController implements Initializable {
         sofaQuantity.setItems(FXCollections.observableArrayList("1","2","3","4","5"));
         tableQuantity.setItems(FXCollections.observableArrayList("1","2","3","4","5"));
 
-        File bedFile = new File("images/bed.jpg");
-        File sofaFile = new File("images/sofa.jpg");
-        File tableFile = new File("images/table.jpg");
+        File bedFile = new File("images/bed.png");
+        File sofaFile = new File("images/sofa.png");
+        File tableFile = new File("images/table.png");
+        File wmsFile = new File("images/WMSLoginPage.png");
 
         Image bedimage = new Image(bedFile.toURI().toString());
         bedImage.setImage(bedimage);
@@ -78,11 +82,16 @@ public class userController implements Initializable {
         Image table = new Image(tableFile.toURI().toString());
         tableImage.setImage(table);
 
+        Image wmslogo = new Image(wmsFile.toURI().toString());
+        wmsLogo.setImage(wmslogo);
+
     }
 
-    public void closePlaceOrder(ActionEvent e){
-        Stage stage =(Stage)(cancelButton.getScene().getWindow());
-        stage.close();
+    public void closePlaceOrder(ActionEvent e) throws IOException {
+        Stage stage = (Stage) cancelButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("loginView.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setScene(scene);
     }
     public void placeOrder() throws SQLException {
 
