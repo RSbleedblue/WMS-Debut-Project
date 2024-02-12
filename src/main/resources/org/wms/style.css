@@ -50,6 +50,107 @@
     -fx-background-color:  #f7ffff;
 }
 /* Style for PieChart Title */
+/* Checking Animated Button */
+.animated-button {
+    -fx-cursor: hand;
+}
+/* Login Button Hover Effect */
+.loginBtn{
+    -fx-background-color: #23033B;
+    -fx-text-fill: #FFF;
+    -fx-background-radius: 5px;
+}
+.loginBtn:hover{
+    -fx-background-color:transparent;
+    -fx-background-radius: 5px;
+    -fx-text-fill:  #23033B;
+    -fx-border-color:  #23033B;
+    -fx-border-width: 1px;
+    -fx-border-style: solid;
+    -fx-border-radius: 5px;
+}
+.cancelBtn{
+     -fx-background-color: #C0392B;
+     -fx-text-fill: #FFF;
+     -fx-background-radius: 5px;
+}
+.cancelBtn:hover{
+    -fx-background-color:transparent;
+    -fx-background-radius: 5px;
+    -fx-text-fill:  #C0392B;
+    -fx-border-color:  #C0392B;
+    -fx-border-width: 1px;
+    -fx-border-style: solid;
+    -fx-border-radius: 5px;
+}
+.signupBtn{
+     -fx-background-color: #FF8F00;
+     -fx-text-fill: #FFF;
+     -fx-background-radius: 5px;
+}
+.signupBtn:hover{
+     -fx-background-color:transparent;
+     -fx-background-radius: 5px;
+     -fx-text-fill:  #FF8F00;
+     -fx-border-color:  #FF8F00;
+     -fx-border-width: 1px;
+     -fx-border-style: solid;
+     -fx-border-radius: 5px;
+}
+.registerBtn{
+    -fx-background-color:  #00A36C;
+    -fx-text-fill: #FFF;
+    -fx-background-radius: 5px;
+}
+.registerBtn:hover{
+    -fx-background-color:transparent;
+    -fx-background-radius: 5px;
+    -fx-text-fill:  #00A36C;
+    -fx-border-color:  #00A36C;
+    -fx-border-width: 1px;
+    -fx-border-style: solid;
+    -fx-border-radius: 5px;
+}
+.text-field {
+    -fx-background-radius: 5px;
+    -fx-border-color:   #23033B;
+    -fx-border-width: 1px;
+    -fx-border-style: solid;
+    -fx-border-radius: 5px;
+}
+
+.text-field:hover {
+    -fx-background-color: transparent;
+}
+
+.text-field:focused {
+    -fx-background-color: transparent;
+    -fx-border-color:  #23033B;
+}
+.combo-box {
+    -fx-background-color: transparent;
+    -fx-text-fill: #FFF;
+    -fx-background-radius: 5px;
+    -fx-border-color:  #23033B;
+    -fx-border-width: 1px;
+    -fx-border-style: solid;
+    -fx-border-radius: 5px;
+}
+
+.combo-box:hover {
+    -fx-background-color: transparent;
+}
+
+.combo-box:focused {
+    -fx-background-color: transparent;
+    -fx-border-color: #23033B;
+}
+
+
+
+
+
+
 
 
 

@@ -1,4 +1,5 @@
 package org.wms;
+import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +12,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import org.w3c.dom.events.MouseEvent;
 import org.wms.utils.SceneUtil;
 
@@ -41,9 +43,23 @@ public class loginController implements Initializable  {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
-        File brandingFile = new File("images/0_k3B9c-aDz179qBT0.jpg");
+        File brandingFile = new File("images/WMSLoginPage.png");
         Image branding = new Image(brandingFile.toURI().toString());
         brandingImageView.setImage(branding);
+    }
+    private void switchScene(Scene newScene) {
+        Stage stage = (Stage) cancelButton.getScene().getWindow();
+        FadeTransition fadeOut = new FadeTransition(Duration.seconds(0.5), stage.getScene().getRoot());
+        fadeOut.setFromValue(1);
+        fadeOut.setToValue(0);
+        fadeOut.setOnFinished(event -> {
+            stage.setScene(newScene);
+            FadeTransition fadeIn = new FadeTransition(Duration.seconds(0.5), stage.getScene().getRoot());
+            fadeIn.setFromValue(0);
+            fadeIn.setToValue(1);
+            fadeIn.play();
+        });
+        fadeOut.play();
     }
 
     public void loginButtonOnAction(ActionEvent event){
@@ -88,31 +104,23 @@ public class loginController implements Initializable  {
     }
 
     public void registerSwitchLoad(ActionEvent event) throws IOException {
-
-        Stage stage = (Stage) userSignup.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("registerView.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        SceneUtil.centerSceneOnScreen(stage,scene);
-        stage.setScene(scene);
+        switchScene(new Scene(fxmlLoader.load()));
     }
+
     private void userSwitchLoad() {
         try {
-            Stage stage = (Stage) loginButton.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("userView.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            SceneUtil.centerSceneOnScreen(stage,scene);
-            stage.setScene(scene);
+            switchScene(new Scene(fxmlLoader.load()));
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
     private void adminSwitchLoad() {
         try {
-            Stage stage = (Stage) loginButton.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("adminView.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            SceneUtil.centerSceneOnScreen(stage,scene);
-            stage.show();
+            switchScene(new Scene(fxmlLoader.load()));
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -136,7 +136,7 @@ public class adminController implements Initializable {
         }
     }
     private void initializeImages() {
-        Image adminImg = loadImage("admin.jpg");
+        Image adminImg = loadImage("WMSLoginPage.png");
         Image addImg = loadImage("add.png");
         Image dashboardImg = loadImage("dashboard.png");
         Image orderIconImg = loadImage("orders.png");

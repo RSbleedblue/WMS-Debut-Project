@@ -149,14 +149,14 @@
          <children>
             <VBox alignment="CENTER" layoutX="-34.0" layoutY="-1.0" prefHeight="200.0" prefWidth="283.0" style="-fx-background-radius: 80;">
                <children>
-                  <ImageView fx:id="adminIcon" blendMode="DARKEN" fitHeight="100.0" fitWidth="91.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="adminIcon" blendMode="DARKEN" fitHeight="101.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../images/admin.jpg" />
+                        <Image url="@../../../../../images/WMSLoginPage.png" />
                      </image>
                   </ImageView>
                   <Label alignment="CENTER" contentDisplay="CENTER" text="Welcome" textAlignment="CENTER">
                      <font>
-                        <Font size="24.0" />
+                        <Font name="Impact" size="24.0" />
                      </font>
                   </Label>
                   <Label alignment="CENTER" contentDisplay="CENTER" text="ADMIN" textAlignment="CENTER">
@@ -167,7 +167,7 @@
                </children>
             </VBox>
             <Separator layoutX="14.0" layoutY="179.0" prefHeight="2.0" prefWidth="225.0" />
-            <AnchorPane layoutX="14.0" layoutY="190.0" prefHeight="407.0" prefWidth="226.0">
+            <AnchorPane layoutX="14.0" layoutY="190.0" prefHeight="407.0" prefWidth="226.0" stylesheets="@style.css">
                <children>
                   <Button fx:id="homeBtn" alignment="CENTER" layoutX="83.0" layoutY="16.0" mnemonicParsing="false" onAction="#setHomeBtn" style="-fx-background-color: #FFF;" stylesheets="@style.css" text="DASHBOARD">
                      <styleClass>
