@@ -7,6 +7,7 @@ module org.wms {
     requires javafx.graphics;
     requires java.sql;
     requires mysql.connector.j;
+    requires jbcrypt;
 
     opens org.wms to javafx.fxml;
     exports org.wms;

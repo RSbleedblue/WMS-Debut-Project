@@ -90,12 +90,12 @@ public class adminController implements Initializable {
     private TableColumn<placedOrders, Integer> orders_quantity_col;
 
     @FXML
-    private ImageView truckINOUT;
+    private ImageView truckIN;
     @FXML
     private ImageView pendingImg;
 
     @FXML
-    private ImageView truckINOUT2;
+    private ImageView truckOUT;
 
     @FXML
     private ImageView warehouseIMG;
@@ -162,16 +162,17 @@ public class adminController implements Initializable {
         Image addImg = loadImage("add.png");
         Image dashboardImg = loadImage("dashboard.png");
         Image orderIconImg = loadImage("orders.png");
-        Image truckInOutImg = loadImage("truckINOUT.jpg");
-        Image wareHouseImg = loadImage("warehouse.png");
+        Image truckIn = loadImage("truckIN.png");
+        Image truckOut = loadImage("truckOUT.png");
+        Image wareHouseImg = loadImage("WMSLoginPageBW.png");
         Image pendingIMG = loadImage("pending.png");
 
         addIcon.setImage(addImg);
         adminIcon.setImage(adminImg);
         dashboardIcon.setImage(dashboardImg);
         orderIcon.setImage(orderIconImg);
-        truckINOUT.setImage(truckInOutImg);
-        truckINOUT2.setImage(truckInOutImg);
+        truckIN.setImage(truckIn);
+        truckOUT.setImage(truckOut);
         warehouseIMG.setImage(wareHouseImg);
         pendingImg.setImage(pendingIMG);
     }

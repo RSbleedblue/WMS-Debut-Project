@@ -51,14 +51,19 @@
       </AnchorPane>
       <AnchorPane layoutX="400.0" prefHeight="600.0" prefWidth="394.0" style="-fx-background-color: #23033B;">
          <children>
-            <ImageView fx:id="brandingImageView" fitHeight="262.0" fitWidth="259.0" layoutX="63.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="brandingImageView" fitHeight="262.0" fitWidth="259.0" layoutX="63.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../images/WMSLoginPage.png" />
                </image>
             </ImageView>
-            <Label layoutX="145.0" layoutY="300.0" style="-fx-text-fill: fff;" text="JOIN US" textFill="WHITE">
+            <Label layoutX="111.0" layoutY="364.0" style="-fx-text-fill: fff;" text="SHIP WITH US" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="120.0" layoutY="556.0" style="-fx-text-fill: D3D3D3;" text="Copyright © 2024, All rights preserved" textFill="#b9b9b9">
+               <font>
+                  <Font size="10.0" />
                </font>
             </Label>
          </children>

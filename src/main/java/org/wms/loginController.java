@@ -13,8 +13,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import org.w3c.dom.events.MouseEvent;
-import org.wms.utils.SceneUtil;
+import org.mindrot.jbcrypt.BCrypt;
 
 import java.io.File;
 import java.io.IOException;
@@ -78,21 +77,22 @@ public class loginController implements Initializable  {
         DatabaseConnection connection = new DatabaseConnection();
         Connection connectionDB = connection.getConnection();
 
-        String verifyLogin = "SELECT count(1), isAdmin FROM user_account WHERE username = '" + usernameTextField.getText() + "' AND password = '" + enterPasswordField.getText() + "'";
+        String verifyLogin = "SELECT password, isAdmin FROM user_account WHERE username = '"
+                + usernameTextField.getText() + "'";
 
         try {
             Statement statement = connectionDB.createStatement();
             ResultSet queryResult = statement.executeQuery(verifyLogin);
             while (queryResult.next()) {
-                int count = queryResult.getInt(1);
-                if (count == 1) {
-                    int isAdmin = queryResult.getInt("isAdmin");
-                    if (isAdmin == 0) {
-                        // User is not an admin
-                        userSwitchLoad();
-                    } else {
-                        // User is an admin
+                String storedHashedPassword = queryResult.getString("password");
+                boolean isAdmin = queryResult.getBoolean("isAdmin");
+
+                // Check if the entered password matches the stored hashed password
+                if (BCrypt.checkpw(enterPasswordField.getText(), storedHashedPassword)) {
+                    if (isAdmin) {
                         adminSwitchLoad();
+                    } else {
+                        userSwitchLoad();
                     }
                 } else {
                     loginMessageLabel.setText("Invalid User");
