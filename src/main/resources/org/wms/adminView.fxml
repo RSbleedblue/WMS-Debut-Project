@@ -35,58 +35,72 @@
                         <String fx:value="image-container" />
                      </styleClass>
                   </BorderPane>
-                  <TextField layoutX="83.0" layoutY="260.0" stylesheets="@style.css">
+                  <TextField fx:id="orderID_field_order" layoutX="83.0" layoutY="260.0" stylesheets="@style.css">
                      <styleClass>
                         <String fx:value="list-view" />
                         <String fx:value="list-cell" />
                      </styleClass>
                   </TextField>
                   <Label layoutX="23.0" layoutY="299.0" text="Name:" />
-                  <TextField layoutX="83.0" layoutY="295.0" prefWidth="106.0" stylesheets="@style.css">
+                  <TextField fx:id="name_field_order" layoutX="83.0" layoutY="295.0" prefWidth="106.0" stylesheets="@style.css">
                      <styleClass>
                         <String fx:value="list-view" />
                         <String fx:value="list-cell" />
                      </styleClass>
                   </TextField>
                   <Label layoutX="23.0" layoutY="334.0" text="Quality" />
-                  <TextField layoutX="83.0" layoutY="330.0" prefWidth="106.0" stylesheets="@style.css">
+                  <TextField fx:id="quality_field_order" layoutX="83.0" layoutY="330.0" prefWidth="106.0" stylesheets="@style.css">
                      <styleClass>
                         <String fx:value="list-view" />
                         <String fx:value="list-cell" />
                      </styleClass>
                   </TextField>
                   <Label layoutX="23.0" layoutY="369.0" text="Quantity" />
-                  <TextField layoutX="83.0" layoutY="365.0" prefWidth="106.0" stylesheets="@style.css">
+                  <TextField fx:id="quantity_field_order" layoutX="83.0" layoutY="365.0" prefWidth="106.0" stylesheets="@style.css">
                      <styleClass>
                         <String fx:value="list-view" />
                         <String fx:value="list-cell" />
                      </styleClass>
                   </TextField>
-                  <Label layoutX="23.0" layoutY="404.0" text="Remaining Storage" />
-                  <TextField layoutX="129.0" layoutY="401.0" prefWidth="106.0" stylesheets="@style.css">
+                  <Label layoutX="23.0" layoutY="404.0" text="Remaining Quantity" />
+                  <TextField fx:id="rem_storage_field_order" layoutX="139.0" layoutY="401.0" prefWidth="106.0" stylesheets="@style.css">
                      <styleClass>
                         <String fx:value="list-view" />
                         <String fx:value="list-cell" />
                      </styleClass>
                   </TextField>
-                  <Button fx:id="push_order_btn" layoutX="39.0" layoutY="475.0" mnemonicParsing="false" style="-fx-background-color: #00A36C;" stylesheets="@style.css" text="Push Order" textFill="WHITE">
+                  <Button fx:id="push_order_btn" layoutX="39.0" layoutY="492.0" mnemonicParsing="false" onAction="#pushOrder" style="-fx-background-color: #00A36C;" stylesheets="@style.css" text="Push Order" textFill="WHITE">
                      <styleClass>
                         <String fx:value="list-view" />
                         <String fx:value="list-cell" />
                      </styleClass>
                   </Button>
-                  <Button fx:id="delete_order_btn" layoutX="145.0" layoutY="475.0" mnemonicParsing="false" style="-fx-background-color: #E96151;" stylesheets="@style.css" text="Delete Order" textFill="WHITE">
+                  <Button fx:id="delete_order_btn" layoutX="145.0" layoutY="491.0" mnemonicParsing="false" onAction="#cancelPushedOrders" style="-fx-background-color: #E96151;" stylesheets="@style.css" text="Delete Order" textFill="WHITE">
                      <styleClass>
                         <String fx:value="list-cell" />
                         <String fx:value="list-view" />
                      </styleClass>
                   </Button>
-                  <Separator layoutX="9.0" layoutY="445.0" prefHeight="3.0" prefWidth="270.0" />
+                  <Separator layoutX="9.0" layoutY="475.0" prefHeight="3.0" prefWidth="270.0" />
+                  <Label layoutX="22.0" layoutY="438.0" text="Truck Capactiy" />
+                  <TextField fx:id="truck_capacity_orderField" layoutX="111.0" layoutY="436.0" prefWidth="106.0" stylesheets="@style.css">
+                     <styleClass>
+                        <String fx:value="list-view" />
+                        <String fx:value="list-cell" />
+                     </styleClass>
+                  </TextField>
+                  <Button fx:id="place_order_btn" layoutX="91.0" layoutY="526.0" mnemonicParsing="false" onAction="#placeOrder" stylesheets="@style.css" text="Place Order" textFill="WHITE">
+                     <styleClass>
+                        <String fx:value="list-view" />
+                        <String fx:value="list-cell" />
+                        <String fx:value="signupBtn" />
+                     </styleClass>
+                  </Button>
                </children>
             </AnchorPane>
             <AnchorPane layoutX="309.0" layoutY="19.0" prefHeight="562.0" prefWidth="506.0" style="-fx-background-radius: 20; -fx-background-color: D3D3d3;">
                <children>
-                  <TableView fx:id="order_table" layoutX="17.0" layoutY="23.0" prefHeight="522.0" prefWidth="494.0">
+                  <TableView fx:id="order_table" layoutX="17.0" layoutY="23.0" onMouseClicked="#selectOrderList" prefHeight="522.0" prefWidth="494.0">
                     <columns>
                       <TableColumn fx:id="order_id_col" maxWidth="119.0" prefWidth="123.0" text="Order_ID" />
                       <TableColumn fx:id="order_name_col" prefWidth="123.0" text="Name" />
