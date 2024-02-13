@@ -5,10 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -60,6 +57,10 @@ public class RegisterController implements Initializable {
             if (reg_Fname.getText().isEmpty() || reg_Lname.getText().isEmpty() || reg_Uname.getText().isEmpty()
                     || reg_password.getText().isEmpty()) {
                 // Prompt text in the respective fields
+                reg_Fname.setStyle("-fx-prompt-text-fill: red;");
+                reg_Lname.setStyle("-fx-prompt-text-fill: red;");
+                reg_Uname.setStyle("-fx-prompt-text-fill: red;");
+                reg_password.setStyle("-fx-prompt-text-fill: red;");
                 reg_Fname.setPromptText("First name required");
                 reg_Lname.setPromptText("Last name required");
                 reg_Uname.setPromptText("Email required");
@@ -70,7 +71,11 @@ public class RegisterController implements Initializable {
             // Validate email format using the username field
             if (!isValidEmail(reg_Uname.getText())) {
                 // Show error message or handle invalid email
-                System.out.println("Invalid email address!");
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Invalid Email format");
+                alert.showAndWait();
                 return;
             }
 
@@ -88,6 +93,11 @@ public class RegisterController implements Initializable {
             preparedStatement.setBoolean(5, isAdminValue);
             preparedStatement.executeUpdate();
             preparedStatement.close();
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Success");
+            alert.setHeaderText("Account");
+            alert.setContentText("Account Successfully Created");
+            alert.showAndWait();
             returnBack();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -96,6 +106,7 @@ public class RegisterController implements Initializable {
         }
     }
     public void returnBack() throws IOException {
+
         Stage stage = (Stage) cancelButton.getScene().getWindow();
          FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("loginView.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
