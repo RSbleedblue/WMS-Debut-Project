@@ -4,17 +4,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Rectangle2D;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import org.w3c.dom.events.MouseEvent;
-import org.wms.utils.SceneUtil;
+import org.mindrot.jbcrypt.BCrypt;
 
 import java.io.File;
 import java.io.IOException;
@@ -78,30 +74,38 @@ public class loginController implements Initializable  {
         DatabaseConnection connection = new DatabaseConnection();
         Connection connectionDB = connection.getConnection();
 
-        String verifyLogin = "SELECT count(1), isAdmin FROM user_account WHERE username = '" + usernameTextField.getText() + "' AND password = '" + enterPasswordField.getText() + "'";
+        String verifyLogin = "SELECT password, isAdmin FROM user_account WHERE username = '"
+                + usernameTextField.getText() + "'";
 
         try {
             Statement statement = connectionDB.createStatement();
             ResultSet queryResult = statement.executeQuery(verifyLogin);
+            boolean userFound = false; // Flag to check if user exists
             while (queryResult.next()) {
-                int count = queryResult.getInt(1);
-                if (count == 1) {
-                    int isAdmin = queryResult.getInt("isAdmin");
-                    if (isAdmin == 0) {
-                        // User is not an admin
-                        userSwitchLoad();
-                    } else {
-                        // User is an admin
+                userFound = true; // Set the flag to true since user exists
+                String storedHashedPassword = queryResult.getString("password");
+                boolean isAdmin = queryResult.getBoolean("isAdmin");
+
+                // Check if the entered password matches the stored hashed password
+                if (BCrypt.checkpw(enterPasswordField.getText(), storedHashedPassword)) {
+                    if (isAdmin) {
                         adminSwitchLoad();
+                    } else {
+                        userSwitchLoad();
                     }
-                } else {
-                    loginMessageLabel.setText("Invalid User");
+                    return; // Exit the method if login is successful
                 }
+            }
+            if (!userFound) {
+                loginMessageLabel.setText("User not found"); // User not found
+            } else {
+                loginMessageLabel.setText("Invalid Password"); // Invalid password
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
 
     public void registerSwitchLoad(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("registerView.fxml"));
