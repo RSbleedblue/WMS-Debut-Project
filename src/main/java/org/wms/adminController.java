@@ -142,23 +142,73 @@ public class adminController implements Initializable {
         loadDeliverOrder();
 
     }
-    private void truckTimeLoad(){
-        String query = "select * from truck_status";
-        try{
+    public class DatabaseQueryException extends RuntimeException {
+        public DatabaseQueryException(String message, Throwable cause) {
+            super(message, cause);
+        }
+    }
+    public class RemainingQuantityException extends Exception {
+        public RemainingQuantityException() {
+            super();
+        }
+    }
 
+    public class OrderSelectionException extends RuntimeException {
+        public OrderSelectionException() {
+            super();
+        }
+
+        public OrderSelectionException(String message, Throwable cause) {
+            super(message, cause);
+        }
+    }
+    public class WarehouseUpdateException extends Exception {
+        public WarehouseUpdateException() {
+            super();
+        }
+
+        public WarehouseUpdateException(String message, Throwable cause) {
+            super(message, cause);
+        }
+
+    }
+
+    public class CancelPushedOrdersException extends Exception {
+        public CancelPushedOrdersException() {
+            super();
+        }
+
+        public CancelPushedOrdersException(String message, Throwable cause) {
+            super(message, cause);
+        }
+    }
+
+    public class PushOrderException extends Exception {
+        public PushOrderException() {
+            super();
+        }
+
+        public PushOrderException(String message) {
+            super(message);
+        }
+    }
+
+    private void truckTimeLoad() {
+        String query = "select * from truck_status";
+        try {
             PreparedStatement statement = connectionDB.prepareStatement(query);
             ResultSet result = statement.executeQuery();
-            if(result.next()){
+            if (result.next()) {
                 String truckIn = result.getString("truck_in");
                 String truckOut = result.getString("truck_out");
                 truckINTime.setText(truckIn);
                 truckOutTime.setText(truckOut);
             }
-        }
-        catch (SQLException e) {
-            throw new RuntimeException(e);
+        } catch (SQLException e) {
+            throw new DatabaseQueryException("Error loading truck time from the database", e);
         }
     }
+
     private void initializeImages() {
         Image adminImg = loadImage("WMSLoginPage.png");
         Image addImg = loadImage("add.png");
@@ -202,6 +252,8 @@ public class adminController implements Initializable {
                 warehouseData whd = new warehouseData(c_id, name, quality, quantity);
                 warehouseData.add(whd);
             }
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -233,23 +285,24 @@ public class adminController implements Initializable {
             orders_Section.setVisible(true);
         }
     }
-    private void getOrdersPending(){
+
+
+    private void getOrdersPending() {
         int count = 0;
         String getOrders = "SELECT COUNT(*) AS not_delivered_count\n" +
                 "FROM order_detail\n" +
                 "WHERE delivery_status = 'not_delivered';";
-        try{
+        try {
             PreparedStatement prepare = connectionDB.prepareStatement(getOrders);
             ResultSet result = prepare.executeQuery();
-            if(result.next()){
+            if (result.next()) {
                 count = result.getInt("not_delivered_count");
                 orderPending.setText(String.valueOf(count));
-            }
-            else{
+            } else {
                 orderPending.setText("0");
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseQueryException("Error retrieving pending orders count from the database", e);
         }
     }
     private ObservableList<placedOrders> getNotDeliveredOrders() {
@@ -270,10 +323,11 @@ public class adminController implements Initializable {
                 pList.add(pOds);
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseQueryException("Error retrieving not delivered orders from the database", e);
         }
         return pList;
     }
+
     ObservableList<placedOrders> placedList;
     private void loadDeliverOrder() {
         placedList = getNotDeliveredOrders();
@@ -284,41 +338,68 @@ public class adminController implements Initializable {
         order_table.setItems(placedList);
     }
     //    To show the list of the Orders selected
-    public void selectOrderList() throws SQLException {
-        placedOrders pOrds = order_table.getSelectionModel().getSelectedItem();
-        int num = order_table.getSelectionModel().getSelectedIndex();
-        if((num - 1) < -1){
-            return;
-        }
-        orderID_field_order.setText(pOrds.getOrder_ID());
-        name_field_order.setText(pOrds.getCommodityName());
-        quality_field_order.setText(Integer.toString(pOrds.getQuality()));
-        quantity_field_order.setText(Integer.toString(pOrds.getQuantity()));
+    public void selectOrderList() {
+        try {
+            placedOrders pOrds = order_table.getSelectionModel().getSelectedItem();
+            if (pOrds == null) {
+                // No order selected, return or show an alert
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("No Order Selected");
+                alert.setHeaderText(null);
+                alert.setContentText("Please select an order.");
+                alert.showAndWait();
+                return;
+            }
 
-//        Finding total capacity;
-        int QuantityStatusVal = getRemainingQuantity(pOrds.getQuality(),pOrds.getCommodityName());
-        rem_storage_field_order.setText(Integer.toString(QuantityStatusVal));
-//        Find Truck Capactiy;
-        truck_capacity_orderField.setText(Integer.toString(truckCapcityVal));
-        String selectedCommodity = pOrds.getCommodityName();
-        if(selectedCommodity.equals("bed")){
-            File bedLoc = new File("images/bed.png");
-            Image bedIMG = new Image(bedLoc.toURI().toString());
-            order_sec_image.setImage(bedIMG);
-        }
-        else if(selectedCommodity.equals("sofa")){
-            File sofaLoc = new File("images/sofa.png");
-            Image sofaIMG = new Image(sofaLoc.toURI().toString());
-            order_sec_image.setImage(sofaIMG);
-        }
-        else{
-            File tableLoc = new File("images/table.png");
-            Image tableIMG = new Image(tableLoc.toURI().toString());
-            order_sec_image.setImage(tableIMG);
+            String selectedCommodity = pOrds.getCommodityName();
+            if (selectedCommodity == null || selectedCommodity.isEmpty()) {
+                // Selected commodity is null or empty, show an alert
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Commodity Not Found");
+                alert.setHeaderText(null);
+                alert.setContentText("The selected commodity is not available.");
+                alert.showAndWait();
+                return;
+            }
+
+            // Proceed with displaying order details and image
+            int num = order_table.getSelectionModel().getSelectedIndex();
+            if ((num - 1) < -1) {
+                return;
+            }
+            orderID_field_order.setText(pOrds.getOrder_ID());
+            name_field_order.setText(selectedCommodity);
+            quality_field_order.setText(Integer.toString(pOrds.getQuality()));
+            quantity_field_order.setText(Integer.toString(pOrds.getQuantity()));
+
+            // Finding total capacity;
+            int QuantityStatusVal = getRemainingQuantity(pOrds.getQuality(), selectedCommodity);
+            rem_storage_field_order.setText(Integer.toString(QuantityStatusVal));
+            // Find Truck Capacity;
+            truck_capacity_orderField.setText(Integer.toString(truckCapcityVal));
+
+            // Set image based on commodity
+            if (selectedCommodity.equals("bed")) {
+                File bedLoc = new File("images/bed.png");
+                Image bedIMG = new Image(bedLoc.toURI().toString());
+                order_sec_image.setImage(bedIMG);
+            } else if (selectedCommodity.equals("sofa")) {
+                File sofaLoc = new File("images/sofa.png");
+                Image sofaIMG = new Image(sofaLoc.toURI().toString());
+                order_sec_image.setImage(sofaIMG);
+            } else if (selectedCommodity.equals("table")) {
+                File tableLoc = new File("images/table.png");
+                Image tableIMG = new Image(tableLoc.toURI().toString());
+                order_sec_image.setImage(tableIMG);
+            }
+        } catch (Exception e) {
+            throw new OrderSelectionException("Error occurred while selecting an order", e);
         }
     }
+
+
     private ArrayList<placedOrders> pushOrders = new ArrayList<>();
-    public void pushOrder() throws SQLException {
+    public void pushOrder() throws PushOrderException, SQLException {
         placedOrders pOds = order_table.getSelectionModel().getSelectedItem();
         int remainingQuantity = getRemainingQuantity(pOds.getQuality(), pOds.getCommodityName());
 
@@ -339,16 +420,13 @@ public class adminController implements Initializable {
             rem_storage_field_order.setText(Integer.toString(remainingQuantity));
 
         } else {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText("Insufficient quantity or truck capacity.");
-            alert.showAndWait();
+            throw new PushOrderException("Insufficient quantity or truck capacity.");
         }
     }
 
-    public void cancelPushedOrders() throws SQLException {
-        int idx = pushOrders.size()-1;
+    public void cancelPushedOrders() throws CancelPushedOrdersException, SQLException {
+        try {
+            int idx = pushOrders.size() - 1;
             // Update global truck capacity
             truckCapcityVal += pushOrders.get(idx).getQuantity();
             // Update database with the canceled quantity
@@ -359,10 +437,15 @@ public class adminController implements Initializable {
                 updateQuantityStatement.setInt(3, pushOrders.get(idx).getQuality());
                 updateQuantityStatement.executeUpdate();
             }
-        // Update the truck capacity field
-        truck_capacity_orderField.setText(Integer.toString(truckCapcityVal));
-        // Clear the list of pushed orders
-        pushOrders.remove(pushOrders.size()-1);
+            // Update the truck capacity field
+            truck_capacity_orderField.setText(Integer.toString(truckCapcityVal));
+            // Clear the list of pushed orders
+            pushOrders.remove(pushOrders.size() - 1);
+        } catch (IndexOutOfBoundsException e) {
+            throw new CancelPushedOrdersException("No orders pushed to cancel.", e);
+        } catch (SQLException e) {
+            throw new CancelPushedOrdersException("Error while canceling pushed orders.", e);
+        }
     }
 
     private int getRemainingQuantity(int quality,String name) throws SQLException {
@@ -459,66 +542,70 @@ public class adminController implements Initializable {
         }
     }
 
-    public void updateWarehouse() throws SQLException {
-        // Set truck capacity to 100
-        truckCapcityVal = 100;
-
-        String c_Name = commodity_Select.getValue().toLowerCase();
-        int quality = quality_select.getValue();
-        int quantity;
+    public void updateWarehouse() throws WarehouseUpdateException, SQLException {
         try {
-            quantity = Integer.parseInt(quantity_select.getText().trim());
-        } catch (NumberFormatException e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Invalid Quantity");
-            alert.setHeaderText(null);
-            alert.setContentText("Please enter a valid integer for quantity.");
-            alert.showAndWait();
-            return;
+            // Set truck capacity to 100
+            truckCapcityVal = 100;
+
+            String c_Name = commodity_Select.getValue().toLowerCase();
+            int quality = quality_select.getValue();
+            int quantity;
+            try {
+                quantity = Integer.parseInt(quantity_select.getText().trim());
+            } catch (NumberFormatException e) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Invalid Quantity");
+                alert.setHeaderText(null);
+                alert.setContentText("Please enter a valid integer for quantity.");
+                alert.showAndWait();
+                return;
+            }
+
+            // Query to update the commodity quantity
+            String updateQuery = "UPDATE commodities\n" +
+                    "SET quantity = quantity + ?\n" +
+                    "WHERE name = ? AND quality = ?;";
+
+            try (PreparedStatement prepare = connectionDB.prepareStatement(updateQuery)) {
+                prepare.setInt(1, quantity);
+                prepare.setString(2, c_Name);
+                prepare.setInt(3, quality);
+                prepare.executeUpdate();
+            }
+
+            // Update truck in time
+            LocalTime time = LocalTime.now();
+            String truckInTimeQuery = "UPDATE truck_status\n" +
+                    "SET truck_in = ?\n" +
+                    "WHERE truck_id = 1";
+            try (PreparedStatement truckInPrepare = connectionDB.prepareStatement(truckInTimeQuery)) {
+                truckInPrepare.setObject(1, time);
+                truckInPrepare.executeUpdate();
+            }
+
+            // Update truck out time to 00:00:00
+            String truckOutTimeQuery = "UPDATE truck_status\n" +
+                    "SET truck_out = '00:00:00'\n" +
+                    "WHERE truck_id = 1";
+            try (PreparedStatement truckOutPrepare = connectionDB.prepareStatement(truckOutTimeQuery)) {
+                truckOutPrepare.executeUpdate();
+            }
+
+            // Update truck capacity to 100
+            String updateTruckCapacityQuery = "UPDATE truck_status\n" +
+                    "SET truck_capacity = ?\n" +
+                    "WHERE truck_id = 1";
+            try (PreparedStatement updateTruckCapacityStatement = connectionDB.prepareStatement(updateTruckCapacityQuery)) {
+                updateTruckCapacityStatement.setInt(1, truckCapcityVal);
+                updateTruckCapacityStatement.executeUpdate();
+            }
+
+            // Reload truck time and warehouse data
+            truckTimeLoad();
+            loadWarehouseData();
+        } catch (SQLException e) {
+            throw new WarehouseUpdateException("Error updating warehouse.", e);
         }
-
-        // Query to update the commodity quantity
-        String updateQuery = "UPDATE commodities\n" +
-                "SET quantity = quantity + ?\n" +
-                "WHERE name = ? AND quality = ?;";
-
-        try (PreparedStatement prepare = connectionDB.prepareStatement(updateQuery)) {
-            prepare.setInt(1, quantity);
-            prepare.setString(2, c_Name);
-            prepare.setInt(3, quality);
-            prepare.executeUpdate();
-        }
-
-        // Update truck in time
-        LocalTime time = LocalTime.now();
-        String truckInTimeQuery = "UPDATE truck_status\n" +
-                "SET truck_in = ?\n" +
-                "WHERE truck_id = 1";
-        try (PreparedStatement truckInPrepare = connectionDB.prepareStatement(truckInTimeQuery)) {
-            truckInPrepare.setObject(1, time);
-            truckInPrepare.executeUpdate();
-        }
-
-        // Update truck out time to 00:00:00
-        String truckOutTimeQuery = "UPDATE truck_status\n" +
-                "SET truck_out = '00:00:00'\n" +
-                "WHERE truck_id = 1";
-        try (PreparedStatement truckOutPrepare = connectionDB.prepareStatement(truckOutTimeQuery)) {
-            truckOutPrepare.executeUpdate();
-        }
-
-        // Update truck capacity to 100
-        String updateTruckCapacityQuery = "UPDATE truck_status\n" +
-                "SET truck_capacity = ?\n" +
-                "WHERE truck_id = 1";
-        try (PreparedStatement updateTruckCapacityStatement = connectionDB.prepareStatement(updateTruckCapacityQuery)) {
-            updateTruckCapacityStatement.setInt(1, truckCapcityVal);
-            updateTruckCapacityStatement.executeUpdate();
-        }
-
-        // Reload truck time and warehouse data
-        truckTimeLoad();
-        loadWarehouseData();
     }
 
     public void clearWarehouse() {
