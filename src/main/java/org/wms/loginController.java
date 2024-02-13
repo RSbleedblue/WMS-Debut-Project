@@ -4,13 +4,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Rectangle2D;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import org.mindrot.jbcrypt.BCrypt;
@@ -83,7 +80,9 @@ public class loginController implements Initializable  {
         try {
             Statement statement = connectionDB.createStatement();
             ResultSet queryResult = statement.executeQuery(verifyLogin);
+            boolean userFound = false; // Flag to check if user exists
             while (queryResult.next()) {
+                userFound = true; // Set the flag to true since user exists
                 String storedHashedPassword = queryResult.getString("password");
                 boolean isAdmin = queryResult.getBoolean("isAdmin");
 
@@ -94,14 +93,19 @@ public class loginController implements Initializable  {
                     } else {
                         userSwitchLoad();
                     }
-                } else {
-                    loginMessageLabel.setText("Invalid User");
+                    return; // Exit the method if login is successful
                 }
+            }
+            if (!userFound) {
+                loginMessageLabel.setText("User not found"); // User not found
+            } else {
+                loginMessageLabel.setText("Invalid Password"); // Invalid password
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
 
     public void registerSwitchLoad(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("registerView.fxml"));

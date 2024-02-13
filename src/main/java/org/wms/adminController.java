@@ -126,6 +126,8 @@ public class adminController implements Initializable {
     private TextField quantity_field_order;
     @FXML
     private TextField rem_storage_field_order;
+    @FXML
+    private ImageView order_sec_image;
 
 
     @Override
@@ -298,6 +300,22 @@ public class adminController implements Initializable {
         rem_storage_field_order.setText(Integer.toString(QuantityStatusVal));
 //        Find Truck Capactiy;
         truck_capacity_orderField.setText(Integer.toString(truckCapcityVal));
+        String selectedCommodity = pOrds.getCommodityName();
+        if(selectedCommodity.equals("bed")){
+            File bedLoc = new File("images/bed.png");
+            Image bedIMG = new Image(bedLoc.toURI().toString());
+            order_sec_image.setImage(bedIMG);
+        }
+        else if(selectedCommodity.equals("sofa")){
+            File sofaLoc = new File("images/sofa.png");
+            Image sofaIMG = new Image(sofaLoc.toURI().toString());
+            order_sec_image.setImage(sofaIMG);
+        }
+        else{
+            File tableLoc = new File("images/table.png");
+            Image tableIMG = new Image(tableLoc.toURI().toString());
+            order_sec_image.setImage(tableIMG);
+        }
     }
     private ArrayList<placedOrders> pushOrders = new ArrayList<>();
     public void pushOrder() throws SQLException {
@@ -308,7 +326,6 @@ public class adminController implements Initializable {
             // Update global truck capacity
             truckCapcityVal -= pOds.getQuantity();
             truck_capacity_orderField.setText(Integer.toString(truckCapcityVal));
-
             pushOrders.add(pOds);
             // Update database with new quantity
             String updateQuantityQuery = "UPDATE commodities SET quantity = quantity - ? WHERE name = ? AND quality = ?";
