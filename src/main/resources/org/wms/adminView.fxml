@@ -11,7 +11,6 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -19,22 +18,10 @@
    <children>
       <AnchorPane fx:id="orders_Section" layoutX="250.0" prefHeight="600.0" prefWidth="834.0" visible="false">
          <children>
-            <AnchorPane layoutX="14.0" layoutY="17.0" prefHeight="562.0" prefWidth="285.0" style="-fx-background-radius: 20; -fx-background-color: D3D3D3;">
+            <AnchorPane layoutX="14.0" layoutY="16.0" prefHeight="563.0" prefWidth="286.0" style="-fx-background-radius: 20; -fx-background-color: FFF;">
                <children>
                   <Label layoutX="23.0" layoutY="264.0" text="Order ID:" />
-                  <BorderPane layoutX="23.0" layoutY="14.0" stylesheets="@style.css">
-                     <center>
-                        <ImageView fx:id="order_sec_image" fitHeight="175.0" fitWidth="200.0" pickOnBounds="true">
-                           <image>
-                              <Image url="@../../../../../images/table.jpg" />
-                           </image>
-                        </ImageView>
-                     </center>
-                     <styleClass>
-                        <String fx:value="image" />
-                        <String fx:value="image-container" />
-                     </styleClass>
-                  </BorderPane>
+                  <ImageView fx:id="order_sec_image" fitHeight="175.0" fitWidth="200.0" layoutX="45.0" layoutY="14.0" pickOnBounds="true" />
                   <TextField fx:id="orderID_field_order" layoutX="83.0" layoutY="260.0" stylesheets="@style.css">
                      <styleClass>
                         <String fx:value="list-view" />
@@ -48,41 +35,45 @@
                         <String fx:value="list-cell" />
                      </styleClass>
                   </TextField>
-                  <Label layoutX="23.0" layoutY="334.0" text="Quality" />
+                  <Label layoutX="23.0" layoutY="334.0" text="Quality:" />
                   <TextField fx:id="quality_field_order" layoutX="83.0" layoutY="330.0" prefWidth="106.0" stylesheets="@style.css">
                      <styleClass>
                         <String fx:value="list-view" />
                         <String fx:value="list-cell" />
                      </styleClass>
                   </TextField>
-                  <Label layoutX="23.0" layoutY="369.0" text="Quantity" />
+                  <Label layoutX="23.0" layoutY="369.0" text="Quantity:" />
                   <TextField fx:id="quantity_field_order" layoutX="83.0" layoutY="365.0" prefWidth="106.0" stylesheets="@style.css">
                      <styleClass>
                         <String fx:value="list-view" />
                         <String fx:value="list-cell" />
                      </styleClass>
                   </TextField>
-                  <Label layoutX="23.0" layoutY="404.0" text="Remaining Quantity" />
+                  <Label layoutX="23.0" layoutY="404.0" text="Remaining Quantity:" />
                   <TextField fx:id="rem_storage_field_order" layoutX="139.0" layoutY="401.0" prefWidth="106.0" stylesheets="@style.css">
                      <styleClass>
                         <String fx:value="list-view" />
                         <String fx:value="list-cell" />
                      </styleClass>
                   </TextField>
-                  <Button fx:id="push_order_btn" layoutX="39.0" layoutY="492.0" mnemonicParsing="false" onAction="#pushOrder" style="-fx-background-color: #00A36C;" stylesheets="@style.css" text="Push Order" textFill="WHITE">
+                  <Button fx:id="push_order_btn" layoutX="39.0" layoutY="492.0" mnemonicParsing="false" onAction="#pushOrder" stylesheets="@style.css" text="Push Order" textFill="WHITE">
                      <styleClass>
                         <String fx:value="list-view" />
                         <String fx:value="list-cell" />
+                        <String fx:value="registerBtn" />
+                        <String fx:value="animated-button" />
                      </styleClass>
                   </Button>
-                  <Button fx:id="delete_order_btn" layoutX="145.0" layoutY="491.0" mnemonicParsing="false" onAction="#cancelPushedOrders" style="-fx-background-color: #E96151;" stylesheets="@style.css" text="Delete Order" textFill="WHITE">
+                  <Button fx:id="delete_order_btn" layoutX="145.0" layoutY="491.0" mnemonicParsing="false" onAction="#cancelPushedOrders" stylesheets="@style.css" text="Delete Order" textFill="WHITE">
                      <styleClass>
                         <String fx:value="list-cell" />
                         <String fx:value="list-view" />
+                        <String fx:value="animated-button" />
+                        <String fx:value="cancelBtn" />
                      </styleClass>
                   </Button>
                   <Separator layoutX="9.0" layoutY="475.0" prefHeight="3.0" prefWidth="270.0" />
-                  <Label layoutX="22.0" layoutY="438.0" text="Truck Capactiy" />
+                  <Label layoutX="22.0" layoutY="438.0" text="Truck Capactiy:" />
                   <TextField fx:id="truck_capacity_orderField" layoutX="111.0" layoutY="436.0" prefWidth="106.0" stylesheets="@style.css">
                      <styleClass>
                         <String fx:value="list-view" />
@@ -94,27 +85,29 @@
                         <String fx:value="list-view" />
                         <String fx:value="list-cell" />
                         <String fx:value="signupBtn" />
+                        <String fx:value="animated-button" />
                      </styleClass>
                   </Button>
+                  <Separator layoutX="9.0" layoutY="209.0" prefHeight="3.0" prefWidth="270.0" />
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="309.0" layoutY="19.0" prefHeight="562.0" prefWidth="506.0" style="-fx-background-radius: 20; -fx-background-color: D3D3d3;">
+            <AnchorPane layoutX="309.0" layoutY="16.0" prefHeight="570.0" prefWidth="506.0" style="-fx-background-radius: 20; -fx-background-color: FFF;">
                <children>
-                  <TableView fx:id="order_table" layoutX="17.0" layoutY="23.0" onMouseClicked="#selectOrderList" prefHeight="522.0" prefWidth="494.0">
+                  <TableView fx:id="order_table" editable="true" layoutX="5.0" layoutY="12.0" onMouseClicked="#selectOrderList" prefHeight="549.0" prefWidth="494.0" stylesheets="@style.css" tableMenuButtonVisible="true">
                     <columns>
-                      <TableColumn fx:id="order_id_col" maxWidth="119.0" prefWidth="123.0" text="Order_ID" />
+                      <TableColumn fx:id="order_id_col" maxWidth="119.0" prefWidth="123.0" text="Order ID" />
                       <TableColumn fx:id="order_name_col" prefWidth="123.0" text="Name" />
                         <TableColumn fx:id="order_quality_col" prefWidth="123.0" text="Quality" />
-                        <TableColumn fx:id="orders_quantity_col" prefWidth="123.0" text="Quantity" />
+                        <TableColumn fx:id="orders_quantity_col" prefWidth="127.99997558593748" text="Quantity" />
                     </columns>
                   </TableView>
                </children>
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="addCommoditySection" layoutX="248.0" onMouseClicked="#setHomeBtn" prefHeight="255.0" prefWidth="834.0" visible="false">
+      <AnchorPane fx:id="addCommoditySection" layoutX="248.0" onMouseClicked="#setHomeBtn" prefHeight="255.0" prefWidth="834.0" stylesheets="@style.css">
          <children>
-            <TableView fx:id="tableView" layoutX="157.0" layoutY="269.0" prefHeight="318.0" prefWidth="486.0">
+            <TableView fx:id="tableView" layoutX="326.0" layoutY="261.0" prefHeight="318.0" prefWidth="486.0">
                <columns>
                   <TableColumn fx:id="c_ID_Col" prefWidth="100.00001525878906" text="Commodity ID" />
                   <TableColumn fx:id="c_Name_Col" prefWidth="126.4000244140625" text="Commodity Name" />
@@ -122,31 +115,32 @@
                   <TableColumn fx:id="quantity_Col" prefWidth="126.4000244140625" text="Quantity" />
                </columns>
             </TableView>
-            <Label layoutX="42.0" layoutY="44.0" text="Select Commodity">
+            <Label layoutX="42.0" layoutY="44.0" text="Select Commodity" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <ComboBox fx:id="commodity_Select" layoutX="216.0" layoutY="45.0" prefWidth="150.0" promptText="choose" stylesheets="@style.css">
+            <ComboBox fx:id="commodity_Select" layoutX="216.0" layoutY="45.0" prefWidth="150.0" promptText="choose" style="-fx-background-color: fff;" stylesheets="@style.css">
                <styleClass>
                   <String fx:value="list-cell" />
                   <String fx:value="list-view" />
                </styleClass>
             </ComboBox>
-            <Label layoutX="42.0" layoutY="108.0" text="Quantity">
+            <Label layoutX="42.0" layoutY="108.0" text="Quantity" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="42.0" layoutY="168.0" text="Quality">
+            <Label layoutX="42.0" layoutY="168.0" text="Quality" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <ComboBox fx:id="quality_select" layoutX="216.0" layoutY="169.0" prefWidth="150.0" promptText="0" stylesheets="@style.css">
+            <ComboBox fx:id="quality_select" layoutX="216.0" layoutY="169.0" prefWidth="150.0" promptText="0" style="-fx-background-color: fff;" stylesheets="@style.css">
                <styleClass>
                   <String fx:value="list-cell" />
                   <String fx:value="list-view" />
+                  <String fx:value="animated-button" />
                </styleClass>
             </ComboBox>
             <Button fx:id="update_com_btn" layoutX="540.0" layoutY="49.0" mnemonicParsing="false" onAction="#updateWarehouse" style="-fx-background-color: #00A36C;" text="UPDATE" textFill="WHITE" />
@@ -183,44 +177,51 @@
             <Separator layoutX="14.0" layoutY="191.0" prefHeight="2.0" prefWidth="225.0" />
             <AnchorPane layoutX="14.0" layoutY="190.0" prefHeight="407.0" prefWidth="226.0" stylesheets="@style.css">
                <children>
-                  <Button fx:id="homeBtn" alignment="CENTER" layoutX="83.0" layoutY="16.0" mnemonicParsing="false" onAction="#setHomeBtn" style="-fx-background-color: #FFF;" stylesheets="@style.css" text="DASHBOARD">
+                  <Button fx:id="homeBtn" alignment="CENTER" layoutX="70.0" layoutY="35.0" mnemonicParsing="false" onAction="#setHomeBtn" prefHeight="38.0" prefWidth="126.0" stylesheets="@style.css" text="DASHBOARD">
                      <styleClass>
-                        <String fx:value="quality-bar" />
-                        <String fx:value="arrow-button" />
-                        <String fx:value="list-cell" />
-                        <String fx:value="list-view" />
+                        <String fx:value="dashboard-btn" />
+                        <String fx:value="animated-button" />
                      </styleClass></Button>
-                  <Button fx:id="addCommodityBtn" alignment="CENTER" layoutX="83.0" layoutY="78.0" mnemonicParsing="false" onAction="#setHomeBtn" style="-fx-background-color: #FFF;" stylesheets="@style.css" text="COMMODITIY">
+                  <Button fx:id="addCommodityBtn" alignment="CENTER" layoutX="70.0" layoutY="108.0" mnemonicParsing="false" onAction="#setHomeBtn" prefHeight="38.0" prefWidth="125.0" stylesheets="@style.css" text="COMMODITIY">
                      <styleClass>
-                        <String fx:value="list-cell" />
-                        <String fx:value="list-view" />
+                        <String fx:value="dashboard-btn" />
+                        <String fx:value="animated-button" />
                      </styleClass></Button>
-                  <ImageView fx:id="dashboardIcon" blendMode="DARKEN" fitHeight="91.0" fitWidth="25.0" layoutX="43.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="dashboardIcon" blendMode="DARKEN" fitHeight="49.0" fitWidth="94.0" layoutX="19.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../images/dashboard.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="addIcon" blendMode="DARKEN" fitHeight="91.0" fitWidth="25.0" layoutX="43.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="addIcon" blendMode="DARKEN" fitHeight="49.0" fitWidth="94.0" layoutX="19.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../images/add.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="orders_BTN" alignment="CENTER" layoutX="83.0" layoutY="140.0" mnemonicParsing="false" onAction="#setHomeBtn" style="-fx-background-color: #FFF;" stylesheets="@style.css" text="ORDERS">
+                  <Button fx:id="orders_BTN" alignment="CENTER" layoutX="70.0" layoutY="184.0" mnemonicParsing="false" onAction="#setHomeBtn" prefHeight="38.0" prefWidth="125.0" stylesheets="@style.css" text="ORDERS">
                      <styleClass>
-                        <String fx:value="list-cell" />
-                        <String fx:value="list-view" />
+                        <String fx:value="dashboard-btn" />
+                        <String fx:value="animated-button" />
                      </styleClass>
                   </Button>
-                  <ImageView fx:id="pendingImg" fitHeight="91.0" fitWidth="25.0" layoutX="43.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="pendingImg" fitHeight="49.0" fitWidth="94.0" layoutX="19.0" layoutY="179.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../images/pending.png" />
                      </image>
                   </ImageView>
+                  <Button fx:id="signoutBTN_dashboard" layoutX="50.0" layoutY="310.0" mnemonicParsing="false" onAction="#signoutAdmin" prefHeight="34.0" prefWidth="126.0" stylesheets="@style.css" text="Sign Out" textFill="WHITE">
+                     <styleClass>
+                        <String fx:value="list-cell" />
+                        <String fx:value="list-view" />
+                        <String fx:value="animated-button" />
+                        <String fx:value="cancelBtn" />
+                     </styleClass>
+                  </Button>
+                  <Label layoutX="80.0" layoutY="280.0" text="Work Done? " />
                </children>
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="dashboardSection" layoutX="255.0" prefHeight="600.0" prefWidth="827.0" style="-fx-background-color: #23033B;">
+      <AnchorPane fx:id="dashboardSection" layoutX="255.0" prefHeight="600.0" prefWidth="827.0" style="-fx-background-color: #23033B;" visible="false">
          <children>
             <AnchorPane layoutX="447.0" layoutY="64.0" prefHeight="100.0" prefWidth="179.0" style="-fx-background-radius: 50;" stylesheets="@style.css">
                <children>
@@ -288,7 +289,7 @@
                   <Font size="26.0" />
                </font>
             </Label>
-            <ImageView fx:id="warehouseIMG" fitHeight="150.0" fitWidth="200.0" layoutX="76.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="warehouseIMG" fitHeight="150.0" fitWidth="200.0" layoutX="67.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../images/WMSLoginPageBW.png" />
                </image>

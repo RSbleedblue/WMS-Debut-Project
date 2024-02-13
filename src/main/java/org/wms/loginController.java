@@ -43,7 +43,7 @@ public class loginController implements Initializable  {
         Image branding = new Image(brandingFile.toURI().toString());
         brandingImageView.setImage(branding);
     }
-    private void switchScene(Scene newScene) {
+    public void switchScene(Scene newScene) {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         FadeTransition fadeOut = new FadeTransition(Duration.seconds(0.5), stage.getScene().getRoot());
         fadeOut.setFromValue(1);

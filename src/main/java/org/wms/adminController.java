@@ -4,14 +4,18 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -126,6 +130,8 @@ public class adminController implements Initializable {
     private TextField quantity_field_order;
     @FXML
     private TextField rem_storage_field_order;
+    @FXML
+    private Button signoutBTN_dashboard;
     @FXML
     private ImageView order_sec_image;
 
@@ -320,6 +326,13 @@ public class adminController implements Initializable {
     private ArrayList<placedOrders> pushOrders = new ArrayList<>();
     public void pushOrder() throws SQLException {
         placedOrders pOds = order_table.getSelectionModel().getSelectedItem();
+        if(pOds == null){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Select order to push!");
+            alert.showAndWait();
+        }
         int remainingQuantity = getRemainingQuantity(pOds.getQuality(), pOds.getCommodityName());
 
         if (pOds.getQuantity() <= remainingQuantity && pOds.getQuantity() <= truckCapcityVal) {
@@ -338,31 +351,53 @@ public class adminController implements Initializable {
             remainingQuantity -= pOds.getQuantity();
             rem_storage_field_order.setText(Integer.toString(remainingQuantity));
 
-        } else {
+            // Remove selected item from the table view
+            placedList.remove(pOds);
+        } else  if (pOds.getQuantity() >= remainingQuantity && pOds.getQuantity() <= truckCapcityVal){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText(null);
-            alert.setContentText("Insufficient quantity or truck capacity.");
+            alert.setContentText("Quantity are not sufficient in warehouse");
+            alert.showAndWait();
+        }
+        else if(pOds.getQuantity() >= truckCapcityVal && pOds.getQuantity() <= remainingQuantity){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Truck Capactiy is full");
+            alert.showAndWait();
+        }
+        else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Both Quantity and truck Capacity is in sufficient");
             alert.showAndWait();
         }
     }
 
+
     public void cancelPushedOrders() throws SQLException {
-        int idx = pushOrders.size()-1;
-            // Update global truck capacity
-            truckCapcityVal += pushOrders.get(idx).getQuantity();
-            // Update database with the canceled quantity
-            String updateQuantityQuery = "UPDATE commodities SET quantity = quantity + ? WHERE name = ? AND quality = ?";
-            try (PreparedStatement updateQuantityStatement = connectionDB.prepareStatement(updateQuantityQuery)) {
-                updateQuantityStatement.setInt(1, pushOrders.get(idx).getQuantity());
-                updateQuantityStatement.setString(2, pushOrders.get(idx).getCommodityName());
-                updateQuantityStatement.setInt(3, pushOrders.get(idx).getQuality());
-                updateQuantityStatement.executeUpdate();
-            }
+        int idx = pushOrders.size() - 1;
+        placedOrders canceledOrder = pushOrders.get(idx);
+
+        // Update global truck capacity
+        truckCapcityVal += canceledOrder.getQuantity();
+        // Update database with the canceled quantity
+        String updateQuantityQuery = "UPDATE commodities SET quantity = quantity + ? WHERE name = ? AND quality = ?";
+        try (PreparedStatement updateQuantityStatement = connectionDB.prepareStatement(updateQuantityQuery)) {
+            updateQuantityStatement.setInt(1, canceledOrder.getQuantity());
+            updateQuantityStatement.setString(2, canceledOrder.getCommodityName());
+            updateQuantityStatement.setInt(3, canceledOrder.getQuality());
+            updateQuantityStatement.executeUpdate();
+        }
         // Update the truck capacity field
         truck_capacity_orderField.setText(Integer.toString(truckCapcityVal));
         // Clear the list of pushed orders
-        pushOrders.remove(pushOrders.size()-1);
+        pushOrders.remove(idx);
+
+        // Re-add the canceled order back to the table view
+        placedList.add(canceledOrder);
     }
 
     private int getRemainingQuantity(int quality,String name) throws SQLException {
@@ -431,6 +466,8 @@ public class adminController implements Initializable {
             // Reload the delivered orders
             loadDeliverOrder();
             truckTimeLoad();
+            getOrdersPending();
+            pushOrders.clear();
 
 
             // Display a confirmation alert
@@ -519,6 +556,13 @@ public class adminController implements Initializable {
         // Reload truck time and warehouse data
         truckTimeLoad();
         loadWarehouseData();
+    }
+    public void signoutAdmin(ActionEvent event) throws IOException {
+        Stage stage = (Stage) signoutBTN_dashboard.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("loginView.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setScene(scene);
+        stage.show();
     }
 
     public void clearWarehouse() {
