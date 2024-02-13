@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -19,20 +20,24 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.mindrot.jbcrypt.BCrypt;
 
 public class RegisterController implements Initializable {
+    private final Logger logger = LogManager.getLogger(RegisterController.class);
+
     private Connection connectionDB;
 
     public RegisterController() {
         DatabaseConnection connection = new DatabaseConnection();
         connectionDB = connection.getConnection();
     }
+
     @FXML
     private TextField reg_Fname;
     @FXML
     private TextField reg_Lname;
-
     @FXML
     private TextField reg_Uname;
     @FXML
@@ -43,17 +48,28 @@ public class RegisterController implements Initializable {
     private Button cancelButton;
     @FXML
     private ComboBox<String> isAdmin;
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle){
-        File fileshield = new File("images/WMSLoginPage.png");
-        Image shield = new Image(fileshield.toURI().toString());
-        brandingImageView.setImage(shield);
 
-        isAdmin.setItems(FXCollections.observableArrayList("Admin","User"));
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        try {
+            File fileshield = new File("images/WMSLoginPage.png");
+            Image shield = new Image(fileshield.toURI().toString());
+            brandingImageView.setImage(shield);
+
+            isAdmin.setItems(FXCollections.observableArrayList("Admin", "User"));
+            logger.info("Registration form initialized successfully");
+        } catch (Exception e) {
+            logger.error("Error initializing registration form", e);
+        }
     }
 
+    public class RegisterException extends Exception {
+        public RegisterException(String message, Throwable cause) {
+            super(message, cause);
+        }
+    }
 
-    public void register() {
+    public void register() throws RegisterException {
         String registerQuery = "INSERT INTO user_account (firstname, lastname, username, password, isAdmin) VALUES (?, ?, ?, ?, ?)";
 
         try {
@@ -70,8 +86,7 @@ public class RegisterController implements Initializable {
             // Validate email format using the username field
             if (!isValidEmail(reg_Uname.getText())) {
                 // Show error message or handle invalid email
-                System.out.println("Invalid email address!");
-                return;
+                throw new RegisterException("Invalid email address", null);
             }
 
             boolean isAdminValue = isAdmin.getValue().equals("Admin");
@@ -88,19 +103,25 @@ public class RegisterController implements Initializable {
             preparedStatement.setBoolean(5, isAdminValue);
             preparedStatement.executeUpdate();
             preparedStatement.close();
+            logger.info("User registered successfully");
             returnBack();
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("SQL error occurred while registering", e);
+            throw new RegisterException("SQL error occurred while registering", e);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            logger.error("IO error occurred while registering", e);
+            throw new RegisterException("IO error occurred while registering", e);
         }
     }
+
     public void returnBack() throws IOException {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
-         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("loginView.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("loginView.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
+        logger.debug("Returning back to login view after registration");
     }
+
     private boolean isValidEmail(String email) {
         String regex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
         return email.matches(regex);
