@@ -23,7 +23,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1080.0" style="-fx-background-color: #281F5F;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.wms.adminController">
    <children>
-      <AnchorPane fx:id="orders_Section" layoutX="250.0" prefHeight="600.0" prefWidth="834.0" visible="false">
+      <AnchorPane fx:id="orders_Section" layoutX="250.0" prefHeight="600.0" prefWidth="834.0">
          <children>
             <AnchorPane layoutX="14.0" layoutY="16.0" prefHeight="563.0" prefWidth="286.0" style="-fx-background-radius: 20; -fx-background-color: FFF;">
                <children>
@@ -65,16 +65,12 @@
                   </TextField>
                   <Button fx:id="push_order_btn" layoutX="39.0" layoutY="492.0" mnemonicParsing="false" onAction="#pushOrder" stylesheets="@style.css" text="Push Order" textFill="WHITE">
                      <styleClass>
-                        <String fx:value="list-view" />
-                        <String fx:value="list-cell" />
                         <String fx:value="registerBtn" />
                         <String fx:value="animated-button" />
                      </styleClass>
                   </Button>
                   <Button fx:id="delete_order_btn" layoutX="145.0" layoutY="491.0" mnemonicParsing="false" onAction="#cancelPushedOrders" stylesheets="@style.css" text="Delete Order" textFill="WHITE">
                      <styleClass>
-                        <String fx:value="list-cell" />
-                        <String fx:value="list-view" />
                         <String fx:value="animated-button" />
                         <String fx:value="cancelBtn" />
                      </styleClass>
@@ -251,7 +247,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="dashboardSection" layoutX="255.0" prefHeight="600.0" prefWidth="827.0" style="-fx-background-color: #281F5F;">
+      <AnchorPane fx:id="dashboardSection" layoutX="255.0" prefHeight="600.0" prefWidth="827.0" style="-fx-background-color: #281F5F;" visible="false">
          <children>
             <Label layoutX="54.0" layoutY="22.0" prefHeight="58.0" prefWidth="226.0" style="-fx-text-fill: fff;" text="Warehouse">
                <font>

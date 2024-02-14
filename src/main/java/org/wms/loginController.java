@@ -21,12 +21,15 @@ import org.mindrot.jbcrypt.BCrypt;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ResourceBundle;
 
 public class loginController implements Initializable {
+    private Connection connectionDB;
+    public loginController(){
+        DatabaseConnection connection = new DatabaseConnection();
+        connectionDB = connection.getConnection();
+    }
 
     private final Logger logger = LogManager.getLogger(loginController.class);
 
@@ -51,9 +54,9 @@ public class loginController implements Initializable {
             File brandingFile = new File("images/WMSLoginPage.png");
             Image branding = new Image(brandingFile.toURI().toString());
             brandingImageView.setImage(branding);
-            logger.info("Branding image loaded successfully");
+            logger.info("Loading Login Page");
         } catch (Exception e) {
-            logger.error("Error loading branding image", e);
+            logger.error("Error loading Login Page", e);
         }
     }
     public class DatabaseQueryException extends RuntimeException {
@@ -153,10 +156,23 @@ public class loginController implements Initializable {
             throw new ViewLoadException("Error loading register view", e);
         }
     }
+    private String getName(String userName) throws SQLException {
+        String query = "Select firstname from user_account where username = ?";
+        PreparedStatement statement = connectionDB.prepareStatement(query);
+        statement.setString(1,userName);
+        ResultSet result = statement.executeQuery();
+        String firstName = "";
+        if(result.next()){
+            firstName = result.getString("firstname");
+        }
+        return firstName;
+    }
 
-    private void userSwitchLoad() throws ViewLoadException {
+    private void userSwitchLoad() throws ViewLoadException, SQLException {
         try {
+            userController userController = new userController(getName(usernameTextField.getText()));
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("userView.fxml"));
+            fxmlLoader.setController(userController);
             switchScene(new Scene(fxmlLoader.load()));
             logger.info("Switched to user view");
         } catch (IOException e) {

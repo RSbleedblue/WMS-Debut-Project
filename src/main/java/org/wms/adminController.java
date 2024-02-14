@@ -611,6 +611,13 @@ public class adminController implements Initializable {
 
     public void cancelPushedOrders() throws SQLException, CancelPushedOrdersException {
         try {
+            if(pushOrders.isEmpty()){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setContentText("Truck is Empty");
+                alert.showAndWait();
+                return;
+            }
             int idx = pushOrders.size() - 1;
             placedOrders canceledOrder = pushOrders.get(idx);
 
@@ -791,14 +798,6 @@ public class adminController implements Initializable {
             try (PreparedStatement truckInPrepare = connectionDB.prepareStatement(truckInTimeQuery)) {
                 truckInPrepare.setObject(1, time);
                 truckInPrepare.executeUpdate();
-            }
-
-            // Update truck out time to 00:00:00
-            String truckOutTimeQuery = "UPDATE truck_status\n" +
-                    "SET truck_out = '00:00:00'\n" +
-                    "WHERE truck_id = 1";
-            try (PreparedStatement truckOutPrepare = connectionDB.prepareStatement(truckOutTimeQuery)) {
-                truckOutPrepare.executeUpdate();
             }
 
             // Update truck capacity to 100

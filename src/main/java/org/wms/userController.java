@@ -6,8 +6,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -37,8 +39,14 @@ public class userController implements Initializable {
     private static final Logger logger = LogManager.getLogger(userController.class);
 
     private Connection connectionDB;
+    private String userName;
 
-    public userController() {
+    public userController(String name) {
+        DatabaseConnection connection = new DatabaseConnection();
+        connectionDB = connection.getConnection();
+        this.userName = name;
+    }
+    public userController(){
         DatabaseConnection connection = new DatabaseConnection();
         connectionDB = connection.getConnection();
     }
@@ -67,11 +75,15 @@ public class userController implements Initializable {
     private Button cancelButton;
     @FXML
     private Button placeOrderBtn;
+    @FXML
+    private TextField nameField;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
             // Initialization code...
+            nameField.setText(userName);
             bedQuality.setItems(FXCollections.observableArrayList("1", "2", "3", "4", "5"));
             sofaQuality.setItems(FXCollections.observableArrayList("1", "2", "3", "4", "5"));
             tableQuality.setItems(FXCollections.observableArrayList("1", "2", "3", "4", "5"));
@@ -133,6 +145,13 @@ public class userController implements Initializable {
                 int tableQN = Integer.parseInt(tableQuantity.getValue());
                 int tableQL = Integer.parseInt(tableQuality.getValue());
                 items.add(new OrderItem("table", tableQL, tableQN));
+            }
+            if(items.isEmpty()){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setContentText("Your Selection is Empty");
+                alert.showAndWait();
+                return;
             }
             String orderID = generateID();
             boolean res = insertIntoOrder(items, orderID);

@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import org.apache.logging.log4j.LogManager;
@@ -65,8 +66,22 @@ public class RegisterController implements Initializable {
             super(message, cause);
         }
     }
+    public class AccountException extends Exception {
+        public AccountException(String message, Throwable cause) {
+            super(message, cause);
+        }
+    }
 
-    public void register() throws RegisterException {
+    public void register() throws RegisterException, AccountException, SQLException, IOException {
+        if(isRegisteredEmail(reg_Uname.getText())){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setTitle(null);
+            alert.setContentText("Already Registered Please Login");
+            alert.showAndWait();
+            returnBack();
+            return;
+        }
         String registerQuery = "INSERT INTO user_account (firstname, lastname, username, password, isAdmin) VALUES (?, ?, ?, ?, ?)";
 
         try {
@@ -94,9 +109,17 @@ public class RegisterController implements Initializable {
                 alert.showAndWait();
               
                 throw new RegisterException("Invalid Email Format", null);
+            }
+            if(isAdmin.getValue() == null){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Please select the Account Status");
+                alert.showAndWait();
+
+                throw new AccountException("Invalid Account Type", null);
 
             }
-
             boolean isAdminValue = isAdmin.getValue().equals("Admin");
 
             // Hash the password before storing it
@@ -124,7 +147,23 @@ public class RegisterController implements Initializable {
         } catch (IOException e) {
             logger.error("IO error occurred while registering", e);
             throw new RegisterException("IO error occurred while registering", e);
+        } catch (AccountException e) {
+            logger.error("No selection made in account status during registering");
+            throw new AccountException("Invalid Account Status",e);
         }
+    }
+    private boolean isRegisteredEmail(String email) throws SQLException {
+        String query = "SELECT COUNT(*) FROM user_account WHERE username = ?";
+        try (PreparedStatement preparedStatement = connectionDB.prepareStatement(query)) {
+            preparedStatement.setString(1, email);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    int count = resultSet.getInt(1);
+                    return count > 0; // If count > 0, email is registered
+                }
+            }
+        }
+        return false;
     }
 
     public void returnBack() throws IOException {

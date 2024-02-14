@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: fff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.wms.thankyouController">
    <children>
       <Button fx:id="redirectBtn" layoutX="248.0" layoutY="444.0" mnemonicParsing="false" onAction="#redirect" prefHeight="50.0" prefWidth="318.0" stylesheets="@style.css" text="Order Again" textFill="WHITE">
@@ -34,7 +33,7 @@
             <Image url="@../../../../../images/thanks.png" />
          </image>
       </ImageView>
-      <Label layoutX="283.0" layoutY="306.0" prefHeight="166.0" prefWidth="367.0" text="Your order has been placed">
+      <Label fx:id="orderShowTextField" layoutX="283.0" layoutY="306.0" prefHeight="166.0" prefWidth="367.0" text="Your order has been placed">
          <font>
             <Font size="20.0" />
          </font>

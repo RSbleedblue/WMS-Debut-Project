@@ -66,6 +66,8 @@ public class thankyouController implements Initializable {
         try {
             Stage stage = (Stage) redirectBtn.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("userView.fxml"));
+            userController userController = new userController();
+            loader.setController(userController);
             Scene scene = new Scene(loader.load());
             stage.setScene(scene);
             logger.info("Redirecting to user view");
