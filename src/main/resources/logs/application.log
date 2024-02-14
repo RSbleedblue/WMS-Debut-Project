@@ -2634,3 +2634,695 @@ Caused by: java.lang.IllegalArgumentException: Can not set javafx.scene.control.
 14:53:51.082 [JavaFX Application Thread] INFO  org.wms.userController - User controller initialized successfully
 14:53:51.090 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to user view
 14:53:51.090 [JavaFX Application Thread] INFO  org.wms.loginController - User logged in
+15:07:26.758 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+15:07:27.568 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+15:07:27.846 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+15:07:37.540 [JavaFX Application Thread] ERROR org.wms.loginController - Error while Switching to admin
+javafx.fxml.LoadException: Controller value already specified.
+/E:/IntelijFiles/WMS/target/classes/org/wms/adminView.fxml:24
+
+	at javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2703) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$ValueElement.processAttribute(FXMLLoader.java:925) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$InstanceDeclarationElement.processAttribute(FXMLLoader.java:981) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$Element.processStartElement(FXMLLoader.java:230) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$ValueElement.processStartElement(FXMLLoader.java:755) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.processStartElement(FXMLLoader.java:2808) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2634) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2516) ~[javafx-fxml-18.0.2-win.jar:?]
+	at org.wms.loginController.adminSwitchLoad(loginController.java:189) ~[classes/:?]
+	at org.wms.loginController.validateLogin(loginController.java:126) ~[classes/:?]
+	at org.wms.loginController.loginButtonOnAction(loginController.java:93) ~[classes/:?]
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:577) ~[?:?]
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77) ~[javafx-base-18.0.2-win.jar:?]
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:577) ~[?:?]
+	at com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1852) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1724) ~[javafx-fxml-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.event.Event.fireEvent(Event.java:198) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.scene.Node.fireEvent(Node.java:8797) ~[javafx-graphics-18.0.2-win.jar:?]
+	at javafx.scene.control.Button.fire(Button.java:203) ~[javafx-controls-18.0.2-win.jar:?]
+	at com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:208) ~[javafx-controls-18.0.2-win.jar:?]
+	at com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274) ~[javafx-controls-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.event.Event.fireEvent(Event.java:198) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3881) ~[javafx-graphics-18.0.2-win.jar:?]
+	at javafx.scene.Scene.processMouseEvent(Scene.java:1874) ~[javafx-graphics-18.0.2-win.jar:?]
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2607) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301) ~[javafx-graphics-18.0.2-win.jar:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:399) ~[?:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:551) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.View.notifyMouse(View.java:937) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184) ~[javafx-graphics-18.0.2-win.jar:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+15:07:37.550 [JavaFX Application Thread] ERROR org.wms.loginController - Error occurs while validating user
+org.wms.loginController$ViewLoadException: Error loading admin view
+	at org.wms.loginController.adminSwitchLoad(loginController.java:193) ~[classes/:?]
+	at org.wms.loginController.validateLogin(loginController.java:126) ~[classes/:?]
+	at org.wms.loginController.loginButtonOnAction(loginController.java:93) ~[classes/:?]
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:577) ~[?:?]
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77) ~[javafx-base-18.0.2-win.jar:?]
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:577) ~[?:?]
+	at com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1852) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1724) ~[javafx-fxml-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.event.Event.fireEvent(Event.java:198) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.scene.Node.fireEvent(Node.java:8797) ~[javafx-graphics-18.0.2-win.jar:?]
+	at javafx.scene.control.Button.fire(Button.java:203) ~[javafx-controls-18.0.2-win.jar:?]
+	at com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:208) ~[javafx-controls-18.0.2-win.jar:?]
+	at com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274) ~[javafx-controls-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.event.Event.fireEvent(Event.java:198) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3881) ~[javafx-graphics-18.0.2-win.jar:?]
+	at javafx.scene.Scene.processMouseEvent(Scene.java:1874) ~[javafx-graphics-18.0.2-win.jar:?]
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2607) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301) ~[javafx-graphics-18.0.2-win.jar:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:399) ~[?:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:551) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.View.notifyMouse(View.java:937) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184) ~[javafx-graphics-18.0.2-win.jar:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+Caused by: javafx.fxml.LoadException: Controller value already specified.
+/E:/IntelijFiles/WMS/target/classes/org/wms/adminView.fxml:24
+
+	at javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2703) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$ValueElement.processAttribute(FXMLLoader.java:925) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$InstanceDeclarationElement.processAttribute(FXMLLoader.java:981) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$Element.processStartElement(FXMLLoader.java:230) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$ValueElement.processStartElement(FXMLLoader.java:755) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.processStartElement(FXMLLoader.java:2808) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2634) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2516) ~[javafx-fxml-18.0.2-win.jar:?]
+	at org.wms.loginController.adminSwitchLoad(loginController.java:189) ~[classes/:?]
+	... 56 more
+15:08:06.488 [JavaFX Application Thread] INFO  org.wms.loginController - Application closed
+15:08:33.027 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+15:08:33.686 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+15:08:33.959 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+15:08:43.111 [JavaFX Application Thread] ERROR org.wms.loginController - Error while Switching to admin
+javafx.fxml.LoadException: 
+/E:/IntelijFiles/WMS/target/classes/org/wms/adminView.fxml:196
+
+	at javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2707) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2685) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2516) ~[javafx-fxml-18.0.2-win.jar:?]
+	at org.wms.loginController.adminSwitchLoad(loginController.java:189) ~[classes/:?]
+	at org.wms.loginController.validateLogin(loginController.java:126) ~[classes/:?]
+	at org.wms.loginController.loginButtonOnAction(loginController.java:93) ~[classes/:?]
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:577) ~[?:?]
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77) ~[javafx-base-18.0.2-win.jar:?]
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:577) ~[?:?]
+	at com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1852) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1724) ~[javafx-fxml-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.event.Event.fireEvent(Event.java:198) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.scene.Node.fireEvent(Node.java:8797) ~[javafx-graphics-18.0.2-win.jar:?]
+	at javafx.scene.control.Button.fire(Button.java:203) ~[javafx-controls-18.0.2-win.jar:?]
+	at com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:208) ~[javafx-controls-18.0.2-win.jar:?]
+	at com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274) ~[javafx-controls-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.event.Event.fireEvent(Event.java:198) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3881) ~[javafx-graphics-18.0.2-win.jar:?]
+	at javafx.scene.Scene.processMouseEvent(Scene.java:1874) ~[javafx-graphics-18.0.2-win.jar:?]
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2607) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301) ~[javafx-graphics-18.0.2-win.jar:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:399) ~[?:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:551) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.View.notifyMouse(View.java:937) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184) ~[javafx-graphics-18.0.2-win.jar:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+Caused by: java.lang.IllegalArgumentException: Can not set javafx.scene.control.TextField field org.wms.adminController.nameField_dashboard to javafx.scene.control.Label
+	at jdk.internal.reflect.FieldAccessorImpl.throwSetIllegalArgumentException(FieldAccessorImpl.java:228) ~[?:?]
+	at jdk.internal.reflect.FieldAccessorImpl.throwSetIllegalArgumentException(FieldAccessorImpl.java:232) ~[?:?]
+	at jdk.internal.reflect.MethodHandleObjectFieldAccessorImpl.set(MethodHandleObjectFieldAccessorImpl.java:115) ~[?:?]
+	at java.lang.reflect.Field.set(Field.java:820) ~[?:?]
+	at javafx.fxml.FXMLLoader.injectFields(FXMLLoader.java:1173) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$ValueElement.processValue(FXMLLoader.java:868) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$ValueElement.processStartElement(FXMLLoader.java:762) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.processStartElement(FXMLLoader.java:2808) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2634) ~[javafx-fxml-18.0.2-win.jar:?]
+	... 59 more
+15:08:43.122 [JavaFX Application Thread] ERROR org.wms.loginController - Error occurs while validating user
+org.wms.loginController$ViewLoadException: Error loading admin view
+	at org.wms.loginController.adminSwitchLoad(loginController.java:193) ~[classes/:?]
+	at org.wms.loginController.validateLogin(loginController.java:126) ~[classes/:?]
+	at org.wms.loginController.loginButtonOnAction(loginController.java:93) ~[classes/:?]
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:577) ~[?:?]
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77) ~[javafx-base-18.0.2-win.jar:?]
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:577) ~[?:?]
+	at com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1852) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1724) ~[javafx-fxml-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.event.Event.fireEvent(Event.java:198) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.scene.Node.fireEvent(Node.java:8797) ~[javafx-graphics-18.0.2-win.jar:?]
+	at javafx.scene.control.Button.fire(Button.java:203) ~[javafx-controls-18.0.2-win.jar:?]
+	at com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:208) ~[javafx-controls-18.0.2-win.jar:?]
+	at com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274) ~[javafx-controls-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.event.Event.fireEvent(Event.java:198) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3881) ~[javafx-graphics-18.0.2-win.jar:?]
+	at javafx.scene.Scene.processMouseEvent(Scene.java:1874) ~[javafx-graphics-18.0.2-win.jar:?]
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2607) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301) ~[javafx-graphics-18.0.2-win.jar:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:399) ~[?:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:551) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.View.notifyMouse(View.java:937) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184) ~[javafx-graphics-18.0.2-win.jar:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+Caused by: javafx.fxml.LoadException: 
+/E:/IntelijFiles/WMS/target/classes/org/wms/adminView.fxml:196
+
+	at javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2707) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2685) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2516) ~[javafx-fxml-18.0.2-win.jar:?]
+	at org.wms.loginController.adminSwitchLoad(loginController.java:189) ~[classes/:?]
+	... 56 more
+Caused by: java.lang.IllegalArgumentException: Can not set javafx.scene.control.TextField field org.wms.adminController.nameField_dashboard to javafx.scene.control.Label
+	at jdk.internal.reflect.FieldAccessorImpl.throwSetIllegalArgumentException(FieldAccessorImpl.java:228) ~[?:?]
+	at jdk.internal.reflect.FieldAccessorImpl.throwSetIllegalArgumentException(FieldAccessorImpl.java:232) ~[?:?]
+	at jdk.internal.reflect.MethodHandleObjectFieldAccessorImpl.set(MethodHandleObjectFieldAccessorImpl.java:115) ~[?:?]
+	at java.lang.reflect.Field.set(Field.java:820) ~[?:?]
+	at javafx.fxml.FXMLLoader.injectFields(FXMLLoader.java:1173) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$ValueElement.processValue(FXMLLoader.java:868) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$ValueElement.processStartElement(FXMLLoader.java:762) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.processStartElement(FXMLLoader.java:2808) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2634) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2516) ~[javafx-fxml-18.0.2-win.jar:?]
+	at org.wms.loginController.adminSwitchLoad(loginController.java:189) ~[classes/:?]
+	... 56 more
+15:10:38.468 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+15:10:39.118 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+15:10:39.379 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+15:10:50.018 [JavaFX Application Thread] ERROR org.wms.loginController - Error while Switching to admin
+javafx.fxml.LoadException: 
+/E:/IntelijFiles/WMS/target/classes/org/wms/adminView.fxml:196
+
+	at javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2707) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2685) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2516) ~[javafx-fxml-18.0.2-win.jar:?]
+	at org.wms.loginController.adminSwitchLoad(loginController.java:190) ~[classes/:?]
+	at org.wms.loginController.validateLogin(loginController.java:126) ~[classes/:?]
+	at org.wms.loginController.loginButtonOnAction(loginController.java:93) ~[classes/:?]
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:577) ~[?:?]
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77) ~[javafx-base-18.0.2-win.jar:?]
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:577) ~[?:?]
+	at com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1852) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1724) ~[javafx-fxml-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.event.Event.fireEvent(Event.java:198) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.scene.Node.fireEvent(Node.java:8797) ~[javafx-graphics-18.0.2-win.jar:?]
+	at javafx.scene.control.Button.fire(Button.java:203) ~[javafx-controls-18.0.2-win.jar:?]
+	at com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:208) ~[javafx-controls-18.0.2-win.jar:?]
+	at com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274) ~[javafx-controls-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.event.Event.fireEvent(Event.java:198) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3881) ~[javafx-graphics-18.0.2-win.jar:?]
+	at javafx.scene.Scene.processMouseEvent(Scene.java:1874) ~[javafx-graphics-18.0.2-win.jar:?]
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2607) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301) ~[javafx-graphics-18.0.2-win.jar:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:399) ~[?:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:551) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.View.notifyMouse(View.java:937) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184) ~[javafx-graphics-18.0.2-win.jar:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+Caused by: java.lang.IllegalArgumentException: Can not set javafx.scene.control.TextField field org.wms.adminController.nameField_dashboard to javafx.scene.control.Label
+	at jdk.internal.reflect.FieldAccessorImpl.throwSetIllegalArgumentException(FieldAccessorImpl.java:228) ~[?:?]
+	at jdk.internal.reflect.FieldAccessorImpl.throwSetIllegalArgumentException(FieldAccessorImpl.java:232) ~[?:?]
+	at jdk.internal.reflect.MethodHandleObjectFieldAccessorImpl.set(MethodHandleObjectFieldAccessorImpl.java:115) ~[?:?]
+	at java.lang.reflect.Field.set(Field.java:820) ~[?:?]
+	at javafx.fxml.FXMLLoader.injectFields(FXMLLoader.java:1173) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$ValueElement.processValue(FXMLLoader.java:868) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$ValueElement.processStartElement(FXMLLoader.java:762) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.processStartElement(FXMLLoader.java:2808) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2634) ~[javafx-fxml-18.0.2-win.jar:?]
+	... 59 more
+15:10:50.031 [JavaFX Application Thread] ERROR org.wms.loginController - Error occurs while validating user
+org.wms.loginController$ViewLoadException: Error loading admin view
+	at org.wms.loginController.adminSwitchLoad(loginController.java:194) ~[classes/:?]
+	at org.wms.loginController.validateLogin(loginController.java:126) ~[classes/:?]
+	at org.wms.loginController.loginButtonOnAction(loginController.java:93) ~[classes/:?]
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:577) ~[?:?]
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77) ~[javafx-base-18.0.2-win.jar:?]
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:577) ~[?:?]
+	at com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1852) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1724) ~[javafx-fxml-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.event.Event.fireEvent(Event.java:198) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.scene.Node.fireEvent(Node.java:8797) ~[javafx-graphics-18.0.2-win.jar:?]
+	at javafx.scene.control.Button.fire(Button.java:203) ~[javafx-controls-18.0.2-win.jar:?]
+	at com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:208) ~[javafx-controls-18.0.2-win.jar:?]
+	at com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274) ~[javafx-controls-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.event.Event.fireEvent(Event.java:198) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3881) ~[javafx-graphics-18.0.2-win.jar:?]
+	at javafx.scene.Scene.processMouseEvent(Scene.java:1874) ~[javafx-graphics-18.0.2-win.jar:?]
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2607) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301) ~[javafx-graphics-18.0.2-win.jar:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:399) ~[?:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:551) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.View.notifyMouse(View.java:937) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184) ~[javafx-graphics-18.0.2-win.jar:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+Caused by: javafx.fxml.LoadException: 
+/E:/IntelijFiles/WMS/target/classes/org/wms/adminView.fxml:196
+
+	at javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2707) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2685) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2516) ~[javafx-fxml-18.0.2-win.jar:?]
+	at org.wms.loginController.adminSwitchLoad(loginController.java:190) ~[classes/:?]
+	... 56 more
+Caused by: java.lang.IllegalArgumentException: Can not set javafx.scene.control.TextField field org.wms.adminController.nameField_dashboard to javafx.scene.control.Label
+	at jdk.internal.reflect.FieldAccessorImpl.throwSetIllegalArgumentException(FieldAccessorImpl.java:228) ~[?:?]
+	at jdk.internal.reflect.FieldAccessorImpl.throwSetIllegalArgumentException(FieldAccessorImpl.java:232) ~[?:?]
+	at jdk.internal.reflect.MethodHandleObjectFieldAccessorImpl.set(MethodHandleObjectFieldAccessorImpl.java:115) ~[?:?]
+	at java.lang.reflect.Field.set(Field.java:820) ~[?:?]
+	at javafx.fxml.FXMLLoader.injectFields(FXMLLoader.java:1173) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$ValueElement.processValue(FXMLLoader.java:868) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$ValueElement.processStartElement(FXMLLoader.java:762) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.processStartElement(FXMLLoader.java:2808) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2634) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2516) ~[javafx-fxml-18.0.2-win.jar:?]
+	at org.wms.loginController.adminSwitchLoad(loginController.java:190) ~[classes/:?]
+	... 56 more
+15:11:51.764 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+15:11:52.445 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+15:11:52.716 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+15:11:59.982 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+15:11:59.989 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 12
+15:11:59.992 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+15:11:59.992 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+15:11:59.994 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+15:12:00.008 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+15:12:00.008 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+15:12:00.049 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+15:12:00.049 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in
+15:12:04.846 [JavaFX Application Thread] INFO  org.wms.adminController - Add Commodity button clicked. Add commodity section displayed.
+15:12:06.330 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.
+15:12:07.646 [JavaFX Application Thread] INFO  org.wms.adminController - Home button clicked. Dashboard section displayed.
+15:12:46.757 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+15:12:47.487 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+15:12:47.769 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+15:12:56.419 [JavaFX Application Thread] ERROR org.wms.loginController - Error while Switching to admin
+javafx.fxml.LoadException: Controller value already specified.
+/E:/IntelijFiles/WMS/target/classes/org/wms/adminView.fxml:24
+
+	at javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2703) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$ValueElement.processAttribute(FXMLLoader.java:925) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$InstanceDeclarationElement.processAttribute(FXMLLoader.java:981) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$Element.processStartElement(FXMLLoader.java:230) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$ValueElement.processStartElement(FXMLLoader.java:755) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.processStartElement(FXMLLoader.java:2808) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2634) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2516) ~[javafx-fxml-18.0.2-win.jar:?]
+	at org.wms.loginController.adminSwitchLoad(loginController.java:190) ~[classes/:?]
+	at org.wms.loginController.validateLogin(loginController.java:126) ~[classes/:?]
+	at org.wms.loginController.loginButtonOnAction(loginController.java:93) ~[classes/:?]
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:577) ~[?:?]
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77) ~[javafx-base-18.0.2-win.jar:?]
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:577) ~[?:?]
+	at com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1852) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1724) ~[javafx-fxml-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.event.Event.fireEvent(Event.java:198) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.scene.Node.fireEvent(Node.java:8797) ~[javafx-graphics-18.0.2-win.jar:?]
+	at javafx.scene.control.Button.fire(Button.java:203) ~[javafx-controls-18.0.2-win.jar:?]
+	at com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:208) ~[javafx-controls-18.0.2-win.jar:?]
+	at com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274) ~[javafx-controls-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.event.Event.fireEvent(Event.java:198) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3881) ~[javafx-graphics-18.0.2-win.jar:?]
+	at javafx.scene.Scene.processMouseEvent(Scene.java:1874) ~[javafx-graphics-18.0.2-win.jar:?]
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2607) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301) ~[javafx-graphics-18.0.2-win.jar:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:399) ~[?:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:551) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.View.notifyMouse(View.java:937) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184) ~[javafx-graphics-18.0.2-win.jar:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+15:12:56.427 [JavaFX Application Thread] ERROR org.wms.loginController - Error occurs while validating user
+org.wms.loginController$ViewLoadException: Error loading admin view
+	at org.wms.loginController.adminSwitchLoad(loginController.java:194) ~[classes/:?]
+	at org.wms.loginController.validateLogin(loginController.java:126) ~[classes/:?]
+	at org.wms.loginController.loginButtonOnAction(loginController.java:93) ~[classes/:?]
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:577) ~[?:?]
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77) ~[javafx-base-18.0.2-win.jar:?]
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:577) ~[?:?]
+	at com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1852) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1724) ~[javafx-fxml-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.event.Event.fireEvent(Event.java:198) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.scene.Node.fireEvent(Node.java:8797) ~[javafx-graphics-18.0.2-win.jar:?]
+	at javafx.scene.control.Button.fire(Button.java:203) ~[javafx-controls-18.0.2-win.jar:?]
+	at com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:208) ~[javafx-controls-18.0.2-win.jar:?]
+	at com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274) ~[javafx-controls-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.event.Event.fireEvent(Event.java:198) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3881) ~[javafx-graphics-18.0.2-win.jar:?]
+	at javafx.scene.Scene.processMouseEvent(Scene.java:1874) ~[javafx-graphics-18.0.2-win.jar:?]
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2607) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301) ~[javafx-graphics-18.0.2-win.jar:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:399) ~[?:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:551) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.View.notifyMouse(View.java:937) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184) ~[javafx-graphics-18.0.2-win.jar:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+Caused by: javafx.fxml.LoadException: Controller value already specified.
+/E:/IntelijFiles/WMS/target/classes/org/wms/adminView.fxml:24
+
+	at javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2703) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$ValueElement.processAttribute(FXMLLoader.java:925) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$InstanceDeclarationElement.processAttribute(FXMLLoader.java:981) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$Element.processStartElement(FXMLLoader.java:230) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$ValueElement.processStartElement(FXMLLoader.java:755) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.processStartElement(FXMLLoader.java:2808) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2634) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2516) ~[javafx-fxml-18.0.2-win.jar:?]
+	at org.wms.loginController.adminSwitchLoad(loginController.java:190) ~[classes/:?]
+	... 56 more
+15:14:12.539 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+15:14:13.188 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+15:14:13.462 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+15:14:24.267 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+15:14:24.271 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 12
+15:14:24.274 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+15:14:24.274 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+15:14:24.276 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+15:14:24.288 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+15:14:24.289 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+15:14:24.325 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+15:14:24.325 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in
+15:14:50.033 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+15:14:50.697 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+15:14:50.967 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+15:14:59.865 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+15:14:59.867 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 12
+15:14:59.869 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+15:14:59.869 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+15:14:59.871 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+15:14:59.884 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+15:14:59.884 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+15:14:59.919 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+15:14:59.919 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in
+15:15:09.999 [JavaFX Application Thread] INFO  org.wms.adminController - Home button clicked. Dashboard section displayed.
+15:15:15.185 [JavaFX Application Thread] INFO  org.wms.adminController - Add Commodity button clicked. Add commodity section displayed.
+15:15:19.554 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.
+15:15:28.433 [JavaFX Application Thread] INFO  org.wms.adminController - Add Commodity button clicked. Add commodity section displayed.
+15:15:39.939 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+15:15:39.941 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+15:15:46.956 [JavaFX Application Thread] INFO  org.wms.adminController - Home button clicked. Dashboard section displayed.
+15:21:08.847 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+15:21:10.103 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+15:21:12.993 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+15:21:13.665 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+15:21:13.941 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+15:21:24.069 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+15:21:24.073 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 12
+15:21:24.076 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+15:21:24.076 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+15:21:24.078 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+15:21:24.092 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+15:21:24.092 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+15:21:24.129 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+15:21:24.130 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in
+15:23:58.085 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+15:23:58.758 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+15:23:59.036 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+15:24:09.305 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+15:24:09.308 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 12
+15:24:09.310 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+15:24:09.310 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+15:24:09.313 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+15:24:09.328 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+15:24:09.329 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+15:24:09.364 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+15:24:09.364 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in
+15:24:11.911 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.
+15:24:16.455 [JavaFX Application Thread] INFO  org.wms.adminController - Home button clicked. Dashboard section displayed.
+15:24:18.145 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.
+15:24:20.769 [JavaFX Application Thread] INFO  org.wms.adminController - Home button clicked. Dashboard section displayed.
+15:24:22.325 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.

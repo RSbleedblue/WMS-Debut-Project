@@ -181,15 +181,17 @@ public class loginController implements Initializable {
         }
     }
 
-    private void adminSwitchLoad() throws ViewLoadException {
+    private void adminSwitchLoad() throws ViewLoadException, SQLException {
         try {
+            String userName = getName(usernameTextField.getText()); // Get the username
+            adminController adminController = new adminController(userName); // Pass the username
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("adminView.fxml"));
+            fxmlLoader.setController(adminController);
             switchScene(new Scene(fxmlLoader.load()));
             logger.info("Switched to admin view");
         } catch (IOException e) {
             logger.error("Error while Switching to admin",e);
             throw new ViewLoadException("Error loading admin view", e);
-
         }
     }
 }

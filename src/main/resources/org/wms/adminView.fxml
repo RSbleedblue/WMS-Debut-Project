@@ -21,9 +21,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1080.0" style="-fx-background-color: #281F5F;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.wms.adminController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1080.0" style="-fx-background-color: #281F5F;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane fx:id="orders_Section" layoutX="250.0" prefHeight="600.0" prefWidth="834.0">
+      <AnchorPane fx:id="orders_Section" layoutX="250.0" prefHeight="600.0" prefWidth="834.0" visible="false">
          <children>
             <AnchorPane layoutX="14.0" layoutY="16.0" prefHeight="563.0" prefWidth="286.0" style="-fx-background-radius: 20; -fx-background-color: FFF;">
                <children>
@@ -193,7 +193,7 @@
                         <Font name="Impact" size="24.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="CENTER" text="ADMIN" textAlignment="CENTER">
+                  <Label fx:id="nameField_dashboard" alignment="CENTER" contentDisplay="CENTER" text="ADMIN" textAlignment="CENTER">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -247,7 +247,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="dashboardSection" layoutX="255.0" prefHeight="600.0" prefWidth="827.0" style="-fx-background-color: #281F5F;" visible="false">
+      <AnchorPane fx:id="dashboardSection" layoutX="255.0" prefHeight="600.0" prefWidth="827.0" style="-fx-background-color: #281F5F;">
          <children>
             <Label layoutX="54.0" layoutY="22.0" prefHeight="58.0" prefWidth="226.0" style="-fx-text-fill: fff;" text="Warehouse">
                <font>
@@ -267,7 +267,7 @@
                   <DropShadow />
                </effect>
             </ImageView>
-            <AnchorPane layoutX="257.0" layoutY="64.0" prefHeight="106.0" prefWidth="494.0" style="-fx-background-radius: 50;" stylesheets="@style.css">
+            <AnchorPane layoutX="257.0" layoutY="64.0" prefHeight="106.0" prefWidth="494.0" style="-fx-background-radius: 50; -fx-background-color: fff;" styleClass="animated-button" stylesheets="@style.css">
                <children>
                   <Label layoutX="74.0" layoutY="21.0" text="Orders">
                      <font>
@@ -284,7 +284,7 @@
                         <Image url="@../../../../../images/orders.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="orderPending" layoutX="82.0" layoutY="62.0" text="0">
+                  <Label fx:id="orderPending" layoutX="82.0" layoutY="67.0" styleClass="animated-button" stylesheets="@style.css" text="0">
                      <font>
                         <Font size="25.0" />
                      </font>
@@ -330,10 +330,6 @@
                      </font>
                   </Label>
                </children>
-               <styleClass>
-                  <String fx:value="dashboard-info-container" />
-                  <String fx:value="animated-button" />
-               </styleClass>
             </AnchorPane>
             <AnchorPane layoutX="35.0" layoutY="251.0" prefHeight="310.0" prefWidth="436.0" style="-fx-background-color: fff; -fx-background-radius: 20;" stylesheets="@style.css">
                <styleClass>

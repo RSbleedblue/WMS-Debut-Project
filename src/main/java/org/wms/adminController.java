@@ -33,6 +33,7 @@ import java.util.ResourceBundle;
 public class adminController implements Initializable {
     private Connection connectionDB;
     public int truckCapcityVal;
+    private String UserName;
 
     public adminController() {
         DatabaseConnection connection = new DatabaseConnection();
@@ -43,7 +44,20 @@ public class adminController implements Initializable {
             throw new RuntimeException(e);
         }
     }
+    public adminController(String UserName){
+        DatabaseConnection connection = new DatabaseConnection();
+        connectionDB = connection.getConnection();
+        this.UserName = UserName;
+        try{
+            truckCapcityVal = getTruckCapacity();
+        }
+        catch (SQLException e){
+            throw new RuntimeException(e);
+        }
+    }
 
+    @FXML
+    private Label nameField_dashboard;
     @FXML
     private ImageView select_commodity_detail_img;
     @FXML
@@ -161,6 +175,7 @@ public class adminController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
 //        Default loading for the dashboard
+        nameField_dashboard.setText(UserName);
         initializeImages();
         getOrdersPending();
         loadWarehouseData();
@@ -179,6 +194,12 @@ public class adminController implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        orderPending.setOnMouseClicked(event -> {
+            addCommoditySection.setVisible(false);
+            dashboardSection.setVisible(false);
+            orders_Section.setVisible(true);
+            logger.info("Orders button clicked. Orders section displayed.");
+        });
 
     }
 
@@ -386,6 +407,12 @@ public class adminController implements Initializable {
             orders_Section.setVisible(false);
             logger.info("Add Commodity button clicked. Add commodity section displayed.");
         } else if (event.getSource() == orders_BTN) {
+            addCommoditySection.setVisible(false);
+            dashboardSection.setVisible(false);
+            orders_Section.setVisible(true);
+            logger.info("Orders button clicked. Orders section displayed.");
+        }
+        else if(event.getSource() == orderPending){
             addCommoditySection.setVisible(false);
             dashboardSection.setVisible(false);
             orders_Section.setVisible(true);
