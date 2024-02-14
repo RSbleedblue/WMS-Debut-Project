@@ -584,33 +584,54 @@ public class adminController implements Initializable {
             logger.error("Error pushing order", e);
             throw e;
         }
-    }        
-    public void cancelPushedOrders() throws SQLException,CancelPushedOrdersException, {
-        int idx = pushOrders.size() - 1;
-        placedOrders canceledOrder = pushOrders.get(idx);
-
-        // Update global truck capacity
-        truckCapcityVal += canceledOrder.getQuantity();
-        // Update database with the canceled quantity
-        String updateQuantityQuery = "UPDATE commodities SET quantity = quantity + ? WHERE name = ? AND quality = ?";
-        try (PreparedStatement updateQuantityStatement = connectionDB.prepareStatement(updateQuantityQuery)) {
-            updateQuantityStatement.setInt(1, canceledOrder.getQuantity());
-            updateQuantityStatement.setString(2, canceledOrder.getCommodityName());
-            updateQuantityStatement.setInt(3, canceledOrder.getQuality());
-            updateQuantityStatement.executeUpdate();
+    }
+    private int getTruckCapacity() throws SQLException {
+        String query = "SELECT truck_capacity FROM truck_status";
+        try {
+            PreparedStatement truckStatusStatement = connectionDB.prepareStatement(query);
+            ResultSet resultSet = truckStatusStatement.executeQuery();
+            if (resultSet.next()) {
+                return resultSet.getInt("truck_capacity");
+            } else {
+                throw new SQLException("No truck capacity data found");
+            }
+        } catch (SQLException e) {
+            // Log the exception or handle it appropriately
+            throw new SQLException("Error retrieving truck capacity", e);
         }
-        // Update the truck capacity field
-        truck_capacity_orderField.setText(Integer.toString(truckCapcityVal));
-        // Clear the list of pushed orders
-        pushOrders.remove(idx);
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Loaded");
-        alert.setContentText("Order with ID: "+canceledOrder.getOrder_ID()+" has been unloaded from the truck");
-        alert.showAndWait();
-      
-        // Re-add the canceled order back to the table view
-        placedList.add(canceledOrder);
-       catch (IndexOutOfBoundsException e) {
+    }
+
+    public void cancelPushedOrders() throws SQLException, CancelPushedOrdersException {
+        try {
+            int idx = pushOrders.size() - 1;
+            placedOrders canceledOrder = pushOrders.get(idx);
+
+            // Update global truck capacity
+            truckCapcityVal += canceledOrder.getQuantity();
+
+            // Update database with the canceled quantity
+            String updateQuantityQuery = "UPDATE commodities SET quantity = quantity + ? WHERE name = ? AND quality = ?";
+            try (PreparedStatement updateQuantityStatement = connectionDB.prepareStatement(updateQuantityQuery)) {
+                updateQuantityStatement.setInt(1, canceledOrder.getQuantity());
+                updateQuantityStatement.setString(2, canceledOrder.getCommodityName());
+                updateQuantityStatement.setInt(3, canceledOrder.getQuality());
+                updateQuantityStatement.executeUpdate();
+            }
+
+            // Update the truck capacity field
+            truck_capacity_orderField.setText(Integer.toString(truckCapcityVal));
+
+            // Clear the list of pushed orders
+            pushOrders.remove(idx);
+
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Loaded");
+            alert.setContentText("Order with ID: " + canceledOrder.getOrder_ID() + " has been unloaded from the truck");
+            alert.showAndWait();
+
+            // Re-add the canceled order back to the table view
+            placedList.add(canceledOrder);
+        } catch (IndexOutOfBoundsException e) {
             logger.error("No orders pushed to cancel.", e);
             throw new CancelPushedOrdersException("No orders pushed to cancel.", e);
         } catch (SQLException e) {
@@ -618,7 +639,6 @@ public class adminController implements Initializable {
             throw new CancelPushedOrdersException("Error while canceling pushed orders.", e);
         }
     }
-
     private int getRemainingQuantity(int quality, String name) throws SQLException {
         int QuantityStatusVal = -1;
         String query = "SELECT quantity FROM commodities WHERE quality = ? AND name = ?";
@@ -660,45 +680,43 @@ public class adminController implements Initializable {
             alert.setContentText("Push orders to place");
             alert.showAndWait();
         } else {
-            String updateDeliveryQuery = "UPDATE order_detail " +
-                    "SET delivery_status = 'delivered' " +
-                    "WHERE order_id = ?";
-            try (PreparedStatement updateDeliveryStatement = connectionDB.prepareStatement(updateDeliveryQuery)) {
-                for (placedOrders pOds : pushOrders) {
-                    logger.info("Updating delivery status for order ID: " + pOds.getOrder_ID());
-                    updateDeliveryStatement.setString(1, pOds.getOrder_ID());
-                    updateDeliveryStatement.executeUpdate();
-                    truckCapcityVal -= pOds.getQuantity();
+            try {
+                String updateDeliveryQuery = "UPDATE order_detail " +
+                        "SET delivery_status = 'delivered' " +
+                        "WHERE order_id = ?";
+                try (PreparedStatement updateDeliveryStatement = connectionDB.prepareStatement(updateDeliveryQuery)) {
+                    for (placedOrders pOds : pushOrders) {
+                        logger.info("Updating delivery status for order ID: " + pOds.getOrder_ID());
+                        updateDeliveryStatement.setString(1, pOds.getOrder_ID());
+                        updateDeliveryStatement.executeUpdate();
+                        truckCapcityVal -= pOds.getQuantity();
+                    }
                 }
-            } catch (SQLException e) {
-                logger.error("Error updating delivery status", e);
-                throw e;
-            }
 
-            // Update the truck out time
-            LocalTime time = LocalTime.now();
-            String updateTruckOutTimeQuery = "UPDATE truck_status\n" +
-                    "SET truck_out = ?\n" +
-                    "WHERE truck_id = 1";
-            try (PreparedStatement updateTruckOutTimeStatement = connectionDB.prepareStatement(updateTruckOutTimeQuery)) {
-                updateTruckOutTimeStatement.setObject(1, time);
-                updateTruckOutTimeStatement.executeUpdate();
-            }
+                // Update the truck out time
+                LocalTime time = LocalTime.now();
+                String updateTruckOutTimeQuery = "UPDATE truck_status\n" +
+                        "SET truck_out = ?\n" +
+                        "WHERE truck_id = 1";
+                try (PreparedStatement updateTruckOutTimeStatement = connectionDB.prepareStatement(updateTruckOutTimeQuery)) {
+                    updateTruckOutTimeStatement.setObject(1, time);
+                    updateTruckOutTimeStatement.executeUpdate();
+                }
 
-            // Update the truck capacity in the database
-            String updateTruckCapacityQuery = "UPDATE truck_status\n" +
-                    "SET truck_capacity = ?\n" +
-                    "WHERE truck_id = 1";
-            try (PreparedStatement updateTruckCapacityStatement = connectionDB.prepareStatement(updateTruckCapacityQuery)) {
-                updateTruckCapacityStatement.setInt(1, truckCapcityVal);
-                updateTruckCapacityStatement.executeUpdate();
-            }
+                // Update the truck capacity in the database
+                String updateTruckCapacityQuery = "UPDATE truck_status\n" +
+                        "SET truck_capacity = ?\n" +
+                        "WHERE truck_id = 1";
+                try (PreparedStatement updateTruckCapacityStatement = connectionDB.prepareStatement(updateTruckCapacityQuery)) {
+                    updateTruckCapacityStatement.setInt(1, truckCapcityVal);
+                    updateTruckCapacityStatement.executeUpdate();
+                }
 
-            // Reload the delivered orders
-            loadDeliverOrder();
-            truckTimeLoad();
-            getOrdersPending();
-            pushOrders.clear();
+                // Reload the delivered orders
+                loadDeliverOrder();
+                truckTimeLoad();
+                getOrdersPending();
+                pushOrders.clear();
 
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Success");
@@ -712,29 +730,13 @@ public class adminController implements Initializable {
         }
     }
 
-    private int getTruckCapacity() throws SQLException {
-        String query = "SELECT truck_capacity FROM truck_status";
-        try {
-            PreparedStatement truckStatusStatement = connectionDB.prepareStatement(query);
-            ResultSet resultSet = truckStatusStatement.executeQuery();
-            if (resultSet.next()) {
-                return resultSet.getInt("truck_capacity");
-            } else {
-                throw new SQLException("No truck capacity data found");
-            }
-        } catch (SQLException e) {
-            logger.error("Error retrieving truck capacity", e);
-            throw new SQLException("Error retrieving truck capacity", e);
-        }
-    }
-
     public void updateWarehouse() throws WarehouseUpdateException, SQLException {
         try {
             // Set truck capacity to 100
             truckCapcityVal = 100;
 
-            String c_Name = commodity_Select.getValue().toLowerCase();
-            int quality = quality_select.getValue();
+            String c_Name = commodity_Select.getValue() != null ? commodity_Select.getValue().toLowerCase() : null;
+            Integer quality = quality_select.getValue();
             int quantity;
             try {
                 quantity = Integer.parseInt(quantity_select.getText().trim());
@@ -744,6 +746,17 @@ public class adminController implements Initializable {
                 alert.setTitle("Invalid Quantity");
                 alert.setHeaderText(null);
                 alert.setContentText("Please enter a valid integer for quantity.");
+                alert.showAndWait();
+                return;
+            }
+
+            // Validate commodity name and quality
+            if (c_Name == null || quality == null) {
+                logger.error("Commodity name or quality is not selected");
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Invalid Selection");
+                alert.setHeaderText(null);
+                alert.setContentText("Please select commodity and quality.");
                 alert.showAndWait();
                 return;
             }
@@ -795,14 +808,6 @@ public class adminController implements Initializable {
             throw new WarehouseUpdateException("Error updating warehouse.", e);
         }
     }
-    public void signoutAdmin(ActionEvent event) throws IOException {
-        Stage stage = (Stage) signoutBTN_dashboard.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("loginView.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        stage.setScene(scene);
-        stage.show();
-    }
-
     public void clearWarehouse() {
         commodity_Select.getSelectionModel().clearSelection();
         commodity_Select.setPromptText("Choose again");
@@ -810,4 +815,12 @@ public class adminController implements Initializable {
         quality_select.getSelectionModel().clearSelection();
         quality_select.setPromptText("0");
     }
-}
+    public void signoutAdmin(ActionEvent e) throws IOException {
+        Stage stage = (Stage) signoutBTN_dashboard.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("loginView.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    }

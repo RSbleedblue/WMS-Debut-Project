@@ -120,11 +120,12 @@
 }
 
 .text-field:hover {
-    -fx-background-color: transparent;
+    -fx-background-color: #FFF
+;
 }
 
 .text-field:focused {
-    -fx-background-color: transparent;
+    -fx-background-color: #FFF;
     -fx-border-color:  #281F5F;
 }
 .combo-box {

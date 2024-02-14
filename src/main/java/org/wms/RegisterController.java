@@ -94,7 +94,6 @@ public class RegisterController implements Initializable {
                 alert.showAndWait();
               
                 throw new RegisterException("Invalid Email Format", null);
-                return;
             }
 
             boolean isAdminValue = isAdmin.getValue().equals("Admin");
