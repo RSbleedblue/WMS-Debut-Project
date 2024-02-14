@@ -14,7 +14,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: fff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.wms.userController">
    <children>
-      <AnchorPane layoutX="500.0" prefHeight="600.0" prefWidth="300.0" style="-fx-background-color: #23033B;">
+      <AnchorPane layoutX="500.0" prefHeight="600.0" prefWidth="300.0" style="-fx-background-color: #281F5F;">
          <children>
             <Label layoutX="69.0" layoutY="20.0" text="Order Details" textFill="WHITE">
                <font>

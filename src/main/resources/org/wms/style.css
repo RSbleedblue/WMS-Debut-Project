@@ -56,15 +56,15 @@
 }
 /* Login Button Hover Effect */
 .loginBtn{
-    -fx-background-color: #23033B;
+    -fx-background-color: #281F5F;
     -fx-text-fill: #FFF;
     -fx-background-radius: 5px;
 }
 .loginBtn:hover{
     -fx-background-color:transparent;
     -fx-background-radius: 5px;
-    -fx-text-fill:  #23033B;
-    -fx-border-color:  #23033B;
+    -fx-text-fill:  #281F5F;
+    -fx-border-color:  #281F5F;
     -fx-border-width: 1px;
     -fx-border-style: solid;
     -fx-border-radius: 5px;
@@ -113,7 +113,7 @@
 }
 .text-field {
     -fx-background-radius: 5px;
-    -fx-border-color:   #23033B;
+    -fx-border-color:   #281F5F;
     -fx-border-width: 1px;
     -fx-border-style: solid;
     -fx-border-radius: 5px;
@@ -125,13 +125,13 @@
 
 .text-field:focused {
     -fx-background-color: transparent;
-    -fx-border-color:  #23033B;
+    -fx-border-color:  #281F5F;
 }
 .combo-box {
     -fx-background-color: transparent;
     -fx-text-fill: #FFF;
     -fx-background-radius: 5px;
-    -fx-border-color:  #23033B;
+    -fx-border-color:  #281F5F;
     -fx-border-width: 1px;
     -fx-border-style: solid;
     -fx-border-radius: 5px;
@@ -143,7 +143,7 @@
 
 .combo-box:focused {
     -fx-background-color: transparent;
-    -fx-border-color: #23033B;
+    -fx-border-color: #281F5F;
 }
 .dashboard-info-container{
     -fx-border-radius: 2px 2px 2px 2px;
@@ -157,6 +157,83 @@
     -fx-border-style: solid;
     -fx-border-radius: 5px;
 }
+/* style.css */
+.table-view {
+    -fx-border-width: 1px;
+    -fx-border-color: #281F5F;
+    -fx-background-color: transparent;
+    -fx-border-radius: 10px;
+    -fx-cursor: hand;
+}
+
+.table-view .column-header {
+    -fx-border-radius: 10px;
+    -fx-background-color :  #281F5F;
+    -fx-text-fill: #fff;
+}
+.table-view .column-header .label{
+    -fx-text-fill : #fff;
+    -fx-border-radius: 10px;
+}
+.table-cell {
+    -fx-alignment: CENTER;
+}
+.dashboard-btn{
+    -fx-background-color:   #281F5F;
+    -fx-text-fill: #FFF;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+}
+.dashboard-btn:hover{
+    -fx-background-color:transparent;
+    -fx-background-radius: 5px;
+    -fx-text-fill:    #281F5F;
+    -fx-border-color:    #281F5F;
+    -fx-border-width: 1px;
+    -fx-border-style: solid;
+    -fx-border-radius: 5px;
+}
+.BtnWhiteBGGreen{
+    -fx-background-color:  #00A36C;
+    -fx-text-fill: #FFF;
+    -fx-background-radius: 5px;
+}
+.BtnWhiteBGGreen:hover{
+    -fx-background-color:#FFF;
+    -fx-background-radius: 5px;
+    -fx-text-fill:  #00A36C;
+    -fx-border-color:  #00A36C;
+    -fx-border-width: 1px;
+    -fx-border-style: solid;
+    -fx-border-radius: 5px;
+}
+.BtnWhiteBGRed{
+    -fx-background-color:  #C0392B;
+    -fx-text-fill: #FFF;
+    -fx-background-radius: 5px;
+}
+.BtnWhiteBGRed:hover{
+    -fx-background-color:#FFF;
+    -fx-background-radius: 5px;
+    -fx-text-fill:  #C0392B;
+    -fx-border-color:  #C0392B;
+    -fx-border-width: 1px;
+    -fx-border-style: solid;
+    -fx-border-radius: 5px;
+}
+.progress-bar {
+    -fx-accent: green; /* Color of the progress */
+}
+
+.progress-bar .track {
+    -fx-background-color: #f0f0f0; /* Color of the background track */
+}
+
+.progress-bar .bar {
+    -fx-background-color: #0066cc; /* Color of the progress bar */
+}
+
+
 
 
 

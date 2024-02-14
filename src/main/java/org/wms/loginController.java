@@ -56,7 +56,6 @@ public class loginController implements Initializable {
             logger.error("Error loading branding image", e);
         }
     }
-
     public class DatabaseQueryException extends RuntimeException {
         public DatabaseQueryException(String message, Throwable cause) {
             super(message, cause);
@@ -69,7 +68,7 @@ public class loginController implements Initializable {
         }
     }
 
-    private void switchScene(Scene newScene) {
+    public void switchScene(Scene newScene) {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         FadeTransition fadeOut = new FadeTransition(Duration.seconds(0.5), stage.getScene().getRoot());
         fadeOut.setFromValue(1);

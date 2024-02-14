@@ -10,8 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #23033B;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.wms.loginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #281F5F;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.wms.loginController">
    <children>
       <AnchorPane layoutX="406.0" prefHeight="600.0" prefWidth="393.0" style="-fx-background-color: ffffff; -fx-background-radius: 50;">
          <children>
@@ -62,7 +61,7 @@
                   <String fx:value="signupBtn" />
                </styleClass>
             </Button>
-            <Label layoutX="42.0" layoutY="68.0" text="Welcome back">
+            <Label layoutX="42.0" layoutY="68.0" text="Welcome">
                <font>
                   <Font name="Impact" size="35.0" />
                </font>
@@ -74,7 +73,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane prefHeight="600.0" prefWidth="394.0" style="-fx-background-color: #23033B;">
+      <AnchorPane prefHeight="600.0" prefWidth="394.0" style="-fx-background-color: #281F5F;">
          <children>
             <ImageView fx:id="brandingImageView" fitHeight="262.0" fitWidth="259.0" layoutX="63.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
                <image>
