@@ -1,15 +1,21 @@
 package org.wms;
+
 import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.mindrot.jbcrypt.BCrypt;
 
 import java.io.File;
@@ -20,7 +26,10 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 
-public class loginController implements Initializable  {
+public class loginController implements Initializable {
+
+    private final Logger logger = LogManager.getLogger(loginController.class);
+
     @FXML
     private Button cancelButton;
     @FXML
@@ -36,14 +45,30 @@ public class loginController implements Initializable  {
     @FXML
     private Button loginButton;
 
-
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle){
-        File brandingFile = new File("images/WMSLoginPage.png");
-        Image branding = new Image(brandingFile.toURI().toString());
-        brandingImageView.setImage(branding);
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        try {
+            File brandingFile = new File("images/WMSLoginPage.png");
+            Image branding = new Image(brandingFile.toURI().toString());
+            brandingImageView.setImage(branding);
+            logger.info("Branding image loaded successfully");
+        } catch (Exception e) {
+            logger.error("Error loading branding image", e);
+        }
     }
-    private void switchScene(Scene newScene) {
+    public class DatabaseQueryException extends RuntimeException {
+        public DatabaseQueryException(String message, Throwable cause) {
+            super(message, cause);
+        }
+    }
+
+    public class ViewLoadException extends Exception {
+        public ViewLoadException(String message, Throwable cause) {
+            super(message, cause);
+        }
+    }
+
+    public void switchScene(Scene newScene) {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         FadeTransition fadeOut = new FadeTransition(Duration.seconds(0.5), stage.getScene().getRoot());
         fadeOut.setFromValue(1);
@@ -56,21 +81,27 @@ public class loginController implements Initializable  {
             fadeIn.play();
         });
         fadeOut.play();
+        logger.debug("Switching scene");
     }
 
-    public void loginButtonOnAction(ActionEvent event){
-        if(!usernameTextField.getText().isBlank() && !enterPasswordField.getText().isBlank()){
+    @FXML
+    public void loginButtonOnAction(ActionEvent event) {
+        if (!usernameTextField.getText().isBlank() && !enterPasswordField.getText().isBlank()) {
             validateLogin();
-        }
-        else{
+        } else {
             loginMessageLabel.setText("Invalid User");
+            logger.warn("Invalid user login attempt");
         }
     }
-    public void cancelButtonOnAction(ActionEvent event){
+
+    @FXML
+    public void cancelButtonOnAction(ActionEvent event) {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
+        logger.info("Application closed");
     }
-    public void validateLogin() {
+
+    private void validateLogin() {
         DatabaseConnection connection = new DatabaseConnection();
         Connection connectionDB = connection.getConnection();
 
@@ -90,45 +121,59 @@ public class loginController implements Initializable  {
                 if (BCrypt.checkpw(enterPasswordField.getText(), storedHashedPassword)) {
                     if (isAdmin) {
                         adminSwitchLoad();
+                        logger.info("Admin logged in");
                     } else {
                         userSwitchLoad();
+                        logger.info("User logged in");
                     }
                     return; // Exit the method if login is successful
                 }
             }
             if (!userFound) {
                 loginMessageLabel.setText("User not found"); // User not found
+                logger.warn("User not found during login attempt");
             } else {
                 loginMessageLabel.setText("Invalid Password"); // Invalid password
+                logger.warn("Invalid password during login attempt");
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("Error occurs while validating user", e);
+            throw new DatabaseQueryException("Error occurs while validating user", e);
         }
     }
 
-
-    public void registerSwitchLoad(ActionEvent event) throws IOException {
+    @FXML
+    public void registerSwitchLoad(ActionEvent event) throws ViewLoadException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("registerView.fxml"));
-        switchScene(new Scene(fxmlLoader.load()));
+        try {
+            switchScene(new Scene(fxmlLoader.load()));
+            logger.info("Switched to register view");
+        } catch (IOException e) {
+            logger.error("Error loading register view", e);
+            throw new ViewLoadException("Error loading register view", e);
+        }
     }
 
-    private void userSwitchLoad() {
+    private void userSwitchLoad() throws ViewLoadException {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("userView.fxml"));
             switchScene(new Scene(fxmlLoader.load()));
+            logger.info("Switched to user view");
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("Error loading user view", e);
+            throw new ViewLoadException("Error loading user view", e);
         }
     }
 
-    private void adminSwitchLoad() {
+    private void adminSwitchLoad() throws ViewLoadException {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("adminView.fxml"));
             switchScene(new Scene(fxmlLoader.load()));
+            logger.info("Switched to admin view");
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("Error while Switching to admin",e);
+            throw new ViewLoadException("Error loading admin view", e);
+
         }
     }
-
-
 }
