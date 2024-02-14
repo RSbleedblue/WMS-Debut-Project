@@ -34,7 +34,7 @@ public class adminController implements Initializable {
     private Connection connectionDB;
     public int truckCapcityVal;
 
-    public adminController()  {
+    public adminController() {
         DatabaseConnection connection = new DatabaseConnection();
         connectionDB = connection.getConnection();
         try {
@@ -43,6 +43,7 @@ public class adminController implements Initializable {
             throw new RuntimeException(e);
         }
     }
+
     @FXML
     private ImageView select_commodity_detail_img;
     @FXML
@@ -105,9 +106,9 @@ public class adminController implements Initializable {
     @FXML
     private TableColumn<placedOrders, String> order_id_col;
     @FXML
-    private TableColumn<placedOrders,String> order_name_col;
+    private TableColumn<placedOrders, String> order_name_col;
     @FXML
-    private TableColumn<placedOrders,Integer> order_quality_col;
+    private TableColumn<placedOrders, Integer> order_quality_col;
     @FXML
     private TableColumn<placedOrders, Integer> orders_quantity_col;
 
@@ -156,8 +157,6 @@ public class adminController implements Initializable {
     private static final Logger logger = LogManager.getLogger(adminController.class);
 
 
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -182,6 +181,7 @@ public class adminController implements Initializable {
         }
 
     }
+
     private void loadPieChartData() throws SQLException {
         ObservableList<PieChart.Data> piechartData = FXCollections.observableArrayList();
         int totalDelivered = getDeliveryCount("delivered");
@@ -192,19 +192,21 @@ public class adminController implements Initializable {
 
         deliveryPieChart.setData(piechartData);
     }
+
     private int getDeliveryCount(String status) throws SQLException {
         String query = "SELECT COUNT(*) AS delivered_count\n" +
                 "FROM order_detail\n" +
                 "WHERE delivery_status = ?";
         PreparedStatement preparedStatement = connectionDB.prepareStatement(query);
-        preparedStatement.setString(1,status);
+        preparedStatement.setString(1, status);
         ResultSet resultSet = preparedStatement.executeQuery();
         int count = -1;
-        while(resultSet.next()){
+        while (resultSet.next()) {
             count = resultSet.getInt("delivered_count");
         }
         return count;
     }
+
     private void loadBarChartData(String commodityName) throws SQLException {
         ObservableList<OrderItem> commodityData = getBarChartData(commodityName);
         XYChart.Series<String, Number> series = new XYChart.Series<>();
@@ -235,11 +237,13 @@ public class adminController implements Initializable {
         }
         return chartData;
     }
+
     public class DatabaseQueryException extends RuntimeException {
         public DatabaseQueryException(String message, Throwable cause) {
             super(message, cause);
         }
     }
+
     public class RemainingQuantityException extends Exception {
         public RemainingQuantityException() {
             super();
@@ -255,6 +259,7 @@ public class adminController implements Initializable {
             super(message, cause);
         }
     }
+
     public class WarehouseUpdateException extends Exception {
         public WarehouseUpdateException() {
             super();
@@ -387,6 +392,7 @@ public class adminController implements Initializable {
             logger.info("Orders button clicked. Orders section displayed.");
         }
     }
+
     private void getOrdersPending() {
         int count = 0;
         String getOrders = "SELECT COUNT(*) AS not_delivered_count\n" +
@@ -435,6 +441,7 @@ public class adminController implements Initializable {
     }
 
     ObservableList<placedOrders> placedList;
+
     private void loadDeliverOrder() {
         placedList = getNotDeliveredOrders();
         order_id_col.setCellValueFactory(new PropertyValueFactory<>("Order_ID"));
@@ -516,6 +523,7 @@ public class adminController implements Initializable {
         return null;
 
     }
+
     private void showAlert(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle(title);
@@ -523,13 +531,14 @@ public class adminController implements Initializable {
         alert.setContentText(content);
         alert.showAndWait();
     }
+
     private ArrayList<placedOrders> pushOrders = new ArrayList<>();
 
 
     public void pushOrder() throws PushOrderException, SQLException {
         try {
             placedOrders pOds = order_table.getSelectionModel().getSelectedItem();
-            if(pOds == null){
+            if (pOds == null) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
                 alert.setHeaderText(null);
@@ -557,23 +566,21 @@ public class adminController implements Initializable {
 
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Loaded");
-                alert.setContentText("Order with ID: "+pOds.getOrder_ID()+" has been loaded into the truck");
+                alert.setContentText("Order with ID: " + pOds.getOrder_ID() + " has been loaded into the truck");
                 alert.showAndWait();
-            } else  if (pOds.getQuantity() >= remainingQuantity && pOds.getQuantity() <= truckCapcityVal){
+            } else if (pOds.getQuantity() >= remainingQuantity && pOds.getQuantity() <= truckCapcityVal) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
                 alert.setHeaderText(null);
                 alert.setContentText("Quantity are not sufficient in warehouse");
                 alert.showAndWait();
-            }
-            else if(pOds.getQuantity() >= truckCapcityVal && pOds.getQuantity() <= remainingQuantity){
+            } else if (pOds.getQuantity() >= truckCapcityVal && pOds.getQuantity() <= remainingQuantity) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
                 alert.setHeaderText(null);
                 alert.setContentText("Truck Capactiy is full");
                 alert.showAndWait();
-            }
-            else{
+            } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
                 alert.setHeaderText(null);
@@ -585,6 +592,7 @@ public class adminController implements Initializable {
             throw e;
         }
     }
+
     private int getTruckCapacity() throws SQLException {
         String query = "SELECT truck_capacity FROM truck_status";
         try {
@@ -639,6 +647,7 @@ public class adminController implements Initializable {
             throw new CancelPushedOrdersException("Error while canceling pushed orders.", e);
         }
     }
+
     private int getRemainingQuantity(int quality, String name) throws SQLException {
         int QuantityStatusVal = -1;
         String query = "SELECT quantity FROM commodities WHERE quality = ? AND name = ?";
@@ -671,6 +680,7 @@ public class adminController implements Initializable {
         }
         return c_name;
     }
+
     public void placeOrder() throws SQLException {
         if (pushOrders.isEmpty()) {
             logger.error("No orders pushed to place");
@@ -808,6 +818,7 @@ public class adminController implements Initializable {
             throw new WarehouseUpdateException("Error updating warehouse.", e);
         }
     }
+
     public void clearWarehouse() {
         commodity_Select.getSelectionModel().clearSelection();
         commodity_Select.setPromptText("Choose again");
@@ -815,6 +826,7 @@ public class adminController implements Initializable {
         quality_select.getSelectionModel().clearSelection();
         quality_select.setPromptText("0");
     }
+
     public void signoutAdmin(ActionEvent e) throws IOException {
         Stage stage = (Stage) signoutBTN_dashboard.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("loginView.fxml"));
@@ -822,5 +834,4 @@ public class adminController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
 }
