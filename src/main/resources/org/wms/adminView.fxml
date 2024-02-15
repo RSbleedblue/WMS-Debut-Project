@@ -110,7 +110,7 @@
       </AnchorPane>
       <AnchorPane fx:id="addCommoditySection" layoutX="248.0" onMouseClicked="#setHomeBtn" prefHeight="255.0" prefWidth="834.0" stylesheets="@style.css">
          <children>
-            <TableView fx:id="tableView" editable="true" layoutX="342.0" layoutY="260.0" onMouseClicked="#selectCommoditiesList" prefHeight="318.0" prefWidth="389.0" tableMenuButtonVisible="true">
+            <TableView fx:id="tableView" editable="true" layoutX="346.0" layoutY="270.0" onMouseClicked="#selectCommoditiesList" prefHeight="318.0" prefWidth="389.0" tableMenuButtonVisible="true">
                <columns>
                   <TableColumn fx:id="c_Name_Col" prefWidth="126.4000244140625" text="Commodity Name" />
                   <TableColumn fx:id="quality_Col" prefWidth="126.4000244140625" text="Quality Rating" />
@@ -168,7 +168,7 @@
                         <Reflection />
                      </effect>
                   </ImageView>
-                  <ProgressBar fx:id="progressBar" layoutX="61.0" layoutY="134.0" prefHeight="36.0" prefWidth="173.0" progress="1.0" stylesheets="@style.css">
+                  <ProgressBar fx:id="progressBar" layoutX="61.0" layoutY="130.0" prefHeight="24.0" prefWidth="174.0" progress="1.0" stylesheets="@style.css">
                      <effect>
                         <Reflection fraction="0.33" />
                      </effect>
@@ -179,8 +179,8 @@
                   <TextField fx:id="quality_com" layoutX="94.0" layoutY="239.0" prefHeight="27.0" prefWidth="61.0" promptText="0" />
                   <Label layoutX="161.0" layoutY="244.0" text="Quantity:" textFill="WHITE" />
                   <TextField fx:id="quantity_com" layoutX="215.0" layoutY="239.0" prefHeight="27.0" prefWidth="50.0" promptText="0" />
-                  <Label layoutX="47.0" layoutY="184.0" text="Selected Commodity: " textFill="WHITE" />
-                  <TextField fx:id="selected_com_update" layoutX="166.0" layoutY="180.0" prefHeight="27.0" prefWidth="116.0" promptText="select commodity" />
+                  <Label layoutX="47.0" layoutY="180.0" text="Selected Commodity: " textFill="WHITE" />
+                  <TextField fx:id="selected_com_update" layoutX="166.0" layoutY="176.0" prefHeight="27.0" prefWidth="116.0" promptText="select commodity" />
                </children>
             </AnchorPane>
          </children></AnchorPane>

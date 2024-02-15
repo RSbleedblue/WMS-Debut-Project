@@ -1,5 +1,6 @@
 package org.wms;
 
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -99,7 +100,7 @@ public class adminController implements Initializable {
     private Label orderPending;
 
     @FXML
-    private TableColumn<warehouseData, Integer> quality_Col;
+    private TableColumn<warehouseData, String> quality_Col;
 
     @FXML
     private TableColumn<warehouseData, Integer> quantity_Col;
@@ -363,7 +364,7 @@ public class adminController implements Initializable {
 
     private void initializeDropdowns() {
         commodity_Select.setItems(FXCollections.observableArrayList("Bed", "Sofa", "Table"));
-        quality_select.setItems(FXCollections.observableArrayList("poor", "bad", "average", "good", "best"));
+        quality_select.setItems(FXCollections.observableArrayList("POOR", "BAD", "AVERAGE", "GOOD", "BEST"));
         logger.info("Dropdowns initialized successfully.");
     }
 
@@ -392,14 +393,14 @@ public class adminController implements Initializable {
 
     public void loadWarehouseData() {
         list = getWareHouseData();
-       // c_ID_Col.setCellValueFactory(new PropertyValueFactory<>("c_ID"));
         MapQuality map = new MapQuality();
         c_Name_Col.setCellValueFactory(new PropertyValueFactory<>("name"));
-        quality_Col.setCellValueFactory(new PropertyValueFactory<>("quality"));
+        quality_Col.setCellValueFactory(cellData -> new SimpleStringProperty(map.getQualitiesName(cellData.getValue().getQuality())));
         quantity_Col.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         tableView.setItems(list);
         logger.info("Warehouse data loaded successfully.");
     }
+
 
     public void setHomeBtn(ActionEvent event) {
         if (event.getSource() == homeBtn) {
@@ -792,7 +793,7 @@ public class adminController implements Initializable {
             truckCapcityVal = 100;
             MapQuality map = new MapQuality();
             String c_Name = commodity_Select.getValue() != null ? commodity_Select.getValue().toLowerCase() : null;
-            Integer quality = map.getQualitiesValues(quality_select.getValue());
+            Integer quality = map.getQualitiesValues(quality_select.getValue().toLowerCase());
             int quantity;
             try {
                 quantity = Integer.parseInt(quantity_select.getText().trim());

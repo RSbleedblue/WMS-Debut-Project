@@ -12,7 +12,7 @@ public class MapQuality {
         qualitiesByNumber.put(3, "average");
         qualitiesByNumber.put(4, "good");
         qualitiesByNumber.put(5, "best");
-        return qualitiesByNumber.get(n);
+        return qualitiesByNumber.get(n).toUpperCase();
     }
     public int getQualitiesValues(String quality){
         qualitiesByName.put("poor", 1);
