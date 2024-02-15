@@ -14,9 +14,12 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.util.Callback;
+
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.wms.utils.MapQuality;
 
 import java.io.File;
 import java.io.IOException;
@@ -144,9 +147,11 @@ public class adminController implements Initializable {
     @FXML
     private TextField quantity_select;
     @FXML
-    private ComboBox<Integer> quality_select;
+    private ComboBox<String> quality_select;
     @FXML
     private Label truckINTime;
+    @FXML
+    private TextField selected_com_update;
     @FXML
     private Label truckOutTime;
     @FXML
@@ -358,7 +363,7 @@ public class adminController implements Initializable {
 
     private void initializeDropdowns() {
         commodity_Select.setItems(FXCollections.observableArrayList("Bed", "Sofa", "Table"));
-        quality_select.setItems(FXCollections.observableArrayList(1, 2, 3, 4, 5));
+        quality_select.setItems(FXCollections.observableArrayList("poor", "bad", "average", "good", "best"));
         logger.info("Dropdowns initialized successfully.");
     }
 
@@ -370,7 +375,7 @@ public class adminController implements Initializable {
             ResultSet result = prepare.executeQuery();
             while (result.next()) {
                 int c_id = Integer.parseInt(result.getString("c_ID"));
-                String name = result.getString("name");
+                String name = result.getString("name").toUpperCase();
                 int quality = Integer.parseInt(result.getString("quality"));
                 int quantity = Integer.parseInt(result.getString("quantity"));
                 warehouseData whd = new warehouseData(c_id, name, quality, quantity);
@@ -387,7 +392,8 @@ public class adminController implements Initializable {
 
     public void loadWarehouseData() {
         list = getWareHouseData();
-        c_ID_Col.setCellValueFactory(new PropertyValueFactory<>("c_ID"));
+       // c_ID_Col.setCellValueFactory(new PropertyValueFactory<>("c_ID"));
+        MapQuality map = new MapQuality();
         c_Name_Col.setCellValueFactory(new PropertyValueFactory<>("name"));
         quality_Col.setCellValueFactory(new PropertyValueFactory<>("quality"));
         quantity_Col.setCellValueFactory(new PropertyValueFactory<>("quantity"));
@@ -484,7 +490,7 @@ public class adminController implements Initializable {
         if (whd == null) {
             return;
         }
-        select_commodity_detail_img.setImage(setImageByCommodityName(whd.getName()));
+        select_commodity_detail_img.setImage(setImageByCommodityName(whd.getName().toLowerCase()));
         quantity_Col.setCellValueFactory(new PropertyValueFactory<>("quantity"));
 
         // Filter the list to include only items with the selected commodity name
@@ -497,8 +503,13 @@ public class adminController implements Initializable {
         double progress = (double) selectedQuantity / totalQuantity;
         progressBar.setProgress(progress);
         total_Quantity_com.setText(Integer.toString(totalQuantity));
-        quality_com.setText(Integer.toString(whd.getQuality()));
+
+        MapQuality map = new MapQuality();
+        String quality = map.getQualitiesName(whd.getQuality());
+
+        quality_com.setText(quality);
         quantity_com.setText(Integer.toString(selectedQuantity));
+        selected_com_update.setText(whd.getName().toUpperCase());
     }
 
     public void selectOrderList() throws SQLException {
@@ -760,6 +771,7 @@ public class adminController implements Initializable {
                 loadDeliverOrder();
                 truckTimeLoad();
                 getOrdersPending();
+                loadPieChartData();
                 pushOrders.clear();
 
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -778,9 +790,9 @@ public class adminController implements Initializable {
         try {
             // Set truck capacity to 100
             truckCapcityVal = 100;
-
+            MapQuality map = new MapQuality();
             String c_Name = commodity_Select.getValue() != null ? commodity_Select.getValue().toLowerCase() : null;
-            Integer quality = quality_select.getValue();
+            Integer quality = map.getQualitiesValues(quality_select.getValue());
             int quantity;
             try {
                 quantity = Integer.parseInt(quantity_select.getText().trim());
@@ -839,6 +851,7 @@ public class adminController implements Initializable {
             // Reload truck time and warehouse data
             truckTimeLoad();
             loadWarehouseData();
+            loadPieChartData();
         } catch (SQLException e) {
             logger.error("Error updating warehouse.", e);
             throw new WarehouseUpdateException("Error updating warehouse.", e);

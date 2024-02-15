@@ -108,74 +108,79 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="addCommoditySection" layoutX="248.0" onMouseClicked="#setHomeBtn" prefHeight="255.0" prefWidth="834.0" stylesheets="@style.css" visible="false">
+      <AnchorPane fx:id="addCommoditySection" layoutX="248.0" onMouseClicked="#setHomeBtn" prefHeight="255.0" prefWidth="834.0" stylesheets="@style.css">
          <children>
-            <TableView fx:id="tableView" editable="true" layoutX="342.0" layoutY="260.0" onMouseClicked="#selectCommoditiesList" prefHeight="318.0" prefWidth="486.0" tableMenuButtonVisible="true">
+            <TableView fx:id="tableView" editable="true" layoutX="342.0" layoutY="260.0" onMouseClicked="#selectCommoditiesList" prefHeight="318.0" prefWidth="389.0" tableMenuButtonVisible="true">
                <columns>
-                  <TableColumn fx:id="c_ID_Col" prefWidth="100.00001525878906" text="Commodity ID" />
                   <TableColumn fx:id="c_Name_Col" prefWidth="126.4000244140625" text="Commodity Name" />
                   <TableColumn fx:id="quality_Col" prefWidth="126.4000244140625" text="Quality Rating" />
                   <TableColumn fx:id="quantity_Col" prefWidth="126.4000244140625" text="Quantity" />
                </columns>
             </TableView>
-            <Label layoutX="42.0" layoutY="44.0" text="Select Commodity" textFill="WHITE">
+            <Label layoutX="42.0" layoutY="67.0" text="Select Commodity:" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <ComboBox fx:id="commodity_Select" layoutX="216.0" layoutY="45.0" prefWidth="150.0" promptText="choose" style="-fx-background-color: fff;" stylesheets="@style.css">
+            <ComboBox fx:id="commodity_Select" layoutX="216.0" layoutY="68.0" prefWidth="150.0" promptText="Select" style="-fx-background-color: fff;" stylesheets="@style.css">
                <styleClass>
                   <String fx:value="list-cell" />
                   <String fx:value="list-view" />
                </styleClass>
             </ComboBox>
-            <Label layoutX="42.0" layoutY="108.0" text="Quantity" textFill="WHITE">
+            <Label layoutX="42.0" layoutY="131.0" text="Quantity:" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="42.0" layoutY="168.0" text="Quality" textFill="WHITE">
+            <Label layoutX="42.0" layoutY="191.0" text="Quality:" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <ComboBox fx:id="quality_select" layoutX="216.0" layoutY="169.0" prefWidth="150.0" promptText="0" style="-fx-background-color: fff;" stylesheets="@style.css">
+            <ComboBox fx:id="quality_select" layoutX="128.0" layoutY="191.0" prefWidth="150.0" promptText="Select" style="-fx-background-color: fff;" stylesheets="@style.css">
                <styleClass>
                   <String fx:value="list-cell" />
                   <String fx:value="list-view" />
                   <String fx:value="animated-button" />
                </styleClass>
             </ComboBox>
-            <Button fx:id="update_com_btn" layoutX="450.0" layoutY="49.0" mnemonicParsing="false" onAction="#updateWarehouse" prefHeight="26.0" prefWidth="150.0" stylesheets="@style.css" text="UPDATE" textFill="WHITE">
+            <Button fx:id="update_com_btn" layoutX="417.0" layoutY="129.0" mnemonicParsing="false" onAction="#updateWarehouse" prefHeight="26.0" prefWidth="150.0" stylesheets="@style.css" text="UPDATE" textFill="WHITE">
                <styleClass>
                   <String fx:value="animated-button" />
                   <String fx:value="BtnWhiteBGGreen" />
                </styleClass></Button>
-            <Button fx:id="clear_com_btn" layoutX="452.0" layoutY="95.0" mnemonicParsing="false" onAction="#clearWarehouse" prefHeight="26.0" prefWidth="150.0" stylesheets="@style.css" text="CLEAR SELECTION" textFill="WHITE">
+            <Button fx:id="clear_com_btn" layoutX="417.0" layoutY="192.0" mnemonicParsing="false" onAction="#clearWarehouse" prefHeight="26.0" prefWidth="150.0" stylesheets="@style.css" text="CLEAR SELECTION" textFill="WHITE">
                <styleClass>
                   <String fx:value="BtnWhiteBGRed" />
                   <String fx:value="animated-button" />
                </styleClass></Button>
             <Separator layoutX="2.0" layoutY="258.0" prefHeight="3.0" prefWidth="827.0" />
-            <TextField fx:id="quantity_select" layoutX="217.0" layoutY="114.0" stylesheets="@style.css" />
+            <TextField fx:id="quantity_select" layoutX="128.0" layoutY="133.0" promptText="Enter" stylesheets="@style.css">
+               <styleClass>
+                  <String fx:value="list-cell" />
+                  <String fx:value="list-view" />
+               </styleClass></TextField>
             <AnchorPane layoutX="31.0" layoutY="286.0" prefHeight="265.0" prefWidth="294.0" style="-fx-background-color: transparent; -fx-border-radius: 20;">
                <children>
-                  <ImageView fx:id="select_commodity_detail_img" fitHeight="126.0" fitWidth="151.0" layoutX="72.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="126.39999999999998" AnchorPane.leftAnchor="72.0" AnchorPane.rightAnchor="71.39999999999998" AnchorPane.topAnchor="14.0">
+                  <ImageView fx:id="select_commodity_detail_img" fitHeight="126.0" fitWidth="151.0" layoutX="72.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="143.0" AnchorPane.leftAnchor="72.0" AnchorPane.rightAnchor="71.39999999999998" AnchorPane.topAnchor="-1.0">
                      <effect>
                         <Reflection />
                      </effect>
                   </ImageView>
-                  <ProgressBar fx:id="progressBar" layoutX="47.0" layoutY="134.0" prefHeight="36.0" prefWidth="200.0" progress="1.0" stylesheets="@style.css">
+                  <ProgressBar fx:id="progressBar" layoutX="61.0" layoutY="134.0" prefHeight="36.0" prefWidth="173.0" progress="1.0" stylesheets="@style.css">
                      <effect>
-                        <Reflection />
+                        <Reflection fraction="0.33" />
                      </effect>
                   </ProgressBar>
-                  <Label layoutX="47.0" layoutY="198.0" text="Total Quantity: " textFill="WHITE" />
-                  <TextField fx:id="total_Quantity_com" layoutX="133.0" layoutY="193.0" prefHeight="27.0" prefWidth="49.0" promptText="0" />
-                  <Label layoutX="47.0" layoutY="227.0" text="Quality: " textFill="WHITE" />
-                  <TextField fx:id="quality_com" layoutX="94.0" layoutY="224.0" prefHeight="27.0" prefWidth="50.0" promptText="0" />
-                  <Label layoutX="161.0" layoutY="229.0" text="Quantity:" textFill="WHITE" />
-                  <TextField fx:id="quantity_com" layoutX="215.0" layoutY="224.0" prefHeight="27.0" prefWidth="50.0" promptText="0" />
+                  <Label layoutX="47.0" layoutY="211.0" text="Total Quantity: " textFill="WHITE" />
+                  <TextField fx:id="total_Quantity_com" layoutX="131.0" layoutY="209.0" prefHeight="27.0" prefWidth="50.0" promptText="0" />
+                  <Label layoutX="47.0" layoutY="242.0" text="Quality: " textFill="WHITE" />
+                  <TextField fx:id="quality_com" layoutX="94.0" layoutY="239.0" prefHeight="27.0" prefWidth="61.0" promptText="0" />
+                  <Label layoutX="161.0" layoutY="244.0" text="Quantity:" textFill="WHITE" />
+                  <TextField fx:id="quantity_com" layoutX="215.0" layoutY="239.0" prefHeight="27.0" prefWidth="50.0" promptText="0" />
+                  <Label layoutX="47.0" layoutY="184.0" text="Selected Commodity: " textFill="WHITE" />
+                  <TextField fx:id="selected_com_update" layoutX="166.0" layoutY="180.0" prefHeight="27.0" prefWidth="116.0" promptText="select commodity" />
                </children>
             </AnchorPane>
          </children></AnchorPane>
@@ -247,7 +252,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="dashboardSection" layoutX="255.0" prefHeight="600.0" prefWidth="827.0" style="-fx-background-color: #281F5F;">
+      <AnchorPane fx:id="dashboardSection" layoutX="255.0" prefHeight="600.0" prefWidth="827.0" style="-fx-background-color: #281F5F;" visible="false">
          <children>
             <Label layoutX="54.0" layoutY="22.0" prefHeight="58.0" prefWidth="226.0" style="-fx-text-fill: fff;" text="Warehouse">
                <font>
