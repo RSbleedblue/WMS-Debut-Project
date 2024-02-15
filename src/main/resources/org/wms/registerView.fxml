@@ -6,12 +6,13 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #281F5F;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.wms.RegisterController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #474F7A;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.wms.RegisterController">
    <children>
       <AnchorPane layoutX="2.0" prefHeight="600.0" prefWidth="394.0" style="-fx-background-color: fff; -fx-background-radius: 50;">
          <children>
@@ -22,7 +23,7 @@
             <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="89.0" layoutY="251.0" text="Email *" />
             <TextField fx:id="reg_Uname" layoutX="89.0" layoutY="275.0" prefHeight="26.0" prefWidth="200.0" stylesheets="@style.css" />
             <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="89.0" layoutY="319.0" text="Password *" />
-            <Button fx:id="regButton" alignment="CENTER" layoutX="89.0" layoutY="442.0" mnemonicParsing="false" onAction="#register" prefHeight="36.0" prefWidth="200.0" stylesheets="@style.css" text="Register" textFill="WHITE">
+            <Button fx:id="regButton" alignment="CENTER" layoutX="89.0" layoutY="442.0" mnemonicParsing="false" onAction="#register" prefHeight="36.0" prefWidth="200.0" stylesheets="@style.css" text="Register">
                <font>
                   <Font size="16.0" />
                </font>
@@ -42,26 +43,32 @@
                </styleClass>
             </Button>
             <ComboBox fx:id="isAdmin" layoutX="89.0" layoutY="393.0" prefWidth="150.0" promptText="Account status *" styleClass="quality-bar" stylesheets="@style.css" />
-            <Label layoutX="79.0" layoutY="40.0" prefHeight="64.0" prefWidth="235.0" text="Register Here">
+            <Label layoutX="79.0" layoutY="40.0" prefHeight="64.0" prefWidth="235.0" text="Register Here" textFill="#474f7a">
                <font>
                   <Font name="Impact" size="40.0" />
                </font>
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="400.0" prefHeight="600.0" prefWidth="394.0" style="-fx-background-color: #281F5F;">
+      <AnchorPane layoutX="400.0" prefHeight="600.0" prefWidth="394.0" style="-fx-background-color: #474F7A;">
          <children>
             <ImageView fx:id="brandingImageView" fitHeight="262.0" fitWidth="259.0" layoutX="63.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../images/WMSLoginPage.png" />
                </image>
+               <effect>
+                  <Reflection fraction="0.74" topOpacity="0.23" />
+               </effect>
             </ImageView>
             <Label layoutX="111.0" layoutY="364.0" style="-fx-text-fill: fff;" text="SHIP WITH US" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
+               <effect>
+                  <Reflection />
+               </effect>
             </Label>
-            <Label layoutX="120.0" layoutY="556.0" style="-fx-text-fill: D3D3D3;" text="Copyright © 2024, All rights preserved" textFill="#b9b9b9">
+            <Label layoutX="107.0" layoutY="570.0" style="-fx-text-fill: D3D3D3;" text="Copyright © 2024, All rights preserved" textFill="#b9b9b9">
                <font>
                   <Font size="10.0" />
                </font>

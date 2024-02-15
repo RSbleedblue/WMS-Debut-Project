@@ -368,7 +368,7 @@
                   <String fx:value="animated-button" />
                </styleClass>
                <children>
-                  <BarChart fx:id="barChart_dashboard" layoutX="9.0" layoutY="4.0" prefHeight="306.0" prefWidth="418.0">
+                  <BarChart fx:id="barChart_dashboard" layoutX="9.0" layoutY="4.0" prefHeight="306.0" prefWidth="418.0" stylesheets="@style.css">
                     <xAxis>
                       <CategoryAxis side="BOTTOM" fx:id="xAxis" />
                     </xAxis>

@@ -33,19 +33,19 @@
             <Image url="@../../../../../images/thanks.png" />
          </image>
       </ImageView>
-      <Label fx:id="orderShowTextField" layoutX="283.0" layoutY="306.0" prefHeight="166.0" prefWidth="367.0" text="Your order has been placed">
+      <Label fx:id="orderShowTextField" layoutX="283.0" layoutY="373.0" prefHeight="50.0" prefWidth="250.0" text="Your order has been placed">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <ImageView fx:id="wmsLogoThanks" fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="wmsLogoThanks" fitHeight="83.0" fitWidth="116.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../images/WMSLoginPage.png" />
          </image>
       </ImageView>
-      <Label layoutX="142.0" layoutY="71.0" text="WMS">
+      <Label layoutX="95.0" layoutY="32.0" text="WMS">
          <font>
-            <Font name="Impact" size="46.0" />
+            <Font name="Arial Bold" size="46.0" />
          </font>
       </Label>
    </children>
