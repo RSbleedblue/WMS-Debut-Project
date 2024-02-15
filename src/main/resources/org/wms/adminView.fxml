@@ -108,7 +108,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="addCommoditySection" layoutX="248.0" onMouseClicked="#setHomeBtn" prefHeight="255.0" prefWidth="834.0" stylesheets="@style.css">
+      <AnchorPane fx:id="addCommoditySection" layoutX="248.0" onMouseClicked="#setHomeBtn" prefHeight="255.0" prefWidth="834.0" stylesheets="@style.css" visible="false">
          <children>
             <TableView fx:id="tableView" editable="true" layoutX="346.0" layoutY="270.0" onMouseClicked="#selectCommoditiesList" prefHeight="318.0" prefWidth="389.0" tableMenuButtonVisible="true">
                <columns>
@@ -252,7 +252,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="dashboardSection" layoutX="255.0" prefHeight="600.0" prefWidth="827.0" style="-fx-background-color: #281F5F;" visible="false">
+      <AnchorPane fx:id="dashboardSection" layoutX="255.0" prefHeight="600.0" prefWidth="827.0" style="-fx-background-color: #281F5F;">
          <children>
             <Label layoutX="54.0" layoutY="22.0" prefHeight="58.0" prefWidth="226.0" style="-fx-text-fill: fff;" text="Warehouse">
                <font>
@@ -272,7 +272,7 @@
                   <DropShadow />
                </effect>
             </ImageView>
-            <AnchorPane layoutX="257.0" layoutY="64.0" prefHeight="106.0" prefWidth="494.0" style="-fx-background-radius: 50; -fx-background-color: fff;" styleClass="animated-button" stylesheets="@style.css">
+            <AnchorPane layoutX="297.0" layoutY="42.0" prefHeight="106.0" prefWidth="494.0" style="-fx-background-radius: 50; -fx-background-color: fff;" styleClass="animated-button" stylesheets="@style.css">
                <children>
                   <Label layoutX="74.0" layoutY="21.0" text="Orders">
                      <font>
@@ -366,6 +366,20 @@
                   <Font name="Impact" size="28.0" />
                </font>
             </Label>
+            <AnchorPane layoutX="518.0" layoutY="179.0" prefHeight="50.0" prefWidth="242.0" style="-fx-background-color: fff; -fx-background-radius: 20px;">
+               <children>
+                  <Label layoutX="17.0" layoutY="12.0" text="Truck Delivery Status:">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="truck_del_status" layoutX="200.0" layoutY="11.0" prefHeight="24.0" prefWidth="34.0" text="-----">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
    </children>

@@ -3723,3 +3723,679 @@ Caused by: javafx.fxml.LoadException: Controller value already specified.
 10:00:00.317 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
 10:00:00.318 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in
 10:00:23.467 [JavaFX Application Thread] INFO  org.wms.adminController - Home button clicked. Dashboard section displayed.
+10:09:50.727 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+10:09:51.571 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+10:09:51.864 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+10:10:03.247 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+10:10:03.250 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 2
+10:10:03.253 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+10:10:03.254 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+10:10:03.256 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+10:10:03.260 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+10:10:03.261 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+10:10:03.294 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+10:10:03.295 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in
+10:10:06.543 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.
+10:13:24.404 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+10:13:25.175 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+10:13:25.457 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+10:13:35.250 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+10:13:35.253 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 2
+10:13:35.256 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+10:13:35.256 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+10:13:35.258 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+10:13:35.262 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+10:13:35.263 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+10:13:35.299 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+10:13:35.299 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in
+10:13:38.266 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.
+10:13:52.086 [JavaFX Application Thread] INFO  org.wms.adminController - Add Commodity button clicked. Add commodity section displayed.
+10:14:06.230 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+10:14:06.232 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+10:14:15.719 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.
+10:14:24.570 [JavaFX Application Thread] INFO  org.wms.adminController - Home button clicked. Dashboard section displayed.
+10:14:31.352 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.
+10:14:36.439 [JavaFX Application Thread] INFO  org.wms.adminController - Add Commodity button clicked. Add commodity section displayed.
+10:14:39.530 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.
+10:16:13.947 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+10:16:14.660 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+10:16:14.927 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+10:16:24.163 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+10:16:24.166 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 2
+10:16:24.169 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+10:16:24.170 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+10:16:24.172 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+10:16:24.177 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+10:16:24.178 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+10:16:24.217 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+10:16:24.217 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in
+10:16:26.685 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.
+10:17:05.043 [JavaFX Application Thread] INFO  org.wms.adminController - Add Commodity button clicked. Add commodity section displayed.
+10:17:06.533 [JavaFX Application Thread] INFO  org.wms.adminController - Home button clicked. Dashboard section displayed.
+10:17:08.631 [JavaFX Application Thread] INFO  org.wms.adminController - Add Commodity button clicked. Add commodity section displayed.
+10:25:45.756 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+10:25:46.540 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+10:25:46.825 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+10:25:54.484 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+10:25:54.488 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 2
+10:25:54.491 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+10:25:54.491 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+10:25:54.493 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+10:25:54.497 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+10:25:54.498 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+10:25:54.533 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+10:25:54.533 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in
+10:26:02.283 [JavaFX Application Thread] ERROR org.wms.adminController - Invalid quantity entered
+java.lang.NumberFormatException: For input string: "as"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:67) ~[?:?]
+	at java.lang.Integer.parseInt(Integer.java:668) ~[?:?]
+	at java.lang.Integer.parseInt(Integer.java:784) ~[?:?]
+	at org.wms.adminController.updateWarehouse(adminController.java:811) ~[classes/:?]
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:577) ~[?:?]
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77) ~[javafx-base-18.0.2-win.jar:?]
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:577) ~[?:?]
+	at com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1854) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1724) ~[javafx-fxml-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.event.Event.fireEvent(Event.java:198) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.scene.Node.fireEvent(Node.java:8797) ~[javafx-graphics-18.0.2-win.jar:?]
+	at javafx.scene.control.Button.fire(Button.java:203) ~[javafx-controls-18.0.2-win.jar:?]
+	at com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:208) ~[javafx-controls-18.0.2-win.jar:?]
+	at com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274) ~[javafx-controls-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.event.Event.fireEvent(Event.java:198) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3881) ~[javafx-graphics-18.0.2-win.jar:?]
+	at javafx.scene.Scene.processMouseEvent(Scene.java:1874) ~[javafx-graphics-18.0.2-win.jar:?]
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2607) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301) ~[javafx-graphics-18.0.2-win.jar:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:399) ~[?:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:551) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.View.notifyMouse(View.java:937) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184) ~[javafx-graphics-18.0.2-win.jar:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+10:26:14.914 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+10:26:14.916 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+10:33:22.433 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+10:33:23.211 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+10:33:23.486 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+10:33:42.209 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+10:33:42.211 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 2
+10:33:42.214 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+10:33:42.214 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+10:33:42.216 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+10:33:42.221 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+10:33:42.222 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+10:33:42.257 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+10:33:42.258 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in
+10:33:52.071 [JavaFX Application Thread] INFO  org.wms.adminController - Home button clicked. Dashboard section displayed.
+10:41:50.846 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+10:41:51.494 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+10:41:51.765 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+10:42:10.318 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+10:42:10.320 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 2
+10:42:10.325 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+10:42:10.325 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+10:42:10.327 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+10:42:10.331 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+10:42:10.332 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+10:42:10.369 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+10:42:10.369 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in
+10:42:14.854 [JavaFX Application Thread] INFO  org.wms.adminController - Home button clicked. Dashboard section displayed.
+10:44:21.853 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+10:44:22.521 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+10:44:22.796 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+10:44:48.483 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+10:44:48.489 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 2
+10:44:48.494 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+10:44:48.495 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+10:44:48.497 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+10:44:48.502 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+10:44:48.503 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+10:44:48.537 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+10:44:48.538 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in
+10:44:51.520 [JavaFX Application Thread] INFO  org.wms.adminController - Home button clicked. Dashboard section displayed.
+10:45:17.078 [JavaFX Application Thread] INFO  org.wms.adminController - Add Commodity button clicked. Add commodity section displayed.
+10:45:24.961 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.
+10:45:26.815 [JavaFX Application Thread] INFO  org.wms.adminController - Home button clicked. Dashboard section displayed.
+10:45:28.423 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.
+10:49:19.234 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+10:49:19.923 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+10:49:20.203 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+10:49:28.430 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+10:49:28.437 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 2
+10:49:28.441 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+10:49:28.442 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+10:49:28.444 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+10:49:28.449 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+10:49:28.449 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+10:49:28.483 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+10:49:28.483 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in
+10:49:34.374 [JavaFX Application Thread] INFO  org.wms.adminController - Home button clicked. Dashboard section displayed.
+10:49:38.122 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.
+10:49:44.133 [JavaFX Application Thread] INFO  org.wms.adminController - Updating delivery status for order ID: 3d3f
+10:49:44.166 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+10:49:44.167 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+10:49:44.168 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+10:49:44.169 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 0
+10:49:50.923 [JavaFX Application Thread] INFO  org.wms.adminController - Home button clicked. Dashboard section displayed.
+10:49:56.598 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.
+10:50:03.844 [JavaFX Application Thread] INFO  org.wms.adminController - Home button clicked. Dashboard section displayed.
+10:50:05.106 [JavaFX Application Thread] INFO  org.wms.adminController - Add Commodity button clicked. Add commodity section displayed.
+10:50:08.641 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+10:50:17.056 [JavaFX Application Thread] INFO  org.wms.userController - User controller initialized successfully
+10:50:17.058 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to user view
+10:50:17.059 [JavaFX Application Thread] INFO  org.wms.loginController - User logged in
+10:50:26.365 [JavaFX Application Thread] INFO  org.wms.thankyouController - Thank you page initialized successfully
+10:50:27.516 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+10:50:27.524 [JavaFX Application Thread] INFO  org.wms.thankyouController - Closing the window and returning to login view
+10:50:36.079 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+10:50:36.081 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 2
+10:50:36.083 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+10:50:36.084 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+10:50:36.085 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+10:50:36.088 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+10:50:36.088 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+10:50:36.100 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+10:50:36.100 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in
+10:50:38.574 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.
+10:50:46.449 [JavaFX Application Thread] INFO  org.wms.adminController - Updating delivery status for order ID: b926
+10:50:46.466 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+10:50:46.467 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+10:50:46.468 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+10:50:46.469 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 0
+10:50:56.257 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+10:51:07.111 [JavaFX Application Thread] INFO  org.wms.userController - User controller initialized successfully
+10:51:07.112 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to user view
+10:51:07.113 [JavaFX Application Thread] INFO  org.wms.loginController - User logged in
+10:51:12.293 [JavaFX Application Thread] INFO  org.wms.thankyouController - Thank you page initialized successfully
+10:51:13.692 [JavaFX Application Thread] INFO  org.wms.userController - User controller initialized successfully
+10:51:13.717 [JavaFX Application Thread] INFO  org.wms.thankyouController - Redirecting to user view
+10:51:17.912 [JavaFX Application Thread] INFO  org.wms.thankyouController - Thank you page initialized successfully
+10:51:19.413 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+10:51:19.419 [JavaFX Application Thread] INFO  org.wms.thankyouController - Closing the window and returning to login view
+10:51:26.533 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+10:51:26.535 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 2
+10:51:26.536 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+10:51:26.536 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+10:51:26.537 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+10:51:26.541 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+10:51:26.542 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+10:51:26.550 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+10:51:26.550 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in
+10:51:29.019 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.
+10:51:34.981 [JavaFX Application Thread] INFO  org.wms.adminController - Updating delivery status for order ID: 56f4
+10:51:35.000 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+10:51:35.000 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+10:51:35.002 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+10:51:35.002 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 1
+10:51:54.149 [JavaFX Application Thread] INFO  org.wms.adminController - Home button clicked. Dashboard section displayed.
+11:03:13.323 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+11:03:14.190 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+11:03:14.486 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+11:03:21.778 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+11:03:21.781 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 1
+11:03:21.784 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+11:03:21.784 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+11:03:21.787 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+11:03:21.791 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+11:03:21.792 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+11:03:21.797 [JavaFX Application Thread] ERROR org.wms.loginController - Error while Switching to admin
+javafx.fxml.LoadException: 
+/E:/IntelijFiles/WMS/target/classes/org/wms/adminView.fxml
+
+	at javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2707) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2685) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2516) ~[javafx-fxml-18.0.2-win.jar:?]
+	at org.wms.loginController.adminSwitchLoad(loginController.java:190) ~[classes/:?]
+	at org.wms.loginController.validateLogin(loginController.java:126) ~[classes/:?]
+	at org.wms.loginController.loginButtonOnAction(loginController.java:93) ~[classes/:?]
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:577) ~[?:?]
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77) ~[javafx-base-18.0.2-win.jar:?]
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:577) ~[?:?]
+	at com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1852) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1724) ~[javafx-fxml-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.event.Event.fireEvent(Event.java:198) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.scene.Node.fireEvent(Node.java:8797) ~[javafx-graphics-18.0.2-win.jar:?]
+	at javafx.scene.control.Button.fire(Button.java:203) ~[javafx-controls-18.0.2-win.jar:?]
+	at com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:208) ~[javafx-controls-18.0.2-win.jar:?]
+	at com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274) ~[javafx-controls-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.event.Event.fireEvent(Event.java:198) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3881) ~[javafx-graphics-18.0.2-win.jar:?]
+	at javafx.scene.Scene.processMouseEvent(Scene.java:1874) ~[javafx-graphics-18.0.2-win.jar:?]
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2607) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301) ~[javafx-graphics-18.0.2-win.jar:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:399) ~[?:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:551) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.View.notifyMouse(View.java:937) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184) ~[javafx-graphics-18.0.2-win.jar:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+Caused by: java.lang.RuntimeException: java.sql.SQLException: Before start of result set
+	at org.wms.adminController.initialize(adminController.java:195) ~[classes/:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2655) ~[javafx-fxml-18.0.2-win.jar:?]
+	... 59 more
+Caused by: java.sql.SQLException: Before start of result set
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130) ~[mysql-connector-j-8.0.33.jar:?]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:98) ~[mysql-connector-j-8.0.33.jar:?]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:90) ~[mysql-connector-j-8.0.33.jar:?]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:64) ~[mysql-connector-j-8.0.33.jar:?]
+	at com.mysql.cj.jdbc.result.ResultSetImpl.checkRowPos(ResultSetImpl.java:532) ~[mysql-connector-j-8.0.33.jar:?]
+	at com.mysql.cj.jdbc.result.ResultSetImpl.getObject(ResultSetImpl.java:1322) ~[mysql-connector-j-8.0.33.jar:?]
+	at com.mysql.cj.jdbc.result.ResultSetImpl.getInt(ResultSetImpl.java:830) ~[mysql-connector-j-8.0.33.jar:?]
+	at com.mysql.cj.jdbc.result.ResultSetImpl.getInt(ResultSetImpl.java:851) ~[mysql-connector-j-8.0.33.jar:?]
+	at org.wms.adminController.truck_del_status(adminController.java:347) ~[classes/:?]
+	at org.wms.adminController.setTruckStatus(adminController.java:335) ~[classes/:?]
+	at org.wms.adminController.initialize(adminController.java:193) ~[classes/:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2655) ~[javafx-fxml-18.0.2-win.jar:?]
+	... 59 more
+11:03:21.808 [JavaFX Application Thread] ERROR org.wms.loginController - Error occurs while validating user
+org.wms.loginController$ViewLoadException: Error loading admin view
+	at org.wms.loginController.adminSwitchLoad(loginController.java:194) ~[classes/:?]
+	at org.wms.loginController.validateLogin(loginController.java:126) ~[classes/:?]
+	at org.wms.loginController.loginButtonOnAction(loginController.java:93) ~[classes/:?]
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:577) ~[?:?]
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77) ~[javafx-base-18.0.2-win.jar:?]
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:577) ~[?:?]
+	at com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1852) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1724) ~[javafx-fxml-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.event.Event.fireEvent(Event.java:198) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.scene.Node.fireEvent(Node.java:8797) ~[javafx-graphics-18.0.2-win.jar:?]
+	at javafx.scene.control.Button.fire(Button.java:203) ~[javafx-controls-18.0.2-win.jar:?]
+	at com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:208) ~[javafx-controls-18.0.2-win.jar:?]
+	at com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274) ~[javafx-controls-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.event.Event.fireEvent(Event.java:198) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3881) ~[javafx-graphics-18.0.2-win.jar:?]
+	at javafx.scene.Scene.processMouseEvent(Scene.java:1874) ~[javafx-graphics-18.0.2-win.jar:?]
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2607) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301) ~[javafx-graphics-18.0.2-win.jar:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:399) ~[?:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:551) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.View.notifyMouse(View.java:937) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184) ~[javafx-graphics-18.0.2-win.jar:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+Caused by: javafx.fxml.LoadException: 
+/E:/IntelijFiles/WMS/target/classes/org/wms/adminView.fxml
+
+	at javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2707) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2685) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2516) ~[javafx-fxml-18.0.2-win.jar:?]
+	at org.wms.loginController.adminSwitchLoad(loginController.java:190) ~[classes/:?]
+	... 56 more
+Caused by: java.lang.RuntimeException: java.sql.SQLException: Before start of result set
+	at org.wms.adminController.initialize(adminController.java:195) ~[classes/:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2655) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2516) ~[javafx-fxml-18.0.2-win.jar:?]
+	at org.wms.loginController.adminSwitchLoad(loginController.java:190) ~[classes/:?]
+	... 56 more
+Caused by: java.sql.SQLException: Before start of result set
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130) ~[mysql-connector-j-8.0.33.jar:?]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:98) ~[mysql-connector-j-8.0.33.jar:?]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:90) ~[mysql-connector-j-8.0.33.jar:?]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:64) ~[mysql-connector-j-8.0.33.jar:?]
+	at com.mysql.cj.jdbc.result.ResultSetImpl.checkRowPos(ResultSetImpl.java:532) ~[mysql-connector-j-8.0.33.jar:?]
+	at com.mysql.cj.jdbc.result.ResultSetImpl.getObject(ResultSetImpl.java:1322) ~[mysql-connector-j-8.0.33.jar:?]
+	at com.mysql.cj.jdbc.result.ResultSetImpl.getInt(ResultSetImpl.java:830) ~[mysql-connector-j-8.0.33.jar:?]
+	at com.mysql.cj.jdbc.result.ResultSetImpl.getInt(ResultSetImpl.java:851) ~[mysql-connector-j-8.0.33.jar:?]
+	at org.wms.adminController.truck_del_status(adminController.java:347) ~[classes/:?]
+	at org.wms.adminController.setTruckStatus(adminController.java:335) ~[classes/:?]
+	at org.wms.adminController.initialize(adminController.java:193) ~[classes/:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2655) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2516) ~[javafx-fxml-18.0.2-win.jar:?]
+	at org.wms.loginController.adminSwitchLoad(loginController.java:190) ~[classes/:?]
+	... 56 more
+11:04:55.900 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+11:04:56.660 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+11:04:56.938 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+11:05:06.469 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+11:05:06.471 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 1
+11:05:06.474 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+11:05:06.474 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+11:05:06.476 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+11:05:06.479 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+11:05:06.480 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+11:05:06.519 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+11:05:06.519 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in
+11:05:25.893 [JavaFX Application Thread] INFO  org.wms.adminController - Add Commodity button clicked. Add commodity section displayed.
+11:05:33.589 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+11:05:33.590 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+11:05:36.242 [JavaFX Application Thread] INFO  org.wms.adminController - Home button clicked. Dashboard section displayed.
+11:05:39.001 [JavaFX Application Thread] INFO  org.wms.adminController - Add Commodity button clicked. Add commodity section displayed.
+11:05:40.805 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+11:05:40.806 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+11:05:45.381 [JavaFX Application Thread] INFO  org.wms.adminController - Home button clicked. Dashboard section displayed.
+11:05:55.998 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.
+11:05:58.575 [JavaFX Application Thread] INFO  org.wms.adminController - Home button clicked. Dashboard section displayed.
+11:06:07.092 [JavaFX Application Thread] INFO  org.wms.adminController - Add Commodity button clicked. Add commodity section displayed.
+11:08:29.798 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+11:08:30.462 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+11:08:30.750 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+11:08:37.625 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+11:08:37.626 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 1
+11:08:37.630 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+11:08:37.630 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+11:08:37.633 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+11:08:37.637 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+11:08:37.638 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+11:08:37.673 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+11:08:37.673 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in
+11:08:41.444 [JavaFX Application Thread] INFO  org.wms.adminController - Add Commodity button clicked. Add commodity section displayed.
+11:08:52.806 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+11:08:52.808 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+11:08:54.682 [JavaFX Application Thread] INFO  org.wms.adminController - Home button clicked. Dashboard section displayed.
+11:11:03.482 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+11:11:04.123 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+11:11:04.399 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+11:11:12.925 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+11:11:12.929 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 1
+11:11:12.932 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+11:11:12.932 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+11:11:12.934 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+11:11:12.938 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+11:11:12.939 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+11:11:12.976 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+11:11:12.976 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in
+11:11:19.387 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.
+11:11:24.916 [JavaFX Application Thread] INFO  org.wms.adminController - Updating delivery status for order ID: ef65
+11:11:24.952 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+11:11:24.953 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+11:11:24.954 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+11:11:24.955 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 0
+11:11:27.361 [JavaFX Application Thread] INFO  org.wms.adminController - Home button clicked. Dashboard section displayed.
+11:12:08.706 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+11:12:09.367 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+11:12:09.647 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+11:12:18.714 [JavaFX Application Thread] INFO  org.wms.userController - User controller initialized successfully
+11:12:18.723 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to user view
+11:12:18.723 [JavaFX Application Thread] INFO  org.wms.loginController - User logged in
+11:12:28.787 [JavaFX Application Thread] INFO  org.wms.thankyouController - Thank you page initialized successfully
+11:12:30.726 [JavaFX Application Thread] INFO  org.wms.userController - User controller initialized successfully
+11:12:30.786 [JavaFX Application Thread] INFO  org.wms.thankyouController - Redirecting to user view
+11:12:37.608 [JavaFX Application Thread] INFO  org.wms.thankyouController - Thank you page initialized successfully
+11:12:40.596 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+11:12:40.607 [JavaFX Application Thread] INFO  org.wms.thankyouController - Closing the window and returning to login view
+11:12:49.573 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+11:12:49.575 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 3
+11:12:49.577 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+11:12:49.578 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+11:12:49.580 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+11:12:49.585 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+11:12:49.585 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+11:12:49.605 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+11:12:49.606 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in
+11:12:57.514 [JavaFX Application Thread] INFO  org.wms.adminController - Add Commodity button clicked. Add commodity section displayed.
+11:13:10.618 [JavaFX Application Thread] ERROR org.wms.adminController - Invalid quantity entered
+java.lang.NumberFormatException: For input string: "as"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:67) ~[?:?]
+	at java.lang.Integer.parseInt(Integer.java:668) ~[?:?]
+	at java.lang.Integer.parseInt(Integer.java:784) ~[?:?]
+	at org.wms.adminController.updateWarehouse(adminController.java:847) ~[classes/:?]
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:577) ~[?:?]
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77) ~[javafx-base-18.0.2-win.jar:?]
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:577) ~[?:?]
+	at com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1854) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1724) ~[javafx-fxml-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.event.Event.fireEvent(Event.java:198) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.scene.Node.fireEvent(Node.java:8797) ~[javafx-graphics-18.0.2-win.jar:?]
+	at javafx.scene.control.Button.fire(Button.java:203) ~[javafx-controls-18.0.2-win.jar:?]
+	at com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:208) ~[javafx-controls-18.0.2-win.jar:?]
+	at com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274) ~[javafx-controls-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[javafx-base-18.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.event.Event.fireEvent(Event.java:198) ~[javafx-base-18.0.2-win.jar:?]
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3881) ~[javafx-graphics-18.0.2-win.jar:?]
+	at javafx.scene.Scene.processMouseEvent(Scene.java:1874) ~[javafx-graphics-18.0.2-win.jar:?]
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2607) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301) ~[javafx-graphics-18.0.2-win.jar:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:399) ~[?:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:551) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.View.notifyMouse(View.java:937) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184) ~[javafx-graphics-18.0.2-win.jar:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+11:13:17.528 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+11:13:17.529 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+11:13:19.174 [JavaFX Application Thread] INFO  org.wms.adminController - Home button clicked. Dashboard section displayed.
+11:15:06.720 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+11:15:07.596 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+11:15:07.887 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+11:15:17.286 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+11:15:17.288 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 3
+11:15:17.290 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+11:15:17.290 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+11:15:17.292 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+11:15:17.298 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+11:15:17.299 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+11:15:17.332 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+11:15:17.332 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in
+11:16:11.899 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+11:16:12.682 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+11:16:12.972 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+11:16:20.820 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+11:16:20.821 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 3
+11:16:20.825 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+11:16:20.825 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+11:16:20.827 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+11:16:20.835 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+11:16:20.836 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+11:16:20.875 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+11:16:20.875 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in
+11:16:33.606 [JavaFX Application Thread] INFO  org.wms.adminController - Add Commodity button clicked. Add commodity section displayed.
+11:16:35.612 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.
+11:16:49.012 [JavaFX Application Thread] INFO  org.wms.adminController - Updating delivery status for order ID: b32f
+11:16:49.020 [JavaFX Application Thread] INFO  org.wms.adminController - Updating delivery status for order ID: b32f
+11:16:49.048 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+11:16:49.049 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+11:16:49.051 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+11:16:49.052 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 1
+11:16:51.838 [JavaFX Application Thread] INFO  org.wms.adminController - Home button clicked. Dashboard section displayed.
+11:17:26.418 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+11:17:27.108 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+11:17:27.386 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+11:17:35.765 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+11:17:35.767 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 1
+11:17:35.770 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+11:17:35.770 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+11:17:35.772 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+11:17:35.776 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+11:17:35.776 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+11:17:35.814 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+11:17:35.815 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in
+11:18:00.566 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.
+11:18:44.196 [JavaFX Application Thread] INFO  org.wms.adminController - Add Commodity button clicked. Add commodity section displayed.
+11:18:45.768 [JavaFX Application Thread] INFO  org.wms.adminController - Home button clicked. Dashboard section displayed.
+11:19:21.407 [JavaFX Application Thread] INFO  org.wms.adminController - Add Commodity button clicked. Add commodity section displayed.
+11:19:29.217 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+11:19:29.219 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+11:19:38.553 [JavaFX Application Thread] INFO  org.wms.adminController - Home button clicked. Dashboard section displayed.
+11:20:14.078 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+11:20:14.761 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+11:20:15.054 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+11:20:23.415 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+11:20:23.417 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 1
+11:20:23.420 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+11:20:23.420 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+11:20:23.423 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+11:20:23.426 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+11:20:23.427 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+11:20:23.463 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+11:20:23.464 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in
+11:20:52.291 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+11:20:53.039 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+11:20:53.324 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+11:21:00.489 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+11:21:00.493 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 1
+11:21:00.496 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+11:21:00.496 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+11:21:00.498 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+11:21:00.503 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+11:21:00.504 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+11:21:00.539 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+11:21:00.540 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in
+11:21:21.646 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+11:21:22.309 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+11:21:22.596 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+11:21:32.351 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+11:21:32.356 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 1
+11:21:32.359 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+11:21:32.359 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+11:21:32.361 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+11:21:32.365 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+11:21:32.366 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+11:21:32.403 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+11:21:32.403 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in
+11:23:05.348 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+11:23:05.999 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+11:23:06.272 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+11:23:15.447 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+11:23:15.450 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 1
+11:23:15.454 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+11:23:15.454 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+11:23:15.455 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+11:23:15.460 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+11:23:15.461 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+11:23:15.508 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+11:23:15.508 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in
+11:23:23.606 [JavaFX Application Thread] INFO  org.wms.adminController - Add Commodity button clicked. Add commodity section displayed.
+11:23:30.559 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.

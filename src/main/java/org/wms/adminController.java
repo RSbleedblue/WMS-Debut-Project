@@ -59,7 +59,8 @@ public class adminController implements Initializable {
             throw new RuntimeException(e);
         }
     }
-
+    @FXML
+    private Label truck_del_status;
     @FXML
     private Label nameField_dashboard;
     @FXML
@@ -126,7 +127,7 @@ public class adminController implements Initializable {
     @FXML
     private TableColumn<placedOrders, String> order_name_col;
     @FXML
-    private TableColumn<placedOrders, Integer> order_quality_col;
+    private TableColumn<placedOrders, String> order_quality_col;
     @FXML
     private TableColumn<placedOrders, Integer> orders_quantity_col;
 
@@ -188,6 +189,11 @@ public class adminController implements Initializable {
         initializeDropdowns();
         truckTimeLoad();
         loadDeliverOrder();
+        try {
+            setTruckStatus();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
         try {
             loadBarChartData("bed");
             loadBarChartData("sofa");
@@ -317,6 +323,31 @@ public class adminController implements Initializable {
             super(message);
         }
     }
+    public class invalidQuantity extends  Exception{
+        public invalidQuantity(){
+            super();
+        }
+        public invalidQuantity(String message){
+            super((message));
+        }
+    }
+    private void setTruckStatus() throws SQLException {
+        boolean isIn = isTruckIn();
+        if (isIn) {
+            truck_del_status.setText("IN");
+        } else {
+            truck_del_status.setText("OUT");
+        }
+    }
+
+    private boolean isTruckIn() throws SQLException {
+        String query = "SELECT truck_active FROM truck_status LIMIT 1"; // Limit the query to one row
+        try (PreparedStatement statement = connectionDB.prepareStatement(query);
+             ResultSet resultSet = statement.executeQuery()) {
+            return resultSet.next() && resultSet.getBoolean("truck_active");
+        }
+    }
+
 
     private void truckTimeLoad() {
         String query = "select * from truck_status";
@@ -326,8 +357,16 @@ public class adminController implements Initializable {
             if (result.next()) {
                 String truckIn = result.getString("truck_in");
                 String truckOut = result.getString("truck_out");
-                truckINTime.setText(truckIn);
-                truckOutTime.setText(truckOut);
+                boolean isStatus = result.getBoolean("truck_active");
+                if(isStatus){
+                    truckINTime.setText(truckIn);
+                    truckOutTime.setText("------");
+                }
+                else{
+                    truckINTime.setText("------");
+                    truckOutTime.setText(truckIn);
+                }
+
                 logger.info("Truck time loaded successfully.");
             }
         } catch (SQLException e) {
@@ -478,13 +517,16 @@ public class adminController implements Initializable {
 
     private void loadDeliverOrder() {
         placedList = getNotDeliveredOrders();
+        MapQuality map = new MapQuality();
         order_id_col.setCellValueFactory(new PropertyValueFactory<>("Order_ID"));
-        order_name_col.setCellValueFactory(new PropertyValueFactory<>("commodityName"));
-        order_quality_col.setCellValueFactory(new PropertyValueFactory<>("quality"));
+        order_name_col.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCommodityName().toUpperCase()));
+        order_quality_col.setCellValueFactory(cellData -> new SimpleStringProperty(map.getQualitiesName(cellData.getValue().getQuality())));
         orders_quantity_col.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         order_table.setItems(placedList);
         logger.info("Loaded not delivered orders into the table.");
     }
+
+
 
     public void selectCommoditiesList() {
         warehouseData whd = tableView.getSelectionModel().getSelectedItem();
@@ -527,9 +569,10 @@ public class adminController implements Initializable {
             showAlert("Commodity Not Found", "The selected commodity is not available.");
             return;
         }
+        MapQuality map = new MapQuality();
         orderID_field_order.setText(pOrds.getOrder_ID());
-        name_field_order.setText(pOrds.getCommodityName());
-        quality_field_order.setText(Integer.toString(pOrds.getQuality()));
+        name_field_order.setText(pOrds.getCommodityName().toUpperCase());
+        quality_field_order.setText(map.getQualitiesName(pOrds.getQuality()).toUpperCase());
         quantity_field_order.setText(Integer.toString(pOrds.getQuantity()));
 
         int QuantityStatusVal = getRemainingQuantity(pOrds.getQuality(), pOrds.getCommodityName());
@@ -759,6 +802,10 @@ public class adminController implements Initializable {
                     updateTruckOutTimeStatement.executeUpdate();
                 }
 
+                String updateTruckStatusQuery = "UPDATE truck_status SET truck_active = '0' WHERE truck_id = 1";
+                try(PreparedStatement updateTruckStatusStatement= connectionDB.prepareStatement(updateTruckStatusQuery)){
+                    updateTruckStatusStatement.executeUpdate();
+                }
                 // Update the truck capacity in the database
                 String updateTruckCapacityQuery = "UPDATE truck_status\n" +
                         "SET truck_capacity = ?\n" +
@@ -773,6 +820,7 @@ public class adminController implements Initializable {
                 truckTimeLoad();
                 getOrdersPending();
                 loadPieChartData();
+                setTruckStatus();
                 pushOrders.clear();
 
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -797,7 +845,8 @@ public class adminController implements Initializable {
             int quantity;
             try {
                 quantity = Integer.parseInt(quantity_select.getText().trim());
-            } catch (NumberFormatException e) {
+            }
+            catch (NumberFormatException e) {
                 logger.error("Invalid quantity entered", e);
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Invalid Quantity");
@@ -839,6 +888,10 @@ public class adminController implements Initializable {
                 truckInPrepare.setObject(1, time);
                 truckInPrepare.executeUpdate();
             }
+            String updateTruckStatusQuery = "UPDATE truck_status SET truck_active = '1' WHERE truck_id = 1";
+            try(PreparedStatement updateTruckStatusStatement= connectionDB.prepareStatement(updateTruckStatusQuery)){
+                updateTruckStatusStatement.executeUpdate();
+            }
 
             // Update truck capacity to 100
             String updateTruckCapacityQuery = "UPDATE truck_status\n" +
@@ -853,6 +906,7 @@ public class adminController implements Initializable {
             truckTimeLoad();
             loadWarehouseData();
             loadPieChartData();
+            setTruckStatus();
         } catch (SQLException e) {
             logger.error("Error updating warehouse.", e);
             throw new WarehouseUpdateException("Error updating warehouse.", e);
