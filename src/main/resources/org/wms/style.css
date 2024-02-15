@@ -49,22 +49,27 @@
 .thanksNav{
     -fx-background-color:  #f7ffff;
 }
-/* Style for PieChart Title */
+.data0.chart-pie { -fx-pie-color: #81689D; }
+.data1.chart-pie { -fx-pie-color: #474F7A; }
+
+.default-color0.chart-bar { -fx-bar-fill: #81689D; }
+.default-color1.chart-bar { -fx-bar-fill: #474F7A; }
+.default-color2.chart-bar { -fx-bar-fill: #FFD0EC; }
 /* Checking Animated Button */
 .animated-button {
     -fx-cursor: hand;
 }
 /* Login Button Hover Effect */
 .loginBtn{
-    -fx-background-color: #281F5F;
+    -fx-background-color: #81689D;
     -fx-text-fill: #FFF;
     -fx-background-radius: 5px;
 }
 .loginBtn:hover{
     -fx-background-color:transparent;
     -fx-background-radius: 5px;
-    -fx-text-fill:  #281F5F;
-    -fx-border-color:  #281F5F;
+    -fx-text-fill:  #81689D;
+    -fx-border-color:  #81689D;
     -fx-border-width: 1px;
     -fx-border-style: solid;
     -fx-border-radius: 5px;
@@ -161,7 +166,7 @@
 /* style.css */
 .table-view {
     -fx-border-width: 1px;
-    -fx-border-color: #281F5F;
+    -fx-border-color: #81689D;
     -fx-background-color: transparent;
     -fx-border-radius: 10px;
     -fx-cursor: hand;
@@ -169,7 +174,7 @@
 
 .table-view .column-header {
     -fx-border-radius: 10px;
-    -fx-background-color :  #281F5F;
+    -fx-background-color :  #81689D;
     -fx-text-fill: #fff;
 }
 .table-view .column-header .label{
@@ -180,7 +185,7 @@
     -fx-alignment: CENTER;
 }
 .dashboard-btn{
-    -fx-background-color:   #281F5F;
+    -fx-background-color: #81689D;
     -fx-text-fill: #FFF;
     -fx-background-radius: 5px;
     -fx-cursor: hand;
@@ -188,8 +193,8 @@
 .dashboard-btn:hover{
     -fx-background-color:transparent;
     -fx-background-radius: 5px;
-    -fx-text-fill:    #281F5F;
-    -fx-border-color:    #281F5F;
+    -fx-text-fill: #81689D;
+    -fx-border-color: #81689D;
     -fx-border-width: 1px;
     -fx-border-style: solid;
     -fx-border-radius: 5px;
@@ -236,11 +241,11 @@
 }
 
 .progress-bar .track {
-    -fx-background-color: #f0f0f0; /* Color of the background track */
+    -fx-background-color: #FFD0EC; /* Color of the background track */
 }
 
 .progress-bar .bar {
-    -fx-background-color: #0066cc; /* Color of the progress bar */
+    -fx-background-color: #81689D; /* Color of the progress bar */
 }
 
 

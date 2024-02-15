@@ -1,5 +1,6 @@
 package org.wms;
 
+import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -14,14 +15,17 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.util.Callback;
 
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.wms.utils.MapQuality;
+import org.wms.utils.OrderItem;
+import org.wms.utils.placedOrders;
+import org.wms.utils.warehouseData;
 
 import java.io.File;
 import java.io.IOException;
@@ -30,7 +34,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -71,7 +74,7 @@ public class adminController implements Initializable {
     @FXML
     private ImageView select_commodity_detail_img;
     @FXML
-    private StackedBarChart<String, Number> barChart_dashboard;
+    private BarChart<String, Number> barChart_dashboard;
     @FXML
     private PieChart deliveryPieChart;
     @FXML
@@ -216,7 +219,6 @@ public class adminController implements Initializable {
         });
 
     }
-
     private void loadPieChartData() throws SQLException {
         ObservableList<PieChart.Data> piechartData = FXCollections.observableArrayList();
         int totalDelivered = getDeliveryCount("delivered");
@@ -225,17 +227,13 @@ public class adminController implements Initializable {
         PieChart.Data deliveredData = new PieChart.Data("Delivered", totalDelivered);
         PieChart.Data notDeliveredData = new PieChart.Data("Not Delivered", notDelivered);
 
-        attachToolTip(deliveredData, totalDelivered);
-        attachToolTip(notDeliveredData, notDelivered);
         piechartData.addAll(deliveredData, notDeliveredData);
 
         // Set the piechartData to the deliveryPieChart
         deliveryPieChart.setData(piechartData);
     }
-    private void attachToolTip(PieChart.Data data, int value){
-        Tooltip tooltip = new Tooltip("Value: "+ value);
-        Tooltip.install(data.getNode(),tooltip);
-    }
+
+
 
     private int getDeliveryCount(String status) throws SQLException {
         String query = "SELECT COUNT(*) AS delivered_count\n" +
@@ -255,10 +253,11 @@ public class adminController implements Initializable {
         ObservableList<OrderItem> commodityData = getBarChartData(commodityName);
         XYChart.Series<String, Number> series = new XYChart.Series<>();
         series.setName(commodityName.toUpperCase());
+        MapQuality map = new MapQuality();
 
         // Add data points representing each quality
         for (int i = 0; i < commodityData.size(); i++) {
-            series.getData().add(new XYChart.Data<>("Quality " + (i + 1), commodityData.get(i).getQuantity()));
+            series.getData().add(new XYChart.Data<>( map.getQualitiesName(i+1), commodityData.get(i).getQuantity()));
         }
 
         // Add series to the chart
@@ -347,9 +346,14 @@ public class adminController implements Initializable {
         if (isIn) {
             truck_del_status.setText("IN");
             truck_text_Status.setText("IN");
+            truck_del_status.setTextFill(Color.GREEN);
+            truck_text_Status.setFill(Color.GREEN);
         } else {
             truck_del_status.setText("OUT");
             truck_text_Status.setText("OUT");
+
+            truck_del_status.setTextFill(Color.RED);
+            truck_text_Status.setFill(Color.RED);
         }
     }
 
@@ -373,10 +377,10 @@ public class adminController implements Initializable {
                 boolean isStatus = result.getBoolean("truck_active");
                 if(isStatus){
                     truckINTime.setText(truckIn);
-                    truckOutTime.setText("------");
+                    truckOutTime.setText("--------");
                 }
                 else{
-                    truckINTime.setText("------");
+                    truckINTime.setText("--------");
                     truckOutTime.setText(truckIn);
                 }
 
@@ -854,6 +858,13 @@ public class adminController implements Initializable {
     public void updateWarehouse() throws WarehouseUpdateException, SQLException {
         try {
             // Set truck capacity to 100
+            if(commodity_Select.getValue() == null || quantity_select == null || quality_select == null){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setContentText("Fill in the details");
+                alert.showAndWait();
+                return;
+            }
             truckCapcityVal = 100;
             MapQuality map = new MapQuality();
             String c_Name = commodity_Select.getValue() != null ? commodity_Select.getValue().toLowerCase() : null;

@@ -10,11 +10,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #281F5F;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.wms.loginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #474F7A;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.wms.loginController">
    <children>
       <AnchorPane layoutX="406.0" prefHeight="600.0" prefWidth="393.0" style="-fx-background-color: ffffff; -fx-background-radius: 50;">
          <children>
-            <Label layoutX="78.0" layoutY="174.0" text="Username">
+            <Label layoutX="77.0" layoutY="174.0" text="Username:">
                <font>
                   <Font size="13.0" />
                </font>
@@ -25,7 +25,7 @@
                   <String fx:value="list-view" />
                </styleClass>
             </TextField>
-            <Label layoutX="78.0" layoutY="217.0" text="Password">
+            <Label layoutX="78.0" layoutY="217.0" text="Password:">
                <font>
                   <Font size="13.0" />
                </font>
@@ -61,7 +61,7 @@
                   <String fx:value="signupBtn" />
                </styleClass>
             </Button>
-            <Label layoutX="42.0" layoutY="68.0" text="Welcome">
+            <Label layoutX="42.0" layoutY="68.0" text="Welcome" textFill="#1f2544">
                <font>
                   <Font name="Impact" size="35.0" />
                </font>
@@ -73,14 +73,14 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane prefHeight="600.0" prefWidth="394.0" style="-fx-background-color: #281F5F;">
+      <AnchorPane prefHeight="600.0" prefWidth="394.0" style="-fx-background-color: #474F7A;">
          <children>
             <ImageView fx:id="brandingImageView" fitHeight="262.0" fitWidth="259.0" layoutX="63.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../images/WMSLoginPage.png" />
                </image>
             </ImageView>
-            <Label layoutX="126.0" layoutY="296.0" text="Welcome to" textFill="GOLD">
+            <Label layoutX="126.0" layoutY="296.0" text="Manage with" textFill="#ffd0ec">
                <font>
                   <Font size="24.0" />
                </font>

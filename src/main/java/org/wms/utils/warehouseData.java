@@ -1,4 +1,4 @@
-package org.wms;
+package org.wms.utils;
 
 public class warehouseData {
     private int c_ID;

@@ -28,6 +28,7 @@ import java.util.UUID;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.wms.utils.MapQuality;
+import org.wms.utils.OrderItem;
 
 // Custom exception class for order placement errors
 class OrderPlacementException extends Exception {
