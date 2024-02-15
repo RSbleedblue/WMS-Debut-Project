@@ -27,6 +27,7 @@ import java.util.UUID;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.wms.utils.MapQuality;
 
 // Custom exception class for order placement errors
 class OrderPlacementException extends Exception {
@@ -84,9 +85,9 @@ public class userController implements Initializable {
         try {
             // Initialization code...
             nameField.setText(userName);
-            bedQuality.setItems(FXCollections.observableArrayList("1", "2", "3", "4", "5"));
-            sofaQuality.setItems(FXCollections.observableArrayList("1", "2", "3", "4", "5"));
-            tableQuality.setItems(FXCollections.observableArrayList("1", "2", "3", "4", "5"));
+            bedQuality.setItems(FXCollections.observableArrayList("POOR", "BAD", "AVERAGE", "GOOD", "BEST"));
+            sofaQuality.setItems(FXCollections.observableArrayList("POOR", "BAD", "AVERAGE", "GOOD", "BEST"));
+            tableQuality.setItems(FXCollections.observableArrayList("POOR", "BAD", "AVERAGE", "GOOD", "BEST"));
 
             bedQuantity.setItems(FXCollections.observableArrayList("1", "2", "3", "4", "5"));
             sofaQuantity.setItems(FXCollections.observableArrayList("1", "2", "3", "4", "5"));
@@ -127,23 +128,24 @@ public class userController implements Initializable {
     }
 
     public void placeOrder() throws OrderPlacementException {
+        MapQuality map = new MapQuality();
         try {
             ArrayList<OrderItem> items = new ArrayList<>();
             if (bedQuality.getValue() != null && bedQuantity.getValue() != null) {
-                int bedQL = Integer.parseInt(bedQuality.getValue());
+                int bedQL = map.getQualitiesValues(bedQuality.getValue().toLowerCase());
                 int bedQN = Integer.parseInt(bedQuantity.getValue());
                 items.add(new OrderItem("bed", bedQL, bedQN));
 
             }
             if (sofaQuality.getValue() != null && sofaQuantity.getValue() != null) {
-                int sofaQL = Integer.parseInt(sofaQuality.getValue());
+                int sofaQL = map.getQualitiesValues(sofaQuality.getValue().toLowerCase());
                 int sofaQN = Integer.parseInt(sofaQuantity.getValue());
                 items.add(new OrderItem("sofa", sofaQL, sofaQN));
 
             }
             if (tableQuality.getValue() != null && tableQuantity.getValue() != null) {
                 int tableQN = Integer.parseInt(tableQuantity.getValue());
-                int tableQL = Integer.parseInt(tableQuality.getValue());
+                int tableQL = map.getQualitiesValues(tableQuality.getValue().toLowerCase());
                 items.add(new OrderItem("table", tableQL, tableQN));
             }
             if(items.isEmpty()){

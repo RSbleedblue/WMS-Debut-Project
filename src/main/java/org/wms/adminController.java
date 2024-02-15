@@ -14,6 +14,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
@@ -59,6 +60,10 @@ public class adminController implements Initializable {
             throw new RuntimeException(e);
         }
     }
+    @FXML
+    private Text truck_text_Status;
+    @FXML
+    private ImageView truck_status_image;
     @FXML
     private Label truck_del_status;
     @FXML
@@ -138,9 +143,6 @@ public class adminController implements Initializable {
 
     @FXML
     private ImageView truckOUT;
-
-    @FXML
-    private ImageView warehouseIMG;
     @FXML
     private TextField truck_capacity_orderField;
 
@@ -220,10 +222,19 @@ public class adminController implements Initializable {
         int totalDelivered = getDeliveryCount("delivered");
         int notDelivered = getDeliveryCount("not_delivered");
 
-        piechartData.add(new PieChart.Data("Delivered", totalDelivered));
-        piechartData.add(new PieChart.Data("Not Delivered", notDelivered));
+        PieChart.Data deliveredData = new PieChart.Data("Delivered", totalDelivered);
+        PieChart.Data notDeliveredData = new PieChart.Data("Not Delivered", notDelivered);
 
+        attachToolTip(deliveredData, totalDelivered);
+        attachToolTip(notDeliveredData, notDelivered);
+        piechartData.addAll(deliveredData, notDeliveredData);
+
+        // Set the piechartData to the deliveryPieChart
         deliveryPieChart.setData(piechartData);
+    }
+    private void attachToolTip(PieChart.Data data, int value){
+        Tooltip tooltip = new Tooltip("Value: "+ value);
+        Tooltip.install(data.getNode(),tooltip);
     }
 
     private int getDeliveryCount(String status) throws SQLException {
@@ -335,8 +346,10 @@ public class adminController implements Initializable {
         boolean isIn = isTruckIn();
         if (isIn) {
             truck_del_status.setText("IN");
+            truck_text_Status.setText("IN");
         } else {
             truck_del_status.setText("OUT");
+            truck_text_Status.setText("OUT");
         }
     }
 
@@ -382,8 +395,9 @@ public class adminController implements Initializable {
         Image orderIconImg = loadImage("orders.png");
         Image truckIn = loadImage("truckIN.png");
         Image truckOut = loadImage("truckOUT.png");
-        Image wareHouseImg = loadImage("WMSLoginPageBW.png");
         Image pendingIMG = loadImage("pending.png");
+        Image truckStatusIMG = loadImage("truckStatus.png");
+        Image defaultImgCom = loadImage("add.png");
 
         addIcon.setImage(addImg);
         adminIcon.setImage(adminImg);
@@ -391,8 +405,10 @@ public class adminController implements Initializable {
         orderIcon.setImage(orderIconImg);
         truckIN.setImage(truckIn);
         truckOUT.setImage(truckOut);
-        warehouseIMG.setImage(wareHouseImg);
         pendingImg.setImage(pendingIMG);
+        truck_status_image.setImage(truckStatusIMG);
+        select_commodity_detail_img.setImage(defaultImgCom);
+
         logger.info("Images initialized successfully.");
     }
 

@@ -38,7 +38,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="36.0" layoutY="237.0" prefHeight="70.0" prefWidth="200.0" promptText="Your feeback is Valuable!" />
+            <TextField alignment="TOP_LEFT" layoutX="36.0" layoutY="237.0" prefHeight="70.0" prefWidth="200.0" promptText="Your feeback is Valuable!" />
             <Separator layoutX="14.0" layoutY="318.0" prefHeight="0.0" prefWidth="265.0" />
             <Button fx:id="cancelButton" layoutX="45.0" layoutY="457.0" mnemonicParsing="false" onAction="#closePlaceOrder" prefHeight="58.0" prefWidth="209.0" stylesheets="@style.css" text="Cancel Order" textFill="#fff6f6">
                <styleClass>
