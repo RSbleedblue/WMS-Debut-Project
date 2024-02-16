@@ -17,6 +17,7 @@ import javafx.util.Duration;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.mindrot.jbcrypt.BCrypt;
+import org.wms.utils.DatabaseConnection;
 
 import java.io.File;
 import java.io.IOException;
@@ -91,7 +92,15 @@ public class loginController implements Initializable {
     public void loginButtonOnAction(ActionEvent event) {
         if (!usernameTextField.getText().isBlank() && !enterPasswordField.getText().isBlank()) {
             validateLogin();
-        } else {
+        } else if (!usernameTextField.getText().isBlank() && enterPasswordField.getText().isBlank()) {
+            loginMessageLabel.setText("Password is Empty");
+            logger.warn("Password is Empty");
+        }
+        else if (usernameTextField.getText().isBlank() && !enterPasswordField.getText().isBlank()) {
+            loginMessageLabel.setText("User name is Empty");
+            logger.warn("User name is Empty");
+        }
+        else{
             loginMessageLabel.setText("Invalid User");
             logger.warn("Invalid user login attempt");
         }

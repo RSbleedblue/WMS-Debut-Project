@@ -387,7 +387,7 @@
                   <PieChart fx:id="deliveryPieChart" layoutX="24.0" layoutY="35.0" prefHeight="38.0" prefWidth="262.0" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
-            <Label layoutX="580.0" layoutY="484.0" style="-fx-text-fill: FFD0EC;" text="Delivery Status" textFill="WHITE">
+            <Label layoutX="580.0" layoutY="528.0" style="-fx-text-fill: FFD0EC;" text="Delivery Status" textFill="WHITE">
                <font>
                   <Font name="Impact" size="21.0" />
                </font>
@@ -400,6 +400,20 @@
                      </font>
                   </Label>
                   <Label fx:id="truck_del_status" layoutX="146.0" layoutY="3.0" prefHeight="30.0" prefWidth="41.0" text="-----">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="551.0" layoutY="483.0" prefHeight="38.0" prefWidth="188.0" style="-fx-background-color: fff; -fx-background-radius: 20px;">
+               <children>
+                  <Label layoutX="13.0" layoutY="9.0" text="Total Orders Delivered:">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="total_order_detail" layoutX="146.0" layoutY="3.0" prefHeight="30.0" prefWidth="41.0" text="-----">
                      <font>
                         <Font size="13.0" />
                      </font>

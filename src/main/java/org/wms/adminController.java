@@ -18,10 +18,8 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.wms.utils.MapQuality;
-import org.wms.utils.OrderItem;
-import org.wms.utils.placedOrders;
-import org.wms.utils.warehouseData;
+import org.wms.utils.*;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -68,6 +66,8 @@ public class adminController implements Initializable {
     private PieChart deliveryPieChart;
     @FXML
     private Button addCommodityBtn;
+    @FXML
+    private Label total_order_detail;
 
     @FXML
     private AnchorPane addCommoditySection;
@@ -175,13 +175,11 @@ public class adminController implements Initializable {
             super(message, cause);
         }
     }
-
     public class RemainingQuantityException extends Exception {
         public RemainingQuantityException() {
             super();
         }
     }
-
     public class OrderSelectionException extends RuntimeException {
         public OrderSelectionException() {
             super();
@@ -191,7 +189,6 @@ public class adminController implements Initializable {
             super(message, cause);
         }
     }
-
     public class WarehouseUpdateException extends Exception {
         public WarehouseUpdateException() {
             super();
@@ -202,7 +199,6 @@ public class adminController implements Initializable {
         }
 
     }
-
     public class CancelPushedOrdersException extends Exception {
         public CancelPushedOrdersException() {
             super();
@@ -212,7 +208,6 @@ public class adminController implements Initializable {
             super(message, cause);
         }
     }
-
     public class PushOrderException extends Exception {
         public PushOrderException() {
             super();
@@ -230,8 +225,7 @@ public class adminController implements Initializable {
             super((message));
         }
     }
-
-//    When Admin Controller is triggered initialize method loads the data.
+    //    When Admin Controller is triggered initialize method loads the data.
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -243,6 +237,11 @@ public class adminController implements Initializable {
         initializeDropdowns();
         truckTimeLoad();
         loadDeliverOrder();
+        try {
+            getTotalDeliveryCount();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
         try {
             setTruckStatus();
         } catch (SQLException e) {
@@ -327,6 +326,10 @@ public class adminController implements Initializable {
             truck_text_Status.setFill(Color.RED);
         }
     }
+    private void getTotalDeliveryCount() throws SQLException {
+        int totalCount = getDeliveryCount("delivered");
+        total_order_detail.setText(String.valueOf(totalCount));
+    }
     private int getDeliveryCount(String status) throws SQLException {
         String query = "SELECT COUNT(*) AS delivered_count\n" +
                 "FROM order_detail\n" +
@@ -396,13 +399,11 @@ public class adminController implements Initializable {
 
         logger.info("Images initialized successfully.");
     }
-
 //  To initialize images helper method
     private Image loadImage(String filename) {
         File file = new File("images/" + filename);
         return new Image(file.toURI().toString());
     }
-
     private void initializeDropdowns() {
         commodity_Select.setItems(FXCollections.observableArrayList("Bed", "Sofa", "Table"));
         quality_select.setItems(FXCollections.observableArrayList("POOR", "BAD", "AVERAGE", "GOOD", "BEST"));
@@ -419,7 +420,6 @@ public class adminController implements Initializable {
         tableView.setItems(list);
         logger.info("Warehouse data loaded successfully.");
     }
-
     public ObservableList<warehouseData> getWareHouseData() {
         String query = "SELECT * FROM commodities";
         ObservableList<warehouseData> warehouseData = FXCollections.observableArrayList();
@@ -440,7 +440,6 @@ public class adminController implements Initializable {
         }
         return warehouseData;
     }
-
 //  Action Buttons to switch in the Admin pages
     public void setHomeBtn(ActionEvent event) {
         if (event.getSource() == homeBtn) {
@@ -488,7 +487,6 @@ public class adminController implements Initializable {
             throw new DatabaseQueryException("Error retrieving pending orders count from the database", e);
         }
     }
-
     private ObservableList<placedOrders> getNotDeliveredOrders() {
         String query = "SELECT Order_ID, commodity_ID, quality, quantity\n" +
                 "FROM order_detail\n" +
@@ -513,9 +511,7 @@ public class adminController implements Initializable {
         }
         return pList;
     }
-
     ObservableList<placedOrders> placedList;
-
     private void loadDeliverOrder() {
         placedList = getNotDeliveredOrders();
         MapQuality map = new MapQuality();
@@ -557,14 +553,14 @@ public class adminController implements Initializable {
         placedOrders pOrds = order_table.getSelectionModel().getSelectedItem();
         if (pOrds == null) {
             logger.warn("No order selected.");
-            showAlert("No Order Selected", "Please select an order.");
+            showSuccessAlert("No Order Selected", null,"Please select an order.");
             return;
         }
         String selectedCommodity = pOrds.getCommodityName();
         if (selectedCommodity == null || selectedCommodity.isEmpty()) {
             // Selected commodity is null or empty, show an alert
             logger.warn("Selected commodity is null or empty.");
-            showAlert("Commodity Not Found", "The selected commodity is not available.");
+            showSuccessAlert("Commodity Not Found", null,"The selected commodity is not available.");
             return;
         }
         MapQuality map = new MapQuality();
@@ -601,14 +597,6 @@ public class adminController implements Initializable {
         }
         return null;
 
-    }
-//    Custom Alert method to trigger alert
-    private void showAlert(String title, String content) {
-        Alert alert = new Alert(Alert.AlertType.WARNING);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(content);
-        alert.showAndWait();
     }
 //    Method of loading orders into the Truck.
     private ArrayList<placedOrders> pushOrders = new ArrayList<>();
@@ -662,8 +650,6 @@ public class adminController implements Initializable {
             throw e;
         }
     }
-
-
     private int getTruckCapacity() throws SQLException {
         String query = "SELECT truck_capacity FROM truck_status";
         try {
@@ -725,7 +711,6 @@ public class adminController implements Initializable {
             throw new CancelPushedOrdersException("Error while canceling pushed orders.", e);
         }
     }
-
     private int getRemainingQuantity(int quality, String name) throws SQLException {
         int QuantityStatusVal = -1;
         String query = "SELECT quantity FROM commodities WHERE quality = ? AND name = ?";
@@ -743,7 +728,6 @@ public class adminController implements Initializable {
         return QuantityStatusVal;
     }
 //    Method to load commodity Name.
-
     private String getCommodityName(int c_id) {
         String c_name = null;
         String query = "SELECT name FROM commodities WHERE c_ID = ?";
@@ -766,8 +750,6 @@ public class adminController implements Initializable {
             logger.error("No orders pushed to place");
             return;
         }
-
-
         try {
             // Update delivery status for placed orders
             String updateDeliveryQuery = "UPDATE order_detail SET delivery_status = 'delivered' WHERE order_id = ?";
@@ -800,8 +782,10 @@ public class adminController implements Initializable {
             getOrdersPending();
             loadPieChartData();
             setTruckStatus();
-            pushOrders.clear();
+            loadWarehouseData();
+            getTotalDeliveryCount();
 
+            pushOrders.clear();
             showSuccessAlert("Success", null, "Truck out for delivery");
         } catch (SQLException e) {
             logger.error("Error updating truck status or reloading data", e);
@@ -903,6 +887,7 @@ public class adminController implements Initializable {
         quality_select.getSelectionModel().clearSelection();
         quality_select.setPromptText("0");
     }
+//    Sign Out button to close the portal and session
     public void signoutAdmin(ActionEvent e) throws IOException {
         Stage stage = (Stage) signoutBTN_dashboard.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("loginView.fxml"));

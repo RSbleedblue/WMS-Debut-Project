@@ -19,7 +19,7 @@
             <String fx:value="animated-button" />
          </styleClass>
       </Button>
-      <Button fx:id="closeBtn" layoutX="247.0" layoutY="503.0" mnemonicParsing="false" onAction="#close" prefHeight="40.0" prefWidth="318.0" stylesheets="@style.css" text="SignOut" textFill="WHITE">
+      <Button fx:id="closeBtn" layoutX="247.0" layoutY="503.0" mnemonicParsing="false" onAction="#close" prefHeight="40.0" prefWidth="318.0" stylesheets="@style.css" text="Sign Out" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
