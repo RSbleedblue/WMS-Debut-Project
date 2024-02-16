@@ -114,9 +114,6 @@ public class loginController implements Initializable {
     }
 
     private void validateLogin() {
-        DatabaseConnection connection = new DatabaseConnection();
-        Connection connectionDB = connection.getConnection();
-
         String verifyLogin = "SELECT password, isAdmin FROM user_account WHERE username = '"
                 + usernameTextField.getText() + "'";
 

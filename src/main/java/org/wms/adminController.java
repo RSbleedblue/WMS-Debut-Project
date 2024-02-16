@@ -217,14 +217,6 @@ public class adminController implements Initializable {
             super(message);
         }
     }
-    public class invalidQuantity extends  Exception{
-        public invalidQuantity(){
-            super();
-        }
-        public invalidQuantity(String message){
-            super((message));
-        }
-    }
     //    When Admin Controller is triggered initialize method loads the data.
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

@@ -42,9 +42,10 @@ public class main extends Application {
 
     public static void main(String[] args) {
         // Configure Log4j
-        System.setProperty("log4j.configurationFile", "src/main/resources/log4j2.xml");
+       System.setProperty("log4j.configurationFile", "src/main/resources/log4j2.xml");
 
         // Launch the JavaFX application
         launch();
     }
+
 }
