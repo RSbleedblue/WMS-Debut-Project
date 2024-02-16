@@ -1,4 +1,4 @@
-package org.wms;
+package org.wms.utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

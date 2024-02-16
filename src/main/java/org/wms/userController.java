@@ -6,8 +6,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -25,6 +27,9 @@ import java.util.UUID;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.wms.utils.DatabaseConnection;
+import org.wms.utils.MapQuality;
+import org.wms.utils.OrderItem;
 
 // Custom exception class for order placement errors
 class OrderPlacementException extends Exception {
@@ -37,8 +42,14 @@ public class userController implements Initializable {
     private static final Logger logger = LogManager.getLogger(userController.class);
 
     private Connection connectionDB;
+    private String userName;
 
-    public userController() {
+    public userController(String name) {
+        DatabaseConnection connection = new DatabaseConnection();
+        connectionDB = connection.getConnection();
+        this.userName = name;
+    }
+    public userController(){
         DatabaseConnection connection = new DatabaseConnection();
         connectionDB = connection.getConnection();
     }
@@ -67,14 +78,18 @@ public class userController implements Initializable {
     private Button cancelButton;
     @FXML
     private Button placeOrderBtn;
+    @FXML
+    private TextField nameField;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
             // Initialization code...
-            bedQuality.setItems(FXCollections.observableArrayList("1", "2", "3", "4", "5"));
-            sofaQuality.setItems(FXCollections.observableArrayList("1", "2", "3", "4", "5"));
-            tableQuality.setItems(FXCollections.observableArrayList("1", "2", "3", "4", "5"));
+            nameField.setText(userName);
+            bedQuality.setItems(FXCollections.observableArrayList("POOR", "BAD", "AVERAGE", "GOOD", "BEST"));
+            sofaQuality.setItems(FXCollections.observableArrayList("POOR", "BAD", "AVERAGE", "GOOD", "BEST"));
+            tableQuality.setItems(FXCollections.observableArrayList("POOR", "BAD", "AVERAGE", "GOOD", "BEST"));
 
             bedQuantity.setItems(FXCollections.observableArrayList("1", "2", "3", "4", "5"));
             sofaQuantity.setItems(FXCollections.observableArrayList("1", "2", "3", "4", "5"));
@@ -115,24 +130,32 @@ public class userController implements Initializable {
     }
 
     public void placeOrder() throws OrderPlacementException {
+        MapQuality map = new MapQuality();
         try {
             ArrayList<OrderItem> items = new ArrayList<>();
             if (bedQuality.getValue() != null && bedQuantity.getValue() != null) {
-                int bedQL = Integer.parseInt(bedQuality.getValue());
+                int bedQL = map.getQualitiesValues(bedQuality.getValue().toLowerCase());
                 int bedQN = Integer.parseInt(bedQuantity.getValue());
                 items.add(new OrderItem("bed", bedQL, bedQN));
 
             }
             if (sofaQuality.getValue() != null && sofaQuantity.getValue() != null) {
-                int sofaQL = Integer.parseInt(sofaQuality.getValue());
+                int sofaQL = map.getQualitiesValues(sofaQuality.getValue().toLowerCase());
                 int sofaQN = Integer.parseInt(sofaQuantity.getValue());
                 items.add(new OrderItem("sofa", sofaQL, sofaQN));
 
             }
             if (tableQuality.getValue() != null && tableQuantity.getValue() != null) {
                 int tableQN = Integer.parseInt(tableQuantity.getValue());
-                int tableQL = Integer.parseInt(tableQuality.getValue());
+                int tableQL = map.getQualitiesValues(tableQuality.getValue().toLowerCase());
                 items.add(new OrderItem("table", tableQL, tableQN));
+            }
+            if(items.isEmpty()){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setContentText("Your Selection is Empty");
+                alert.showAndWait();
+                return;
             }
             String orderID = generateID();
             boolean res = insertIntoOrder(items, orderID);

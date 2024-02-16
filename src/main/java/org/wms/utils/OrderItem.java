@@ -1,4 +1,4 @@
-package org.wms;
+package org.wms.utils;
 
 public class OrderItem {
     private String commodity;

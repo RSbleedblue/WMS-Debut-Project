@@ -12,46 +12,46 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: fff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.wms.userController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: fff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane layoutX="500.0" prefHeight="600.0" prefWidth="300.0" style="-fx-background-color: #281F5F;">
+      <AnchorPane layoutX="500.0" prefHeight="600.0" prefWidth="300.0" style="-fx-background-color: fff;">
          <children>
-            <Label layoutX="69.0" layoutY="20.0" text="Order Details" textFill="WHITE">
+            <Label layoutX="40.0" layoutY="20.0" text="Shipping Details">
                <font>
                   <Font name="Arial Bold" size="27.0" />
                </font>
             </Label>
-            <Label layoutX="36.0" layoutY="76.0" text="Name" textFill="WHITE">
+            <Label layoutX="36.0" layoutY="76.0" text="Name">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
             <TextField fx:id="nameField" layoutX="36.0" layoutY="96.0" prefHeight="26.0" prefWidth="200.0" promptText="Enter Name" />
-            <Label layoutX="36.0" layoutY="137.0" text="Address" textFill="WHITE">
+            <Label layoutX="36.0" layoutY="137.0" text="Address">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
             <TextField alignment="TOP_LEFT" layoutX="36.0" layoutY="157.0" prefHeight="50.0" prefWidth="200.0" promptText="Enter Address" />
-            <Label layoutX="36.0" layoutY="217.0" text="Pincode" textFill="WHITE">
+            <Label layoutX="36.0" layoutY="217.0" text="FeedBack">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="36.0" layoutY="237.0" prefHeight="26.0" prefWidth="125.0" promptText="Enter Name" />
-            <Separator layoutX="14.0" layoutY="285.0" prefHeight="0.0" prefWidth="265.0" />
-            <Button fx:id="cancelButton" layoutX="43.0" layoutY="413.0" mnemonicParsing="false" onAction="#closePlaceOrder" prefHeight="58.0" prefWidth="209.0" stylesheets="@style.css" text="Close" textFill="#fff6f6">
+            <TextField alignment="TOP_LEFT" layoutX="36.0" layoutY="237.0" prefHeight="70.0" prefWidth="200.0" promptText="Your feeback is Valuable!" />
+            <Separator layoutX="14.0" layoutY="318.0" prefHeight="0.0" prefWidth="265.0" />
+            <Button fx:id="cancelButton" layoutX="42.0" layoutY="456.0" mnemonicParsing="false" onAction="#closePlaceOrder" prefHeight="58.0" prefWidth="209.0" stylesheets="@style.css" text="Cancel Order" textFill="#fff6f6">
                <styleClass>
-                  <String fx:value="cancelBtn" />
+                  <String fx:value="BtnWhiteBGRed" />
                   <String fx:value="animated-button" />
                </styleClass>
                <font>
                   <Font name="Tahoma" size="22.0" />
                </font></Button>
-            <Button fx:id="placeOrderBtn" layoutX="42.0" layoutY="331.0" mnemonicParsing="false" onAction="#placeOrder" prefHeight="58.0" prefWidth="209.0" stylesheets="@style.css" text="Place Order" textFill="#fff6f6">
+            <Button fx:id="placeOrderBtn" layoutX="42.0" layoutY="376.0" mnemonicParsing="false" onAction="#placeOrder" prefHeight="58.0" prefWidth="209.0" stylesheets="@style.css" text="Place Order" textFill="#fff6f6">
                <styleClass>
                   <String fx:value="animated-button" />
-                  <String fx:value="registerBtn" />
+                  <String fx:value="BtnWhiteBGGreen" />
                </styleClass>
                <font>
                   <Font size="22.0" />
@@ -153,7 +153,7 @@
                <children>
                   <Label layoutY="39.0" text="Place Order">
                      <font>
-                        <Font size="26.0" />
+                        <Font name="Arial Bold" size="26.0" />
                      </font>
                   </Label>
                   <Separator layoutX="-114.0" layoutY="93.0" prefHeight="1.0" prefWidth="503.0" />

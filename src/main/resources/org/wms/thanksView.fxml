@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: fff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.wms.thankyouController">
    <children>
       <Button fx:id="redirectBtn" layoutX="248.0" layoutY="444.0" mnemonicParsing="false" onAction="#redirect" prefHeight="50.0" prefWidth="318.0" stylesheets="@style.css" text="Order Again" textFill="WHITE">
@@ -20,7 +19,7 @@
             <String fx:value="animated-button" />
          </styleClass>
       </Button>
-      <Button fx:id="closeBtn" layoutX="247.0" layoutY="503.0" mnemonicParsing="false" onAction="#close" prefHeight="40.0" prefWidth="318.0" stylesheets="@style.css" text="SignOut" textFill="WHITE">
+      <Button fx:id="closeBtn" layoutX="247.0" layoutY="503.0" mnemonicParsing="false" onAction="#close" prefHeight="40.0" prefWidth="318.0" stylesheets="@style.css" text="Sign Out" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
@@ -34,19 +33,19 @@
             <Image url="@../../../../../images/thanks.png" />
          </image>
       </ImageView>
-      <Label layoutX="283.0" layoutY="306.0" prefHeight="166.0" prefWidth="367.0" text="Your order has been placed">
+      <Label fx:id="orderShowTextField" layoutX="283.0" layoutY="373.0" prefHeight="50.0" prefWidth="250.0" text="Your order has been placed">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <ImageView fx:id="wmsLogoThanks" fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="wmsLogoThanks" fitHeight="83.0" fitWidth="116.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../images/WMSLoginPage.png" />
          </image>
       </ImageView>
-      <Label layoutX="142.0" layoutY="71.0" text="WMS">
+      <Label layoutX="95.0" layoutY="32.0" text="WMS">
          <font>
-            <Font name="Impact" size="46.0" />
+            <Font name="Arial Bold" size="46.0" />
          </font>
       </Label>
    </children>

@@ -12,4 +12,6 @@ module org.wms {
 
     opens org.wms to javafx.fxml;
     exports org.wms;
+    exports org.wms.utils;
+    opens org.wms.utils to javafx.fxml;
 }
