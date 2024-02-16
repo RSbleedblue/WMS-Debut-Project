@@ -37,6 +37,9 @@ public class adminController implements Initializable {
     private Connection connectionDB;
     public int truckCapcityVal;
     private final String UserName;
+    private static final Logger logger = LogManager.getLogger(adminController.class);
+
+//    Controller constructor modified.
     public adminController(String UserName){
         DatabaseConnection connection = new DatabaseConnection();
         connectionDB = connection.getConnection();
@@ -48,6 +51,7 @@ public class adminController implements Initializable {
             throw new RuntimeException(e);
         }
     }
+//  FXML FX: Ids;
     @FXML
     private Text truck_text_Status;
     @FXML
@@ -165,107 +169,7 @@ public class adminController implements Initializable {
     @FXML
     private ImageView order_sec_image;
 
-    private static final Logger logger = LogManager.getLogger(adminController.class);
-
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-//        Default loading for the dashboard
-        nameField_dashboard.setText(UserName);
-        initializeImages();
-        getOrdersPending();
-        loadWarehouseData();
-        initializeDropdowns();
-        truckTimeLoad();
-        loadDeliverOrder();
-        try {
-            setTruckStatus();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        try {
-            loadBarChartData("bed");
-            loadBarChartData("sofa");
-            loadBarChartData("table");
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        try {
-            loadPieChartData();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        orderPending.setOnMouseClicked(event -> {
-            addCommoditySection.setVisible(false);
-            dashboardSection.setVisible(false);
-            orders_Section.setVisible(true);
-            logger.info("Orders button clicked. Orders section displayed.");
-        });
-
-    }
-    private void loadPieChartData() throws SQLException {
-        ObservableList<PieChart.Data> piechartData = FXCollections.observableArrayList();
-        int totalDelivered = getDeliveryCount("delivered");
-        int notDelivered = getDeliveryCount("not_delivered");
-
-        PieChart.Data deliveredData = new PieChart.Data("Delivered", totalDelivered);
-        PieChart.Data notDeliveredData = new PieChart.Data("Not Delivered", notDelivered);
-
-        piechartData.addAll(deliveredData, notDeliveredData);
-
-        // Set the piechartData to the deliveryPieChart
-        deliveryPieChart.setData(piechartData);
-    }
-
-
-
-    private int getDeliveryCount(String status) throws SQLException {
-        String query = "SELECT COUNT(*) AS delivered_count\n" +
-                "FROM order_detail\n" +
-                "WHERE delivery_status = ?";
-        PreparedStatement preparedStatement = connectionDB.prepareStatement(query);
-        preparedStatement.setString(1, status);
-        ResultSet resultSet = preparedStatement.executeQuery();
-        int count = -1;
-        while (resultSet.next()) {
-            count = resultSet.getInt("delivered_count");
-        }
-        return count;
-    }
-
-    private void loadBarChartData(String commodityName) throws SQLException {
-        ObservableList<OrderItem> commodityData = getBarChartData(commodityName);
-        XYChart.Series<String, Number> series = new XYChart.Series<>();
-        series.setName(commodityName.toUpperCase());
-        MapQuality map = new MapQuality();
-
-        // Add data points representing each quality
-        for (int i = 0; i < commodityData.size(); i++) {
-            series.getData().add(new XYChart.Data<>( map.getQualitiesName(i+1), commodityData.get(i).getQuantity()));
-        }
-
-        // Add series to the chart
-        barChart_dashboard.getData().add(series);
-    }
-
-    private ObservableList<OrderItem> getBarChartData(String name) throws SQLException {
-        ObservableList<OrderItem> chartData = FXCollections.observableArrayList();
-        String query = "SELECT * FROM commodities WHERE name = ?";
-        try (
-                PreparedStatement statement = connectionDB.prepareStatement(query)) {
-            statement.setString(1, name);
-            try (ResultSet result = statement.executeQuery()) {
-                while (result.next()) {
-                    int quality = result.getInt("quality");
-                    int quantity = result.getInt("quantity");
-                    chartData.add(new OrderItem(name, quality, quantity));
-                }
-            }
-        }
-        return chartData;
-    }
-
+//    Custom Exception classes
     public class DatabaseQueryException extends RuntimeException {
         public DatabaseQueryException(String message, Throwable cause) {
             super(message, cause);
@@ -326,6 +230,88 @@ public class adminController implements Initializable {
             super((message));
         }
     }
+
+//    When Admin Controller is triggered initialize method loads the data.
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+//     Default loading for the dashboard
+        nameField_dashboard.setText(UserName);
+        initializeImages();
+        getOrdersPending();
+        loadWarehouseData();
+        initializeDropdowns();
+        truckTimeLoad();
+        loadDeliverOrder();
+        try {
+            setTruckStatus();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            loadBarChartData("bed");
+            loadBarChartData("sofa");
+            loadBarChartData("table");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            loadPieChartData();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        orderPending.setOnMouseClicked(event -> {
+            addCommoditySection.setVisible(false);
+            dashboardSection.setVisible(false);
+            orders_Section.setVisible(true);
+            logger.info("Orders button clicked. Orders section displayed.");
+        });
+
+    }
+//    Pie Chart Data, Bar Chart Data and Truck Status
+    private void loadPieChartData() throws SQLException {
+        ObservableList<PieChart.Data> piechartData = FXCollections.observableArrayList();
+        int totalDelivered = getDeliveryCount("delivered");
+        int notDelivered = getDeliveryCount("not_delivered");
+
+        PieChart.Data deliveredData = new PieChart.Data("Delivered", totalDelivered);
+        PieChart.Data notDeliveredData = new PieChart.Data("Not Delivered", notDelivered);
+
+        piechartData.addAll(deliveredData, notDeliveredData);
+
+        // Set the piechartData to the deliveryPieChart
+        deliveryPieChart.setData(piechartData);
+    }
+    private void loadBarChartData(String commodityName) throws SQLException {
+        ObservableList<OrderItem> commodityData = getBarChartData(commodityName);
+        XYChart.Series<String, Number> series = new XYChart.Series<>();
+        series.setName(commodityName.toUpperCase());
+        MapQuality map = new MapQuality();
+
+        // Add data points representing each quality
+        for (int i = 0; i < commodityData.size(); i++) {
+            series.getData().add(new XYChart.Data<>( map.getQualitiesName(i+1), commodityData.get(i).getQuantity()));
+        }
+
+        // Add series to the chart
+        barChart_dashboard.getData().add(series);
+    }
+    private ObservableList<OrderItem> getBarChartData(String name) throws SQLException {
+        ObservableList<OrderItem> chartData = FXCollections.observableArrayList();
+        String query = "SELECT * FROM commodities WHERE name = ?";
+        try (
+                PreparedStatement statement = connectionDB.prepareStatement(query)) {
+            statement.setString(1, name);
+            try (ResultSet result = statement.executeQuery()) {
+                while (result.next()) {
+                    int quality = result.getInt("quality");
+                    int quantity = result.getInt("quantity");
+                    chartData.add(new OrderItem(name, quality, quantity));
+                }
+            }
+        }
+        return chartData;
+    }
     private void setTruckStatus() throws SQLException {
         boolean isIn = isTruckIn();
         if (isIn) {
@@ -341,7 +327,19 @@ public class adminController implements Initializable {
             truck_text_Status.setFill(Color.RED);
         }
     }
-
+    private int getDeliveryCount(String status) throws SQLException {
+        String query = "SELECT COUNT(*) AS delivered_count\n" +
+                "FROM order_detail\n" +
+                "WHERE delivery_status = ?";
+        PreparedStatement preparedStatement = connectionDB.prepareStatement(query);
+        preparedStatement.setString(1, status);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        int count = -1;
+        while (resultSet.next()) {
+            count = resultSet.getInt("delivered_count");
+        }
+        return count;
+    }
     private boolean isTruckIn() throws SQLException {
         String query = "SELECT truck_active FROM truck_status LIMIT 1"; // Limit the query to one row
         try (PreparedStatement statement = connectionDB.prepareStatement(query);
@@ -349,8 +347,6 @@ public class adminController implements Initializable {
             return resultSet.next() && resultSet.getBoolean("truck_active");
         }
     }
-
-
     private void truckTimeLoad() {
         String query = "select * from truck_status";
         try {
@@ -376,7 +372,7 @@ public class adminController implements Initializable {
             throw new DatabaseQueryException("Error loading truck time from the database", e);
         }
     }
-
+//  To load images in the admin view
     private void initializeImages() {
         Image adminImg = loadImage("WMSLoginPage.png");
         Image addImg = loadImage("add.png");
@@ -401,6 +397,7 @@ public class adminController implements Initializable {
         logger.info("Images initialized successfully.");
     }
 
+//  To initialize images helper method
     private Image loadImage(String filename) {
         File file = new File("images/" + filename);
         return new Image(file.toURI().toString());
@@ -410,6 +407,17 @@ public class adminController implements Initializable {
         commodity_Select.setItems(FXCollections.observableArrayList("Bed", "Sofa", "Table"));
         quality_select.setItems(FXCollections.observableArrayList("POOR", "BAD", "AVERAGE", "GOOD", "BEST"));
         logger.info("Dropdowns initialized successfully.");
+    }
+    private ObservableList<warehouseData> list;
+//  Warehouse Data to show as a list.
+    public void loadWarehouseData() {
+        list = getWareHouseData();
+        MapQuality map = new MapQuality();
+        c_Name_Col.setCellValueFactory(new PropertyValueFactory<>("name"));
+        quality_Col.setCellValueFactory(cellData -> new SimpleStringProperty(map.getQualitiesName(cellData.getValue().getQuality())));
+        quantity_Col.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        tableView.setItems(list);
+        logger.info("Warehouse data loaded successfully.");
     }
 
     public ObservableList<warehouseData> getWareHouseData() {
@@ -433,19 +441,7 @@ public class adminController implements Initializable {
         return warehouseData;
     }
 
-    private ObservableList<warehouseData> list;
-
-    public void loadWarehouseData() {
-        list = getWareHouseData();
-        MapQuality map = new MapQuality();
-        c_Name_Col.setCellValueFactory(new PropertyValueFactory<>("name"));
-        quality_Col.setCellValueFactory(cellData -> new SimpleStringProperty(map.getQualitiesName(cellData.getValue().getQuality())));
-        quantity_Col.setCellValueFactory(new PropertyValueFactory<>("quantity"));
-        tableView.setItems(list);
-        logger.info("Warehouse data loaded successfully.");
-    }
-
-
+//  Action Buttons to switch in the Admin pages
     public void setHomeBtn(ActionEvent event) {
         if (event.getSource() == homeBtn) {
             addCommoditySection.setVisible(false);
@@ -470,7 +466,7 @@ public class adminController implements Initializable {
             logger.info("Orders button clicked. Orders section displayed.");
         }
     }
-
+//  Loading Pending orders which are not delivered.
     private void getOrdersPending() {
         int count = 0;
         String getOrders = "SELECT COUNT(*) AS not_delivered_count\n" +
@@ -530,9 +526,7 @@ public class adminController implements Initializable {
         order_table.setItems(placedList);
         logger.info("Loaded not delivered orders into the table.");
     }
-
-
-
+//    User selects a commodity that will load the progress bar as well as related IDS.
     public void selectCommoditiesList() {
         warehouseData whd = tableView.getSelectionModel().getSelectedItem();
         if (whd == null) {
@@ -608,6 +602,7 @@ public class adminController implements Initializable {
         return null;
 
     }
+//    Custom Alert method to trigger alert
     private void showAlert(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle(title);
@@ -615,6 +610,7 @@ public class adminController implements Initializable {
         alert.setContentText(content);
         alert.showAndWait();
     }
+//    Method of loading orders into the Truck.
     private ArrayList<placedOrders> pushOrders = new ArrayList<>();
     public void pushOrder() throws PushOrderException, SQLException {
         if (!isTruckIn()) {
@@ -683,7 +679,7 @@ public class adminController implements Initializable {
             throw new SQLException("Error retrieving truck capacity", e);
         }
     }
-
+//  If admin cancels the truck load.
     public void cancelPushedOrders() throws SQLException, CancelPushedOrdersException {
         try {
             if(pushOrders.isEmpty()){
@@ -746,6 +742,7 @@ public class adminController implements Initializable {
         }
         return QuantityStatusVal;
     }
+//    Method to load commodity Name.
 
     private String getCommodityName(int c_id) {
         String c_name = null;
@@ -762,6 +759,7 @@ public class adminController implements Initializable {
         }
         return c_name;
     }
+//    When Place Order button triggers placeOrder is triggered.
     public void placeOrder() throws SQLException {
         if (pushOrders.isEmpty()) {
             showErrorAlert("Error", null, "Push orders to place");
@@ -810,7 +808,7 @@ public class adminController implements Initializable {
             throw e;
         }
     }
-
+//    Custom Show Error Alert.
     private void showErrorAlert(String title, String header, String content) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
@@ -818,7 +816,7 @@ public class adminController implements Initializable {
         alert.setContentText(content);
         alert.showAndWait();
     }
-
+//    Custom Show Success Alert.
     private void showSuccessAlert(String title, String header, String content) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle(title);
@@ -826,18 +824,15 @@ public class adminController implements Initializable {
         alert.setContentText(content);
         alert.showAndWait();
     }
-
+//    Update Warehouse method to load Data
     public void updateWarehouse() throws WarehouseUpdateException, SQLException {
         try {
-            // Set truck capacity to 100
             if(commodity_Select.getValue() == null || quantity_select == null || quality_select == null){
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error");
-                alert.setContentText("Fill in the details");
-                alert.showAndWait();
+                showErrorAlert("Error",null,"Fill in the Details");
                 return;
             }
-            truckCapcityVal = 100;
+            // Set truck capacity to 20
+            truckCapcityVal = 20;
             MapQuality map = new MapQuality();
             String c_Name = commodity_Select.getValue() != null ? commodity_Select.getValue().toLowerCase() : null;
             Integer quality = map.getQualitiesValues(quality_select.getValue().toLowerCase());
@@ -847,25 +842,15 @@ public class adminController implements Initializable {
             }
             catch (NumberFormatException e) {
                 logger.error("Invalid quantity entered", e);
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Invalid Quantity");
-                alert.setHeaderText(null);
-                alert.setContentText("Please enter a valid integer for quantity.");
-                alert.showAndWait();
+                showErrorAlert("Invalid Quantity",null,"Please enter a valid Integer for Quantity");
                 return;
             }
-
             // Validate commodity name and quality
-            if (c_Name == null || quality == null) {
+            if (c_Name == null) {
                 logger.error("Commodity name or quality is not selected");
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Invalid Selection");
-                alert.setHeaderText(null);
-                alert.setContentText("Please select commodity and quality.");
-                alert.showAndWait();
+                showErrorAlert("Invalid Selection",null,"Please select commodity and quality");
                 return;
             }
-
             // Query to update the commodity quantity
             String updateQuery = "UPDATE commodities\n" +
                     "SET quantity = quantity + ?\n" +
@@ -892,7 +877,7 @@ public class adminController implements Initializable {
                 updateTruckStatusStatement.executeUpdate();
             }
 
-            // Update truck capacity to 100
+            // Update truck capacity to 20
             String updateTruckCapacityQuery = "UPDATE truck_status\n" +
                     "SET truck_capacity = ?\n" +
                     "WHERE truck_id = 1";
@@ -911,7 +896,6 @@ public class adminController implements Initializable {
             throw new WarehouseUpdateException("Error updating warehouse.", e);
         }
     }
-
     public void clearWarehouse() {
         commodity_Select.getSelectionModel().clearSelection();
         commodity_Select.setPromptText("Choose again");
@@ -919,7 +903,6 @@ public class adminController implements Initializable {
         quality_select.getSelectionModel().clearSelection();
         quality_select.setPromptText("0");
     }
-
     public void signoutAdmin(ActionEvent e) throws IOException {
         Stage stage = (Stage) signoutBTN_dashboard.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("loginView.fxml"));
