@@ -75,17 +75,17 @@
       </AnchorPane>
       <AnchorPane prefHeight="600.0" prefWidth="394.0" style="-fx-background-color: #474F7A;">
          <children>
-            <ImageView fx:id="brandingImageView" fitHeight="262.0" fitWidth="259.0" layoutX="63.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="brandingImageView" fitHeight="262.0" fitWidth="259.0" layoutX="63.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../images/WMSLoginPage.png" />
                </image>
             </ImageView>
-            <Label layoutX="124.0" layoutY="296.0" text="Continue With" textFill="#d9b7ff">
+            <Label layoutX="70.0" layoutY="300.0" text="Effortless Management" textFill="WHITE">
                <font>
-                  <Font name="Impact" size="24.0" />
+                  <Font name="Ebrima" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="148.0" layoutY="326.0" text="WMS" textFill="WHITE">
+            <Label layoutX="148.0" layoutY="335.0" text="WMS" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="35.0" />
                </font>

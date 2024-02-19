@@ -257,7 +257,6 @@ public class adminController implements Initializable {
             orders_Section.setVisible(true);
             logger.info("Orders button clicked. Orders section displayed.");
         });
-
     }
 //    Pie Chart Data, Bar Chart Data and Truck Status
     private void loadPieChartData() throws SQLException {
@@ -278,7 +277,8 @@ public class adminController implements Initializable {
         XYChart.Series<String, Number> series = new XYChart.Series<>();
         series.setName(commodityName.toUpperCase());
         MapQuality map = new MapQuality();
-
+        // Clear existing data from the series
+        barChart_dashboard.getData().removeIf(s -> s.getName().equalsIgnoreCase(commodityName));
         // Add data points representing each quality
         for (int i = 0; i < commodityData.size(); i++) {
             series.getData().add(new XYChart.Data<>( map.getQualitiesName(i+1), commodityData.get(i).getQuantity()));
@@ -867,6 +867,12 @@ public class adminController implements Initializable {
             loadWarehouseData();
             loadPieChartData();
             setTruckStatus();
+            loadBarChartData("bed");
+            loadBarChartData("sofa");
+            loadBarChartData("table");
+
+            showSuccessAlert("Update","success","Warehouse updated Successfully");
+
         } catch (SQLException e) {
             logger.error("Error updating warehouse.", e);
             throw new WarehouseUpdateException("Error updating warehouse.", e);

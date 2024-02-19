@@ -154,7 +154,7 @@
             <ImageView fx:id="truck_status_image" fitHeight="130.0" fitWidth="188.0" layoutX="607.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="450.79999999999995" AnchorPane.leftAnchor="607.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="16.0" />
             <AnchorPane layoutX="624.0" layoutY="140.0" prefHeight="26.0" prefWidth="94.0" style="-fx-background-color: fff; -fx-background-radius: 20;">
                <children>
-                  <Text fx:id="truck_text_Status" layoutX="67.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="In" wrappingWidth="34.399999999999864">
+                  <Text fx:id="truck_text_Status" layoutX="65.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="In" wrappingWidth="34.399999999999864">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -166,7 +166,7 @@
                   </Label>
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="42.0" layoutY="29.0" prefHeight="220.0" prefWidth="471.0" style="-fx-background-color: fff; -fx-background-radius: 20;">
+            <AnchorPane layoutX="42.0" layoutY="23.0" prefHeight="200.0" prefWidth="471.0" style="-fx-background-color: fff; -fx-background-radius: 20;">
                <children>
                   <Label layoutX="22.0" layoutY="36.0" text="Select Commodity:">
                      <font>
@@ -179,17 +179,17 @@
                         <String fx:value="list-view" />
                      </styleClass>
                   </ComboBox>
-                  <Label layoutX="22.0" layoutY="87.0" text="Quantity:">
+                  <Label layoutX="22.0" layoutY="134.0" text="Quantity:">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="22.0" layoutY="139.0" text="Quality:">
+                  <Label layoutX="22.0" layoutY="87.0" text="Quality:">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <ComboBox fx:id="quality_select" layoutX="77.0" layoutY="135.0" prefWidth="150.0" promptText="Select" style="-fx-background-color: fff;" stylesheets="@style.css">
+                  <ComboBox fx:id="quality_select" layoutX="77.0" layoutY="83.0" prefWidth="150.0" promptText="Select" style="-fx-background-color: fff;" stylesheets="@style.css">
                      <styleClass>
                         <String fx:value="list-cell" />
                         <String fx:value="list-view" />
@@ -209,7 +209,7 @@
                         <String fx:value="animated-button" />
                      </styleClass>
                   </Button>
-                  <TextField fx:id="quantity_select" layoutX="88.0" layoutY="86.0" promptText="Enter" stylesheets="@style.css">
+                  <TextField fx:id="quantity_select" layoutX="88.0" layoutY="133.0" promptText="Enter" stylesheets="@style.css">
                      <styleClass>
                         <String fx:value="list-cell" />
                         <String fx:value="list-view" />
@@ -288,7 +288,7 @@
       </AnchorPane>
       <AnchorPane fx:id="dashboardSection" layoutX="255.0" prefHeight="600.0" prefWidth="827.0" style="-fx-background-color: #474F7A;">
          <children>
-            <Label layoutX="54.0" layoutY="22.0" prefHeight="58.0" prefWidth="226.0" style="-fx-text-fill: #FFD0EC;" text="Warehouse">
+            <Label layoutX="54.0" layoutY="22.0" prefHeight="58.0" prefWidth="226.0" style="-fx-text-fill: #FFD0EC;" text="Warehouse" textFill="WHITE">
                <font>
                   <Font name="Impact" size="40.0" />
                </font>
@@ -315,7 +315,7 @@
                         <Image url="@../../../../../images/orders.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="orderPending" layoutX="88.0" layoutY="55.0" styleClass="animated-button" stylesheets="@style.css" text="0">
+                  <Label fx:id="orderPending" layoutX="88.0" layoutY="57.0" styleClass="animated-button" stylesheets="@style.css" text="0">
                      <font>
                         <Font size="25.0" />
                      </font>
@@ -335,7 +335,7 @@
                         <Image url="@../../../../../images/truckIN.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="truckINTime" layoutX="208.0" layoutY="64.0" text="0">
+                  <Label fx:id="truckINTime" layoutX="225.0" layoutY="66.0" text="0">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -355,20 +355,20 @@
                         <Image url="@../../../../../images/truckOUT.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="truckOutTime" layoutX="356.0" layoutY="64.0" text="0">
+                  <Label fx:id="truckOutTime" layoutX="373.0" layoutY="65.0" text="0">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="35.0" layoutY="251.0" prefHeight="310.0" prefWidth="436.0" style="-fx-background-color: fff; -fx-background-radius: 20;" stylesheets="@style.css">
+            <AnchorPane layoutX="35.0" layoutY="245.0" prefHeight="310.0" prefWidth="436.0" style="-fx-background-color: fff; -fx-background-radius: 20;" stylesheets="@style.css">
                <styleClass>
                   <String fx:value="dashboard-info-container" />
                   <String fx:value="animated-button" />
                </styleClass>
                <children>
-                  <BarChart fx:id="barChart_dashboard" layoutX="9.0" layoutY="4.0" prefHeight="306.0" prefWidth="418.0" stylesheets="@style.css">
+                  <BarChart fx:id="barChart_dashboard" layoutX="9.0" prefHeight="306.0" prefWidth="418.0" stylesheets="@style.css">
                     <xAxis>
                       <CategoryAxis side="BOTTOM" fx:id="xAxis" />
                     </xAxis>
@@ -378,7 +378,7 @@
                   </BarChart>
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="490.0" layoutY="251.0" prefHeight="220.0" prefWidth="310.0" style="-fx-background-color: fff; -fx-background-radius: 20;" stylesheets="@style.css">
+            <AnchorPane layoutX="490.0" layoutY="245.0" prefHeight="220.0" prefWidth="310.0" style="-fx-background-color: fff; -fx-background-radius: 20;" stylesheets="@style.css">
                <styleClass>
                   <String fx:value="dashboard-info-container" />
                   <String fx:value="animated-button" />
@@ -399,7 +399,7 @@
                         <Font size="13.0" />
                      </font>
                   </Label>
-                  <Label fx:id="truck_del_status" layoutX="146.0" layoutY="3.0" prefHeight="30.0" prefWidth="41.0" text="-----">
+                  <Label fx:id="truck_del_status" layoutX="146.0" layoutY="4.0" prefHeight="30.0" prefWidth="41.0" text="-----">
                      <font>
                         <Font size="13.0" />
                      </font>
@@ -413,13 +413,18 @@
                         <Font size="13.0" />
                      </font>
                   </Label>
-                  <Label fx:id="total_order_detail" layoutX="146.0" layoutY="3.0" prefHeight="30.0" prefWidth="41.0" text="-----">
+                  <Label fx:id="total_order_detail" layoutX="146.0" layoutY="4.0" prefHeight="30.0" prefWidth="41.0" text="-----">
                      <font>
                         <Font size="13.0" />
                      </font>
                   </Label>
                </children>
             </AnchorPane>
+            <Label layoutX="179.0" layoutY="562.0" style="-fx-text-fill: FFD0EC;" text="Warehouse Data" textFill="WHITE">
+               <font>
+                  <Font name="Impact" size="21.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>

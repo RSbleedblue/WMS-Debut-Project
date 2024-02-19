@@ -80,6 +80,10 @@ public class userController implements Initializable {
     private Button placeOrderBtn;
     @FXML
     private TextField nameField;
+    @FXML
+    private TextField address_order;
+    @FXML
+    private TextField feedback_order;
 
 
     @Override
@@ -130,6 +134,16 @@ public class userController implements Initializable {
     }
 
     public void placeOrder() throws OrderPlacementException {
+        if(address_order.getText().isBlank() || feedback_order.getText().isBlank()){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setContentText("Please fill the Order details before proceeding");
+            alert.showAndWait();
+
+            logger.error("Address or feedback not filled");
+
+            return;
+        }
         MapQuality map = new MapQuality();
         try {
             ArrayList<OrderItem> items = new ArrayList<>();
