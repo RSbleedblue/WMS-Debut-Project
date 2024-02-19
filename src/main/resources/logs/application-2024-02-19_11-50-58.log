@@ -1,0 +1,18 @@
+11:50:58.388 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+11:50:59.052 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+11:50:59.339 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+11:51:12.404 [JavaFX Application Thread] INFO  org.wms.RegisterController - Registration form initialized successfully
+11:51:12.410 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to register view
+11:51:33.324 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+11:51:40.468 [JavaFX Application Thread] INFO  org.wms.RegisterController - Registration form initialized successfully
+11:51:40.472 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to register view
+11:51:55.006 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+11:52:11.114 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+11:52:11.118 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 3
+11:52:11.121 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+11:52:11.121 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+11:52:11.122 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+11:52:11.127 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+11:52:11.128 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+11:52:11.153 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+11:52:11.154 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in

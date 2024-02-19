@@ -258,6 +258,7 @@ public class adminController implements Initializable {
             logger.info("Orders button clicked. Orders section displayed.");
         });
     }
+
 //    Pie Chart Data, Bar Chart Data and Truck Status
     private void loadPieChartData() throws SQLException {
         ObservableList<PieChart.Data> piechartData = FXCollections.observableArrayList();
@@ -286,6 +287,7 @@ public class adminController implements Initializable {
 
         // Add series to the chart
         barChart_dashboard.getData().add(series);
+        barChart_dashboard.lookup(".chart-plot-background").setStyle("-fx-background-color: transparent;");
     }
     private ObservableList<OrderItem> getBarChartData(String name) throws SQLException {
         ObservableList<OrderItem> chartData = FXCollections.observableArrayList();

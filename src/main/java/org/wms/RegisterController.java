@@ -1,6 +1,5 @@
 package org.wms;
 
-import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -50,8 +49,7 @@ public class RegisterController implements Initializable {
     private ImageView brandingImageView;
     @FXML
     private Button cancelButton;
-    @FXML
-    private ComboBox<String> isAdmin;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -60,9 +58,6 @@ public class RegisterController implements Initializable {
             File fileshield = new File("images/WMSLoginPage.png");
             Image shield = new Image(fileshield.toURI().toString());
             brandingImageView.setImage(shield);
-
-            // Set options for admin selection
-            isAdmin.setItems(FXCollections.observableArrayList("Admin", "User"));
             logger.info("Registration form initialized successfully");
         } catch (Exception e) {
             logger.error("Error initializing registration form", e);
@@ -95,7 +90,7 @@ public class RegisterController implements Initializable {
             return;
         }
 
-        String registerQuery = "INSERT INTO user_account (firstname, lastname, username, password, isAdmin) VALUES (?, ?, ?, ?, ?)";
+        String registerQuery = "INSERT INTO user_account (firstname, lastname, username, password, isAdmin) VALUES (?, ?, ?, ?, 1)";
 
         try {
             // Check if required fields are empty
@@ -123,18 +118,6 @@ public class RegisterController implements Initializable {
                 alert.showAndWait();
                 throw new RegisterException("Invalid Email Format", null);
             }
-
-            // Check if admin status is selected
-            if (isAdmin.getValue() == null) {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error");
-                alert.setHeaderText(null);
-                alert.setContentText("Please select the Account Status");
-                alert.showAndWait();
-                throw new AccountException("Invalid Account Type", null);
-            }
-            boolean isAdminValue = isAdmin.getValue().equals("Admin");
-
             // Hash the password before storing it
             String hashedPassword = BCrypt.hashpw(reg_password.getText(), BCrypt.gensalt());
 
@@ -145,7 +128,7 @@ public class RegisterController implements Initializable {
             preparedStatement.setString(2, reg_Lname.getText());
             preparedStatement.setString(3, reg_Uname.getText());
             preparedStatement.setString(4, hashedPassword);
-            preparedStatement.setBoolean(5, isAdminValue);
+//            preparedStatement.setBoolean(5, isAdminValue);
             preparedStatement.executeUpdate();
             preparedStatement.close();
 
@@ -164,9 +147,6 @@ public class RegisterController implements Initializable {
         } catch (IOException e) {
             logger.error("IO error occurred while registering", e);
             throw new RegisterException("IO error occurred while registering", e);
-        } catch (AccountException e) {
-            logger.error("No selection made in account status during registering");
-            throw new AccountException("Invalid Account Status", e);
         }
     }
 
