@@ -1,0 +1,9 @@
+15:32:25.498 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+15:32:26.531 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+15:32:26.945 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+15:32:59.520 [JavaFX Application Thread] INFO  org.wms.userController - User controller initialized successfully
+15:32:59.533 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to user view
+15:32:59.533 [JavaFX Application Thread] INFO  org.wms.loginController - User logged in
+15:33:21.909 [JavaFX Application Thread] ERROR org.wms.userController - Address or feedback not filled
+15:33:40.013 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+15:33:41.675 [JavaFX Application Thread] INFO  org.wms.loginController - Application closed
