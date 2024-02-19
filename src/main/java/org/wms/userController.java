@@ -308,18 +308,20 @@ public class userController implements Initializable {
                 bts_name.setText(userName);
                // bts_add.setText(userAddress.getText());
                 bts_id.setText(orderID);
+
+
                 for (OrderItem item : items) {
                     if (item.getCommodity().equals("bed")) {
                         // Set the quality and quantity of the bed
-                        bts_b_ql.setText(Integer.toString(item.getQuality()));
+                        bts_b_ql.setText(map.getQualitiesName(item.getQuality()));
                         bts_b_qt.setText(Integer.toString(item.getQuantity()));
                     } else if (item.getCommodity().equals("sofa")) {
                         // Set the quality and quantity of the sofa
-                        bts_s_ql.setText(Integer.toString(item.getQuality()));
+                        bts_s_ql.setText(map.getQualitiesName(item.getQuality()));
                         bts_s_qt.setText(Integer.toString(item.getQuantity()));
                     } else if (item.getCommodity().equals("table")) {
                         // Set the quality and quantity of the table
-                        bts_t_ql.setText(Integer.toString(item.getQuality()));
+                        bts_t_ql.setText(map.getQualitiesName(item.getQuality()));
                         bts_t_qt.setText(Integer.toString(item.getQuantity()));
                     }
                 }
