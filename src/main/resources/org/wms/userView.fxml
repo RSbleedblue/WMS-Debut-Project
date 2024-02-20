@@ -4,169 +4,178 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: fff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane fx:id="summarySection" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #474F7A;" visible="false">
+      <AnchorPane fx:id="order_summary" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #474F7A;" visible="false">
          <children>
-            <AnchorPane fx:id="orderSummarySofaBedTable" layoutY="52.0" prefHeight="546.0" prefWidth="802.0">
+            <AnchorPane layoutX="39.0" layoutY="56.0" prefHeight="479.0" prefWidth="725.0" style="-fx-border-color: FFF; -fx-border-radius: 20;">
                <children>
-                  <AnchorPane layoutX="41.0" layoutY="35.0" prefHeight="470.0" prefWidth="339.0" style="-fx-background-color: #FFD0EC; -fx-background-radius: 20;" />
-                  <AnchorPane layoutX="408.0" layoutY="-25.0" prefHeight="546.0" prefWidth="378.0" style="-fx-background-color: #FFD0EC; -fx-background-radius: 20;">
+                  <ImageView fx:id="main_image" fitHeight="185.0" fitWidth="212.0" layoutX="455.0" layoutY="280.0" pickOnBounds="true" preserveRatio="true" />
+                  <HBox alignment="CENTER" layoutX="496.0" layoutY="262.0" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: fff; -fx-background-radius: 20;">
                      <children>
-                        <Label layoutX="111.0" layoutY="14.0" text="Your Details" textFill="#1f2544">
-                           <font>
-                              <Font name="Impact" size="29.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="44.0" layoutY="75.0" text="Table">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="44.0" layoutY="134.0" text="Sofa">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="44.0" layoutY="197.0" text="Bed">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Label>
-                        <Separator layoutX="6.0" layoutY="64.0" prefHeight="3.0" prefWidth="371.0" />
-                        <Label layoutX="64.0" layoutY="105.0" text="Details:" />
-                        <Label layoutX="64.0" layoutY="164.0" text="Details:" />
-                        <Label layoutX="59.0" layoutY="227.0" text="Details:" />
-                        <TextField fx:id="bts_t_ql" layoutX="123.0" layoutY="101.0" prefHeight="25.0" prefWidth="114.0" promptText="quality" />
-                        <TextField fx:id="bts_t_qt" layoutX="250.0" layoutY="101.0" prefHeight="25.0" prefWidth="114.0" promptText="quantity" />
-                        <TextField fx:id="bts_s_ql" layoutX="123.0" layoutY="160.0" prefHeight="25.0" prefWidth="114.0" promptText="quality" />
-                        <TextField fx:id="bts_s_qt" layoutX="250.0" layoutY="160.0" prefHeight="25.0" prefWidth="114.0" promptText="quantity" />
-                        <TextField fx:id="bts_b_ql" layoutX="123.0" layoutY="223.0" prefHeight="25.0" prefWidth="114.0" promptText="quality" />
-                        <TextField fx:id="bts_b_qt" layoutX="250.0" layoutY="223.0" prefHeight="25.0" prefWidth="114.0" promptText="quantity" />
-                        <Separator layoutX="3.0" layoutY="270.0" prefHeight="3.0" prefWidth="371.0" />
-                        <Label layoutX="46.0" layoutY="287.0" text="Name:">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="44.0" layoutY="324.0" text="Address:">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="45.0" layoutY="427.0" text="Estimation Delivery time : 3-4 Days">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="bts_name" layoutX="103.0" layoutY="289.0" prefHeight="25.0" prefWidth="114.0" />
-                        <TextField fx:id="bts_add" layoutX="118.0" layoutY="326.0" prefHeight="58.0" prefWidth="173.0" />
-                        <Label layoutX="44.0" layoutY="391.0" text="Order ID:">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="bts_id" layoutX="126.0" layoutY="392.0" prefHeight="25.0" prefWidth="114.0" />
-                        <Button layoutX="53.0" layoutY="472.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="146.0" styleClass="BtnWhiteBGGreen" stylesheets="@style.css" text="Confirm">
-                           <font>
-                              <Font size="25.0" />
-                           </font>
-                        </Button>
-                        <Button layoutX="205.0" layoutY="472.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="146.0" styleClass="BtnWhiteBGRed" stylesheets="@style.css" text="Cancel">
-                           <font>
-                              <Font size="25.0" />
-                           </font>
-                        </Button>
+                        <Label text="Selected Commodity" />
                      </children>
-                  </AnchorPane>
+                  </HBox>
+                  <AnchorPane fx:id="table_light" layoutX="508.0" layoutY="158.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: fff; -fx-background-radius: 100;" />
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="orderSummarySofaTable" prefHeight="200.0" prefWidth="200.0" visible="false">
-               <children>
-                  <Label text="orderSummarySofaTable" />
-               </children>
-            </AnchorPane>
-            <AnchorPane fx:id="orderSummaryBedTable" prefHeight="200.0" prefWidth="200.0" visible="false">
-               <children>
-                  <Label text="orderSummaryBedTable" />
-               </children>
-            </AnchorPane>
-            <AnchorPane fx:id="orderSummarySofaBed" prefHeight="200.0" prefWidth="200.0" visible="false">
-               <children>
-                  <Label text="orderSummarySofaBed" />
-               </children>
-            </AnchorPane>
-            <AnchorPane fx:id="orderSummaryTable" prefHeight="200.0" prefWidth="200.0" visible="false">
-               <children>
-                  <Label text="orderSummaryTable" />
-               </children>
-            </AnchorPane>
-            <AnchorPane fx:id="orderSummarySofa" layoutX="28.0" layoutY="174.0" prefHeight="200.0" prefWidth="200.0" visible="false" />
-            <AnchorPane fx:id="orderSummaryBed" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" styleClass="f" visible="false" />
-            <Label layoutX="140.0" layoutY="23.0" text="ORDER SUMMARY" textFill="#ffd0ec">
+            <Label layoutX="311.0" layoutY="14.0" text="Order Summary" textFill="WHITE">
                <font>
-                  <Font name="Impact" size="27.0" />
+                  <Font name="Impact" size="29.0" />
                </font>
             </Label>
+            <HBox alignment="CENTER" layoutX="89.0" layoutY="60.0" prefHeight="185.0" prefWidth="637.0" style="-fx-background-color: TRANSPARENT; -fx-background-radius: 20;">
+               <children>
+                  <ImageView fx:id="bed_image" fitHeight="145.0" fitWidth="148.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../images/bed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="sofa_image" fitHeight="173.0" fitWidth="203.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../images/sofa.png" />
+                     </image>
+                     <effect>
+                        <Reflection fraction="0.05" />
+                     </effect>
+                  </ImageView>
+                  <ImageView fx:id="table_image" fitHeight="163.0" fitWidth="163.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../images/table.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <AnchorPane fx:id="bed_light" layoutX="216.0" layoutY="214.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: fff; -fx-background-radius: 100;" />
+            <AnchorPane fx:id="sofa_light" layoutX="385.0" layoutY="213.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: fff; -fx-background-radius: 100;" />
+            <HBox alignment="CENTER" layoutX="63.0" layoutY="252.0" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: fff; -fx-background-radius: 20;">
+               <children>
+                  <Label contentDisplay="CENTER" text="Quality" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="63.0" layoutY="292.0" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: fff; -fx-background-radius: 20;">
+               <children>
+                  <Label contentDisplay="CENTER" text="Quantity" />
+               </children>
+            </HBox>
+            <Label fx:id="bed_ql" layoutX="218.0" layoutY="256.0" text="Label" textFill="WHITE" />
+            <Label fx:id="bed_qt" layoutX="217.0" layoutY="296.0" text="Label" textFill="WHITE" />
+            <Label fx:id="sofa_ql" layoutX="385.0" layoutY="256.0" text="Label" textFill="WHITE" />
+            <Label fx:id="sofa_qt" layoutX="385.0" layoutY="296.0" text="Label" textFill="WHITE" />
+            <Label fx:id="table_ql" layoutX="547.0" layoutY="256.0" text="Label" textFill="WHITE" />
+            <Label fx:id="table_qt" layoutX="547.0" layoutY="296.0" text="Label" textFill="WHITE" />
+            <Label layoutX="243.0" layoutY="502.0" prefHeight="25.0" prefWidth="310.0" text="Estimated Delivery Time 3 working days!" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="s_name" layoutX="160.0" layoutY="395.0" text="Label" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="s_orderid" layoutX="161.0" layoutY="428.0" prefHeight="25.0" prefWidth="50.0" text="Label" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="s_add" layoutX="160.0" layoutY="464.0" text="Label" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Button fx:id="confirmOrder" layoutX="254.0" layoutY="544.0" mnemonicParsing="false" onAction="#confirmHandler" prefHeight="37.0" prefWidth="114.0" stylesheets="@style.css" text="Confirm">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="BtnWhiteBGGreen" />
+                  <String fx:value="animated-button" />
+               </styleClass>
+            </Button>
+            <Button fx:id="cancelConfirm" layoutX="398.0" layoutY="544.0" mnemonicParsing="false" onAction="#cancelHandler" prefHeight="37.0" prefWidth="114.0" stylesheets="@style.css" text="Reset">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="BtnWhiteBGRed" />
+                  <String fx:value="animated-button" />
+               </styleClass>
+            </Button>
+            <HBox alignment="CENTER" layoutX="64.0" layoutY="393.0" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: fff; -fx-background-radius: 20;">
+               <children>
+                  <Label text="Name:" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="64.0" layoutY="428.0" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: fff; -fx-background-radius: 20;">
+               <children>
+                  <Label text="Order ID:" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="64.0" layoutY="464.0" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: fff; -fx-background-radius: 20;">
+               <children>
+                  <Label text="Address:" />
+               </children>
+            </HBox>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="orderDetail" prefHeight="200.0" prefWidth="200.0">
+      <AnchorPane fx:id="orderDetail" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #474F7A;">
          <children>
-            <AnchorPane prefHeight="600.0" prefWidth="300.0" style="-fx-background-color: fff;">
+            <AnchorPane prefHeight="600.0" prefWidth="300.0" style="-fx-background-color: #474F7A;">
                <children>
-                  <Label layoutX="40.0" layoutY="20.0" text="Shipping Details">
+                  <Label layoutX="40.0" layoutY="20.0" text="Shipping Details" textFill="#ffd0ec">
                      <font>
                         <Font name="Arial Bold" size="27.0" />
                      </font>
                   </Label>
-                  <Label layoutX="36.0" layoutY="76.0" text="Name">
+                  <Label layoutX="36.0" layoutY="76.0" text="Name" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
                   <TextField fx:id="nameField" layoutX="36.0" layoutY="96.0" prefHeight="26.0" prefWidth="200.0" promptText="Enter Name" />
-                  <Label layoutX="36.0" layoutY="137.0" text="Address">
+                  <Label layoutX="36.0" layoutY="137.0" text="Address" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
                   <TextField fx:id="address_order" alignment="TOP_LEFT" layoutX="36.0" layoutY="157.0" prefHeight="50.0" prefWidth="200.0" promptText="Enter Address" />
-                  <Label layoutX="36.0" layoutY="217.0" text="FeedBack">
+                  <Label layoutX="36.0" layoutY="217.0" text="Additional Delivery instruction" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="feedback_order" alignment="TOP_LEFT" layoutX="36.0" layoutY="237.0" prefHeight="70.0" prefWidth="200.0" promptText="Your feeback is Valuable!" />
-                  <Separator layoutX="14.0" layoutY="318.0" prefHeight="0.0" prefWidth="265.0" />
-                  <Button fx:id="cancelButton" layoutX="42.0" layoutY="456.0" mnemonicParsing="false" onAction="#closePlaceOrder" prefHeight="58.0" prefWidth="209.0" stylesheets="@style.css" text="Cancel Order" textFill="#fff6f6">
+                  <TextField fx:id="feedback_order" alignment="TOP_LEFT" layoutX="36.0" layoutY="237.0" prefHeight="70.0" prefWidth="200.0" promptText="Your delivery details" />
+                  <Button fx:id="cancelButton" layoutX="32.0" layoutY="452.0" mnemonicParsing="false" onAction="#closePlaceOrder" prefHeight="58.0" prefWidth="209.0" stylesheets="@style.css" text="Cancel Order" textFill="#fff6f6">
                      <styleClass>
                         <String fx:value="BtnWhiteBGRed" />
                         <String fx:value="animated-button" />
                      </styleClass>
                      <font>
-                        <Font name="Tahoma" size="22.0" />
+                        <Font name="Tahoma" size="16.0" />
                      </font>
                   </Button>
-                  <Button fx:id="placeOrderBtn" layoutX="42.0" layoutY="376.0" mnemonicParsing="false" onAction="#placeOrder" prefHeight="58.0" prefWidth="209.0" stylesheets="@style.css" text="Place Order" textFill="#fff6f6">
+                  <Button fx:id="placeOrderBtn" layoutX="32.0" layoutY="372.0" mnemonicParsing="false" onAction="#placeOrder" prefHeight="58.0" prefWidth="209.0" stylesheets="@style.css" text="Checkout" textFill="#fff6f6">
                      <styleClass>
                         <String fx:value="animated-button" />
                         <String fx:value="BtnWhiteBGGreen" />
                      </styleClass>
                      <font>
-                        <Font size="22.0" />
+                        <Font size="16.0" />
                      </font>
                   </Button>
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="274.0" prefHeight="600.0" prefWidth="523.0" style="-fx-background-color: #ffffff;">
+            <AnchorPane layoutX="274.0" prefHeight="600.0" prefWidth="531.0" style="-fx-background-color: fff; -fx-background-radius: 50;">
                <children>
                   <ImageView fx:id="sofaImage" fitHeight="181.0" fitWidth="200.0" layoutX="14.0" layoutY="236.0" pickOnBounds="true">
                      <image>
@@ -257,17 +266,12 @@
                   <Label layoutX="369.0" layoutY="320.0" text="Select Quantity" />
                   <Label layoutX="245.0" layoutY="482.0" text="Select Quality" />
                   <Label layoutX="370.0" layoutY="482.0" text="Select Quantity" />
-                  <AnchorPane layoutX="112.0" layoutY="-17.0" prefHeight="106.0" prefWidth="316.0" style="-fx-background-radius: 80;">
-                     <children>
-                        <Label layoutY="39.0" text="Place Order">
-                           <font>
-                              <Font name="Arial Bold" size="26.0" />
-                           </font>
-                        </Label>
-                        <Separator layoutX="-114.0" layoutY="93.0" prefHeight="1.0" prefWidth="503.0" />
-                     </children>
-                  </AnchorPane>
-                  <ImageView fx:id="wmsLogo" fitHeight="58.0" fitWidth="73.0" layoutX="52.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                  <Label contentDisplay="CENTER" layoutX="215.0" layoutY="23.0" text="Place Order">
+                     <font>
+                        <Font name="Arial Bold" size="26.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="wmsLogo" fitHeight="58.0" fitWidth="73.0" layoutX="156.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../images/WMSLoginPage.png" />
                      </image>
