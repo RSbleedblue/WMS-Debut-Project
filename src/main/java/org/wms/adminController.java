@@ -637,6 +637,11 @@ public class adminController implements Initializable {
                 placedList.remove(pOds);
                 pushOrders.add(pOds);
 
+                loadBarChartData("bed");
+                loadBarChartData("sofa");
+                loadBarChartData("table");
+                loadWarehouseData();
+
                 showSuccessAlert("Loaded", null, "Order with ID: " + pOds.getOrder_ID() + " has been loaded into the truck");
             }
         } catch (SQLException e) {
@@ -697,6 +702,10 @@ public class adminController implements Initializable {
 
             // Re-add the canceled order back to the table view
             placedList.add(canceledOrder);
+            loadBarChartData("bed");
+            loadBarChartData("sofa");
+            loadBarChartData("table");
+            loadWarehouseData();
         } catch (IndexOutOfBoundsException e) {
             logger.error("No orders pushed to cancel.", e);
             throw new CancelPushedOrdersException("No orders pushed to cancel.", e);
@@ -778,9 +787,11 @@ public class adminController implements Initializable {
             setTruckStatus();
             loadWarehouseData();
             getTotalDeliveryCount();
-
+            loadBarChartData("bed");
+            loadBarChartData("sofa");
+            loadBarChartData("table");
             pushOrders.clear();
-            showSuccessAlert("Success", null, "Truck out for delivery");
+            showSuccessAlert("Success", null, "Order is Dispatched Successfully");
         } catch (SQLException e) {
             logger.error("Error updating truck status or reloading data", e);
             throw e;
