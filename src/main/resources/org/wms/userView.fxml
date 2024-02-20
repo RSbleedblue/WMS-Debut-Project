@@ -15,16 +15,11 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: fff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane fx:id="order_summary" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #474F7A;" visible="false">
+      <AnchorPane fx:id="order_summary" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #474F7A;">
          <children>
             <AnchorPane layoutX="39.0" layoutY="56.0" prefHeight="479.0" prefWidth="725.0" style="-fx-border-color: FFF; -fx-border-radius: 20;">
                <children>
                   <ImageView fx:id="main_image" fitHeight="185.0" fitWidth="212.0" layoutX="455.0" layoutY="280.0" pickOnBounds="true" preserveRatio="true" />
-                  <HBox alignment="CENTER" layoutX="496.0" layoutY="262.0" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: fff; -fx-background-radius: 20;">
-                     <children>
-                        <Label text="Selected Commodity" />
-                     </children>
-                  </HBox>
                   <AnchorPane fx:id="table_light" layoutX="508.0" layoutY="158.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: fff; -fx-background-radius: 100;" />
                </children>
             </AnchorPane>
@@ -128,7 +123,7 @@
             </HBox>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="orderDetail" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #474F7A;">
+      <AnchorPane fx:id="orderDetail" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #474F7A;" visible="false">
          <children>
             <AnchorPane prefHeight="600.0" prefWidth="300.0" style="-fx-background-color: #474F7A;">
                <children>

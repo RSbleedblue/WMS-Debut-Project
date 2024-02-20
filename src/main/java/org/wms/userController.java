@@ -364,6 +364,14 @@ public class userController implements Initializable {
                 sofa_qt.setVisible(false);
                 table_ql.setVisible(false);
                 table_qt.setVisible(false);
+                sofa_image.setOpacity(.2);
+                sofa_image.setScaleX(0.8);
+                sofa_light.setOpacity(0.2);
+                sofa_image.setScaleY(0.8);
+                table_image.setOpacity(.2);
+                table_image.setScaleX(0.8);
+                table_light.setOpacity(0.2);
+                table_image.setScaleY(0.8);
                 main_image.setImage(bedImage.getImage());
             } else if (item1.getCommodity().equals("sofa")) {
                 sofa_light.setStyle("-fx-background-color: #50C878;" +
@@ -374,6 +382,14 @@ public class userController implements Initializable {
                 bed_qt.setVisible(false);
                 table_ql.setVisible(false);
                 table_qt.setVisible(false);
+                bed_image.setOpacity(.2);
+                bed_image.setScaleX(0.8);
+                bed_light.setOpacity(0.2);
+                bed_image.setScaleY(0.8);
+                table_image.setOpacity(.2);
+                table_image.setScaleX(0.8);
+                table_light.setOpacity(0.2);
+                table_image.setScaleY(0.8);
                 main_image.setImage(sofaImage.getImage());
             } else if (item1.getCommodity().equals("table")) {
                 table_light.setStyle("-fx-background-color: #50C878;" +
@@ -384,6 +400,14 @@ public class userController implements Initializable {
                 bed_qt.setVisible(false);
                 sofa_ql.setVisible(false);
                 sofa_qt.setVisible(false);
+                bed_image.setOpacity(.2);
+                bed_image.setScaleX(0.8);
+                bed_light.setOpacity(0.2);
+                bed_image.setScaleY(0.8);
+                sofa_image.setOpacity(.2);
+                sofa_image.setScaleX(0.8);
+                sofa_light.setOpacity(0.2);
+                sofa_image.setScaleY(0.8);
                 main_image.setImage(tableImage.getImage());
             }
         }
@@ -401,6 +425,10 @@ public class userController implements Initializable {
                 sofa_qt.setText(String.valueOf(items.get(0).getQuantity()));
                 table_ql.setText(map.getQualitiesName(items.get(1).getQuality()));
                 table_qt.setText(String.valueOf(items.get(1).getQuantity()));
+                bed_image.setOpacity(.2);
+                bed_image.setScaleX(0.8);
+                bed_light.setOpacity(0.2);
+                bed_image.setScaleY(0.8);
                 main_image.setImage(sofaTable);
 
            }
@@ -413,6 +441,10 @@ public class userController implements Initializable {
                 bed_qt.setText(String.valueOf(items.get(0).getQuantity()));
                 sofa_ql.setText(map.getQualitiesName(items.get(1).getQuality()));
                 sofa_qt.setText(String.valueOf(items.get(1).getQuantity()));
+                table_image.setOpacity(.2);
+                table_image.setScaleX(0.8);
+                table_light.setOpacity(0.2);
+                table_image.setScaleY(0.8);
                 main_image.setImage(bedSofa);
             }
             else{
@@ -424,6 +456,10 @@ public class userController implements Initializable {
                 bed_qt.setText(String.valueOf(items.get(0).getQuantity()));
                 table_ql.setText(map.getQualitiesName(items.get(1).getQuality()));
                 table_qt.setText(String.valueOf(items.get(1).getQuantity()));
+                sofa_image.setOpacity(.2);
+                sofa_image.setScaleX(0.8);
+                sofa_light.setOpacity(0.2);
+                sofa_image.setScaleY(0.8);
                 main_image.setImage(bedTable);
             }
         }
