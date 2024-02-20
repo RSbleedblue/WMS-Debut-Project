@@ -5,9 +5,9 @@ import java.sql.DriverManager;
 public class DatabaseConnection {
     public Connection databaseLink;
     public Connection getConnection(){
-        String databaseName = "wmsdb";
+        String databaseName = "wms_sys";
         String databaseUser = "root";
-        String databasePassword = "9771896742";
+        String databasePassword = "sachinricha";
         String url = "jdbc:mysql://localhost/" + databaseName;
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
