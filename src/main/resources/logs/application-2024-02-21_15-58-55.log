@@ -1,0 +1,20 @@
+15:58:55.261 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+15:58:56.031 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+15:58:56.319 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+15:59:03.343 [JavaFX Application Thread] WARN  org.wms.loginController - User not found during login attempt
+15:59:22.557 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+15:59:22.561 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 1
+15:59:22.564 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+15:59:22.564 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+15:59:22.568 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+15:59:22.569 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+15:59:22.620 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+15:59:22.621 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in
+15:59:23.035 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+15:59:23.037 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 1
+15:59:23.039 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+15:59:23.039 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+15:59:23.041 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+15:59:23.041 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+15:59:23.065 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+15:59:23.065 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in

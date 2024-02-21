@@ -27,15 +27,23 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 public class adminController implements Initializable {
     private Connection connectionDB;
+
+    private int truckID = generateTruckID();
     public int truckCapcityVal;
     private final String UserName;
     private static final Logger logger = LogManager.getLogger(adminController.class);
+
+    private boolean isGraphVisible = true;
+
 
 //    Controller constructor modified.
     public adminController(String UserName){
@@ -52,6 +60,24 @@ public class adminController implements Initializable {
 //  FXML FX: Ids;
     @FXML
     private Text truck_text_Status;
+    @FXML
+    private Label historyBTN;
+    @FXML
+    private AnchorPane graph_change_pane;
+    @FXML
+    private AnchorPane log_detail_pane;
+    @FXML
+    private TableView<logDetail> log_detail_table;
+    @FXML
+    private TableColumn<logDetail, String> log_truck_id;
+    @FXML
+    private TableColumn<logDetail, String> log_order_id;
+    @FXML
+    private TableColumn<logDetail, String> log_task_done;
+    @FXML
+    private TableColumn<logDetail, String> log_truckin;
+    @FXML
+    private TableColumn<logDetail, String> log_truckout;
     @FXML
     private ImageView truck_status_image;
     @FXML
@@ -145,11 +171,9 @@ public class adminController implements Initializable {
     @FXML
     private ComboBox<String> quality_select;
     @FXML
-    private Label truckINTime;
+    private Label truckID_label;
     @FXML
     private TextField selected_com_update;
-    @FXML
-    private Label truckOutTime;
     @FXML
     private Button orders_BTN;
     @FXML
@@ -227,8 +251,9 @@ public class adminController implements Initializable {
         getOrdersPending();
         loadWarehouseData();
         initializeDropdowns();
-        truckTimeLoad();
         loadDeliverOrder();
+        setTruckID();
+        loadLogData();
         try {
             getTotalDeliveryCount();
         } catch (SQLException e) {
@@ -257,6 +282,20 @@ public class adminController implements Initializable {
             orders_Section.setVisible(true);
             logger.info("Orders button clicked. Orders section displayed.");
         });
+        historyBTN.setOnMouseClicked(event -> {
+            if (isGraphVisible) {
+                graph_change_pane.setVisible(false);
+                log_detail_pane.setVisible(true);
+                logger.info("History button clicked. Log table displayed.");
+                isGraphVisible = false;
+            } else {
+                graph_change_pane.setVisible(true);
+                log_detail_pane.setVisible(false);
+                logger.info("History button clicked. Graph displayed.");
+                isGraphVisible = true;
+            }
+        });
+
     }
 
 //    Pie Chart Data, Bar Chart Data and Truck Status
@@ -344,31 +383,32 @@ public class adminController implements Initializable {
             return resultSet.next() && resultSet.getBoolean("truck_active");
         }
     }
-    private void truckTimeLoad() {
-        String query = "select * from truck_status";
-        try {
-            PreparedStatement statement = connectionDB.prepareStatement(query);
-            ResultSet result = statement.executeQuery();
-            if (result.next()) {
-                String truckIn = result.getString("truck_in");
-                String truckOut = result.getString("truck_out");
-                boolean isStatus = result.getBoolean("truck_active");
-                if(isStatus){
-                    truckINTime.setText(truckIn);
-                    truckOutTime.setText("--------");
-                }
-                else{
-                    truckINTime.setText("--------");
-                    truckOutTime.setText(truckOut);
-                }
+//    private void truckTimeLoad() {
+//        String query = "select * from truck_status";
+//        try {
+//            PreparedStatement statement = connectionDB.prepareStatement(query);
+//            ResultSet result = statement.executeQuery();
+//            if (result.next()) {
+//                String truckIn = result.getString("truck_in");
+//                String truckOut = result.getString("truck_out");
+//                boolean isStatus = result.getBoolean("truck_active");
+//                if(isStatus){
+//                    truckINTime.setText(truckIn);
+//                    truckOutTime.setText("--------");
+//                }
+//                else{
+//                    truckINTime.setText("--------");
+//                    truckOutTime.setText(truckOut);
+//                }
+//
+//                logger.info("Truck time loaded successfully.");
+//            }
+//        } catch (SQLException e) {
+//            logger.error("Error loading truck time from the database", e);
+//            throw new DatabaseQueryException("Error loading truck time from the database", e);
+//        }
+//    }
 
-                logger.info("Truck time loaded successfully.");
-            }
-        } catch (SQLException e) {
-            logger.error("Error loading truck time from the database", e);
-            throw new DatabaseQueryException("Error loading truck time from the database", e);
-        }
-    }
 //  To load images in the admin view
     private void initializeImages() {
         Image adminImg = loadImage("WMSLoginPage.png");
@@ -402,6 +442,43 @@ public class adminController implements Initializable {
         commodity_Select.setItems(FXCollections.observableArrayList("Bed", "Sofa", "Table"));
         quality_select.setItems(FXCollections.observableArrayList("POOR", "BAD", "AVERAGE", "GOOD", "BEST"));
         logger.info("Dropdowns initialized successfully.");
+    }
+    private ObservableList<logDetail> logList;
+    public void loadLogData() {
+        logList = getLogData();
+        log_truck_id.setCellValueFactory(new PropertyValueFactory<>("truckID"));
+        log_order_id.setCellValueFactory(new PropertyValueFactory<>("orderID"));
+        log_task_done.setCellValueFactory(new PropertyValueFactory<>("taskDone"));
+        log_truckin.setCellValueFactory(new PropertyValueFactory<>("truckIn"));
+        log_truckout.setCellValueFactory(new PropertyValueFactory<>("truckOut"));
+
+        // Load data into TableView
+        log_detail_table.setItems(logList);
+    }
+    private ObservableList<logDetail> getLogData() {
+        ObservableList<logDetail> logDetails = FXCollections.observableArrayList();
+        String query = "SELECT Truck_ID, Order_ID, truck_in, truck_out FROM log_detail";
+        try (PreparedStatement logStatement = connectionDB.prepareStatement(query)) {
+            ResultSet resultSet = logStatement.executeQuery();
+            while (resultSet.next()) {
+                String truckID = resultSet.getString("Truck_ID");
+                String orderID = resultSet.getString("Order_ID");
+                String truckIn = resultSet.getString("truck_in");
+                String truckOut = resultSet.getString("truck_out");
+                String taskDone = "";
+
+                // Set task_done based on truck_in and truck_out
+                if (truckIn == null) {
+                    taskDone = "Unloaded";
+                } else if (truckOut == null) {
+                    taskDone = "Loaded";
+                }
+                logDetails.add(new logDetail(truckID, orderID, taskDone, truckIn, truckOut));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return logDetails;
     }
     private ObservableList<warehouseData> list;
 //  Warehouse Data to show as a list.
@@ -755,10 +832,11 @@ public class adminController implements Initializable {
         }
         try {
             // Update delivery status for placed orders
-            String updateDeliveryQuery = "UPDATE order_detail SET delivery_status = 'delivered' WHERE order_id = ?";
+            String updateDeliveryQuery = "UPDATE order_detail SET delivery_status = 'delivered' WHERE order_id =  ? and quality = ?";
             try (PreparedStatement updateDeliveryStatement = connectionDB.prepareStatement(updateDeliveryQuery)) {
                 for (placedOrders pOds : pushOrders) {
                     updateDeliveryStatement.setString(1, pOds.getOrder_ID());
+                    updateDeliveryStatement.setInt(2,pOds.getQuality());
                     updateDeliveryStatement.addBatch();
                 }
                 updateDeliveryStatement.executeBatch();
@@ -778,10 +856,20 @@ public class adminController implements Initializable {
                 updateTruckCapacityStatement.setInt(1, truckCapcityVal);
                 updateTruckCapacityStatement.executeUpdate();
             }
-
+            // Updating Log_Table
+            String logTruckDetailQuery = "Insert into log_detail (Order_ID, Truck_ID, Quality, Quantity, truck_out) values (?, ?, ?, ?, ?)";
+            try(PreparedStatement insertLogStatement = connectionDB.prepareStatement(logTruckDetailQuery)){
+                for(placedOrders pOds : pushOrders){
+                    insertLogStatement.setString(1, pOds.getOrder_ID());
+                    insertLogStatement.setInt(2,truckID);
+                    insertLogStatement.setInt(3,pOds.getQuality());
+                    insertLogStatement.setInt(4,pOds.getQuantity());
+                    insertLogStatement.setObject(5,time);
+                    insertLogStatement.executeUpdate();
+                }
+            }
             // Reload data and clear orders list
             loadDeliverOrder();
-            truckTimeLoad();
             getOrdersPending();
             loadPieChartData();
             setTruckStatus();
@@ -790,6 +878,7 @@ public class adminController implements Initializable {
             loadBarChartData("bed");
             loadBarChartData("sofa");
             loadBarChartData("table");
+            loadLogData();
             pushOrders.clear();
             showSuccessAlert("Success", null, "Order is Dispatched Successfully");
         } catch (SQLException e) {
@@ -815,6 +904,13 @@ public class adminController implements Initializable {
     }
 //    Update Warehouse method to load Data
     public void updateWarehouse() throws WarehouseUpdateException, SQLException {
+        truckID = generateTruckID();
+        truckID_label.setText(Integer.toString(truckID));
+        if (isTruckIn()) {
+            showErrorAlert("ERROR", "Failed", "Already Unloaded");
+            logger.error("Truck is Empty");
+            return;
+        }
         try {
             if(commodity_Select.getValue() == null || quantity_select == null || quality_select == null){
                 showErrorAlert("Error",null,"Fill in the Details");
@@ -865,6 +961,14 @@ public class adminController implements Initializable {
             try(PreparedStatement updateTruckStatusStatement= connectionDB.prepareStatement(updateTruckStatusQuery)){
                 updateTruckStatusStatement.executeUpdate();
             }
+            String logTruckQuery = "Insert into log_detail (Truck_ID, Quality, Quantity, truck_in) Values( ?, ?, ?, ?)";
+            try(PreparedStatement logTruckStatement = connectionDB.prepareStatement(logTruckQuery)){
+                logTruckStatement.setInt(1,truckID);
+                logTruckStatement.setInt(2,quality);
+                logTruckStatement.setInt(3,quantity);
+                logTruckStatement.setObject(4,time);
+                logTruckStatement.executeUpdate();
+            }
 
             // Update truck capacity to 20
             String updateTruckCapacityQuery = "UPDATE truck_status\n" +
@@ -876,14 +980,14 @@ public class adminController implements Initializable {
             }
 
             // Reload truck time and warehouse data
-            truckTimeLoad();
             loadWarehouseData();
             loadPieChartData();
             setTruckStatus();
             loadBarChartData("bed");
             loadBarChartData("sofa");
             loadBarChartData("table");
-
+            setTruckID();
+            loadLogData();
             showSuccessAlert("Update","success","Warehouse updated Successfully");
 
         } catch (SQLException e) {
@@ -905,5 +1009,31 @@ public class adminController implements Initializable {
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
         stage.show();
+    }
+    private int generateTruckID() {
+        Random rand = new Random();
+        int min = 1000;
+        int max = 9999;
+        return rand.nextInt(max - min + 1) + min;
+    }
+    private void setTruckID(){
+        try{
+            String query = "SELECT Truck_ID, truck_in\n" +
+                    "FROM log_detail\n" +
+                    "ORDER BY ID DESC\n" + // Order by truck_in to get the latest truck
+                    "LIMIT 1";
+            PreparedStatement queryExecute = connectionDB.prepareStatement(query);
+            ResultSet resultSet = queryExecute.executeQuery();
+            if(resultSet.next()){
+                truckID = resultSet.getInt("Truck_ID");
+            } else {
+                // No rows returned, so generate a new truck ID
+                truckID = generateTruckID();
+            }
+            truckID_label.setText(Integer.toString(truckID));
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
     }
 }

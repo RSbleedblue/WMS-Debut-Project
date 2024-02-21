@@ -195,7 +195,7 @@ public class loginController implements Initializable {
     private void userSwitchLoad() throws ViewLoadException, SQLException {
         try {
             // Passes the first name of the user to the user controller
-            userController userController = new userController(getName(usernameTextField.getText()));
+            userController userController = new userController();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("userView.fxml"));
             fxmlLoader.setController(userController);
             switchScene(new Scene(fxmlLoader.load())); // Switches to the user view

@@ -1,0 +1,9 @@
+23:48:09.264 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+23:48:09.972 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+23:48:10.260 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+23:48:19.490 [JavaFX Application Thread] INFO  org.wms.userController - User controller initialized successfully
+23:48:19.503 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to user view
+23:48:19.503 [JavaFX Application Thread] INFO  org.wms.loginController - User logged in
+23:48:40.998 [JavaFX Application Thread] ERROR org.wms.userController - Invalid phone number entered
+23:48:50.290 [JavaFX Application Thread] ERROR org.wms.userController - Invalid phone number entered
+23:48:53.740 [JavaFX Application Thread] ERROR org.wms.userController - Invalid phone number entered

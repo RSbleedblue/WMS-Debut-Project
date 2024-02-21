@@ -42,20 +42,15 @@ public class userController implements Initializable {
     private static final String IMAGES_PATH = "images/";
 
     private Connection connectionDB;
-    private String userName;
     private ArrayList<OrderItem> items = new ArrayList<>();
-
-    public userController(String name) {
-        DatabaseConnection connection = new DatabaseConnection();
-        connectionDB = connection.getConnection();
-        this.userName = name;
-    }
     public userController(){
         DatabaseConnection connection = new DatabaseConnection();
         connectionDB = connection.getConnection();
     }
     @FXML
     private TextField address_order;
+    @FXML
+    private TextField order_phone;
 
     @FXML
     private ImageView bedImage;
@@ -173,10 +168,6 @@ public class userController implements Initializable {
 
     @FXML
     private Label sofa_qt;
-
-    @FXML
-    private AnchorPane summarySection;
-
     @FXML
     private ImageView tableImage;
 
@@ -188,7 +179,8 @@ public class userController implements Initializable {
 
     @FXML
     private ImageView table_image;
-
+    @FXML
+    private Label s_phone;
     @FXML
     private AnchorPane table_light;
 
@@ -205,7 +197,7 @@ public class userController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
             // Initialization code...
-            nameField.setText(userName.toUpperCase());
+//            nameField.setText(userName.toUpperCase());
             bedQuality.setItems(FXCollections.observableArrayList("POOR", "BAD", "AVERAGE", "GOOD", "BEST"));
             sofaQuality.setItems(FXCollections.observableArrayList("POOR", "BAD", "AVERAGE", "GOOD", "BEST"));
             tableQuality.setItems(FXCollections.observableArrayList("POOR", "BAD", "AVERAGE", "GOOD", "BEST"));
@@ -254,21 +246,30 @@ public class userController implements Initializable {
     }
     public void cancelHandler(ActionEvent e) {
         bedQuality.setValue(null);
+        bedQuality.setPromptText("0");
+
         sofaQuality.setValue(null);
+        sofaQuality.setPromptText("0");
+
         tableQuality.setValue(null);
+        tableQuality.setPromptText("0");
 
         bedQuantity.setValue(null);
+        bedQuantity.setPromptText("0");
+
         sofaQuantity.setValue(null);
+        sofaQuantity.setPromptText("0");
+
         tableQuantity.setValue(null);
+        tableQuantity.setPromptText("0");
 
         orderDetail.setVisible(true);
-        summarySection.setVisible(false);
-
+        clearOrderDetails();
     }
 
     String orderID = generateID();
     public void placeOrder(ActionEvent event) throws OrderPlacementException, SQLException, IOException {
-        if (address_order.getText().isBlank() || feedback_order.getText().isBlank()) {
+        if (address_order.getText().isBlank() || feedback_order.getText().isBlank() || nameField.getText().isBlank() || order_phone.getText().isBlank()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setContentText("Please fill the Order details before proceeding");
@@ -277,7 +278,16 @@ public class userController implements Initializable {
             logger.error("Address or feedback not filled");
             return;
         }
+        if (order_phone.getText().isBlank() || !isInteger(order_phone.getText()) || order_phone.getText().length() != 10) {
+            // Show error message or take appropriate action
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setContentText("Please enter a valid phone number");
+            alert.showAndWait();
 
+            logger.error("Invalid phone number entered");
+            return;
+        }
         items.clear();
         MapQuality map = new MapQuality();
 
@@ -304,22 +314,18 @@ public class userController implements Initializable {
             alert.showAndWait();
             return;
         }
-        s_name.setText(userName.toUpperCase());
+        s_name.setText(nameField.getText().toUpperCase());
         s_add.setText(address_order.getText());
         s_orderid.setText(orderID.toUpperCase());
-
+        s_phone.setText(order_phone.getText());
         // Clear existing values
         clearOrderDetails();
         // Show the summary section
         orderDetail.setVisible(false);
         order_summary.setVisible(true);
-
         // Display order details based on the selected items
         displayOrderDetails();
-
-
     }
-
     private void clearOrderDetails() {
         // Clear existing order details
         bed_light.setStyle("-fx-background-color: #FF5733;" +
@@ -340,7 +346,22 @@ public class userController implements Initializable {
         sofa_qt.setVisible(true);
         table_ql.setVisible(true);
         table_qt.setVisible(true);
+        sofa_image.setOpacity(1);
+        bed_image.setOpacity(1);
+        table_image.setOpacity(1);
+        bed_light.setOpacity(1);
+        table_light.setOpacity(1);
+        sofa_light.setOpacity(1);
     }
+    public boolean isInteger(String input) {
+        try {
+            Long.parseLong(input);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
     MapQuality map = new MapQuality();
     private void displayOrderDetails() {
         File bedSofaFile = new File("images/BedSofa.png");
