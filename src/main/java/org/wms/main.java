@@ -21,7 +21,7 @@ public class main extends Application {
             FXMLLoader fxmlLoader = new FXMLLoader(main.class.getResource("loginView.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
-            stage.initStyle(StageStyle.UNDECORATED);
+//            stage.initStyle(StageStyle.TRANSPARENT);
             stage.setScene(scene);
             stage.show();
             logger.info("Application started successfully.");
