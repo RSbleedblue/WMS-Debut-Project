@@ -59,6 +59,12 @@ public class adminController implements Initializable {
     }
 //  FXML FX: Ids;
     @FXML
+    private Label pending_update;
+    @FXML
+    private AnchorPane pendingUpdation_box;
+    @FXML
+    private Label pendingLabel;
+    @FXML
     private Text truck_text_Status;
     @FXML
     private Label historyBTN;
@@ -254,6 +260,7 @@ public class adminController implements Initializable {
         loadDeliverOrder();
         setTruckID();
         loadLogData();
+        setPending_updateTexT();
         try {
             getTotalDeliveryCount();
         } catch (SQLException e) {
@@ -672,12 +679,18 @@ public class adminController implements Initializable {
 //    Method of loading orders into the Truck.
     private ArrayList<placedOrders> pushOrders = new ArrayList<>();
     public void pushOrder() throws PushOrderException, SQLException {
-        if (!isTruckIn()) {
-            showErrorAlert("ERROR", "Unavailable", "Truck is out for Delivery");
-            logger.error("Truck is out for Delivery");
+//        if (!isTruckIn()) {
+//            showErrorAlert("ERROR", "Unavailable", "Truck is out for Delivery");
+//            logger.error("Truck is out for Delivery");
+//            return;
+//        }
+//        Check for Pending Updation
+        int pendingUpdation = getUpdatePending();
+        if(pendingUpdation != 0){
+            showErrorAlert("Error","Update","First Update the Warehouse");
+            logger.error("Updates Pending");
             return;
         }
-
         try {
             placedOrders pOds = order_table.getSelectionModel().getSelectedItem();
             if (pOds == null) {
@@ -981,7 +994,6 @@ public class adminController implements Initializable {
 
             // Reload truck time and warehouse data
             loadWarehouseData();
-            loadPieChartData();
             setTruckStatus();
             loadBarChartData("bed");
             loadBarChartData("sofa");
@@ -1035,5 +1047,32 @@ public class adminController implements Initializable {
         catch (SQLException e){
             e.printStackTrace();
         }
+    }
+    private void setPending_updateTexT(){
+        int pending = getUpdatePending();
+        if(pending != 0){
+            pending_update.setText(Integer.toString(pending));
+            pending_update.setTextFill(Color.RED);
+            pendingLabel.setTextFill(Color.RED);
+            return;
+        }
+        pending_update.setText("0");
+        pending_update.setTextFill(Color.GREEN);
+        pendingLabel.setTextFill(Color.GREEN);
+
+    }
+    private int getUpdatePending() {
+        int updatePendingCount = 0;
+        String query = "SELECT COUNT(*) FROM gatekeeper_data WHERE status = 'not_updated'";
+        try (PreparedStatement statement = connectionDB.prepareStatement(query)) {
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                updatePendingCount = resultSet.getInt(1); // Retrieve the count from the first column
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            // Handle the exception appropriately, such as logging or rethrowing
+        }
+        return updatePendingCount;
     }
 }

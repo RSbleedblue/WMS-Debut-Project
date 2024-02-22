@@ -18,7 +18,7 @@ public class main extends Application {
     public void start(Stage stage) {
         try {
             logger.info("Starting the application...");
-            FXMLLoader fxmlLoader = new FXMLLoader(main.class.getResource("loginView.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(main.class.getResource("gateKeeperView.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
 //            stage.initStyle(StageStyle.TRANSPARENT);
