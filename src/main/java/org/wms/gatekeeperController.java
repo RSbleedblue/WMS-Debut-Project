@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -70,7 +71,7 @@ public class gatekeeperController implements Initializable {
     private ComboBox<String> table_quantity;
 
     @FXML
-    private TextField truck_id;
+    private Label truck_id;
 
 
     //    Default constructor
@@ -83,6 +84,7 @@ public class gatekeeperController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle){
         initializeImages();
         initializeDropdowns();
+        truck_id.setText(Integer.toString(generateProcessID()));
     }
     MapQuality map = new MapQuality();
     private void initializeDropdowns(){
@@ -119,13 +121,14 @@ public class gatekeeperController implements Initializable {
             gatekeeperData data = new gatekeeperData(cname, quality, quantity);
             gatekeeperDataList.add(data);
         }
-        String insertQuery = "Insert into gatekeeper_data (c_name, quality, quantity) Values (? , ? , ?)";
+        String insertQuery = "Insert into gatekeeper_data (c_name, quality, quantity, process) Values (? , ? , ?, ?)";
         try (PreparedStatement insertStatement = connectDB.prepareStatement(insertQuery)){
             for(gatekeeperData data : gatekeeperDataList){
                 String qualityChanged = data.getQuality().toLowerCase();
                 insertStatement.setString(1, data.getCname());
                 insertStatement.setInt(2,Integer.parseInt(qualityChanged));
                 insertStatement.setInt(3,Integer.parseInt(data.getQuantity()));
+                insertStatement.setInt(4, generateProcessID());
                 insertStatement.executeUpdate();
             }
         }
@@ -158,9 +161,20 @@ public class gatekeeperController implements Initializable {
         sofa_quantity.getSelectionModel().clearSelection();
         table_quality.getSelectionModel().clearSelection();
         table_quantity.getSelectionModel().clearSelection();
-
-        // Clear truck_id field
-        truck_id.clear();
+    }
+    private int generateProcessID(){
+        String query = "SELECT MAX(ID) AS latest_id FROM gatekeeper_data";
+        int truckID = 1000;
+        try(PreparedStatement statement = connectDB.prepareStatement(query)){
+            ResultSet set =  statement.executeQuery();
+            if(set.next()){
+                truckID += set.getInt("latest_id");
+            }
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+        return truckID;
     }
     private void initializeImages(){
         Image sofaImage = loadImage("sofa.png");

@@ -138,16 +138,20 @@ public class loginController implements Initializable {
             while (queryResult.next()) {
                 userFound = true; // Set the flag to true since user exists
                 String storedHashedPassword = queryResult.getString("password");
-                boolean isAdmin = queryResult.getBoolean("isAdmin");
+                int isAdmin = queryResult.getInt("isAdmin");
 
                 // Check if the entered password matches the stored hashed password
                 if (BCrypt.checkpw(enterPasswordField.getText(), storedHashedPassword)) {
-                    if (isAdmin) {
-                        adminSwitchLoad(); // Switches to admin view if the user is an admin
-                        logger.info("Admin logged in"); // Logs the successful admin login
-                    } else {
-                        userSwitchLoad(); // Switches to user view if the user is not an admin
-                        logger.info("User logged in"); // Logs the successful user login
+                    if (isAdmin == 1) {
+                        adminSwitchLoad();
+                        logger.info("Admin logged in");
+                    } else if(isAdmin == 0) {
+                        userSwitchLoad();
+                        logger.info("User logged in");
+                    }
+                    else{
+                        getkeeperSwitchLoad();
+                        logger.info("gatekeeper Logged in");
                     }
                     return; // Exit the method if login is successful
                 }
@@ -164,7 +168,6 @@ public class loginController implements Initializable {
             throw new DatabaseQueryException("Error occurs while validating user", e);
         }
     }
-
     // Handles the action when the user clicks the register button to switch to the register view
     @FXML
     public void registerSwitchLoad(ActionEvent event) throws ViewLoadException {
@@ -204,6 +207,11 @@ public class loginController implements Initializable {
             logger.error("Error loading user view", e); // Logs an error if loading user view fails
             throw new ViewLoadException("Error loading user view", e);
         }
+    }
+    private void getkeeperSwitchLoad() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("gateKeeperView.fxml"));
+        switchScene(new Scene(fxmlLoader.load()));
+        logger.info("Switched to Gatekeeper View");
     }
 
     // Method to switch to the admin view after successful admin login

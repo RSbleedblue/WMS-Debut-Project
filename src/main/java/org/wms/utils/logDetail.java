@@ -8,13 +8,15 @@ public class logDetail {
     private final SimpleStringProperty taskDone;
     private final SimpleStringProperty truckIn;
     private final SimpleStringProperty truckOut;
+    private final SimpleStringProperty day;
 
-    public logDetail(String truckID, String orderID, String taskDone, String truckIn, String truckOut) {
+    public logDetail(String truckID, String orderID, String taskDone, String truckIn, String truckOut, String day) {
         this.truckID = new SimpleStringProperty(truckID);
         this.orderID = new SimpleStringProperty(orderID);
         this.taskDone = new SimpleStringProperty(taskDone);
         this.truckIn = new SimpleStringProperty(truckIn);
         this.truckOut = new SimpleStringProperty(truckOut);
+        this.day = new SimpleStringProperty(day);
     }
 
     public String getTruckID() {
@@ -44,5 +46,8 @@ public class logDetail {
             return "-----";
         }
         return truckOut.get();
+    }
+    public String getDay(){
+        return day.get();
     }
 }

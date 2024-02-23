@@ -1,0 +1,21 @@
+14:24:16.185 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+14:24:17.337 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+14:24:20.950 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+14:24:30.792 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+14:24:30.794 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 1
+14:24:30.795 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+14:24:30.798 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+14:24:30.800 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+14:24:30.838 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+14:24:30.838 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in
+14:24:39.948 [JavaFX Application Thread] INFO  org.wms.adminController - Home button clicked. Dashboard section displayed.
+14:24:43.023 [JavaFX Application Thread] INFO  org.wms.adminController - History button clicked. Log table displayed.
+14:24:50.405 [JavaFX Application Thread] INFO  org.wms.adminController - History button clicked. Graph displayed.
+14:24:59.665 [JavaFX Application Thread] INFO  org.wms.adminController - Add Commodity button clicked. Add commodity section displayed.
+14:25:10.224 [JavaFX Application Thread] ERROR org.wms.adminController - Truck is Empty
+14:25:12.316 [JavaFX Application Thread] INFO  org.wms.adminController - Home button clicked. Dashboard section displayed.
+14:25:13.706 [JavaFX Application Thread] INFO  org.wms.adminController - Add Commodity button clicked. Add commodity section displayed.
+14:25:17.637 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.
+14:25:22.534 [JavaFX Application Thread] ERROR org.wms.adminController - Updates Pending
+14:25:23.843 [JavaFX Application Thread] INFO  org.wms.adminController - Add Commodity button clicked. Add commodity section displayed.
+14:25:32.837 [JavaFX Application Thread] ERROR org.wms.adminController - Truck is Empty

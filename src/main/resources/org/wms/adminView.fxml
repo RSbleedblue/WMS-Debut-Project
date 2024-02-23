@@ -8,12 +8,10 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -109,45 +107,16 @@
       </AnchorPane>
       <AnchorPane fx:id="addCommoditySection" layoutX="248.0" onMouseClicked="#setHomeBtn" prefHeight="598.0" prefWidth="814.0" visible="false">
          <children>
-            <TableView fx:id="tableView" editable="true" layoutX="397.0" layoutY="270.0" onMouseClicked="#selectCommoditiesList" prefHeight="318.0" prefWidth="400.0" tableMenuButtonVisible="true">
-               <columns>
-                  <TableColumn fx:id="c_Name_Col" prefWidth="126.4000244140625" text="Commodity Name" />
-                  <TableColumn fx:id="quality_Col" prefWidth="126.4000244140625" text="Quality Rating" />
-                  <TableColumn fx:id="quantity_Col" prefWidth="126.4000244140625" text="Quantity" />
-               </columns>
-            </TableView>
             <AnchorPane layoutX="44.0" layoutY="263.0" prefHeight="318.0" prefWidth="327.0" style="-fx-background-color: fff; -fx-background-radius: 20;">
                <children>
-                  <ImageView fx:id="select_commodity_detail_img" fitHeight="144.0" fitWidth="150.0" layoutX="97.0" pickOnBounds="true" AnchorPane.bottomAnchor="176.0" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="86.60000000000002" AnchorPane.topAnchor="0.0">
-                     <image>
-                        <Image url="@../../../../../images/add.png" />
-                     </image>
-                  </ImageView>
-                  <ProgressBar fx:id="progressBar" layoutX="43.0" layoutY="133.0" prefHeight="34.0" prefWidth="258.0" progress="0.47" stylesheets="@style.css">
-                     <effect>
-                        <Reflection fraction="0.7" />
-                     </effect>
-                  </ProgressBar>
-                  <Label layoutX="44.0" layoutY="219.0" text="Total Quantity: ">
-                     <font>
-                        <Font size="14.0" />
-                     </font></Label>
-                  <TextField fx:id="total_Quantity_com" layoutX="147.0" layoutY="218.0" prefHeight="27.0" prefWidth="50.0" promptText="0" />
-                  <Label layoutX="45.0" layoutY="252.0" text="Quality: ">
-                     <font>
-                        <Font size="14.0" />
-                     </font></Label>
-                  <TextField fx:id="quality_com" layoutX="147.0" layoutY="250.0" prefHeight="27.0" prefWidth="76.0" promptText="0" />
-                  <Label layoutX="44.0" layoutY="288.0" text="Quantity:">
-                     <font>
-                        <Font size="14.0" />
-                     </font></Label>
-                  <TextField fx:id="quantity_com" layoutX="147.0" layoutY="284.0" prefHeight="27.0" prefWidth="50.0" promptText="0" />
-                  <Label layoutX="44.0" layoutY="186.0" text="Commodity: ">
-                     <font>
-                        <Font size="14.0" />
-                     </font></Label>
-                  <TextField fx:id="selected_com_update" layoutX="147.0" layoutY="182.0" prefHeight="27.0" prefWidth="116.0" promptText="select commodity" />
+                  <TableView fx:id="pending_update_table" layoutX="7.0" layoutY="11.0" prefHeight="298.0" prefWidth="310.0">
+                    <columns>
+                      <TableColumn fx:id="pending_id_col" prefWidth="75.0" text="ID" />
+                        <TableColumn fx:id="pending_name_col" prefWidth="75.0" text="Name" />
+                      <TableColumn fx:id="pending_col_quality" prefWidth="75.0" text="Quality" />
+                        <TableColumn fx:id="pending_col_quantity" prefWidth="75.0" text="Quantity" />
+                    </columns>
+                  </TableView>
                </children>
             </AnchorPane>
             <ImageView fx:id="truck_status_image" fitHeight="130.0" fitWidth="188.0" layoutX="607.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="450.79999999999995" AnchorPane.leftAnchor="607.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="16.0" />
@@ -165,7 +134,7 @@
                   </Label>
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="42.0" layoutY="23.0" prefHeight="200.0" prefWidth="471.0" style="-fx-background-color: fff; -fx-background-radius: 20;">
+            <AnchorPane layoutX="42.0" layoutY="23.0" prefHeight="186.0" prefWidth="471.0" style="-fx-background-color: fff; -fx-background-radius: 20;">
                <children>
                   <Label layoutX="20.0" layoutY="36.0" text="Commodity:">
                      <font>
@@ -196,13 +165,13 @@
                         <String fx:value="animated-button" />
                      </styleClass>
                   </ComboBox>
-                  <Button fx:id="update_com_btn" layoutX="318.0" layoutY="82.0" mnemonicParsing="false" onAction="#updateWarehouse" prefHeight="30.0" prefWidth="116.0" stylesheets="@style.css" text="UPDATE" textFill="WHITE">
+                  <Button fx:id="update_com_btn" layoutX="318.0" layoutY="62.0" mnemonicParsing="false" onAction="#updateWarehouse" prefHeight="30.0" prefWidth="116.0" stylesheets="@style.css" text="UPDATE" textFill="WHITE">
                      <styleClass>
                         <String fx:value="animated-button" />
                         <String fx:value="BtnWhiteBGGreen" />
                      </styleClass>
                   </Button>
-                  <Button fx:id="clear_com_btn" layoutX="318.0" layoutY="129.0" mnemonicParsing="false" onAction="#clearWarehouse" prefHeight="24.0" prefWidth="116.0" stylesheets="@style.css" text="CLEAR SELECTION" textFill="WHITE">
+                  <Button fx:id="clear_com_btn" layoutX="318.0" layoutY="109.0" mnemonicParsing="false" onAction="#clearWarehouse" prefHeight="24.0" prefWidth="116.0" stylesheets="@style.css" text="CLEAR SELECTION" textFill="WHITE">
                      <styleClass>
                         <String fx:value="BtnWhiteBGRed" />
                         <String fx:value="animated-button" />
@@ -216,6 +185,28 @@
                   </TextField>
                </children>
             </AnchorPane>
+            <AnchorPane fx:id="graph_change_pane" layoutX="389.0" layoutY="267.0" prefHeight="310.0" prefWidth="436.0" style="-fx-background-color: fff; -fx-background-radius: 20;" styleClass="animated-button" stylesheets="@style.css">
+               <children>
+                  <BarChart fx:id="barChart_dashboard" layoutX="9.0" prefHeight="306.0" prefWidth="418.0" stylesheets="@style.css">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" fx:id="xAxis" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis fx:id="yAxis" side="LEFT" />
+                    </yAxis>
+                  </BarChart>
+               </children>
+            </AnchorPane>
+            <Label layoutX="588.0" layoutY="223.0" style="-fx-text-fill: FFD0EC;" text="Warehouse Data" textFill="WHITE">
+               <font>
+                  <Font name="Impact" size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="136.0" layoutY="223.0" style="-fx-text-fill: FFD0EC;" text="Pending Updates" textFill="WHITE">
+               <font>
+                  <Font name="Impact" size="21.0" />
+               </font>
+            </Label>
          </children></AnchorPane>
       <AnchorPane fx:id="heroSectionleft" prefHeight="600.0" prefWidth="250.0" style="-fx-background-color: fff; -fx-background-radius: 50;">
          <children>
@@ -241,33 +232,33 @@
             <Separator layoutX="14.0" layoutY="191.0" prefHeight="2.0" prefWidth="225.0" />
             <AnchorPane layoutX="14.0" layoutY="190.0" prefHeight="407.0" prefWidth="226.0" stylesheets="@style.css">
                <children>
-                  <Button fx:id="homeBtn" alignment="CENTER" layoutX="70.0" layoutY="35.0" mnemonicParsing="false" onAction="#setHomeBtn" prefHeight="38.0" prefWidth="126.0" stylesheets="@style.css" text="DASHBOARD">
+                  <Button fx:id="homeBtn" alignment="CENTER" layoutX="70.0" layoutY="43.0" mnemonicParsing="false" onAction="#setHomeBtn" prefHeight="38.0" prefWidth="126.0" stylesheets="@style.css" text="DASHBOARD">
                      <styleClass>
                         <String fx:value="dashboard-btn" />
                         <String fx:value="animated-button" />
                      </styleClass></Button>
-                  <Button fx:id="addCommodityBtn" alignment="CENTER" layoutX="70.0" layoutY="108.0" mnemonicParsing="false" onAction="#setHomeBtn" prefHeight="38.0" prefWidth="125.0" stylesheets="@style.css" text="COMMODITIY">
+                  <Button fx:id="addCommodityBtn" alignment="CENTER" layoutX="70.0" layoutY="185.0" mnemonicParsing="false" onAction="#setHomeBtn" prefHeight="38.0" prefWidth="125.0" stylesheets="@style.css" text="UPDATE">
                      <styleClass>
                         <String fx:value="dashboard-btn" />
                         <String fx:value="animated-button" />
                      </styleClass></Button>
-                  <ImageView fx:id="dashboardIcon" blendMode="DARKEN" fitHeight="49.0" fitWidth="94.0" layoutX="19.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="dashboardIcon" blendMode="DARKEN" fitHeight="49.0" fitWidth="94.0" layoutX="19.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../images/dashboard.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="addIcon" blendMode="DARKEN" fitHeight="49.0" fitWidth="94.0" layoutX="19.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="addIcon" blendMode="DARKEN" fitHeight="49.0" fitWidth="94.0" layoutX="19.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../images/add.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="orders_BTN" alignment="CENTER" layoutX="70.0" layoutY="184.0" mnemonicParsing="false" onAction="#setHomeBtn" prefHeight="38.0" prefWidth="125.0" stylesheets="@style.css" text="ORDERS">
+                  <Button fx:id="orders_BTN" alignment="CENTER" layoutX="70.0" layoutY="115.0" mnemonicParsing="false" onAction="#setHomeBtn" prefHeight="38.0" prefWidth="125.0" stylesheets="@style.css" text="ORDERS">
                      <styleClass>
                         <String fx:value="dashboard-btn" />
                         <String fx:value="animated-button" />
                      </styleClass>
                   </Button>
-                  <ImageView fx:id="pendingImg" fitHeight="49.0" fitWidth="94.0" layoutX="19.0" layoutY="179.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="pendingImg" fitHeight="49.0" fitWidth="94.0" layoutX="19.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../images/pending.png" />
                      </image>
@@ -319,22 +310,22 @@
                         <Font size="25.0" />
                      </font>
                   </Label>
-                  <Label layoutX="226.0" layoutY="25.0" text="Truck ID">
+                  <Label layoutX="221.0" layoutY="26.0" text="Process">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <Label layoutX="239.0" layoutY="47.0" text="current">
+                  <Label layoutX="229.0" layoutY="45.0" text="number">
                      <font>
                         <Font size="10.0" />
                      </font>
                   </Label>
-                  <ImageView fx:id="truckIN" fitHeight="49.0" fitWidth="50.0" layoutX="170.0" layoutY="19.0" pickOnBounds="true">
+                  <ImageView fx:id="truckIN" fitHeight="49.0" fitWidth="50.0" layoutX="163.0" layoutY="22.0" pickOnBounds="true">
                      <image>
                         <Image url="@../../../../../images/truckIN.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="truckID_label" layoutX="226.0" layoutY="64.0" text="0">
+                  <Label fx:id="truckID_label" layoutX="221.0" layoutY="60.0" text="0">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -356,12 +347,13 @@
                   </Label>
                </children>
             </AnchorPane>
-            <PieChart fx:id="deliveryPieChart" layoutX="488.0" layoutY="236.8" legendVisible="false" prefHeight="274.0" prefWidth="324.0" style="-fx-text-fill: fff;" styleClass="animated-button" stylesheets="@style.css" AnchorPane.bottomAnchor="89.0" AnchorPane.leftAnchor="488.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="237.0" />
-            <AnchorPane fx:id="log_detail_pane" layoutX="35.0" layoutY="245.0" prefHeight="310.0" prefWidth="436.0" style="-fx-background-color: fff; -fx-background-radius: 20;" visible="false">
+            <PieChart fx:id="deliveryPieChart" layoutX="517.0" layoutY="226.4" legendVisible="false" prefHeight="288.0" prefWidth="318.0" style="-fx-text-fill: fff;" styleClass="animated-button" stylesheets="@style.css" AnchorPane.bottomAnchor="86.39999999999998" AnchorPane.leftAnchor="517.0" AnchorPane.rightAnchor="-7.399999999999977" AnchorPane.topAnchor="226.4" />
+            <AnchorPane fx:id="log_detail_pane" layoutX="16.0" layoutY="245.0" prefHeight="342.0" prefWidth="524.0" style="-fx-background-color: fff; -fx-background-radius: 20;" visible="false">
                <children>
-                  <TableView fx:id="log_detail_table" layoutX="5.0" layoutY="6.0" prefHeight="298.0" prefWidth="426.0" tableMenuButtonVisible="true">
+                  <TableView fx:id="log_detail_table" layoutX="5.0" layoutY="6.0" prefHeight="332.0" prefWidth="513.0" tableMenuButtonVisible="true">
                     <columns>
-                      <TableColumn fx:id="log_truck_id" prefWidth="82.0" text="Truck ID" />
+                      <TableColumn fx:id="log_truck_id" prefWidth="82.0" text="Process" />
+                        <TableColumn fx:id="log_date" prefWidth="82.0" text="Date" />
                       <TableColumn fx:id="log_order_id" prefWidth="82.0" text="Order ID" />
                         <TableColumn fx:id="log_task_done" prefWidth="82.0" text="Task Done" />
                         <TableColumn fx:id="log_truckin" prefWidth="82.0" text="Truck IN" />
@@ -370,19 +362,7 @@
                   </TableView>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="graph_change_pane" layoutX="35.0" layoutY="245.0" prefHeight="310.0" prefWidth="436.0" style="-fx-background-color: fff; -fx-background-radius: 20;" styleClass="animated-button" stylesheets="@style.css">
-               <children>
-                  <BarChart fx:id="barChart_dashboard" layoutX="9.0" prefHeight="306.0" prefWidth="418.0" stylesheets="@style.css">
-                    <xAxis>
-                      <CategoryAxis side="BOTTOM" fx:id="xAxis" />
-                    </xAxis>
-                    <yAxis>
-                      <NumberAxis fx:id="yAxis" side="LEFT" />
-                    </yAxis>
-                  </BarChart>
-               </children>
-            </AnchorPane>
-            <Label layoutX="590.0" layoutY="465.0" style="-fx-text-fill: FFD0EC;" text="Delivery Status" textFill="WHITE">
+            <Label layoutX="620.0" layoutY="465.0" style="-fx-text-fill: FFD0EC;" text="Delivery Status" textFill="WHITE">
                <font>
                   <Font name="Impact" size="21.0" />
                </font>
@@ -401,7 +381,7 @@
                   </Label>
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="273.0" layoutY="176.0" prefHeight="38.0" prefWidth="188.0" style="-fx-background-color: fff; -fx-background-radius: 20px;">
+            <AnchorPane layoutX="599.0" layoutY="228.0" prefHeight="38.0" prefWidth="188.0" style="-fx-background-color: fff; -fx-background-radius: 20px;">
                <children>
                   <Label layoutX="13.0" layoutY="9.0" text="Total Orders Delivered:">
                      <font>
@@ -415,14 +395,9 @@
                   </Label>
                </children>
             </AnchorPane>
-            <Label layoutX="179.0" layoutY="562.0" style="-fx-text-fill: FFD0EC;" text="Warehouse Data" textFill="WHITE">
-               <font>
-                  <Font name="Impact" size="21.0" />
-               </font>
-            </Label>
-            <AnchorPane fx:id="pendingUpdation_box" layoutX="496.0" layoutY="176.0" prefHeight="38.0" prefWidth="151.0" style="-fx-background-color: fff; -fx-background-radius: 20px;">
+            <AnchorPane fx:id="pendingUpdation_box" layoutX="280.0" layoutY="176.0" prefHeight="38.0" prefWidth="151.0" style="-fx-background-color: fff; -fx-background-radius: 20px;">
                <children>
-                  <Label fx:id="pendingLabel" layoutX="13.0" layoutY="9.0" text="Pending Updation:">
+                  <Label fx:id="pendingLabel" layoutX="13.0" layoutY="9.0" styleClass="animated-button" text="Pending Updation:">
                      <font>
                         <Font size="13.0" />
                      </font>
@@ -430,6 +405,23 @@
                   <Label fx:id="pending_update" layoutX="123.0" layoutY="4.0" prefHeight="30.0" prefWidth="26.0" text="-----">
                      <font>
                         <Font name="Ebrima" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="area_chart_pane" layoutX="16.0" layoutY="245.0" prefHeight="342.0" prefWidth="524.0" style="-fx-background-color: fff; -fx-background-radius: 20;">
+               <children>
+                  <BarChart fx:id="areaChart" layoutX="15.0" layoutY="22.0" legendVisible="false" prefHeight="298.0" prefWidth="494.0">
+                    <xAxis>
+                      <CategoryAxis fx:id="areaXaxis" side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis fx:id="areaYaxis" side="LEFT" />
+                    </yAxis>
+                  </BarChart>
+                  <Label layoutX="168.0" layoutY="304.0" style="-fx-text-fill: #474F7A;" text="Most Ordered Items" textFill="WHITE">
+                     <font>
+                        <Font name="Ebrima" size="21.0" />
                      </font>
                   </Label>
                </children>

@@ -10,6 +10,10 @@ public class OrderItem {
         this.quality = quality;
         this.quantity = quantity;
     }
+    public OrderItem(String commodity, int quantity){
+        this.commodity = commodity;
+        this.quantity = quantity;
+    }
 
     // Getters and setters
     public String getCommodity() {

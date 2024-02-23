@@ -18,10 +18,10 @@ public class main extends Application {
     public void start(Stage stage) {
         try {
             logger.info("Starting the application...");
-            FXMLLoader fxmlLoader = new FXMLLoader(main.class.getResource("gateKeeperView.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(main.class.getResource("loginView.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
-//            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initStyle(StageStyle.UNDECORATED);
             stage.setScene(scene);
             stage.show();
             logger.info("Application started successfully.");
