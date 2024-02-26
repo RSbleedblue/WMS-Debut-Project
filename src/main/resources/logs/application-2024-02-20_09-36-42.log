@@ -1,0 +1,8 @@
+09:36:42.658 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+09:36:43.677 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+09:36:44.116 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+09:37:06.135 [JavaFX Application Thread] INFO  org.wms.userController - User controller initialized successfully
+09:37:06.149 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to user view
+09:37:06.150 [JavaFX Application Thread] INFO  org.wms.loginController - User logged in
+09:37:22.538 [JavaFX Application Thread] INFO  org.wms.userController - Printing the Placed items 
+09:37:22.538 [JavaFX Application Thread] INFO  org.wms.userController - Sofa bed and table 

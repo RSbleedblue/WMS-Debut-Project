@@ -1,0 +1,33 @@
+11:34:58.759 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+11:34:59.483 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+11:34:59.769 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+11:35:09.895 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+11:35:09.897 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 2
+11:35:09.897 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+11:35:09.902 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+11:35:09.903 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+11:35:09.973 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+11:35:09.974 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in
+11:35:14.630 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.
+11:35:19.132 [JavaFX Application Thread] INFO  org.wms.adminController - Add Commodity button clicked. Add commodity section displayed.
+11:35:21.259 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+11:35:33.474 [JavaFX Application Thread] INFO  org.wms.userController - User controller initialized successfully
+11:35:33.477 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to user view
+11:35:33.477 [JavaFX Application Thread] INFO  org.wms.loginController - User logged in
+11:36:00.147 [JavaFX Application Thread] INFO  org.wms.thankyouController - Thank you page initialized successfully
+11:36:02.069 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+11:36:02.078 [JavaFX Application Thread] INFO  org.wms.thankyouController - Closing the window and returning to login view
+11:36:14.716 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to Gatekeeper View
+11:36:14.716 [JavaFX Application Thread] INFO  org.wms.loginController - gatekeeper Logged in
+11:36:24.547 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+11:36:33.586 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+11:36:33.587 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 3
+11:36:33.587 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+11:36:33.594 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+11:36:33.594 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+11:36:33.624 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+11:36:33.624 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in
+11:36:39.174 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.
+11:36:43.461 [JavaFX Application Thread] INFO  org.wms.adminController - Add Commodity button clicked. Add commodity section displayed.
+11:36:45.190 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+11:36:46.550 [JavaFX Application Thread] INFO  org.wms.loginController - Application closed

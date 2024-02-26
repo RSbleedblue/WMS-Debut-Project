@@ -1,0 +1,8 @@
+10:19:33.655 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+10:19:34.288 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+10:19:34.590 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+10:19:49.219 [JavaFX Application Thread] WARN  org.wms.loginController - User not found during login attempt
+10:19:56.912 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to Gatekeeper View
+10:19:56.912 [JavaFX Application Thread] INFO  org.wms.loginController - gatekeeper Logged in
+10:21:31.612 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+10:21:41.228 [JavaFX Application Thread] INFO  org.wms.loginController - Application closed

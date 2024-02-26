@@ -14,15 +14,16 @@
    <children>
       <AnchorPane layoutX="406.0" prefHeight="600.0" prefWidth="393.0" style="-fx-background-color: ffffff; -fx-background-radius: 50;">
          <children>
-            <Label layoutX="75.0" layoutY="174.0" text="Username:">
+            <Label layoutX="98.0" layoutY="174.0" text="Email:">
                <font>
                   <Font size="13.0" />
                </font>
             </Label>
-            <TextField fx:id="usernameTextField" layoutX="140.0" layoutY="171.0" prefHeight="26.0" prefWidth="173.0" promptText="username" stylesheets="@style.css">
+            <TextField fx:id="usernameTextField" layoutX="140.0" layoutY="171.0" prefHeight="26.0" prefWidth="173.0" promptText="Enter Email" stylesheets="@style.css">
                <styleClass>
                   <String fx:value="list-cell" />
                   <String fx:value="list-view" />
+                  <String fx:value="loginText-field" />
                </styleClass>
             </TextField>
             <Label layoutX="77.0" layoutY="217.0" text="Password:">
@@ -30,10 +31,11 @@
                   <Font size="13.0" />
                </font>
             </Label>
-            <PasswordField fx:id="enterPasswordField" layoutX="141.0" layoutY="214.0" prefHeight="26.0" prefWidth="173.0" promptText="password" stylesheets="@style.css">
+            <PasswordField fx:id="enterPasswordField" layoutX="141.0" layoutY="214.0" prefHeight="26.0" prefWidth="173.0" promptText="Enter Password" stylesheets="@style.css">
                <styleClass>
                   <String fx:value="list-cell" />
                   <String fx:value="list-view" />
+                  <String fx:value="loginText-field" />
                </styleClass>
             </PasswordField>
             <Button fx:id="loginButton" alignment="CENTER" contentDisplay="CENTER" layoutX="75.0" layoutY="278.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="32.0" prefWidth="242.0" stylesheets="@style.css" text="Login" textFill="WHITE">
@@ -75,17 +77,17 @@
       </AnchorPane>
       <AnchorPane prefHeight="600.0" prefWidth="394.0" style="-fx-background-color: #474F7A;">
          <children>
-            <ImageView fx:id="brandingImageView" fitHeight="262.0" fitWidth="259.0" layoutX="63.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="brandingImageView" fitHeight="262.0" fitWidth="259.0" layoutX="63.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../images/WMSLoginPage.png" />
                </image>
             </ImageView>
-            <Label layoutX="124.0" layoutY="296.0" text="Continue With" textFill="#d9b7ff">
+            <Label layoutX="90.0" layoutY="300.0" text="Effortless Management" textFill="#ffd0ec">
                <font>
-                  <Font name="Impact" size="24.0" />
+                  <Font name="Ebrima" size="20.0" />
                </font>
             </Label>
-            <Label layoutX="148.0" layoutY="326.0" text="WMS" textFill="WHITE">
+            <Label layoutX="71.0" layoutY="328.0" text="WAREMASTER" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="35.0" />
                </font>

@@ -1,0 +1,22 @@
+11:58:21.306 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+11:58:22.116 [JavaFX Application Thread] ERROR org.wms.main - Error loading loginView.fxml
+javafx.fxml.LoadException: Error resolving onAction='#createList', either the event handler is not in the Namespace or there is an error in the script.
+/E:/IntelijFiles/WMS/target/classes/org/wms/gateKeeperView.fxml:42
+
+	at javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2703) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$Element.processEventHandlerAttributes(FXMLLoader.java:621) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$ValueElement.processEndElement(FXMLLoader.java:781) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.processEndElement(FXMLLoader.java:2924) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2639) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548) ~[javafx-fxml-18.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2516) ~[javafx-fxml-18.0.2-win.jar:?]
+	at org.wms.main.start(main.java:22) ~[classes/:?]
+	at com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:847) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:484) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457) ~[javafx-graphics-18.0.2-win.jar:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:399) ~[?:?]
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[javafx-graphics-18.0.2-win.jar:?]
+	at com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184) ~[javafx-graphics-18.0.2-win.jar:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]

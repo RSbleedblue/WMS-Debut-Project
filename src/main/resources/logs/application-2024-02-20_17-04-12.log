@@ -1,0 +1,3 @@
+17:04:12.654 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+17:04:13.298 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+17:04:13.663 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.

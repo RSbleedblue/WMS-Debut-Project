@@ -1,0 +1,18 @@
+16:12:02.282 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+16:12:03.443 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+16:12:13.327 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+16:13:11.380 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+16:13:11.384 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 0
+16:13:11.384 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+16:13:11.386 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+16:13:11.387 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+16:13:11.432 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+16:13:11.432 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in
+16:13:17.579 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.
+16:13:18.869 [JavaFX Application Thread] INFO  org.wms.adminController - Add Commodity button clicked. Add commodity section displayed.
+16:15:14.308 [JavaFX Application Thread] INFO  org.wms.adminController - Home button clicked. Dashboard section displayed.
+16:15:16.596 [JavaFX Application Thread] INFO  org.wms.adminController - History button clicked. Log table displayed.
+16:15:19.461 [JavaFX Application Thread] INFO  org.wms.adminController - Add Commodity button clicked. Add commodity section displayed.
+16:15:23.705 [JavaFX Application Thread] INFO  org.wms.adminController - Home button clicked. Dashboard section displayed.
+16:15:30.174 [JavaFX Application Thread] INFO  org.wms.adminController - Add Commodity button clicked. Add commodity section displayed.
+16:16:15.772 [JavaFX Application Thread] INFO  org.wms.adminController - Home button clicked. Dashboard section displayed.

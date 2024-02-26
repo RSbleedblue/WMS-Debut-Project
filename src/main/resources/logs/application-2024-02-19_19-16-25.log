@@ -1,0 +1,9 @@
+19:16:25.696 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+19:16:26.816 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+19:16:27.245 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+19:16:41.264 [JavaFX Application Thread] INFO  org.wms.userController - User controller initialized successfully
+19:16:41.278 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to user view
+19:16:41.278 [JavaFX Application Thread] INFO  org.wms.loginController - User logged in
+19:16:53.713 [JavaFX Application Thread] ERROR org.wms.userController - Address or feedback not filled
+19:16:56.436 [JavaFX Application Thread] INFO  org.wms.userController - Printing the Placed items 
+19:16:56.437 [JavaFX Application Thread] INFO  org.wms.userController - Sofa bed and table 

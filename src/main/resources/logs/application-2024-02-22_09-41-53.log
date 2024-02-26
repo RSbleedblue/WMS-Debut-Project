@@ -1,0 +1,18 @@
+09:41:53.489 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+09:41:54.294 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+09:41:54.617 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+09:42:50.339 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+09:42:50.342 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 1
+09:42:50.346 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+09:42:50.346 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+09:42:50.350 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+09:42:50.351 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+09:42:50.397 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+09:42:50.397 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in
+09:43:16.009 [JavaFX Application Thread] INFO  org.wms.adminController - Add Commodity button clicked. Add commodity section displayed.
+09:43:19.349 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.
+09:43:22.481 [JavaFX Application Thread] INFO  org.wms.adminController - Home button clicked. Dashboard section displayed.
+09:43:23.476 [JavaFX Application Thread] INFO  org.wms.adminController - Add Commodity button clicked. Add commodity section displayed.
+09:43:24.393 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.
+09:43:26.940 [JavaFX Application Thread] INFO  org.wms.adminController - Add Commodity button clicked. Add commodity section displayed.
+09:43:30.167 [JavaFX Application Thread] INFO  org.wms.adminController - Home button clicked. Dashboard section displayed.

@@ -1,0 +1,34 @@
+14:02:57.484 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+14:02:58.695 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+14:04:29.428 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+14:04:37.630 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+14:04:37.636 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 0
+14:04:37.639 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+14:04:37.639 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+14:04:37.641 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+14:04:37.642 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+14:04:37.681 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+14:04:37.681 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in
+14:04:47.022 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.
+14:04:49.454 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+14:04:56.634 [JavaFX Application Thread] INFO  org.wms.userController - User controller initialized successfully
+14:04:56.636 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to user view
+14:04:56.636 [JavaFX Application Thread] INFO  org.wms.loginController - User logged in
+14:05:15.336 [JavaFX Application Thread] ERROR org.wms.userController - Invalid phone number entered
+14:05:21.728 [JavaFX Application Thread] INFO  org.wms.thankyouController - Thank you page initialized successfully
+14:05:23.284 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+14:05:23.294 [JavaFX Application Thread] INFO  org.wms.thankyouController - Closing the window and returning to login view
+14:05:30.280 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+14:05:30.281 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 1
+14:05:30.285 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+14:05:30.286 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+14:05:30.288 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+14:05:30.289 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+14:05:30.309 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+14:05:30.309 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in
+14:05:37.720 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.
+14:05:44.499 [JavaFX Application Thread] ERROR org.wms.adminController - Updates Pending
+14:05:45.383 [JavaFX Application Thread] INFO  org.wms.adminController - Home button clicked. Dashboard section displayed.
+14:07:07.402 [JavaFX Application Thread] INFO  org.wms.adminController - Add Commodity button clicked. Add commodity section displayed.
+14:07:08.641 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.
+14:07:22.465 [JavaFX Application Thread] INFO  org.wms.adminController - Add Commodity button clicked. Add commodity section displayed.

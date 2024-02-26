@@ -1,0 +1,19 @@
+21:22:38.907 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+21:22:39.682 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+21:22:39.988 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+21:22:47.503 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+21:22:47.506 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 1
+21:22:47.509 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+21:22:47.509 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+21:22:47.512 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+21:22:47.513 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+21:22:47.553 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+21:22:47.554 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in
+21:22:57.460 [JavaFX Application Thread] INFO  org.wms.adminController - History button clicked. Log table displayed.
+21:22:59.338 [JavaFX Application Thread] INFO  org.wms.adminController - History button clicked. Graph displayed.
+21:23:04.872 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.
+21:23:08.055 [JavaFX Application Thread] INFO  org.wms.adminController - Add Commodity button clicked. Add commodity section displayed.
+21:23:10.302 [JavaFX Application Thread] INFO  org.wms.adminController - Home button clicked. Dashboard section displayed.
+21:23:12.170 [JavaFX Application Thread] INFO  org.wms.adminController - History button clicked. Log table displayed.
+21:23:17.418 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.
+21:23:19.644 [JavaFX Application Thread] INFO  org.wms.adminController - Add Commodity button clicked. Add commodity section displayed.

@@ -1,0 +1,21 @@
+21:18:32.725 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+21:18:33.492 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+21:18:33.797 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+21:18:41.251 [JavaFX Application Thread] WARN  org.wms.loginController - Invalid password during login attempt
+21:18:48.270 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+21:18:48.274 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 2
+21:18:48.276 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+21:18:48.277 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+21:18:48.280 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+21:18:48.284 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+21:18:48.285 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+21:18:48.318 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+21:18:48.318 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in
+21:18:53.767 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.
+21:19:07.506 [JavaFX Application Thread] ERROR org.wms.adminController - Truck is out for Delivery
+21:19:08.424 [JavaFX Application Thread] INFO  org.wms.adminController - Add Commodity button clicked. Add commodity section displayed.
+21:19:20.670 [JavaFX Application Thread] INFO  org.wms.adminController - Truck time loaded successfully.
+21:19:20.671 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+21:19:24.179 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.
+21:19:30.551 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.
+21:19:36.799 [JavaFX Application Thread] INFO  org.wms.adminController - Warehouse data loaded successfully.

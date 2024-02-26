@@ -1,0 +1,18 @@
+16:03:59.200 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+16:04:00.514 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+16:04:11.169 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+16:04:18.710 [JavaFX Application Thread] WARN  org.wms.loginController - Invalid password during login attempt
+16:04:24.388 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+16:04:24.392 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 0
+16:04:24.392 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+16:04:24.394 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+16:04:24.395 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+16:04:24.433 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+16:04:24.433 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in
+16:04:34.977 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.
+16:04:36.504 [JavaFX Application Thread] INFO  org.wms.adminController - Add Commodity button clicked. Add commodity section displayed.
+16:04:45.889 [JavaFX Application Thread] INFO  org.wms.adminController - Home button clicked. Dashboard section displayed.
+16:05:25.500 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.
+16:05:27.217 [JavaFX Application Thread] INFO  org.wms.adminController - Add Commodity button clicked. Add commodity section displayed.
+16:05:34.539 [JavaFX Application Thread] INFO  org.wms.adminController - Home button clicked. Dashboard section displayed.
+16:05:39.109 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.

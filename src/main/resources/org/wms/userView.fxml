@@ -1,169 +1,292 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.String?>
+<?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: fff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: fff; -fx-background-radius: 50; -fx-border-radius: 50;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane layoutX="500.0" prefHeight="600.0" prefWidth="300.0" style="-fx-background-color: fff;">
+      <AnchorPane fx:id="order_summary" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #474F7A;" visible="false">
          <children>
-            <Label layoutX="40.0" layoutY="20.0" text="Shipping Details">
+            <AnchorPane layoutX="39.0" layoutY="56.0" prefHeight="479.0" prefWidth="734.0" style="-fx-border-color: FFF; -fx-border-radius: 20;">
+               <children>
+                  <AnchorPane fx:id="table_light" layoutX="508.0" layoutY="158.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: fff; -fx-background-radius: 100;" />
+                  <AnchorPane layoutX="176.0" layoutY="286.0" prefHeight="173.0" prefWidth="381.0" style="-fx-background-color: fff; -fx-background-radius: 20;">
+                     <children>
+                        <Label layoutX="23.0" layoutY="123.0" text="Phone:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="s_phone" alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="71.0" layoutY="126.0" prefHeight="13.0" prefWidth="118.0" text="Label" textAlignment="CENTER">
+                           <font>
+                              <Font name="Lucida Sans Typewriter Regular" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="24.0" layoutY="31.0" text="Name:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="s_name" layoutX="74.0" layoutY="30.0" prefHeight="26.0" prefWidth="125.0" text="Label">
+                           <font>
+                              <Font name="Lucida Sans Typewriter Regular" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="17.0" layoutY="60.0" text="Order ID:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="s_orderid" layoutX="76.0" layoutY="61.0" prefHeight="19.0" prefWidth="58.0" text="Label">
+                           <font>
+                              <Font name="Lucida Sans Typewriter Regular" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="19.0" layoutY="92.0" text="Address:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="s_add" alignment="TOP_LEFT" layoutX="77.0" layoutY="94.0" prefHeight="19.0" prefWidth="226.0" text="Label">
+                           <font>
+                              <Font name="Lucida Sans Typewriter Regular" size="13.0" />
+                           </font>
+                        </Label>
+                        <ImageView fx:id="main_image" fitHeight="163.0" fitWidth="212.0" layoutX="193.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <Label layoutX="311.0" layoutY="14.0" text="Order Summary" textFill="WHITE">
                <font>
-                  <Font name="Arial Bold" size="27.0" />
+                  <Font name="Impact" size="29.0" />
                </font>
             </Label>
-            <Label layoutX="36.0" layoutY="76.0" text="Name">
+            <HBox alignment="CENTER" layoutX="89.0" layoutY="60.0" prefHeight="185.0" prefWidth="637.0" style="-fx-background-color: TRANSPARENT; -fx-background-radius: 20;">
+               <children>
+                  <ImageView fx:id="bed_image" fitHeight="145.0" fitWidth="148.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../images/bed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="sofa_image" fitHeight="173.0" fitWidth="203.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../images/sofa.png" />
+                     </image>
+                     <effect>
+                        <Reflection fraction="0.05" />
+                     </effect>
+                  </ImageView>
+                  <ImageView fx:id="table_image" fitHeight="163.0" fitWidth="163.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../images/table.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <AnchorPane fx:id="bed_light" layoutX="216.0" layoutY="214.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: fff; -fx-background-radius: 100;" />
+            <AnchorPane fx:id="sofa_light" layoutX="385.0" layoutY="213.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: fff; -fx-background-radius: 100;" />
+            <HBox alignment="CENTER" layoutX="63.0" layoutY="252.0" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: fff; -fx-background-radius: 20;">
+               <children>
+                  <Label contentDisplay="CENTER" text="Quality" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="63.0" layoutY="292.0" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: fff; -fx-background-radius: 20;">
+               <children>
+                  <Label contentDisplay="CENTER" text="Quantity" />
+               </children>
+            </HBox>
+            <Label fx:id="bed_ql" layoutX="218.0" layoutY="256.0" text="Label" textFill="WHITE" />
+            <Label fx:id="bed_qt" layoutX="217.0" layoutY="296.0" text="Label" textFill="WHITE" />
+            <Label fx:id="sofa_ql" layoutX="385.0" layoutY="256.0" text="Label" textFill="WHITE" />
+            <Label fx:id="sofa_qt" layoutX="385.0" layoutY="296.0" text="Label" textFill="WHITE" />
+            <Label fx:id="table_ql" layoutX="547.0" layoutY="256.0" text="Label" textFill="WHITE" />
+            <Label fx:id="table_qt" layoutX="547.0" layoutY="296.0" text="Label" textFill="WHITE" />
+            <Button fx:id="confirmOrder" layoutX="254.0" layoutY="544.0" mnemonicParsing="false" onAction="#confirmHandler" prefHeight="37.0" prefWidth="114.0" stylesheets="@style.css" text="Confirm">
                <font>
                   <Font size="14.0" />
                </font>
-            </Label>
-            <TextField fx:id="nameField" layoutX="36.0" layoutY="96.0" prefHeight="26.0" prefWidth="200.0" promptText="Enter Name" />
-            <Label layoutX="36.0" layoutY="137.0" text="Address">
+               <styleClass>
+                  <String fx:value="BtnWhiteBGGreen" />
+                  <String fx:value="animated-button" />
+               </styleClass>
+            </Button>
+            <Button fx:id="cancelConfirm" layoutX="398.0" layoutY="544.0" mnemonicParsing="false" onAction="#cancelHandler" prefHeight="37.0" prefWidth="114.0" stylesheets="@style.css" text="Reset">
                <font>
                   <Font size="14.0" />
                </font>
-            </Label>
-            <TextField alignment="TOP_LEFT" layoutX="36.0" layoutY="157.0" prefHeight="50.0" prefWidth="200.0" promptText="Enter Address" />
-            <Label layoutX="36.0" layoutY="217.0" text="FeedBack">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <TextField alignment="TOP_LEFT" layoutX="36.0" layoutY="237.0" prefHeight="70.0" prefWidth="200.0" promptText="Your feeback is Valuable!" />
-            <Separator layoutX="14.0" layoutY="318.0" prefHeight="0.0" prefWidth="265.0" />
-            <Button fx:id="cancelButton" layoutX="42.0" layoutY="456.0" mnemonicParsing="false" onAction="#closePlaceOrder" prefHeight="58.0" prefWidth="209.0" stylesheets="@style.css" text="Cancel Order" textFill="#fff6f6">
                <styleClass>
                   <String fx:value="BtnWhiteBGRed" />
                   <String fx:value="animated-button" />
                </styleClass>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="orderDetail" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #474F7A;">
+         <children>
+            <AnchorPane layoutY="68.0" prefHeight="163.0" prefWidth="800.0" style="-fx-background-color: #fff; -fx-background-radius: 50;">
+               <children>
+                  <ImageView fx:id="sofaImage" fitHeight="109.0" fitWidth="114.0" layoutX="269.0" layoutY="7.0" pickOnBounds="true" AnchorPane.topAnchor="7.0">
+                     <image>
+                        <Image url="@../../../../../images/sofa.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D />
+                     </viewport>
+                  </ImageView>
+                  <Label layoutX="158.0" layoutY="46.0" text="BED">
+                     <font>
+                        <Font name="Segoe UI Emoji" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="376.0" layoutY="43.0" text="Sofa">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="619.0" layoutY="43.0" text="Table">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+                  <Line endX="371.4000244140625" endY="1.52587890625E-5" layoutX="131.0" layoutY="174.0" startX="371.4000244140625" startY="-160.39999389648438" stroke="#dfd9d9" />
+                  <ComboBox fx:id="bedQuality" layoutX="44.0" layoutY="118.0" prefHeight="34.0" prefWidth="100.0" promptText="0" stylesheets="@style.css">
+                     <styleClass>
+                        <String fx:value="arrow-button" />
+                        <String fx:value="list-cell" />
+                        <String fx:value="list-view" />
+                     </styleClass>
+                  </ComboBox>
+                  <ComboBox fx:id="sofaQuality" layoutX="276.0" layoutY="118.0" prefHeight="20.0" prefWidth="100.0" promptText="0" stylesheets="@style.css">
+                     <styleClass>
+                        <String fx:value="arrow-button" />
+                        <String fx:value="quality-bar" />
+                        <String fx:value="list-cell" />
+                        <String fx:value="list-view" />
+                     </styleClass>
+                  </ComboBox>
+                  <ComboBox fx:id="tableQuality" layoutX="532.0" layoutY="119.0" prefHeight="20.0" prefWidth="100.0" promptText="0" stylesheets="@style.css">
+                     <styleClass>
+                        <String fx:value="list-cell" />
+                        <String fx:value="list-view" />
+                        <String fx:value="quality-bar" />
+                        <String fx:value="arrow-button" />
+                     </styleClass>
+                  </ComboBox>
+                  <ComboBox fx:id="bedQuantity" layoutX="154.0" layoutY="118.0" prefHeight="20.0" prefWidth="74.0" promptText="0" stylesheets="@style.css">
+                     <styleClass>
+                        <String fx:value="quality-bar" />
+                        <String fx:value="arrow-button" />
+                        <String fx:value="quality-bar" />
+                        <String fx:value="list-view" />
+                        <String fx:value="list-cell" />
+                     </styleClass>
+                  </ComboBox>
+                  <ComboBox fx:id="sofaQuantity" layoutX="387.0" layoutY="119.0" prefHeight="20.0" prefWidth="74.0" promptText="0" stylesheets="@style.css">
+                     <styleClass>
+                        <String fx:value="quality-bar" />
+                        <String fx:value="arrow-button" />
+                        <String fx:value="quality-bar" />
+                        <String fx:value="list-view" />
+                        <String fx:value="list-cell" />
+                     </styleClass>
+                  </ComboBox>
+                  <ComboBox fx:id="tableQuantity" layoutX="641.0" layoutY="119.0" prefHeight="20.0" prefWidth="74.0" promptText="0" stylesheets="@style.css">
+                     <styleClass>
+                        <String fx:value="quality-bar" />
+                        <String fx:value="arrow-button" />
+                        <String fx:value="quality-bar" />
+                        <String fx:value="list-view" />
+                        <String fx:value="list-cell" />
+                     </styleClass>
+                  </ComboBox>
+                  <Label layoutX="58.0" layoutY="98.0" text="Select Quality" />
+                  <Label layoutX="151.0" layoutY="98.0" text="Select Quantity" />
+                  <ImageView fx:id="bedImage" fitHeight="100.0" fitWidth="100.0" layoutX="58.0" layoutY="2.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../../../../images/bed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="tableImage" fitHeight="100.0" fitWidth="100.0" layoutX="519.0" layoutY="12.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../../../../images/table.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="290.0" layoutY="100.0" text="Select Quality" />
+                  <Label layoutX="385.0" layoutY="98.0" text="Select Quantity" />
+                  <Label layoutX="546.0" layoutY="98.0" text="Select Quality" />
+                  <Label layoutX="639.0" layoutY="98.0" text="Select Quantity" />
+                  <Line endX="371.4000244140625" endY="1.52587890625E-5" layoutX="-120.0" layoutY="174.0" startX="371.4000244140625" startY="-160.39999389648438" stroke="#dfd9d9" />
+               </children>
+            </AnchorPane>
+            <Label contentDisplay="CENTER" layoutX="337.0" layoutY="23.0" text="Place Order" textFill="WHITE">
                <font>
-                  <Font name="Tahoma" size="22.0" />
-               </font></Button>
-            <Button fx:id="placeOrderBtn" layoutX="42.0" layoutY="376.0" mnemonicParsing="false" onAction="#placeOrder" prefHeight="58.0" prefWidth="209.0" stylesheets="@style.css" text="Place Order" textFill="#fff6f6">
+                  <Font name="Arial Bold" size="26.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="wmsLogo" fitHeight="58.0" fitWidth="73.0" layoutX="278.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../images/WMSLoginPage.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="278.0" layoutY="276.0" text="Shipping Details" textFill="#ffd0ec">
+               <font>
+                  <Font name="Arial Bold" size="27.0" />
+               </font>
+            </Label>
+            <Label layoutX="111.0" layoutY="323.0" text="Name:" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="nameField" layoutX="112.0" layoutY="345.0" prefHeight="26.0" prefWidth="200.0" promptText="Enter Name" />
+            <Label layoutX="112.0" layoutY="376.0" text="Address:" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="address_order" alignment="TOP_LEFT" layoutX="111.0" layoutY="397.0" prefHeight="50.0" prefWidth="200.0" promptText="Enter Address" />
+            <TextField fx:id="feedback_order" alignment="TOP_LEFT" layoutX="111.0" layoutY="481.0" prefHeight="26.0" prefWidth="200.0" promptText="Your delivery details" />
+            <Label layoutX="111.0" layoutY="456.0" text="Additional Delivery instruction:" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="placeOrderBtn" layoutX="428.0" layoutY="368.0" mnemonicParsing="false" onAction="#placeOrder" prefHeight="58.0" prefWidth="209.0" stylesheets="@style.css" text="Checkout" textFill="#fff6f6">
                <styleClass>
                   <String fx:value="animated-button" />
                   <String fx:value="BtnWhiteBGGreen" />
                </styleClass>
                <font>
-                  <Font size="22.0" />
-               </font></Button>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutY="-1.0" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: fff;">
-         <children>
-            <ImageView fx:id="sofaImage" fitHeight="181.0" fitWidth="200.0" layoutX="14.0" layoutY="236.0" pickOnBounds="true">
-               <image>
-                  <Image url="@../../../../../images/sofa.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="226.0" layoutY="111.0" text="Bed">
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="cancelButton" layoutX="428.0" layoutY="446.0" mnemonicParsing="false" onAction="#closePlaceOrder" prefHeight="58.0" prefWidth="209.0" stylesheets="@style.css" text="Cancel Order" textFill="#fff6f6">
+               <styleClass>
+                  <String fx:value="BtnWhiteBGRed" />
+                  <String fx:value="animated-button" />
+               </styleClass>
                <font>
-                  <Font name="Segoe UI Emoji" size="25.0" />
+                  <Font name="Tahoma" size="16.0" />
+               </font>
+            </Button>
+            <Label layoutX="111.0" layoutY="515.0" text="Phone Number:" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="228.0" layoutY="276.0" text="Sofa">
-               <font>
-                  <Font size="25.0" />
-               </font>
-            </Label>
-            <Label layoutX="228.0" layoutY="440.0" text="Table">
-               <font>
-                  <Font size="25.0" />
-               </font>
-            </Label>
-            <Line endX="371.4000244140625" endY="1.52587890625E-5" layoutX="131.0" layoutY="242.0" startX="73.4000244140625" startY="1.52587890625E-5" stroke="#dfd9d9" />
-            <Line endX="371.4000244140625" endY="1.52587890625E-5" layoutX="131.0" layoutY="405.0" startX="73.4000244140625" startY="1.52587890625E-5" stroke="#dfd9d9" />
-            <Line endX="371.4000244140625" endY="1.52587890625E-5" layoutX="131.0" layoutY="570.0" startX="73.4000244140625" startY="1.52587890625E-5" stroke="#dfd9d9" />
-            <ComboBox fx:id="bedQuality" layoutX="226.0" layoutY="178.0" prefHeight="32.0" prefWidth="114.0" promptText="0" stylesheets="@style.css">
-               <styleClass>
-                  <String fx:value="arrow-button" />
-                  <String fx:value="list-cell" />
-                  <String fx:value="list-view" />
-               </styleClass>
-            </ComboBox>
-            <ComboBox fx:id="sofaQuality" layoutX="226.0" layoutY="348.0" prefWidth="114.0" promptText="0" stylesheets="@style.css">
-               <styleClass>
-                  <String fx:value="arrow-button" />
-                  <String fx:value="quality-bar" />
-                  <String fx:value="list-cell" />
-                  <String fx:value="list-view" />
-               </styleClass>
-            </ComboBox>
-            <ComboBox fx:id="tableQuality" layoutX="226.0" layoutY="510.0" prefWidth="114.0" promptText="0" stylesheets="@style.css">
-               <styleClass>
-                  <String fx:value="list-cell" />
-                  <String fx:value="list-view" />
-                  <String fx:value="quality-bar" />
-                  <String fx:value="arrow-button" />
-               </styleClass>
-            </ComboBox>
-            <ComboBox fx:id="bedQuantity" layoutX="357.0" layoutY="178.0" prefHeight="32.0" prefWidth="114.0" promptText="0" stylesheets="@style.css">
-               <styleClass>
-                  <String fx:value="quality-bar" />
-                  <String fx:value="arrow-button" />
-                  <String fx:value="quality-bar" />
-                  <String fx:value="list-view" />
-                  <String fx:value="list-cell" />
-               </styleClass>
-            </ComboBox>
-            <ComboBox fx:id="sofaQuantity" layoutX="357.0" layoutY="348.0" prefHeight="32.0" prefWidth="114.0" promptText="0" stylesheets="@style.css">
-               <styleClass>
-                  <String fx:value="quality-bar" />
-                  <String fx:value="arrow-button" />
-                  <String fx:value="quality-bar" />
-                  <String fx:value="list-view" />
-                  <String fx:value="list-cell" />
-               </styleClass>
-            </ComboBox>
-            <ComboBox fx:id="tableQuantity" layoutX="357.0" layoutY="510.0" prefHeight="32.0" prefWidth="114.0" promptText="0" stylesheets="@style.css">
-               <styleClass>
-                  <String fx:value="quality-bar" />
-                  <String fx:value="arrow-button" />
-                  <String fx:value="quality-bar" />
-                  <String fx:value="list-view" />
-                  <String fx:value="list-cell" />
-               </styleClass>
-            </ComboBox>
-            <Label layoutX="245.0" layoutY="153.0" text="Select Quality" />
-            <Label layoutX="370.0" layoutY="153.0" text="Select Quantity" />
-            <ImageView fx:id="bedImage" fitHeight="159.0" fitWidth="173.0" layoutX="28.0" layoutY="91.0" pickOnBounds="true">
-               <image>
-                  <Image url="@../../../../../images/bed.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="tableImage" fitHeight="181.0" fitWidth="200.0" layoutX="14.0" layoutY="409.0" pickOnBounds="true">
-               <image>
-                  <Image url="@../../../../../images/table.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="244.0" layoutY="320.0" text="Select Quality" />
-            <Label layoutX="369.0" layoutY="320.0" text="Select Quantity" />
-            <Label layoutX="245.0" layoutY="482.0" text="Select Quality" />
-            <Label layoutX="370.0" layoutY="482.0" text="Select Quantity" />
-            <AnchorPane layoutX="112.0" layoutY="-17.0" prefHeight="106.0" prefWidth="316.0" style="-fx-background-radius: 80;">
-               <children>
-                  <Label layoutY="39.0" text="Place Order">
-                     <font>
-                        <Font name="Arial Bold" size="26.0" />
-                     </font>
-                  </Label>
-                  <Separator layoutX="-114.0" layoutY="93.0" prefHeight="1.0" prefWidth="503.0" />
-               </children>
-            </AnchorPane>
-            <ImageView fx:id="wmsLogo" fitHeight="58.0" fitWidth="73.0" layoutX="52.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../images/WMSLoginPage.png" />
-               </image>
-            </ImageView>
+            <TextField fx:id="order_phone" layoutX="111.0" layoutY="535.0" prefHeight="26.0" prefWidth="108.0" promptText="Enter Phone" />
          </children>
       </AnchorPane>
    </children>
