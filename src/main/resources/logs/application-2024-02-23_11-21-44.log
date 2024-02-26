@@ -1,0 +1,23 @@
+11:21:44.325 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+11:21:44.983 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+11:21:45.271 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+11:21:54.337 [JavaFX Application Thread] INFO  org.wms.adminController - Images initialized successfully.
+11:21:54.349 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 8
+11:21:54.349 [JavaFX Application Thread] INFO  org.wms.adminController - Dropdowns initialized successfully.
+11:21:54.359 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+11:21:54.361 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+11:21:54.435 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to admin view
+11:21:54.435 [JavaFX Application Thread] INFO  org.wms.loginController - Admin logged in
+11:21:57.306 [JavaFX Application Thread] INFO  org.wms.adminController - Pending button clicked. Orders section displayed.
+11:22:04.013 [JavaFX Application Thread] INFO  org.wms.adminController - Home button clicked. Dashboard section displayed.
+11:22:05.582 [JavaFX Application Thread] INFO  org.wms.adminController - History button clicked. Log table displayed.
+11:22:10.519 [JavaFX Application Thread] INFO  org.wms.adminController - Add Commodity button clicked. Add commodity section displayed.
+11:22:11.953 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.
+11:22:40.283 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved not delivered orders from the database.
+11:22:40.287 [JavaFX Application Thread] INFO  org.wms.adminController - Loaded not delivered orders into the table.
+11:22:40.288 [JavaFX Application Thread] INFO  org.wms.adminController - Retrieved pending orders count: 2
+11:22:42.846 [JavaFX Application Thread] INFO  org.wms.adminController - Home button clicked. Dashboard section displayed.
+11:22:53.555 [JavaFX Application Thread] INFO  org.wms.adminController - History button clicked. Graph displayed.
+11:22:57.854 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.
+11:22:59.832 [JavaFX Application Thread] INFO  org.wms.adminController - Add Commodity button clicked. Add commodity section displayed.
+11:23:00.969 [JavaFX Application Thread] INFO  org.wms.adminController - Orders button clicked. Orders section displayed.

@@ -198,9 +198,9 @@ public class userController implements Initializable {
         try {
             // Initialization code...
 //            nameField.setText(userName.toUpperCase());
-            bedQuality.setItems(FXCollections.observableArrayList("POOR", "BAD", "AVERAGE", "GOOD", "BEST"));
-            sofaQuality.setItems(FXCollections.observableArrayList("POOR", "BAD", "AVERAGE", "GOOD", "BEST"));
-            tableQuality.setItems(FXCollections.observableArrayList("POOR", "BAD", "AVERAGE", "GOOD", "BEST"));
+            bedQuality.setItems(FXCollections.observableArrayList("BASIC", "FAIR", "AVERAGE", "GOOD", "BEST"));
+            sofaQuality.setItems(FXCollections.observableArrayList("BASIC", "FAIR", "AVERAGE", "GOOD", "BEST"));
+            tableQuality.setItems(FXCollections.observableArrayList("BASIC", "FAIR", "AVERAGE", "GOOD", "BEST"));
 
             bedQuantity.setItems(FXCollections.observableArrayList("1", "2", "3", "4", "5"));
             sofaQuantity.setItems(FXCollections.observableArrayList("1", "2", "3", "4", "5"));

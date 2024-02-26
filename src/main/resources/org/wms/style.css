@@ -101,6 +101,20 @@
     -fx-border-style: solid;
     -fx-border-radius: 5px;
 }
+.logout{
+    -fx-background-color: #C0392B;
+     -fx-text-fill: #FFF;
+     -fx-background-radius: 5px;
+}
+.logout:hover{
+-fx-background-color:#FFFFFF;
+    -fx-background-radius: 5px;
+    -fx-text-fill:  #C0392B;
+    -fx-border-color:  #C0392B;
+    -fx-border-width: 1px;
+    -fx-border-style: solid;
+    -fx-border-radius: 5px;
+}
 .signupBtn{
      -fx-background-color: #FF8F00;
      -fx-text-fill: #FFF;
@@ -197,6 +211,12 @@
 .table-cell {
     -fx-alignment: CENTER;
 }
+.text-field {
+    -fx-alignment: center;
+}.loginText-field {
+      -fx-alignment: baseline-left;
+  }
+
 .dashboard-btn{
     -fx-background-color: #81689D;
     -fx-text-fill: #FFF;

@@ -1,0 +1,5 @@
+10:18:17.172 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+10:18:17.832 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+10:18:18.117 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+10:18:43.536 [JavaFX Application Thread] WARN  org.wms.loginController - User not found during login attempt
+10:18:43.754 [JavaFX Application Thread] WARN  org.wms.loginController - User not found during login attempt

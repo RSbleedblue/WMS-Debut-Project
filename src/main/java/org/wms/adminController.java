@@ -454,7 +454,7 @@ public class adminController implements Initializable {
 
     private void initializeDropdowns() {
         commodity_Select.setItems(FXCollections.observableArrayList("Bed", "Sofa", "Table"));
-        quality_select.setItems(FXCollections.observableArrayList("POOR", "BAD", "AVERAGE", "GOOD", "BEST"));
+        quality_select.setItems(FXCollections.observableArrayList("BASIC", "FAIR", "AVERAGE", "GOOD", "BEST"));
         logger.info("Dropdowns initialized successfully.");
     }
 
@@ -558,9 +558,11 @@ public class adminController implements Initializable {
             if (result.next()) {
                 count = result.getInt("not_delivered_count");
                 orderPending.setText(String.valueOf(count));
+                orderPending.setTextFill(Color.RED);
                 logger.info("Retrieved pending orders count: " + count);
             } else {
                 orderPending.setText("0");
+                orderPending.setTextFill(Color.GREEN);
                 logger.info("No pending orders found.");
             }
         } catch (SQLException e) {
@@ -662,11 +664,11 @@ public class adminController implements Initializable {
     private ArrayList<placedOrders> pushOrders = new ArrayList<>();
 
     public void pushOrder() throws PushOrderException, SQLException {
-//        if (!isTruckIn()) {
-//            showErrorAlert("ERROR", "Unavailable", "Truck is out for Delivery");
-//            logger.error("Truck is out for Delivery");
-//            return;
-//        }
+        if (!isTruckIn()) {
+            showErrorAlert("ERROR", "Unavailable", "Truck is out for Delivery");
+            logger.error("Truck is out for Delivery");
+            return;
+        }
 //        Check for Pending Updation
         int pendingUpdation = getUpdatePending();
         if (pendingUpdation != 0) {
@@ -993,7 +995,7 @@ public class adminController implements Initializable {
                 return;
             }
             try (PreparedStatement updatePendingStatusStatement = connectionDB.prepareStatement(changePendingStatus)) {
-                updatePendingStatusStatement.setInt(1, pending_update_table.getSelectionModel().getSelectedItem().getId());
+                updatePendingStatusStatement.setInt(1, Math.abs(999 - pending_update_table.getSelectionModel().getSelectedItem().getId()));
                 updatePendingStatusStatement.executeUpdate();
             }
 
@@ -1120,7 +1122,7 @@ public class adminController implements Initializable {
                 String cname = resultSet.getString("c_name").toUpperCase();
                 String quality = map.getQualitiesName(resultSet.getInt("quality"));
                 String quantity = Integer.toString(resultSet.getInt("quantity"));
-                int id = resultSet.getInt("ID");
+                int id =999+resultSet.getInt("ID");
                 gkd = new gatekeeperData(cname, quality, quantity, id);
                 data.add(gkd);
             }

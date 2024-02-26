@@ -90,7 +90,7 @@ public class RegisterController implements Initializable {
             return;
         }
 
-        String registerQuery = "INSERT INTO user_account (firstname, lastname, username, password, isAdmin) VALUES (?, ?, ?, ?, 1)";
+        String registerQuery = "INSERT INTO user_account (firstname, lastname, username, password, isAdmin) VALUES (?, ?, ?, ?, 0)";
 
         try {
             // Check if required fields are empty

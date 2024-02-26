@@ -1,0 +1,15 @@
+10:05:13.671 [JavaFX Application Thread] INFO  org.wms.main - Starting the application...
+10:05:14.332 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+10:05:14.637 [JavaFX Application Thread] INFO  org.wms.main - Application started successfully.
+10:05:19.897 [JavaFX Application Thread] INFO  org.wms.RegisterController - Registration form initialized successfully
+10:05:19.904 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to register view
+10:05:44.197 [JavaFX Application Thread] INFO  org.wms.RegisterController - User registered successfully
+10:05:51.965 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+10:06:05.449 [JavaFX Application Thread] INFO  org.wms.userController - User controller initialized successfully
+10:06:05.454 [JavaFX Application Thread] INFO  org.wms.loginController - Switched to user view
+10:06:05.454 [JavaFX Application Thread] INFO  org.wms.loginController - User logged in
+10:07:03.515 [JavaFX Application Thread] ERROR org.wms.userController - Address or feedback not filled
+10:07:12.310 [JavaFX Application Thread] ERROR org.wms.userController - Invalid phone number entered
+10:07:34.140 [JavaFX Application Thread] INFO  org.wms.thankyouController - Thank you page initialized successfully
+10:07:36.712 [JavaFX Application Thread] INFO  org.wms.loginController - Loading Login Page
+10:07:36.722 [JavaFX Application Thread] INFO  org.wms.thankyouController - Closing the window and returning to login view

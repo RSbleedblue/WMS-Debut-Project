@@ -25,62 +25,62 @@
          <children>
             <AnchorPane layoutX="14.0" layoutY="16.0" prefHeight="563.0" prefWidth="286.0" style="-fx-background-radius: 20; -fx-background-color: FFF;">
                <children>
-                  <Label layoutX="105.0" layoutY="215.0" text="Order ID" />
+                  <Label layoutX="56.0" layoutY="237.0" text="Order ID" />
                   <ImageView fx:id="order_sec_image" fitHeight="175.0" fitWidth="200.0" layoutX="45.0" layoutY="14.0" pickOnBounds="true" />
-                  <TextField fx:id="orderID_field_order" layoutX="79.0" layoutY="233.0" prefHeight="3.0" prefWidth="100.0" stylesheets="@style.css">
+                  <TextField fx:id="orderID_field_order" layoutX="29.0" layoutY="266.0" prefHeight="3.0" prefWidth="100.0" stylesheets="@style.css">
                      <styleClass>
                         <String fx:value="list-view" />
                         <String fx:value="list-cell" />
                      </styleClass>
                   </TextField>
-                  <Label layoutX="112.0" layoutY="261.0" text="Name" />
-                  <TextField fx:id="name_field_order" layoutX="81.0" layoutY="279.0" prefHeight="26.0" prefWidth="100.0" stylesheets="@style.css">
+                  <Label layoutX="192.0" layoutY="237.0" text="Name" />
+                  <TextField fx:id="name_field_order" layoutX="158.0" layoutY="265.0" prefHeight="26.0" prefWidth="100.0" stylesheets="@style.css">
                      <styleClass>
                         <String fx:value="list-view" />
                         <String fx:value="list-cell" />
                      </styleClass>
                   </TextField>
-                  <Label layoutX="109.0" layoutY="309.0" text="Quality" />
-                  <TextField fx:id="quality_field_order" layoutX="81.0" layoutY="328.0" prefHeight="26.0" prefWidth="100.0" stylesheets="@style.css">
+                  <Label layoutX="60.0" layoutY="310.0" text="Quality" />
+                  <TextField fx:id="quality_field_order" layoutX="29.0" layoutY="336.0" prefHeight="26.0" prefWidth="100.0" stylesheets="@style.css">
                      <styleClass>
                         <String fx:value="list-view" />
                         <String fx:value="list-cell" />
                      </styleClass>
                   </TextField>
-                  <Label layoutX="105.0" layoutY="355.0" text="Quantity" />
-                  <TextField fx:id="quantity_field_order" layoutX="78.0" layoutY="372.0" prefWidth="106.0" stylesheets="@style.css">
+                  <Label layoutX="185.0" layoutY="310.0" text="Quantity" />
+                  <TextField fx:id="quantity_field_order" layoutX="154.0" layoutY="337.0" prefWidth="106.0" stylesheets="@style.css">
                      <styleClass>
                         <String fx:value="list-view" />
                         <String fx:value="list-cell" />
                      </styleClass>
                   </TextField>
-                  <Label layoutX="77.0" layoutY="398.0" text="Remaining Quantity:" />
-                  <TextField fx:id="rem_storage_field_order" layoutX="78.0" layoutY="416.0" prefWidth="106.0" stylesheets="@style.css">
+                  <Label layoutX="25.0" layoutY="391.0" text="Remaining Quantity:" />
+                  <TextField fx:id="rem_storage_field_order" layoutX="26.0" layoutY="416.0" prefWidth="106.0" stylesheets="@style.css">
                      <styleClass>
                         <String fx:value="list-view" />
                         <String fx:value="list-cell" />
                      </styleClass>
                   </TextField>
-                  <Button fx:id="push_order_btn" layoutX="22.0" layoutY="504.0" mnemonicParsing="false" onAction="#pushOrder" stylesheets="@style.css" text="Push Order" textFill="WHITE">
+                  <Button fx:id="push_order_btn" layoutX="22.0" layoutY="489.0" mnemonicParsing="false" onAction="#pushOrder" stylesheets="@style.css" text="Push Order" textFill="WHITE">
                      <styleClass>
                         <String fx:value="registerBtn" />
                         <String fx:value="animated-button" />
                      </styleClass>
                   </Button>
-                  <Button fx:id="delete_order_btn" layoutX="182.0" layoutY="504.0" mnemonicParsing="false" onAction="#cancelPushedOrders" stylesheets="@style.css" text="Delete Order" textFill="WHITE">
+                  <Button fx:id="delete_order_btn" layoutX="103.0" layoutY="488.0" mnemonicParsing="false" onAction="#cancelPushedOrders" stylesheets="@style.css" text="Delete Order" textFill="WHITE">
                      <styleClass>
                         <String fx:value="animated-button" />
                         <String fx:value="cancelBtn" />
                      </styleClass>
                   </Button>
-                  <Label layoutX="89.0" layoutY="442.0" text="Truck Capactiy:" />
-                  <TextField fx:id="truck_capacity_orderField" layoutX="78.0" layoutY="460.0" prefWidth="106.0" stylesheets="@style.css">
+                  <Label layoutX="167.0" layoutY="391.0" text="Truck Capactiy:" />
+                  <TextField fx:id="truck_capacity_orderField" layoutX="155.0" layoutY="416.0" prefWidth="106.0" stylesheets="@style.css">
                      <styleClass>
                         <String fx:value="list-view" />
                         <String fx:value="list-cell" />
                      </styleClass>
                   </TextField>
-                  <Button fx:id="place_order_btn" layoutX="103.0" layoutY="504.0" mnemonicParsing="false" onAction="#placeOrder" prefHeight="26.0" prefWidth="76.0" stylesheets="@style.css" text="Place Order" textFill="WHITE">
+                  <Button fx:id="place_order_btn" layoutX="193.0" layoutY="488.0" mnemonicParsing="false" onAction="#placeOrder" prefHeight="26.0" prefWidth="76.0" stylesheets="@style.css" text="Place Order" textFill="WHITE">
                      <styleClass>
                         <String fx:value="list-view" />
                         <String fx:value="list-cell" />
@@ -181,6 +181,7 @@
                      <styleClass>
                         <String fx:value="list-cell" />
                         <String fx:value="list-view" />
+                        <String fx:value="loginText-field" />
                      </styleClass>
                   </TextField>
                </children>
@@ -310,12 +311,12 @@
                         <Font size="25.0" />
                      </font>
                   </Label>
-                  <Label layoutX="221.0" layoutY="26.0" text="Process">
+                  <Label layoutX="221.0" layoutY="26.0" text="Task ID">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <Label layoutX="229.0" layoutY="45.0" text="number">
+                  <Label layoutX="231.0" layoutY="47.0" text="current">
                      <font>
                         <Font size="10.0" />
                      </font>
@@ -325,7 +326,7 @@
                         <Image url="@../../../../../images/truckIN.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="truckID_label" layoutX="221.0" layoutY="60.0" text="0">
+                  <Label fx:id="truckID_label" layoutX="225.0" layoutY="60.0" text="0">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -340,7 +341,7 @@
                         <Image url="@../../../../../images/truckOUT.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="394.0" layoutY="54.0" text="check">
+                  <Label layoutX="390.0" layoutY="54.0" text="History">
                      <font>
                         <Font size="10.0" />
                      </font>
@@ -352,7 +353,7 @@
                <children>
                   <TableView fx:id="log_detail_table" layoutX="5.0" layoutY="6.0" prefHeight="332.0" prefWidth="513.0" tableMenuButtonVisible="true">
                     <columns>
-                      <TableColumn fx:id="log_truck_id" prefWidth="82.0" text="Process" />
+                      <TableColumn fx:id="log_truck_id" prefWidth="82.0" text="Task ID" />
                         <TableColumn fx:id="log_date" prefWidth="82.0" text="Date" />
                       <TableColumn fx:id="log_order_id" prefWidth="82.0" text="Order ID" />
                         <TableColumn fx:id="log_task_done" prefWidth="82.0" text="Task Done" />
@@ -397,12 +398,12 @@
             </AnchorPane>
             <AnchorPane fx:id="pendingUpdation_box" layoutX="280.0" layoutY="176.0" prefHeight="38.0" prefWidth="151.0" style="-fx-background-color: fff; -fx-background-radius: 20px;">
                <children>
-                  <Label fx:id="pendingLabel" layoutX="13.0" layoutY="9.0" styleClass="animated-button" text="Pending Updation:">
+                  <Label fx:id="pendingLabel" layoutX="13.0" layoutY="9.0" styleClass="animated-button" text="Pending Updates:">
                      <font>
                         <Font size="13.0" />
                      </font>
                   </Label>
-                  <Label fx:id="pending_update" layoutX="123.0" layoutY="4.0" prefHeight="30.0" prefWidth="26.0" text="-----">
+                  <Label fx:id="pending_update" layoutX="118.0" layoutY="4.0" prefHeight="30.0" prefWidth="26.0" text="-----">
                      <font>
                         <Font name="Ebrima" size="18.0" />
                      </font>
